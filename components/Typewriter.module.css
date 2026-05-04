@@ -2,7 +2,7 @@
   font-family: var(--font-serif), serif;
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(30px, 3.8vw, 48px);
+  font-size: clamp(36px, 4.8vw, 60px);
   color: var(--neon);
   min-height: 58px;
   display: flex;
