@@ -28,6 +28,22 @@
 
 .heroContent { flex: 0 0 auto; width: min(52%, 620px); position: relative; z-index: 10; }
 
+.heroSys {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px; color: var(--grey-4); letter-spacing: 2px;
+  margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+  opacity: 0; animation: fadeUp 0.7s 0.1s ease forwards;
+}
+.accent { color: var(--neon); }
+.progressWrap { display: inline-flex; align-items: center; gap: 6px; }
+.progressBar { width: 72px; height: 2px; background: var(--grey-3); overflow: hidden; }
+.progressFill {
+  height: 100%; width: 0%; background: var(--neon);
+  animation: progressLoad 2s 0.8s ease forwards; box-shadow: 0 0 8px var(--neon);
+}
+@keyframes progressLoad { from{width:0%} to{width:82%} }
+.progressPct { font-size: 8px; color: var(--neon); }
+
 .heroLine1 {
   display: block; font-family: var(--font-serif), serif; font-style: normal; font-weight: 300;
   font-size: clamp(90px, 11.5vw, 148px); line-height: 0.88; color: var(--white); letter-spacing: -3px;
