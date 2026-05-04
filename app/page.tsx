@@ -59,15 +59,10 @@ export default function Home() {
 
       {/* ── SERVICES ── */}
       <section className={styles.services} id="services">
-        <div className={styles.servicesHeader}>
-          <ScrollReveal>
-            <span className="section-label">// 01 — What we do</span>
-            <h2 className="section-title">Our Services.</h2>
-          </ScrollReveal>
-          <ScrollReveal className={styles.servicesHeaderRight} delay={2}>
-            Six disciplines. One agency. Engineered to accelerate your brand.
-          </ScrollReveal>
-        </div>
+        <ScrollReveal className={styles.servicesHeader}>
+          <span className="section-label">// 01 — What we do</span>
+          <h2 className="section-title">Our Services.</h2>
+        </ScrollReveal>
         <div className={styles.servicesGrid}>
           {SERVICES.map((s, i) => (
             <ScrollReveal key={s.slug} delay={((i % 3) + 1) as 1|2|3}>
@@ -129,7 +124,7 @@ export default function Home() {
       <section className={styles.cta} id="contact">
         <ScrollReveal>
           <span className="section-label">// 04 — Get in touch</span>
-          <h2 className="section-title">Ready to <em>launch?</em></h2>
+          <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s build something remarkable together</p>
           {/* TODO: Replace href with your Calendly link */}
           <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
