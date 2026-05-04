@@ -86,8 +86,9 @@ interface Particle {
 
 function spawnParticle(W: number, H: number): Particle {
   const cx = W * 0.22, cy = H * 0.5, R = Math.min(W, H) * 0.34
-  const angle = Math.random() * Math.PI * 2
-  const dist = R * (0.45 + Math.random() * 1.15)
+  // Right arc only (-60deg to +240deg) — keeps particles away from the text side
+  const angle = (Math.random() * 1.67 - 0.33) * Math.PI
+  const dist = R * (0.55 + Math.random() * 0.65)  // 0.55–1.2× R
   const item = DATA[Math.floor(Math.random() * DATA.length)]
   return {
     x: cx + Math.cos(angle) * dist,
