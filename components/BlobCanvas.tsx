@@ -87,8 +87,7 @@ interface Particle {
 const recentItems = new Set<number>()
 
 function spawnParticle(W: number, H: number): Particle {
-  const cx = W * 0.22, cy = H * 0.5, R = Math.min(W, H) * 0.34
-  // Right-facing arc: -110deg to +110deg only — keeps particles off the text side
+  const cx = W * 0.42, cy = H * 0.5, R = Math.min(W, H) * 0.34
   const angle = (Math.random() * 1.22 - 0.61) * Math.PI
   const dist = R * (0.6 + Math.random() * 0.6)
   let idx = Math.floor(Math.random() * DATA.length)
@@ -184,7 +183,7 @@ export default function BlobCanvas() {
     const frame = () => {
       if (!W || !H) { raf = requestAnimationFrame(frame); return }
       ctx.clearRect(0, 0, W, H)
-      const cx = W * 0.22, cy = H * 0.50, R = Math.min(W, H) * 0.34
+      const cx = W * 0.42, cy = H * 0.50, R = Math.min(W, H) * 0.34
 
       for (let p = 3; p >= 1; p--) {
         smooth(ctx, blobPts(cx, cy, R * (1.05 + p * 0.12), t * 0.6))
@@ -229,26 +228,18 @@ export default function BlobCanvas() {
           ? 0.55 + Math.sin(t * 1.4 + phaseOffset) * 0.18
           : 0.28 + Math.sin(t * 0.9 + phaseOffset) * 0.08
         p.alpha = Math.min(fadeIn, fadeOut) * pulse
-
-        if (life >= maxLife) {
-          particles[i] = spawnParticle(W, H)
-          return
-        }
-
+        if (life >= maxLife) { particles[i] = spawnParticle(W, H); return }
         ctx.save()
         ctx.globalAlpha = p.alpha
         ctx.font = '10px "Space Mono", monospace'
         ctx.fillStyle = item.color
         ctx.fillText(item.text, p.x, p.y)
         ctx.restore()
-
         if (item.spark) drawSparkline(ctx, p.x, p.y + 5, item.spark, p.alpha, item.color)
         if (item.bars)  drawBars(ctx, p.x, p.y + 5, item.bars, p.alpha, item.color)
       })
 
-      while (particles.length < 16 && W > 0) {
-        particles.push(spawnParticle(W, H))
-      }
+      while (particles.length < 16 && W > 0) particles.push(spawnParticle(W, H))
 
       t += .022
       raf = requestAnimationFrame(frame)
@@ -257,10 +248,7 @@ export default function BlobCanvas() {
     window.addEventListener('resize', resize)
     setTimeout(resize, 50)
     frame()
-    return () => {
-      window.removeEventListener('resize', resize)
-      cancelAnimationFrame(raf)
-    }
+    return () => { window.removeEventListener('resize', resize); cancelAnimationFrame(raf) }
   }, [])
 
   return <canvas ref={ref} className={styles.canvas} />
