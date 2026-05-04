@@ -11,7 +11,8 @@ const SERVICES = [
   { num:'03', slug:'seo',              name:'Ecommerce SEO',             desc:'Technical SEO & intent-driven scaling for ambitious brands.' },
   { num:'04', slug:'lead-generation',  name:'Lead Generation',           desc:'High-quality B2B & B2C prospecting that fills your pipeline.' },
   { num:'05', slug:'cmo-as-a-service', name:'CMO as a Service',          desc:'Executive-level marketing leadership, without the executive price tag.' },
-  { num:'06', slug:'agency-assist',    name:'Agency Assist',             desc:'White-label fulfilment support for agencies that need a trusted partner.', gold: true },
+  { num:'06', slug:'website-builds',   name:'Website Building',          desc:'High-converting, performance-first websites built to grow your brand online.' },
+  { num:'07', slug:'agency-assist',    name:'Agency Assist',             desc:"White-label fulfilment support for agencies that need a trusted partner.", gold: true, full: true },
 ]
 
 const CLIENTS = [
@@ -65,8 +66,8 @@ export default function Home() {
         </ScrollReveal>
         <div className={styles.servicesGrid}>
           {SERVICES.map((s, i) => (
-            <ScrollReveal key={s.slug} delay={((i % 3) + 1) as 1|2|3}>
-              <Link href={`/services/${s.slug}`} className={`${styles.serviceCard}${s.gold ? ' '+styles.scGold : ''}`}>
+            <ScrollReveal key={s.slug} delay={((i % 3) + 1) as 1|2|3} className={s.full ? styles.scFull : ''}>
+              <Link href={`/services/${s.slug}`} data-num={s.num} className={`${styles.serviceCard}${s.gold ? ' '+styles.scGold : ''}`}>
                 <span className={styles.scNum}>{s.num}</span>
                 <span className={styles.scName}>{s.name}</span>
                 <p className={styles.scDesc}>{s.desc}</p>
@@ -126,7 +127,6 @@ export default function Home() {
           <span className="section-label">// 04 — Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s build something remarkable together</p>
-          {/* TODO: Replace href with your Calendly link */}
           <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
         </ScrollReveal>
       </section>
