@@ -50,7 +50,7 @@ const SERVICES: Record<string, {
     name: 'Lead Generation',
     tagline: 'The London lead generation agency that only gets paid when you do.',
     description: [
-      'Zero monthly fees. 100% performance based. Stop burning cash on agencies that promise the world and deliver excuses. You cover the ad spend — we cover the expertise, the strategy, and the execution. If we don't perform, we don't eat.',
+      "Zero monthly fees. 100% performance based. Stop burning cash on agencies that promise the world and deliver excuses. You cover the ad spend — we cover the expertise, the strategy, and the execution. If we don't perform, we don't eat.",
       'We design the creatives, write the copy, build the landing pages, and manage campaign optimisation — all at no charge. We agree on a fair revenue split or fixed CPA for every qualified lead or sale we generate. You own all the data. You have nothing to lose.',
     ],
     outcomes: ['Zero monthly retainer — performance-based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy & landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
@@ -72,7 +72,7 @@ const SERVICES: Record<string, {
     name: 'Agency Assist',
     tagline: 'Scale your agency without increasing your headcount.',
     description: [
-      'Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don't have in-house, we step in and integrate seamlessly to deliver white-label excellence — so you never have to turn down a contract again.',
+      "Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don't have in-house, we step in and integrate seamlessly to deliver white-label excellence — so you never have to turn down a contract again.",
       'We do the work. You get the credit. You receive weekly white-label reports and analysis while maintaining 100% control of the client relationship. We can also execute campaigns and train your junior staff to take them over.',
     ],
     outcomes: ['Overflow execution — never turn down a client again','White-label AI, CRO & Paid Media fulfilment','Training & handoffs to your in-house team','Weekly white-label reports & analysis','Full NDA — you maintain 100% client ownership'],
@@ -176,7 +176,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <span className="section-label">// Get in touch</span>
           <h2 className="section-title">Ready to <em>launch?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
-          {/* TODO: Replace with your Calendly link */}
           <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
         </ScrollReveal>
       </section>
