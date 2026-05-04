@@ -134,7 +134,7 @@
 .scGold { background: #0c0c00 !important; }
 .scGold:hover { background: #111100 !important; }
 .scNum { font-family: var(--font-mono),monospace; font-size: 8px; color: var(--grey-3); letter-spacing: 3px; display: block; margin-bottom: 12px; }
-.scName { font-family: var(--font-inter),sans-serif; font-weight: 600; font-size: 15px; letter-spacing: -0.2px; color: var(--white); display: block; margin-bottom: 8px; line-height: 1.2; }
+.scName { font-family: var(--font-inter),sans-serif; font-weight: 600; font-size: 15px; letter-spacing: 0.5px; text-transform: uppercase; color: var(--white); display: block; margin-bottom: 8px; line-height: 1.2; }
 .scDesc { font-family: var(--font-inter),sans-serif; font-size: 12px; color: var(--grey-4); line-height: 1.7; }
 .scArrow { position: absolute; bottom: 20px; right: 22px; font-size: 15px; color: rgba(255,255,255,0.15); transition: color .3s,transform .3s; }
 .serviceCard:hover .scArrow { color: var(--neon); transform: translate(5px,-5px); }
