@@ -30,7 +30,7 @@ body {
 
 .section-label {
   font-family: var(--font-mono), monospace;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 4px;
   color: var(--neon);
   text-transform: uppercase;
