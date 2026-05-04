@@ -107,22 +107,36 @@
   background: rgba(255,255,255,0.1); outline: 1px solid rgba(255,255,255,0.1);
 }
 .serviceCard {
-  background: var(--off-black); padding: 32px 36px; position: relative;
-  overflow: hidden; cursor: pointer; transition: background 0.35s; text-decoration: none; display: block;
+  background: var(--off-black); padding: 40px 36px 56px; position: relative;
+  overflow: hidden; cursor: pointer;
+  transition: background 0.35s, transform 0.28s, box-shadow 0.35s;
+  text-decoration: none; display: block;
+}
+.serviceCard::before {
+  content: attr(data-num);
+  position: absolute; bottom: -10px; right: 20px;
+  font-family: var(--font-mono), monospace;
+  font-size: 96px; font-weight: 700;
+  color: rgba(255,255,255,0.035);
+  line-height: 1; letter-spacing: -2px;
+  pointer-events: none;
+  transition: color 0.35s;
 }
 .serviceCard::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
   background: var(--neon); transform: scaleX(0); transform-origin: left;
-  transition: transform 0.4s ease; box-shadow: 0 0 12px var(--neon);
+  transition: transform 0.45s ease; box-shadow: 0 0 16px var(--neon);
 }
-.serviceCard:hover { background: var(--grey-1); }
+.serviceCard:hover { background: var(--grey-1); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.45); }
 .serviceCard:hover::after { transform: scaleX(1); }
+.serviceCard:hover::before { color: rgba(212,255,0,0.07); }
+.scFull { grid-column: 1 / -1; }
 .scGold { background: #0c0c00 !important; }
 .scGold:hover { background: #111100 !important; }
-.scNum { font-family: var(--font-mono),monospace; font-size: 9px; color: var(--grey-3); letter-spacing: 3px; display: block; margin-bottom: 18px; }
-.scName { font-family: var(--font-inter),sans-serif; font-weight: 500; font-size: 17px; letter-spacing: 0.2px; color: var(--white); display: block; margin-bottom: 12px; line-height: 1.2; }
-.scDesc { font-family: var(--font-inter),sans-serif; font-size: 12.5px; color: var(--grey-4); line-height: 1.65; }
-.scArrow { position: absolute; bottom: 28px; right: 28px; font-size: 16px; color: var(--grey-3); transition: color .3s,transform .3s; }
+.scNum { font-family: var(--font-mono),monospace; font-size: 9px; color: var(--grey-3); letter-spacing: 3px; display: block; margin-bottom: 20px; }
+.scName { font-family: var(--font-inter),sans-serif; font-weight: 600; font-size: 20px; letter-spacing: -0.2px; color: var(--white); display: block; margin-bottom: 12px; line-height: 1.2; }
+.scDesc { font-family: var(--font-inter),sans-serif; font-size: 13px; color: var(--grey-4); line-height: 1.7; }
+.scArrow { position: absolute; bottom: 28px; right: 28px; font-size: 18px; color: rgba(255,255,255,0.15); transition: color .3s,transform .3s; }
 .serviceCard:hover .scArrow { color: var(--neon); transform: translate(5px,-5px); }
 
 /* ── STATS ── */
@@ -167,7 +181,7 @@
 .resourcesItems { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
 .resourceRow { display: flex; align-items: center; justify-content: space-between; padding: 20px 28px; background: var(--grey-1); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; transition: border-color .25s,background .25s; cursor: pointer; }
 .resourceRow:hover { border-color: rgba(212,255,0,0.3); background: rgba(212,255,0,0.03); }
-.resourceName { font-family: var(--font-inter),sans-serif; font-weight: 400; font-size: 16px; color: var(--white); }
+.resourceName { font-family: var(--font-inter),sans-serif; font-weight: 400; font-size: 13px; color: var(--white); }
 .resourceBadge { font-family: var(--font-mono),monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; }
 .badgeFree { color: var(--neon); border: 1px solid rgba(212,255,0,0.4); }
 .badgeSoon { color: var(--grey-4); border: 1px solid var(--grey-3); }
