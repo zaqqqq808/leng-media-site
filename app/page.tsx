@@ -12,7 +12,7 @@ const SERVICES = [
   { num:'04', slug:'lead-generation',  name:'Lead Generation',           desc:'High-quality B2B & B2C prospecting that fills your pipeline.' },
   { num:'05', slug:'cmo-as-a-service', name:'CMO as a Service',          desc:'Executive-level marketing leadership, without the executive price tag.' },
   { num:'06', slug:'website-builds',   name:'Website Building',          desc:'High-converting, performance-first websites built to grow your brand online.' },
-  { num:'07', slug:'agency-assist',    name:'Agency Assist',             desc:'White-label fulfilment support for agencies that need a trusted partner.', gold: true, full: true },
+  { num:'07', slug:'agency-assist',    name:'Agency Assistance',         desc:'White-label fulfilment support for agencies that need a trusted partner.', gold: true, full: true },
 ]
 
 const CLIENTS = [
