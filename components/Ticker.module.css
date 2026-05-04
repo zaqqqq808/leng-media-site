@@ -10,7 +10,7 @@
 .item {
   display: inline-block;
   font-family: var(--font-mono), monospace;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 3px;
   color: var(--grey-4);
   text-transform: uppercase;
