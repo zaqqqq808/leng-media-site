@@ -6,8 +6,8 @@ import Typewriter from '@/components/Typewriter'
 import Link from 'next/link'
 
 const SERVICES = [
-  { num:'01', slug:'ai-solutions',     name:'AI Solutions & Automation', desc:'Custom chatbots & workflow automation to supercharge your operations.' },
-  { num:'02', slug:'direct-response',  name:'Direct Response',           desc:'Meta Ads & creative strategy that converts and scales.' },
+  { num:'01', slug:'direct-response',  name:'Direct Response',           desc:'Meta Ads & creative strategy that converts and scales.' },
+  { num:'02', slug:'ai-solutions',     name:'AI Solutions & Automation', desc:'Custom chatbots & workflow automation to supercharge your operations.' },
   { num:'03', slug:'seo',              name:'Ecommerce SEO',             desc:'Technical SEO & intent-driven scaling for ambitious brands.' },
   { num:'04', slug:'lead-generation',  name:'Lead Generation',           desc:'High-quality B2B & B2C prospecting that fills your pipeline.' },
   { num:'05', slug:'cmo-as-a-service', name:'CMO as a Service',          desc:'Executive-level marketing leadership, without the executive price tag.' },
