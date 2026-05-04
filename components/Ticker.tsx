@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react'
 import styles from './Ticker.module.css'
 
-const ITEMS = ['AI Solutions','Direct Response','Ecommerce SEO','Lead Generation','CMO as a Service','Agency Assist','Meta Ads','Growth Hacking','Brand Strategy','Automation','London']
+const ITEMS = ['Lead Generation','Image Ad Creation','Rapid A/B Testing','AI Agents','Fast Website Builds','Link Building','CR% Audits','Growth Hacking','Revenue Share Models','Automation']
 
 export default function Ticker() {
   const ref = useRef<HTMLDivElement>(null)
