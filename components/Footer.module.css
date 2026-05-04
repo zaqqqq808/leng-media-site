@@ -1,6 +1,6 @@
 .footer {
-  background: #040404;
-  padding: 36px 52px;
+  background: var(--black);
+  padding: 28px 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,14 +27,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.links { display: flex; gap: 28px; }
-.links a {
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--grey-4);
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.2s;
+
+@media (max-width: 900px) {
+  .footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
 }
-.links a:hover { color: var(--neon); }
