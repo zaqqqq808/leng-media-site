@@ -6,14 +6,12 @@ import Typewriter from '@/components/Typewriter'
 import Link from 'next/link'
 
 const SERVICES = [
-  { num:'01', slug:'ai-solutions',        name:'AI Solutions & Automation', desc:'Custom chatbots & workflow automation to supercharge your operations.' },
-  { num:'02', slug:'direct-response',     name:'Direct Response',           desc:'Meta Ads & creative strategy that converts and scales.' },
-  { num:'03', slug:'seo',                 name:'Ecommerce SEO',             desc:'Technical SEO & intent-driven scaling for ambitious brands.' },
-  { num:'04', slug:'lead-generation',     name:'Lead Generation',           desc:'High-quality B2B & B2C prospecting that fills your pipeline.' },
-  { num:'05', slug:'cmo-as-a-service',    name:'CMO as a Service',          desc:'Executive-level marketing leadership, without the executive price tag.' },
-  { num:'06', slug:'agency-assist',       name:'Agency Assist',             desc:'White-label fulfilment support for agencies that need a trusted partner.', gold: true },
-  { num:'07', slug:'website-builds',      name:'Website Builds',            desc:'From landing pages to full ecommerce stores — built to perform, not just impress.' },
-  { num:'08', slug:'ai-chatbots-agents',  name:'AI Chatbots & Agents',      desc:'Custom AI assistants that qualify leads, answer questions, and close sales 24/7.' },
+  { num:'01', slug:'ai-solutions',     name:'AI Solutions & Automation', desc:'Custom chatbots & workflow automation to supercharge your operations.' },
+  { num:'02', slug:'direct-response',  name:'Direct Response',           desc:'Meta Ads & creative strategy that converts and scales.' },
+  { num:'03', slug:'seo',              name:'Ecommerce SEO',             desc:'Technical SEO & intent-driven scaling for ambitious brands.' },
+  { num:'04', slug:'lead-generation',  name:'Lead Generation',           desc:'High-quality B2B & B2C prospecting that fills your pipeline.' },
+  { num:'05', slug:'cmo-as-a-service', name:'CMO as a Service',          desc:'Executive-level marketing leadership, without the executive price tag.' },
+  { num:'06', slug:'agency-assist',    name:'Agency Assist',             desc:'White-label fulfilment support for agencies that need a trusted partner.', gold: true },
 ]
 
 const TESTIMONIALS = [
@@ -38,20 +36,16 @@ export default function Home() {
         <div className={styles.heroGrid} />
         <div className={styles.heroScanlines} />
         <div className={styles.heroVignette} />
-        <div className={styles.dataTags}>
-          <span className={`${styles.dataTag} ${styles.dt1}`}>STATUS: ACTIVE</span>
-          <span className={`${styles.dataTag} ${styles.dt2}`}>SECTOR: DIGITAL</span>
-          <span className={`${styles.dataTag} ${styles.dt3}`}>REGION: LONDON</span>
-          <span className={`${styles.dataTag} ${styles.dt4}`}>MODE: GROWTH</span>
-        </div>
         <div className={styles.heroContent}>
           <div className={styles.heroSys}>
-            <span className={styles.accent}>SYS:</span>
-            <span>LENG.MEDIA_2050 // AI + GROWTH</span>
-            <div className={styles.progressWrap}>
-              <div className={styles.progressBar}><div className={styles.progressFill} /></div>
+            <span>SYS:</span>
+            <span className={styles.accent}>LENG.MEDIA_2050</span>
+            <span className={styles.progressWrap}>
+              <span className={styles.progressBar}>
+                <span className={styles.progressFill} />
+              </span>
               <span className={styles.progressPct}>82%</span>
-            </div>
+            </span>
           </div>
           <span className={styles.heroLine1}>Digital</span>
           <span className={styles.heroLine2}>ARCHITECTS.</span>
@@ -78,12 +72,12 @@ export default function Home() {
             <h2 className="section-title">Our Services.</h2>
           </ScrollReveal>
           <ScrollReveal className={styles.servicesHeaderRight} delay={2}>
-            Eight disciplines. One agency. Engineered to accelerate your brand.
+            Six disciplines. One agency. Engineered to accelerate your brand.
           </ScrollReveal>
         </div>
         <div className={styles.servicesGrid}>
           {SERVICES.map((s, i) => (
-            <ScrollReveal key={s.slug} delay={((i % 4) + 1) as 1|2|3|4}>
+            <ScrollReveal key={s.slug} delay={((i % 3) + 1) as 1|2|3}>
               <Link href={`/services/${s.slug}`} className={`${styles.serviceCard}${s.gold ? ' '+styles.scGold : ''}`}>
                 <span className={styles.scNum}>{s.num}</span>
                 <span className={styles.scName}>{s.name}</span>
