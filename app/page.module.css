@@ -161,10 +161,10 @@
 .clientLogo:hover { color: rgba(255,255,255,0.55); }
 
 /* ── RESOURCES ── */
-.resources { padding: 110px 52px; background: var(--black); border-top: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: space-between; gap: 60px; }
-.resourcesLeft { flex: 1; }
-.resourcesSub { font-family: var(--font-inter),sans-serif; font-size: 13px; color: var(--grey-4); margin-top: 24px; line-height: 1.7; max-width: 320px; }
-.resourcesItems { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.resources { padding: 110px 52px; background: var(--black); border-top: 1px solid rgba(255,255,255,0.12); text-align: center; }
+.resourcesLeft { margin-bottom: 52px; }
+.resourcesSub { font-family: var(--font-inter),sans-serif; font-size: 13px; color: var(--grey-4); margin-top: 24px; line-height: 1.7; max-width: 420px; margin-left: auto; margin-right: auto; }
+.resourcesItems { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
 .resourceRow { display: flex; align-items: center; justify-content: space-between; padding: 20px 28px; background: var(--grey-1); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; transition: border-color .25s,background .25s; cursor: pointer; }
 .resourceRow:hover { border-color: rgba(212,255,0,0.3); background: rgba(212,255,0,0.03); }
 .resourceName { font-family: var(--font-inter),sans-serif; font-weight: 400; font-size: 16px; color: var(--white); }
@@ -216,6 +216,6 @@
   .clientLogo:nth-last-child(-n+3) { border-bottom: 1px solid rgba(255,255,255,0.08); }
   .clientLogo:nth-last-child(-n+2) { border-bottom: none; }
   .clientLogo { padding: 32px 20px; font-size: 13px; }
-  .resources { flex-direction: column; padding: 64px 24px; }
+  .resources { padding: 64px 24px; }
   .cta { padding: 80px 24px; }
 }
