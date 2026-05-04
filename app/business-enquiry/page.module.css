@@ -21,26 +21,37 @@
 .title {
   font-family: var(--font-serif),serif; font-style: normal; font-weight: 300;
   font-size: clamp(72px,9vw,130px); line-height: 0.9; letter-spacing: -2px;
-  color: var(--white); margin-bottom: 24px;
+  color: var(--white); margin-bottom: 0;
 }
-.sub { font-family: var(--font-inter),sans-serif; font-size: 15px; color: var(--grey-5); line-height: 1.7; max-width: 500px; }
 
+/* ── BODY: stacked rows ── */
 .body {
-  display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0;
-  padding: 80px 52px; min-height: 60vh;
+  display: flex; flex-direction: column;
+  padding: 0 52px;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.bookCard, .formCard { padding: 20px 48px 20px 0; }
-.formCard { padding: 20px 0 20px 48px; }
-.divider { background: rgba(255,255,255,0.06); }
+
+.optionRow {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 64px;
+  padding: 72px 0;
+  align-items: start;
+}
+
+.optionLabel { /* left column */ }
+
 .optionTitle {
   font-family: var(--font-serif),serif; font-style: normal; font-weight: 300;
   font-size: clamp(32px,4vw,52px); color: var(--white); letter-spacing: -1px; line-height: 1;
-  margin-bottom: 16px;
+  margin-bottom: 16px; margin-top: 12px;
 }
-.optionDesc { font-family: var(--font-inter),sans-serif; font-size: 14px; color: var(--grey-5); line-height: 1.7; max-width: 420px; }
+.optionDesc { font-family: var(--font-inter),sans-serif; font-size: 14px; color: var(--grey-5); line-height: 1.7; }
 
-.form { display: flex; flex-direction: column; gap: 20px; margin-top: 36px; }
+.rowDivider { height: 1px; background: rgba(255,255,255,0.06); }
+
+/* ── FORM ── */
+.form { display: flex; flex-direction: column; gap: 20px; }
 .field { display: flex; flex-direction: column; gap: 8px; }
 .label { font-family: var(--font-mono),monospace; font-size: 9px; letter-spacing: 3px; color: var(--grey-4); text-transform: uppercase; }
 .input {
@@ -53,6 +64,10 @@
 .input:focus { border-color: rgba(212,255,0,0.4); }
 .textarea { min-height: 120px; resize: vertical; }
 
+/* ── CALENDAR SIDE ── */
+.calendarSide { display: flex; align-items: center; }
+
+/* ── STRIP ── */
 .strip {
   display: grid; grid-template-columns: repeat(3,1fr);
   border-top: 1px solid rgba(255,255,255,0.05);
@@ -65,4 +80,14 @@
 .stripQuote {
   font-family: var(--font-serif),serif; font-style: normal; font-size: 17px;
   color: rgba(255,255,255,0.6); line-height: 1.5;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { padding: 96px 24px 52px; }
+  .body { padding: 0 24px; }
+  .optionRow { grid-template-columns: 1fr; gap: 32px; padding: 52px 0; }
+  .strip { grid-template-columns: 1fr; }
+  .stripItem { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .stripItem:last-child { border-bottom: none; }
 }
