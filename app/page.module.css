@@ -108,7 +108,7 @@
 }
 .serviceCard {
   background: var(--off-black); padding: 40px 36px 56px; position: relative;
-  overflow: hidden; cursor: pointer;
+  overflow: hidden; cursor: pointer; border-radius: 6px;
   transition: background 0.35s, transform 0.28s, box-shadow 0.35s;
   text-decoration: none; display: block;
 }
@@ -219,7 +219,8 @@
   }
   .services { padding: 64px 24px; }
   .servicesGrid { grid-template-columns: 1fr; }
-  .serviceCard { padding: 28px 24px; }
+  .serviceCard { padding: 24px; }
+  .scDesc { display: none; }
   .scArrow { display: none; }
   .stats { grid-template-columns: repeat(2,1fr); }
   .stat { padding: 48px 24px; }
