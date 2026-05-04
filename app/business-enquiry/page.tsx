@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   description: 'Book a call with the Leng Media team or send us a message.',
 }
 
-// TODO: Replace with your actual Calendly link
 const CALENDLY_URL = 'https://calendly.com/lengmedia'
 
 export default function BusinessEnquiry() {
@@ -20,40 +19,18 @@ export default function BusinessEnquiry() {
         <div className={styles.heroContent}>
           <p className={styles.sys}><span className={styles.accent}>SYS:</span> ENQUIRY.LENG.MEDIA // INITIALISING</p>
           <h1 className={styles.title}>Let&apos;s talk.</h1>
-          <p className={styles.sub}>Whether you&apos;re ready to start or just exploring — book a call. No hard sell, no obligation. Just an honest conversation about your brand.</p>
         </div>
       </section>
 
       <section className={styles.body}>
-        {/* Book a call */}
-        <ScrollReveal className={styles.bookCard}>
-          <span className="section-label">// Option 01</span>
-          <h2 className={styles.optionTitle}>Book a call directly</h2>
-          <p className={styles.optionDesc}>
-            Choose a time that works for you and we&apos;ll have a focused 30-minute conversation about your goals, challenges, and how we can help.
-          </p>
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-            style={{marginTop: 36, display: 'inline-block', fontSize: 12, padding: '16px 40px'}}
-          >
-            Book a Call →
-          </a>
-        </ScrollReveal>
-
-        <div className={styles.divider} />
-
-        {/* Message form */}
-        <ScrollReveal className={styles.formCard} delay={2}>
-          <span className="section-label">// Option 02</span>
-          <h2 className={styles.optionTitle}>Send a message</h2>
-          <p className={styles.optionDesc}>
-            Prefer to write? Leave us a message and we&apos;ll get back to you within 72 hours.
-          </p>
+        {/* Send a message */}
+        <ScrollReveal className={styles.optionRow}>
+          <div className={styles.optionLabel}>
+            <span className="section-label">// Option 01</span>
+            <h2 className={styles.optionTitle}>Send a message</h2>
+            <p className={styles.optionDesc}>Prefer to write? Leave us a message and we&apos;ll get back to you within 72 hours.</p>
+          </div>
           <form className={styles.form} action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            {/* TODO: Replace with your Formspree/Resend form ID, or remove if Calendly only */}
             <div className={styles.field}>
               <label className={styles.label}>Name</label>
               <input className={styles.input} type="text" name="name" placeholder="Your name" required />
@@ -68,6 +45,28 @@ export default function BusinessEnquiry() {
             </div>
             <button type="submit" className="btn-primary" style={{marginTop: 8}}>Send Message</button>
           </form>
+        </ScrollReveal>
+
+        <div className={styles.rowDivider} />
+
+        {/* Book a call */}
+        <ScrollReveal className={styles.optionRow} delay={2}>
+          <div className={styles.optionLabel}>
+            <span className="section-label">// Option 02</span>
+            <h2 className={styles.optionTitle}>Book a call</h2>
+            <p className={styles.optionDesc}>Choose a time that works for you. A focused 30-minute conversation about your goals and how we can help.</p>
+          </div>
+          <div className={styles.calendarSide}>
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ fontSize: 12, padding: '16px 40px', display: 'inline-block' }}
+            >
+              Book a Call →
+            </a>
+          </div>
         </ScrollReveal>
       </section>
 
