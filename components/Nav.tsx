@@ -20,6 +20,7 @@ export default function Nav() {
         <li><Link href="/">Home</Link></li>
         <li><Link href="/#services">Services</Link></li>
         <li><Link href="/free-tools">Resources</Link></li>
+        <li><Link href="/ecommerce-protocol" className={styles.course}>The Ecommerce Protocol</Link></li>
         <li><Link href="/business-enquiry" className={styles.enquiry}>Business Enquiry</Link></li>
       </ul>
     </nav>
