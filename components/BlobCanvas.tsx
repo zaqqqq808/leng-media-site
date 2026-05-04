@@ -84,17 +84,24 @@ interface Particle {
   maxLife: number
 }
 
+const recentItems = new Set<number>()
+
 function spawnParticle(W: number, H: number): Particle {
   const cx = W * 0.22, cy = H * 0.5, R = Math.min(W, H) * 0.34
-  // Right arc only (-60deg to +240deg) — keeps particles away from the text side
-  const angle = (Math.random() * 1.67 - 0.33) * Math.PI
-  const dist = R * (0.55 + Math.random() * 0.65)  // 0.55–1.2× R
-  const item = DATA[Math.floor(Math.random() * DATA.length)]
+  // Right-facing arc: -110deg to +110deg only — keeps particles off the text side
+  const angle = (Math.random() * 1.22 - 0.61) * Math.PI
+  const dist = R * (0.6 + Math.random() * 0.6)
+  let idx = Math.floor(Math.random() * DATA.length)
+  let tries = 0
+  while (recentItems.has(idx) && tries++ < 8) idx = Math.floor(Math.random() * DATA.length)
+  recentItems.add(idx)
+  if (recentItems.size > 8) recentItems.delete(recentItems.values().next().value as number)
+  const item = DATA[idx]
   return {
     x: cx + Math.cos(angle) * dist,
     y: cy + Math.sin(angle) * dist,
-    vx: (Math.random() - 0.5) * 0.15,
-    vy: (Math.random() - 0.5) * 0.10,
+    vx: (Math.random() - 0.5) * 0.12,
+    vy: (Math.random() - 0.5) * 0.08,
     alpha: 0,
     phaseOffset: Math.random() * Math.PI * 2,
     item,
