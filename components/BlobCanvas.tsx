@@ -55,7 +55,7 @@ export default function BlobCanvas() {
     const frame = () => {
       if (!W || !H) { raf = requestAnimationFrame(frame); return }
       ctx.clearRect(0, 0, W, H)
-      const cx = W * 0.52, cy = H * 0.48, R = Math.min(W, H) * 0.28
+      const cx = W * 0.22, cy = H * 0.50, R = Math.min(W, H) * 0.34
       // outer glow
       for (let p = 3; p >= 1; p--) {
         smooth(ctx, blobPts(cx, cy, R * (1.05 + p * 0.12), t * 0.6))
