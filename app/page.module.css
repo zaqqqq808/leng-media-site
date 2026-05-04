@@ -107,7 +107,7 @@
   background: rgba(255,255,255,0.1); outline: 1px solid rgba(255,255,255,0.1);
 }
 .serviceCard {
-  background: var(--grey-2); padding: 22px 24px 36px; position: relative;
+  background: var(--off-black); padding: 22px 24px 36px; position: relative;
   overflow: hidden; cursor: pointer; border-radius: 6px;
   transition: background 0.35s, transform 0.28s, box-shadow 0.35s;
   text-decoration: none; display: block;
@@ -127,7 +127,7 @@
   background: var(--neon); transform: scaleX(0); transform-origin: left;
   transition: transform 0.45s ease; box-shadow: 0 0 16px var(--neon);
 }
-.serviceCard:hover { background: var(--grey-3); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.45); }
+.serviceCard:hover { background: var(--grey-1); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.45); }
 .serviceCard:hover::after { transform: scaleX(1); }
 .serviceCard:hover::before { color: rgba(212,255,0,0.07); }
 .scFull { grid-column: 1 / -1; }
