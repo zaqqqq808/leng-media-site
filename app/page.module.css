@@ -25,18 +25,34 @@
   background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.7) 100%);
   pointer-events: none; z-index: 1;
 }
+.dataTags { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.dataTag {
+  position: absolute;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  color: rgba(212,255,0,0.35);
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+.dataTag::before { content: '[ '; }
+.dataTag::after  { content: ' ]'; }
+.dt1 { top: 18%; right: 52%; animation: dtFloat 8s ease-in-out infinite; }
+.dt2 { bottom: 28%; right: 48%; animation: dtFloat 11s ease-in-out infinite reverse; }
+.dt3 { top: 70%; right: 10%; animation: dtFloat 9s ease-in-out infinite 2s; }
+.dt4 { top: 20%; right: 8%; animation: dtFloat 7s ease-in-out infinite 1s; }
+@keyframes dtFloat { 0%,100%{transform:translateY(0);opacity:.35} 50%{transform:translateY(-8px);opacity:.6} }
 
 .heroContent { flex: 0 0 auto; width: min(52%, 620px); position: relative; z-index: 10; }
 
 .heroSys {
   font-family: var(--font-mono), monospace;
   font-size: 10px; color: var(--grey-4); letter-spacing: 2px;
-  margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+  margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
   opacity: 0; animation: fadeUp 0.7s 0.1s ease forwards;
 }
 .accent { color: var(--neon); }
 .progressWrap { display: inline-flex; align-items: center; gap: 6px; }
-.progressBar { width: 72px; height: 2px; background: var(--grey-3); overflow: hidden; }
+.progressBar { width: 72px; height: 3px; background: var(--grey-3); overflow: hidden; }
 .progressFill {
   height: 100%; width: 0%; background: var(--neon);
   animation: progressLoad 2s 0.8s ease forwards; box-shadow: 0 0 8px var(--neon);
@@ -117,7 +133,7 @@
 .stats { display: grid; grid-template-columns: repeat(4,1fr); background: var(--grey-2); border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }
 .stat { padding: 72px 40px; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
 .stat:last-child { border-right: none; }
-.statNum { font-family: var(--font-serif),serif; font-weight: 600; font-size: clamp(52px,6vw,80px); color: var(--white); line-height: 1; }
+.statNum { font-family: var(--font-inter),sans-serif; font-weight: 700; font-size: clamp(52px,6vw,80px); color: var(--white); line-height: 1; }
 .statNum em { font-style: normal; color: var(--neon); }
 .statLabel { font-family: var(--font-mono),monospace; font-size: 9px; letter-spacing: 2.5px; color: var(--grey-4); text-transform: uppercase; margin-top: 10px; display: block; }
 
@@ -127,7 +143,7 @@
 .testiGrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 48px; }
 .testi { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.15); }
 .testi::before { content: '"'; font-family: var(--font-serif),serif; font-size: 80px; color: rgba(212,255,0,0.12); line-height: 0.6; display: block; margin-bottom: 20px; }
-.testiText { font-family: var(--font-serif),serif; font-style: normal; font-size: 19px; line-height: 1.6; color: rgba(255,255,255,0.8); margin-bottom: 28px; }
+.testiText { font-family: var(--font-inter),sans-serif; font-style: normal; font-size: 15px; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.8); margin-bottom: 28px; }
 .testiName { font-family: var(--font-mono),monospace; font-size: 9.5px; letter-spacing: 2px; color: var(--grey-5); text-transform: uppercase; display: block; }
 .testiRole { font-family: var(--font-mono),monospace; font-size: 8px; letter-spacing: 1.5px; color: var(--neon); text-transform: uppercase; margin-top: 4px; display: block; }
 
@@ -138,7 +154,7 @@
 .resourcesItems { flex: 1; display: flex; flex-direction: column; gap: 2px; }
 .resourceRow { display: flex; align-items: center; justify-content: space-between; padding: 20px 28px; background: var(--grey-1); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; transition: border-color .25s,background .25s; cursor: pointer; }
 .resourceRow:hover { border-color: rgba(212,255,0,0.3); background: rgba(212,255,0,0.03); }
-.resourceName { font-family: var(--font-serif),serif; font-style: normal; font-size: 20px; color: var(--white); }
+.resourceName { font-family: var(--font-inter),sans-serif; font-weight: 400; font-size: 16px; color: var(--white); }
 .resourceBadge { font-family: var(--font-mono),monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; }
 .badgeFree { color: var(--neon); border: 1px solid rgba(212,255,0,0.4); }
 .badgeSoon { color: var(--grey-4); border: 1px solid var(--grey-3); }
