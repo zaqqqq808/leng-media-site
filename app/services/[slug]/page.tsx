@@ -78,15 +78,39 @@ const SERVICES: Record<string, {
     outcomes: ['White-label Meta Ads management','SEO & content production','AI & automation builds','Flexible capacity — project or retainer','Full NDA & confidentiality'],
     related: ['direct-response','seo'],
   },
+  'website-builds': {
+    num: '07',
+    name: 'Website Builds',
+    tagline: 'Built to perform, not just impress.',
+    description: [
+      'We design and develop websites that do what websites should do: convert visitors into customers. From slick landing pages to complex ecommerce platforms, every build is engineered around your business goals.',
+      'Built on modern stacks — Next.js, Shopify, WordPress, Webflow — with performance, SEO, and scalability baked in from day one, not bolted on after.',
+    ],
+    outcomes: ['Landing pages & campaign sites','Ecommerce stores (Shopify, WooCommerce)','Corporate & brand websites','Next.js & headless builds','Webflow & WordPress development','UX design & conversion optimisation'],
+    related: ['ai-chatbots-agents','seo'],
+  },
+  'ai-chatbots-agents': {
+    num: '08',
+    name: 'AI Chatbots & Agents',
+    tagline: 'Your brand, working 24/7 — answering, selling, qualifying, closing.',
+    description: [
+      'We build custom AI chatbots and autonomous agents that handle customer enquiries, qualify leads, and guide prospects through your funnel — around the clock, without human intervention.',
+      'From GPT-4 powered website assistants to complex multi-step agents integrated with your CRM, booking system, and internal tools — we deploy AI that actually moves the needle.',
+    ],
+    outcomes: ['Custom GPT-4 powered chatbots','Lead qualification & booking agents','Customer support automation','CRM & tool integrations (HubSpot, Salesforce)','Multi-step agentic workflows','Analytics & conversation reporting'],
+    related: ['ai-solutions','website-builds'],
+  },
 }
 
 const ALL_SERVICES = [
-  { slug: 'ai-solutions',     name: 'AI Solutions & Automation' },
-  { slug: 'direct-response',  name: 'Direct Response' },
-  { slug: 'seo',              name: 'Ecommerce SEO' },
-  { slug: 'lead-generation',  name: 'Lead Generation' },
-  { slug: 'cmo-as-a-service', name: 'CMO as a Service' },
-  { slug: 'agency-assist',    name: 'Agency Assist' },
+  { slug: 'ai-solutions',        name: 'AI Solutions & Automation' },
+  { slug: 'direct-response',     name: 'Direct Response' },
+  { slug: 'seo',                 name: 'Ecommerce SEO' },
+  { slug: 'lead-generation',     name: 'Lead Generation' },
+  { slug: 'cmo-as-a-service',    name: 'CMO as a Service' },
+  { slug: 'agency-assist',       name: 'Agency Assist' },
+  { slug: 'website-builds',      name: 'Website Builds' },
+  { slug: 'ai-chatbots-agents',  name: 'AI Chatbots & Agents' },
 ]
 
 export async function generateStaticParams() {
@@ -115,7 +139,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className={styles.heroScanlines} />
         <div className={styles.heroContent}>
           <Link href="/#services" className={styles.back}>← All Services</Link>
-          <p className={styles.num}>{s.num} / 06</p>
+          <p className={styles.num}>{s.num} / 08</p>
           <h1 className={styles.title}>{s.name}</h1>
           <p className={styles.tagline}>{s.tagline}</p>
           <Link href="/business-enquiry" className="btn-primary" style={{marginTop:40,display:'inline-block'}}>
@@ -179,7 +203,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <span className="section-label">// Get in touch</span>
           <h2 className="section-title">Ready to <em>launch?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
-          {/* TODO: Replace with your Calendly link */}
           <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
         </ScrollReveal>
       </section>
