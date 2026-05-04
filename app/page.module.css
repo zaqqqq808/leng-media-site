@@ -131,6 +131,7 @@
 .serviceCard:hover::after { transform: scaleX(1); }
 .serviceCard:hover::before { color: rgba(212,255,0,0.07); }
 .scFull { grid-column: 1 / -1; }
+.scFull .serviceCard { text-align: center; }
 .scGold { background: #0c0c00 !important; }
 .scGold:hover { background: #111100 !important; }
 .scNum { font-family: var(--font-mono),monospace; font-size: 8px; color: var(--grey-3); letter-spacing: 3px; display: block; margin-bottom: 12px; }
@@ -220,6 +221,7 @@
   .services { padding: 64px 24px; }
   .servicesGrid { grid-template-columns: 1fr; }
   .serviceCard { padding: 18px 20px 32px; }
+  .scFull .serviceCard { text-align: left; }
   .scDesc { display: none; }
   .scArrow { display: none; }
   .stats { grid-template-columns: repeat(2,1fr); }
