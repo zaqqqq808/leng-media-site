@@ -35,10 +35,10 @@
   text-transform: uppercase; margin-bottom: 16px;
 }
 .title {
-  font-family: var(--font-serif), serif;
-  font-style: normal; font-weight: 300;
-  font-size: clamp(52px, 7vw, 100px);
-  line-height: 0.9; letter-spacing: -2px;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  font-size: clamp(38px, 5.5vw, 76px);
+  line-height: 1.05; letter-spacing: -1px;
   color: var(--white); margin-bottom: 24px;
 }
 .tagline {
@@ -85,7 +85,7 @@
   transition: border-color .25s, background .25s;
 }
 .relatedCard:hover { border-color: rgba(212,255,0,0.3); background: rgba(212,255,0,0.03); }
-.relatedName { font-family: var(--font-serif), serif; font-style: normal; font-size: 26px; color: var(--white); }
+.relatedName { font-family: var(--font-inter), sans-serif; font-weight: 500; font-size: 18px; letter-spacing: -0.2px; color: var(--white); }
 .relatedArrow { font-size: 20px; color: var(--grey-3); transition: color .3s, transform .3s; }
 .relatedCard:hover .relatedArrow { color: var(--neon); transform: translate(4px,-4px); }
 
@@ -105,4 +105,14 @@
   font-family: var(--font-mono),monospace; font-size: 10px;
   letter-spacing: 3px; color: var(--grey-4); text-transform: uppercase;
   margin: 16px 0 52px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { padding: 100px 24px 52px; min-height: 50vh; align-items: flex-start; }
+  .body { flex-direction: column; gap: 48px; padding: 64px 24px; }
+  .related { padding: 64px 24px; }
+  .relatedGrid { grid-template-columns: 1fr; }
+  .cta { padding: 80px 24px; }
+  .title { letter-spacing: -0.5px; }
 }
