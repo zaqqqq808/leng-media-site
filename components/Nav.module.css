@@ -5,12 +5,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 52px;
+  padding: 20px 52px;
   transition: background 0.5s, border-color 0.5s, backdrop-filter 0.5s;
   border-bottom: 1px solid transparent;
 }
 .scrolled {
-  background: rgba(7,7,7,0.88);
+  background: rgba(7,7,7,0.92);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-color: rgba(255,255,255,0.06);
@@ -21,26 +21,29 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1px;
+  flex-shrink: 0;
 }
 .logoMain {
   font-family: var(--font-serif), serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 28px;
   color: var(--white);
   line-height: 1;
   letter-spacing: -0.5px;
 }
 .logoSub {
   font-family: var(--font-mono), monospace;
-  font-size: 7.5px;
+  font-size: 7px;
   letter-spacing: 5px;
   color: var(--grey-4);
 }
+
+/* ── Desktop links ── */
 .links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
   list-style: none;
 }
 .links a {
@@ -63,10 +66,21 @@
 }
 .links a:hover { color: var(--white); }
 .links a:hover::after { width: 100%; }
+.course {
+  color: #FFB700 !important;
+  border: 1px solid rgba(255,183,0,0.4);
+  padding: 8px 16px !important;
+}
+.course::after { display: none !important; }
+.course:hover {
+  background: rgba(255,183,0,0.1) !important;
+  border-color: #FFB700 !important;
+  color: #FFB700 !important;
+}
 .enquiry {
   color: var(--neon) !important;
   border: 1px solid rgba(212,255,0,0.5);
-  padding: 9px 18px !important;
+  padding: 8px 16px !important;
 }
 .enquiry::after { display: none !important; }
 .enquiry:hover {
@@ -74,14 +88,92 @@
   color: var(--black) !important;
 }
 
-.course {
-  color: #FFB700 !important;
-  border: 1px solid rgba(255,183,0,0.4);
-  padding: 9px 18px !important;
+/* ── Hamburger button ── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
 }
-.course::after { display: none !important; }
-.course:hover {
-  background: rgba(255,183,0,0.1) !important;
-  border-color: #FFB700 !important;
+.burger span {
+  display: block;
+  height: 1.5px;
+  background: var(--white);
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+}
+.burger span:nth-child(1) { width: 24px; }
+.burger span:nth-child(2) { width: 18px; }
+.burger span:nth-child(3) { width: 24px; }
+.burgerOpen span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); width: 24px; }
+.burgerOpen span:nth-child(2) { opacity: 0; width: 0; }
+.burgerOpen span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); width: 24px; }
+
+/* ── Mobile overlay menu ── */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 190;
+  background: rgba(7,7,7,0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 100px 32px 48px;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.mobileMenuOpen {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.mobileLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.mobileLinks li {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.mobileLinks li:first-child {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.mobileLinks a {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--grey-5);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 22px 0;
+  transition: color 0.2s, padding-left 0.2s;
+}
+.mobileLinks a:hover { color: var(--white); padding-left: 8px; }
+.mobileCourse {
   color: #FFB700 !important;
+}
+.mobileEnquiry {
+  color: var(--neon) !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .nav { padding: 18px 24px; }
+  .links { display: none; }
+  .burger { display: flex; }
+  .mobileMenu { display: flex; }
 }
