@@ -5,7 +5,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 130px 52px 80px;
+  padding: 130px 52px 80px 88px;
 }
 .heroGrid {
   position: absolute; inset: 0;
