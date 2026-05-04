@@ -69,15 +69,6 @@ export default function BusinessEnquiry() {
           </div>
         </ScrollReveal>
       </section>
-
-      {/* Social proof strip */}
-      <div className={styles.strip}>
-        {['"Tripled our Christmas sales" — Elliot Rees, CEO','Trusted by APL Media','Thousands of new followers & hundreds of sales — Hiro Bharwani, CEO'].map(q => (
-          <div key={q} className={styles.stripItem}>
-            <span className={styles.stripQuote}>{q}</span>
-          </div>
-        ))}
-      </div>
     </>
   )
 }
