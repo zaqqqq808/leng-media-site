@@ -58,10 +58,25 @@ export default function Home() {
       {/* ── TICKER ── */}
       <Ticker />
 
+      {/* ── CLIENTS ── */}
+      <section className={styles.clients}>
+        <ScrollReveal>
+          <span className="section-label">// 01 — Trusted by</span>
+          <h2 className="section-title" style={{marginBottom:52}}>Brands we&apos;ve<br /><em>grown.</em></h2>
+        </ScrollReveal>
+        <ScrollReveal delay={2}>
+          <div className={styles.clientGrid}>
+            {CLIENTS.map(c => (
+              <div key={c} className={styles.clientLogo}>{c}</div>
+            ))}
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* ── SERVICES ── */}
       <section className={styles.services} id="services">
         <ScrollReveal className={styles.servicesHeader}>
-          <span className="section-label">// 01 — What we do</span>
+          <span className="section-label">// 02 — What we do</span>
           <h2 className="section-title">Our Services.</h2>
         </ScrollReveal>
         <div className={styles.servicesGrid}>
@@ -87,21 +102,6 @@ export default function Home() {
           </ScrollReveal>
         ))}
       </div>
-
-      {/* ── CLIENTS ── */}
-      <section className={styles.clients}>
-        <ScrollReveal>
-          <span className="section-label">// 02 — Trusted by</span>
-          <h2 className="section-title" style={{marginBottom:52}}>Brands we&apos;ve<br /><em>grown.</em></h2>
-        </ScrollReveal>
-        <ScrollReveal delay={2}>
-          <div className={styles.clientGrid}>
-            {CLIENTS.map(c => (
-              <div key={c} className={styles.clientLogo}>{c}</div>
-            ))}
-          </div>
-        </ScrollReveal>
-      </section>
 
       {/* ── RESOURCES ── */}
       <section className={styles.resources} id="resources">
