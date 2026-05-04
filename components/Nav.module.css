@@ -73,3 +73,15 @@
   background: var(--neon) !important;
   color: var(--black) !important;
 }
+
+.course {
+  color: #FFB700 !important;
+  border: 1px solid rgba(255,183,0,0.4);
+  padding: 9px 18px !important;
+}
+.course::after { display: none !important; }
+.course:hover {
+  background: rgba(255,183,0,0.1) !important;
+  border-color: #FFB700 !important;
+  color: #FFB700 !important;
+}
