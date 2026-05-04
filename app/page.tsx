@@ -14,10 +14,13 @@ const SERVICES = [
   { num:'06', slug:'agency-assist',    name:'Agency Assist',             desc:'White-label fulfilment support for agencies that need a trusted partner.', gold: true },
 ]
 
-const TESTIMONIALS = [
-  { quote:'"Leng Media tripled our Christmas period sales with a clever use of advertising on Facebook and Instagram. They also advised on our CRM which we were underutilising."', name:'Elliot Rees', role:'CEO' },
-  { quote:'"Leng Media is a trusted partner to APL Media and provides us with digital media buying, advice, insights and solutions across editorial and commercial campaigns."', name:'Chris Debinney-Wright', role:'Commercial Director, APL Media' },
-  { quote:'"Leng Media created two of our websites and all social accounts, as well as engaging content. We gained thousands of new followers and hundreds of sales. Very grateful."', name:'Hiro Bharwani', role:'CEO' },
+const CLIENTS = [
+  'Hims',
+  'National Geographic Traveller',
+  'Ninety Percent',
+  'Horizon Group',
+  'APL Media',
+  'Skin + Me',
 ]
 
 const RESOURCES = [
@@ -37,16 +40,6 @@ export default function Home() {
         <div className={styles.heroScanlines} />
         <div className={styles.heroVignette} />
         <div className={styles.heroContent}>
-          <div className={styles.heroSys}>
-            <span>SYS:</span>
-            <span className={styles.accent}>LENG.MEDIA_2050</span>
-            <span className={styles.progressWrap}>
-              <span className={styles.progressBar}>
-                <span className={styles.progressFill} />
-              </span>
-              <span className={styles.progressPct}>82%</span>
-            </span>
-          </div>
           <span className={styles.heroLine1}>Digital</span>
           <span className={styles.heroLine2}>ARCHITECTS.</span>
           <div className={styles.heroDivider} />
@@ -99,21 +92,19 @@ export default function Home() {
         ))}
       </div>
 
-      {/* ── TESTIMONIALS ── */}
-      <section className={styles.testimonials}>
-        <ScrollReveal className={styles.testiHeader}>
-          <span className="section-label">// 02 — Social Proof</span>
-          <h2 className="section-title">What clients say.</h2>
+      {/* ── CLIENTS ── */}
+      <section className={styles.clients}>
+        <ScrollReveal>
+          <span className="section-label">// 02 — Trusted by</span>
+          <h2 className="section-title" style={{marginBottom:52}}>Brands we&apos;ve<br /><em>grown.</em></h2>
         </ScrollReveal>
-        <div className={styles.testiGrid}>
-          {TESTIMONIALS.map((t,i)=>(
-            <ScrollReveal key={t.name} className={styles.testi} delay={(i+1) as 1|2|3}>
-              <p className={styles.testiText}>{t.quote}</p>
-              <span className={styles.testiName}>{t.name}</span>
-              <span className={styles.testiRole}>{t.role}</span>
-            </ScrollReveal>
-          ))}
-        </div>
+        <ScrollReveal delay={2}>
+          <div className={styles.clientGrid}>
+            {CLIENTS.map(c => (
+              <div key={c} className={styles.clientLogo}>{c}</div>
+            ))}
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* ── RESOURCES ── */}
@@ -140,6 +131,7 @@ export default function Home() {
           <span className="section-label">// 04 — Get in touch</span>
           <h2 className="section-title">Ready to <em>launch?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s build something remarkable together</p>
+          {/* TODO: Replace href with your Calendly link */}
           <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
         </ScrollReveal>
       </section>
