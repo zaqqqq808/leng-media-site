@@ -25,11 +25,11 @@ const CLIENTS = [
 ]
 
 const RESOURCES = [
-  { name:'GDN Ad Specs Cheat Sheet',            href:'/free-tools', free:true },
-  { name:'AI For Ecommerce Cheat Sheet',         href:'/free-tools', free:true },
-  { name:'AI For Ecommerce Tutorial',            href:'/free-tools', free:false },
-  { name:'Ecommerce Protocol',                   href:'/free-tools', free:false },
-  { name:'AI for Ecommerce School & Community',  href:'/free-tools', free:false },
+  { name:'GDN Ad Specs Cheat Sheet',      href:'/free-tools', free:true },
+  { name:'AI For Ecommerce Cheat Sheet',   href:'/free-tools', free:true },
+  { name:'AI For Ecommerce Tutorial',      href:'/free-tools', free:false },
+  { name:'Ecommerce Protocol',             href:'/free-tools', free:false },
+  { name:'AI for Ecommerce Skool',         href:'/free-tools', free:false },
 ]
 
 export default function Home() {
