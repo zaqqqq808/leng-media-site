@@ -7,12 +7,12 @@ import Link from 'next/link'
 
 const SERVICES = [
   { num:'01', slug:'direct-response',  name:'Direct Response',           desc:'Meta Ads & creative strategy that converts and scales.' },
-  { num:'02', slug:'ai-solutions',     name:'AI Solutions & Automation', desc:'Custom chatbots & workflow automation to supercharge your operations.' },
+  { num:'02', slug:'ai-solutions',     name:'AI Solutions',              desc:'Custom chatbots & workflow automation to supercharge your operations.' },
   { num:'03', slug:'seo',              name:'Ecommerce SEO',             desc:'Technical SEO & intent-driven scaling for ambitious brands.' },
   { num:'04', slug:'lead-generation',  name:'Lead Generation',           desc:'High-quality B2B & B2C prospecting that fills your pipeline.' },
   { num:'05', slug:'cmo-as-a-service', name:'CMO as a Service',          desc:'Executive-level marketing leadership, without the executive price tag.' },
   { num:'06', slug:'website-builds',   name:'Website Building',          desc:'High-converting, performance-first websites built to grow your brand online.' },
-  { num:'07', slug:'agency-assist',    name:'Agency Assist',             desc:"White-label fulfilment support for agencies that need a trusted partner.", gold: true, full: true },
+  { num:'07', slug:'agency-assist',    name:'Agency Assist',             desc:'White-label fulfilment support for agencies that need a trusted partner.', gold: true, full: true },
 ]
 
 const CLIENTS = [
@@ -25,11 +25,11 @@ const CLIENTS = [
 ]
 
 const RESOURCES = [
-  { name:'GDN Ad Specs Cheat Sheet',      href:'/free-tools', free:true },
-  { name:'AI For Ecommerce Cheat Sheet',   href:'/free-tools', free:true },
-  { name:'AI For Ecommerce Tutorial',      href:'/free-tools', free:false },
-  { name:'Ecommerce Protocol',             href:'/free-tools', free:false },
-  { name:'AI for Ecommerce Skool',         href:'/free-tools', free:false },
+  { name:'GDN Ad Specs Cheat Sheet',            href:'/free-tools', free:true },
+  { name:'AI For Ecommerce Cheat Sheet',         href:'/free-tools', free:true },
+  { name:'AI For Ecommerce Tutorial',            href:'/free-tools', free:false },
+  { name:'Ecommerce Protocol',                   href:'/free-tools', free:false },
+  { name:'AI for Ecommerce Skool',               href:'/free-tools', free:false },
 ]
 
 export default function Home() {
@@ -49,7 +49,7 @@ export default function Home() {
           <p className={styles.heroTagline}>London-based A.I. &amp; growth hacking agency</p>
           <div className={styles.heroCtas}>
             <Link href="/business-enquiry" className="btn-primary">Let&apos;s Talk</Link>
-            <Link href="#services" className="btn-ghost">Explore services <span>→</span></Link>
+            <Link href="#services" className="btn-ghost">Explore services <span>&#x2192;</span></Link>
           </div>
         </div>
         <div className={styles.blobWrap}><BlobCanvas /></div>
@@ -74,7 +74,7 @@ export default function Home() {
 
       {/* ── STATS ── */}
       <div className={styles.stats}>
-        {[{n:'3',s:'×',l:'Avg. Revenue Growth'},{n:'50',s:'+',l:'Brands Scaled'},{n:'£2',s:'M+',l:'Ad Spend Managed'},{n:'8',s:'yr',l:'Industry Experience'}].map((st,i)=>(
+        {[{n:'3',s:'\u00d7',l:'Avg. Revenue Growth'},{n:'50',s:'+',l:'Brands Scaled'},{n:'\u00a32',s:'M+',l:'Ad Spend Managed'},{n:'8',s:'yr',l:'Industry Experience'}].map((st,i)=>(
           <ScrollReveal key={st.l} className={styles.stat} delay={(i+1) as 1|2|3|4}>
             <div className={styles.statNum}>{st.n}<em>{st.s}</em></div>
             <span className={styles.statLabel}>{st.l}</span>
@@ -95,7 +95,7 @@ export default function Home() {
                 <span className={styles.scNum}>{s.num}</span>
                 <span className={styles.scName}>{s.name}</span>
                 <p className={styles.scDesc}>{s.desc}</p>
-                <span className={styles.scArrow}>↗</span>
+                <span className={styles.scArrow}>&#x2197;</span>
               </Link>
             </ScrollReveal>
           ))}
