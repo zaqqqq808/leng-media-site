@@ -1,0 +1,20 @@
+.wrap {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(30px, 3.8vw, 48px);
+  color: var(--neon);
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+}
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  background: var(--neon);
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blink 0.9s step-end infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
