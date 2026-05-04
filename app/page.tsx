@@ -60,9 +60,8 @@ export default function Home() {
 
       {/* ── CLIENTS ── */}
       <section className={styles.clients}>
-        <ScrollReveal>
+        <ScrollReveal style={{marginBottom:36}}>
           <span className="section-label">// 01 — Trusted by</span>
-          <h2 className="section-title" style={{marginBottom:52}}>Brands we&apos;ve<br /><em>grown.</em></h2>
         </ScrollReveal>
         <ScrollReveal delay={2}>
           <div className={styles.clientGrid}>
