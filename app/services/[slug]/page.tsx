@@ -29,7 +29,7 @@ const SERVICES: Record<string, {
     tagline: 'Ads that generate positive ROAS.',
     description: [
       'We fix the funnel first. Most agencies will happily take your money and drive traffic to a site that converts at 0.3%. We refuse to do that. Before a penny is spent on ads, we audit and improve your user experience — moving key purchase drivers above the fold, implementing reviews, FAQs and clear guarantees, and simplifying the path to purchase.',
-      "We don't identify as a \"Facebook Agency\" or a \"PPC Agency.\" We identify as a Revenue Agency. We go where your customers are — Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it's DTC, Ecom or Lead Generation, we'll have the answer.",
+      'We don\'t identify as a "Facebook Agency" or a "PPC Agency." We identify as a Revenue Agency. We go where your customers are — Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it\'s DTC, Ecom or Lead Generation, we\'ll have the answer.',
     ],
     outcomes: ['Pre-campaign landing page audit & CRO','Meta, TikTok & Google Ads management','Creative strategy & production briefs','Rapid A/B testing to find winners fast','Monthly performance reporting'],
     related: ['ai-solutions','lead-generation'],
@@ -50,7 +50,7 @@ const SERVICES: Record<string, {
     name: 'Lead Generation',
     tagline: 'The London lead generation agency that only gets paid when you do.',
     description: [
-      "Zero monthly fees. 100% performance based. Stop burning cash on agencies that promise the world and deliver excuses. You cover the ad spend — we cover the expertise, the strategy, and the execution. If we don't perform, we don't eat.",
+      'Zero monthly fees. 100% performance based. Stop burning cash on agencies that promise the world and deliver excuses. You cover the ad spend — we cover the expertise, the strategy, and the execution. If we don\'t perform, we don\'t eat.',
       'We design the creatives, write the copy, build the landing pages, and manage campaign optimisation — all at no charge. We agree on a fair revenue split or fixed CPA for every qualified lead or sale we generate. You own all the data. You have nothing to lose.',
     ],
     outcomes: ['Zero monthly retainer — performance-based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy & landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
@@ -62,7 +62,7 @@ const SERVICES: Record<string, {
     tagline: 'The firepower of a full marketing department. None of the overhead.',
     description: [
       'Hiring a CMO, a media buyer, a web developer and a strategist costs upwards of £250k a year — before software or ad spend. Leng Media replaces all of that. We step in as your fully embedded marketing engine, taking full ownership of your growth from high-level strategic vision to pixel-perfect execution.',
-      "We don't advise from the sidelines — we execute. We've helped brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group. CMOaaS starts at £15,000/month. Stop managing freelancers. Start scaling.",
+      'We don\'t advise from the sidelines — we execute. We\'ve helped brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group. CMOaaS starts at £15,000/month. Stop managing freelancers. Start scaling.',
     ],
     outcomes: ['Executive strategy, budgeting & roadmap planning','Ad campaigns, CRO, AI automation & tech stack management','Zero training time — we embed from Day 1','Board-level reporting & OKR frameworks','Clients: Hims, National Geographic Traveller, Ninety Percent, Horizon Group'],
     related: ['ai-solutions','agency-assist'],
@@ -72,7 +72,7 @@ const SERVICES: Record<string, {
     name: 'Agency Assist',
     tagline: 'Scale your agency without increasing your headcount.',
     description: [
-      "Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don't have in-house, we step in and integrate seamlessly to deliver white-label excellence — so you never have to turn down a contract again.",
+      'Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don\'t have in-house, we step in and integrate seamlessly to deliver white-label excellence — so you never have to turn down a contract again.',
       'We do the work. You get the credit. You receive weekly white-label reports and analysis while maintaining 100% control of the client relationship. We can also execute campaigns and train your junior staff to take them over.',
     ],
     outcomes: ['Overflow execution — never turn down a client again','White-label AI, CRO & Paid Media fulfilment','Training & handoffs to your in-house team','Weekly white-label reports & analysis','Full NDA — you maintain 100% client ownership'],
@@ -128,7 +128,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className={styles.bodyLeft}>
           <ScrollReveal>
             <span className="section-label">// Overview</span>
-            <h2 className="section-title" style={{marginBottom:36}}>What we do.</h2>
           </ScrollReveal>
           {s.description.map((p, i) => (
             <ScrollReveal key={i} delay={(i+1) as 1|2}>
@@ -174,8 +173,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className={styles.cta}>
         <ScrollReveal>
           <span className="section-label">// Get in touch</span>
-          <h2 className="section-title">Ready to <em>launch?</em></h2>
+          <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
+          {/* TODO: Replace with your Calendly link */}
           <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
         </ScrollReveal>
       </section>
