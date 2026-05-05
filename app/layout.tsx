@@ -22,20 +22,61 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Leng Media – AI & Growth Agency',
-  description: 'London-based AI & growth hacking agency. We help ambitious brands launch, scale and maximise ROI.',
+  metadataBase: new URL('https://www.lengmedia.com'),
+  title: 'Leng Media – Performance Marketing Agency for Ecommerce Brands',
+  description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue-driven growth strategy. London-based agency trusted by Nat Geo Traveller, Haier and leading DTC brands.',
   openGraph: {
-    title: 'Leng Media – AI & Growth Agency',
-    description: 'London-based AI & growth hacking digital agency.',
-    url: 'https://lengmedia.com',
+    title: 'Leng Media – Performance Marketing Agency for Ecommerce Brands',
+    description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue-driven growth strategy. London-based agency trusted by Nat Geo Traveller, Haier and leading DTC brands.',
+    url: 'https://www.lengmedia.com',
     siteName: 'Leng Media',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Leng Media – Performance Marketing Agency for Ecommerce Brands' }],
+    type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Leng Media – Performance Marketing Agency for Ecommerce Brands',
+    description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue-driven growth strategy.',
+    images: ['/og-image.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.lengmedia.com',
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.lengmedia.com/#organization',
+      name: 'Leng Media',
+      url: 'https://www.lengmedia.com',
+      description: 'Performance marketing agency for ecommerce brands. We scale DTC brands through paid media, SEO, AI solutions and revenue-driven growth strategy.',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'London',
+        addressCountry: 'GB',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.lengmedia.com/#website',
+      url: 'https://www.lengmedia.com',
+      name: 'Leng Media',
+      publisher: { '@id': 'https://www.lengmedia.com/#organization' },
+    },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${spaceMono.variable} ${inter.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Nav />
         <main>{children}</main>
         <Footer />
