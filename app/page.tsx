@@ -43,12 +43,12 @@ export default function Home() {
         <div className={styles.heroContent}>
           <h1>
             <span className={styles.heroLine1}>We scale</span>
-            <span className={styles.heroLine2}>ECOMMERCE.</span>
+            <span className={styles.heroLine2}>BRANDS.</span>
           </h1>
           <div className={styles.heroDivider} />
           <p className={styles.heroPrompt}>&gt; a track record of:</p>
           <Typewriter />
-          <p className={styles.heroTagline}>Performance marketing for ecommerce brands. Human strategy, modern tools.</p>
+          <p className={styles.heroTagline}>Performance marketing for ambitious brands. Human strategy, modern tools.</p>
           <div className={styles.heroCtas}>
             <Link href="/business-enquiry" className="btn-primary">Let&apos;s Talk</Link>
             <Link href="#services" className="btn-ghost">Explore services <span>→</span></Link>
