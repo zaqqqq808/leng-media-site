@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function EcommerceProtocol() {
   return (
-    <main className={styles.page}>
+    <div className={styles.page}>
 
       {/* ── HERO ── */}
       <section className={styles.hero}>
@@ -266,6 +266,6 @@ export default function EcommerceProtocol() {
         </div>
       </section>
 
-    </main>
+    </div>
   )
 }
