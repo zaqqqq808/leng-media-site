@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react'
 import styles from './Typewriter.module.css'
 
-const PHRASES = ['Scaling DTC brands','Maximising ROAS','Growing Shopify stores','Building ecom revenue','Filling sales pipelines']
+const PHRASES = ['Scaling DTC brands','Generating high quality leads','Maximising ROAS','Increasing Shopify CR%','Making you look good']
 
 export default function Typewriter() {
   const textRef = useRef<HTMLSpanElement>(null)
