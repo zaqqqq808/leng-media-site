@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Free Growth Tools – Leng Media',
-  description: 'Free resources, templates and guides used by our top-performing clients.',
+  description: 'Free ecommerce growth tools, ad spec cheat sheets and AI guides used by our top-performing clients. No email required — download and apply immediately.',
 }
 
 const TOOLS = [
