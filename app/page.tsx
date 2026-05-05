@@ -5,6 +5,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Typewriter from '@/components/Typewriter'
 import Link from 'next/link'
 
+export const metadata = {
+    title: 'Leng Media – Performance Marketing & AI Agency for Ecommerce Brands',
+    description: 'London performance marketing agency. We scale DTC brands through paid ads, AI solutions and SEO — trusted by Nat Geo Traveller, Skin+Me and leading ecommerce brands.',
+    alternates: {
+          canonical: 'https://www.lengmedia.com',
+    },
+}
+
 const SERVICES = [
   { num:'01', slug:'direct-response',  name:'Direct Response',           desc:'Meta Ads & creative strategy that converts and scales.' },
   { num:'02', slug:'ai-solutions',     name:'AI Solutions',              desc:'Custom chatbots & workflow automation to supercharge your operations.' },
