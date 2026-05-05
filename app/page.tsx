@@ -41,15 +41,17 @@ export default function Home() {
         <div className={styles.heroScanlines} />
         <div className={styles.heroVignette} />
         <div className={styles.heroContent}>
-          <span className={styles.heroLine1}>Digital</span>
-          <span className={styles.heroLine2}>ARCHITECTS.</span>
+          <h1>
+            <span className={styles.heroLine1}>We scale</span>
+            <span className={styles.heroLine2}>ECOMMERCE.</span>
+          </h1>
           <div className={styles.heroDivider} />
           <p className={styles.heroPrompt}>&gt; a track record of:</p>
           <Typewriter />
-          <p className={styles.heroTagline}>London-based A.I. &amp; growth hacking agency</p>
+          <p className={styles.heroTagline}>Performance marketing for ecommerce brands. Human strategy, modern tools.</p>
           <div className={styles.heroCtas}>
             <Link href="/business-enquiry" className="btn-primary">Let&apos;s Talk</Link>
-            <Link href="#services" className="btn-ghost">Explore services <span>&#x2192;</span></Link>
+            <Link href="#services" className="btn-ghost">Explore services <span>→</span></Link>
           </div>
         </div>
         <div className={styles.blobWrap}><BlobCanvas /></div>
@@ -74,7 +76,7 @@ export default function Home() {
 
       {/* ── STATS ── */}
       <div className={styles.stats}>
-        {[{n:'3',s:'\u00d7',l:'Avg. Revenue Growth'},{n:'50',s:'+',l:'Brands Scaled'},{n:'\u00a32',s:'M+',l:'Ad Spend Managed'},{n:'8',s:'yr',l:'Industry Experience'}].map((st,i)=>(
+        {[{n:'3',s:'×',l:'Avg. Revenue Growth'},{n:'50',s:'+',l:'Brands Scaled'},{n:'£2',s:'M+',l:'Ad Spend Managed'},{n:'8',s:'yr',l:'Industry Experience'}].map((st,i)=>(
           <ScrollReveal key={st.l} className={styles.stat} delay={(i+1) as 1|2|3|4}>
             <div className={styles.statNum}>{st.n}<em>{st.s}</em></div>
             <span className={styles.statLabel}>{st.l}</span>
@@ -95,7 +97,7 @@ export default function Home() {
                 <span className={styles.scNum}>{s.num}</span>
                 <span className={styles.scName}>{s.name}</span>
                 <p className={styles.scDesc}>{s.desc}</p>
-                <span className={styles.scArrow}>&#x2197;</span>
+                <span className={styles.scArrow}>↗</span>
               </Link>
             </ScrollReveal>
           ))}
