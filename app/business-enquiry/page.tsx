@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Business Enquiry – Leng Media',
-  description: 'Book a call with the Leng Media team or send us a message.',
+  description: 'Book a discovery call with the Leng Media team. We work with ambitious ecommerce and service brands — tell us about your goals and we\'ll show you how we can help.',
 }
 
 const CALENDLY_URL = 'https://calendly.com/lengmedia'
