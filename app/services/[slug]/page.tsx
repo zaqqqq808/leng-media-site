@@ -10,7 +10,6 @@ const SERVICES: Record<string, {
   tagline: string
   description: string[]
   outcomes: string[]
-  related: string[]
 }> = {
   'ai-solutions': {
     num: '01',
@@ -21,7 +20,6 @@ const SERVICES: Record<string, {
       'Plus, the 24/7 sales rep that never sleeps. Our AI chatbots capture visitor details before they leave your site, book meetings directly into your calendar, sync with your CRM, and hand off a full chat summary to your sales team. One sale per year can cover the entire cost of the software.',
     ],
     outcomes: ['AI product image remastering at scale','24/7 AI chatbot for lead capture & meeting booking','CRM integration & automatic sync','Chat summaries for seamless sales handoff','Bespoke AI strategy & roadmapping'],
-    related: ['direct-response','cmo-as-a-service'],
   },
   'direct-response': {
     num: '02',
@@ -32,7 +30,6 @@ const SERVICES: Record<string, {
       'We don\'t identify as a "Facebook Agency" or a "PPC Agency." We identify as a Revenue Agency. We go where your customers are — Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it\'s DTC, Ecom or Lead Generation, we\'ll have the answer.',
     ],
     outcomes: ['Pre-campaign landing page audit & CRO','Meta, TikTok & Google Ads management','Creative strategy & production briefs','Rapid A/B testing to find winners fast','Monthly performance reporting'],
-    related: ['ai-solutions','lead-generation'],
   },
   'seo': {
     num: '03',
@@ -43,7 +40,6 @@ const SERVICES: Record<string, {
       'On AI SEO: AI simply scrapes search engines and high-authority websites to generate citations. We ensure your brand gets cited by building a presence on the platforms LLMs feed from — Reddit, Quora, and high-DA blogs — while shifting your keyword focus to mid and bottom-of-funnel transactional terms that capture buyers, not browsers.',
     ],
     outcomes: ['Technical SEO audit & index health fixes','Collection & product page optimisation','Competitor gap analysis','Holistic link building & digital PR','AI citation & LLM optimisation (Reddit, Quora, high-DA)'],
-    related: ['direct-response','ai-solutions'],
   },
   'lead-generation': {
     num: '04',
@@ -54,7 +50,6 @@ const SERVICES: Record<string, {
       'We design the creatives, write the copy, build the landing pages, and manage campaign optimisation — all at no charge. We agree on a fair revenue split or fixed CPA for every qualified lead or sale we generate. You own all the data. You have nothing to lose.',
     ],
     outcomes: ['Zero monthly retainer — performance-based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy & landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
-    related: ['direct-response','cmo-as-a-service'],
   },
   'cmo-as-a-service': {
     num: '05',
@@ -65,7 +60,6 @@ const SERVICES: Record<string, {
       'We don\'t advise from the sidelines — we execute. We\'ve helped brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group. CMOaaS starts at £15,000/month. Stop managing freelancers. Start scaling.',
     ],
     outcomes: ['Executive strategy, budgeting & roadmap planning','Ad campaigns, CRO, AI automation & tech stack management','Zero training time — we embed from Day 1','Board-level reporting & OKR frameworks','Clients: Hims, National Geographic Traveller, Ninety Percent, Horizon Group'],
-    related: ['ai-solutions','agency-assist'],
   },
   'agency-assist': {
     num: '06',
@@ -76,18 +70,8 @@ const SERVICES: Record<string, {
       'We do the work. You get the credit. You receive weekly white-label reports and analysis while maintaining 100% control of the client relationship. We can also execute campaigns and train your junior staff to take them over.',
     ],
     outcomes: ['Overflow execution — never turn down a client again','White-label AI, CRO & Paid Media fulfilment','Training & handoffs to your in-house team','Weekly white-label reports & analysis','Full NDA — you maintain 100% client ownership'],
-    related: ['direct-response','seo'],
   },
 }
-
-const ALL_SERVICES = [
-  { slug: 'ai-solutions',     name: 'AI Solutions & Automation' },
-  { slug: 'direct-response',  name: 'Direct Response' },
-  { slug: 'seo',              name: 'Ecommerce SEO' },
-  { slug: 'lead-generation',  name: 'Lead Generation' },
-  { slug: 'cmo-as-a-service', name: 'CMO as a Service' },
-  { slug: 'agency-assist',    name: 'Agency Assist' },
-]
 
 export async function generateStaticParams() {
   return Object.keys(SERVICES).map(slug => ({ slug }))
@@ -104,8 +88,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params
   const s = SERVICES[slug]
   if (!s) notFound()
-
-  const related = s.related.map(r => ALL_SERVICES.find(a => a.slug === r)).filter(Boolean)
 
   return (
     <>
@@ -149,33 +131,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {/* RELATED */}
-      {related.length > 0 && (
-        <section className={styles.related}>
-          <ScrollReveal>
-            <span className="section-label">// Related Services</span>
-            <h2 className="section-title" style={{marginBottom:48}}>You may also need.</h2>
-          </ScrollReveal>
-          <div className={styles.relatedGrid}>
-            {related.map((r, i) => r && (
-              <ScrollReveal key={r.slug} delay={(i+1) as 1|2}>
-                <Link href={`/services/${r.slug}`} className={styles.relatedCard}>
-                  <span className={styles.relatedName}>{r.name}</span>
-                  <span className={styles.relatedArrow}>↗</span>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-        </section>
-      )}
-
       {/* CTA */}
       <section className={styles.cta}>
         <ScrollReveal>
           <span className="section-label">// Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
-          {/* TODO: Replace with your Calendly link */}
           <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
         </ScrollReveal>
       </section>
