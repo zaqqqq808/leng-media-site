@@ -6,22 +6,39 @@ const PHRASES = ['Scaling DTC brands','Generating high quality leads','Maximisin
 
 export default function Typewriter() {
   const textRef = useRef<HTMLSpanElement>(null)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
   useEffect(() => {
     let pi = 0, ci = 0, del = false
+    let mounted = true
+
     const type = () => {
+      if (!mounted) return
       const ph = PHRASES[pi]
       if (!del) {
-        if (textRef.current) textRef.current.textContent = ph.slice(0, ++ci)
-        if (ci === ph.length) { del = true; return setTimeout(type, 2200) }
+        ci++
+        if (textRef.current) textRef.current.textContent = ph.slice(0, ci)
+        if (ci === ph.length) {
+          del = true
+          timerRef.current = setTimeout(type, 2200)
+          return
+        }
       } else {
-        if (textRef.current) textRef.current.textContent = ph.slice(0, --ci)
+        ci--
+        if (textRef.current) textRef.current.textContent = ph.slice(0, ci)
         if (ci === 0) { del = false; pi = (pi + 1) % PHRASES.length }
       }
-      setTimeout(type, del ? 45 : 85)
+      timerRef.current = setTimeout(type, del ? 45 : 85)
     }
-    const t = setTimeout(type, 1600)
-    return () => clearTimeout(t)
+
+    timerRef.current = setTimeout(type, 1600)
+
+    return () => {
+      mounted = false
+      if (timerRef.current) clearTimeout(timerRef.current)
+    }
   }, [])
+
   return (
     <div className={styles.wrap}>
       <span ref={textRef} />
