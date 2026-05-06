@@ -3,14 +3,15 @@ import BlobCanvas from '@/components/BlobCanvas'
 import Ticker from '@/components/Ticker'
 import ScrollReveal from '@/components/ScrollReveal'
 import Typewriter from '@/components/Typewriter'
+import ClientLogo from '@/components/ClientLogo'
 import Link from 'next/link'
 
 export const metadata = {
-    title: 'Leng Media – Performance Marketing & AI Agency for Ecommerce Brands',
-    description: 'London performance marketing agency. We scale DTC brands through paid ads, AI solutions and SEO — trusted by Nat Geo Traveller, Skin+Me and leading ecommerce brands.',
-    alternates: {
-          canonical: 'https://www.lengmedia.com',
-    },
+  title: 'Leng Media – Performance Marketing & AI Agency for Ecommerce Brands',
+  description: 'London performance marketing agency. We scale DTC brands through paid ads, AI solutions and SEO — trusted by Nat Geo Traveller, Skin+Me and leading ecommerce brands.',
+  alternates: {
+    canonical: 'https://www.lengmedia.com',
+  },
 }
 
 const SERVICES = [
@@ -24,12 +25,12 @@ const SERVICES = [
 ]
 
 const CLIENTS = [
-  'Hims',
-  'National Geographic Traveller',
-  'Ninety Percent',
-  'Horizon Group',
-  'APL Media',
-  'Skin + Me',
+  { name: 'Hims',                          domain: 'hims.com' },
+  { name: 'National Geographic Traveller', domain: 'natgeo.com' },
+  { name: 'Ninety Percent',               domain: 'ninetypercent.com' },
+  { name: 'Horizon Group',                domain: 'horizongroup.co.uk' },
+  { name: 'APL Media',                    domain: 'aplmedia.co.uk' },
+  { name: 'Skin + Me',                    domain: 'skinandme.com' },
 ]
 
 const RESOURCES = [
@@ -76,7 +77,9 @@ export default function Home() {
         <ScrollReveal delay={2}>
           <div className={styles.clientGrid}>
             {CLIENTS.map(c => (
-              <div key={c} className={styles.clientLogo}>{c}</div>
+              <div key={c.name} className={styles.clientLogo}>
+                <ClientLogo name={c.name} domain={c.domain} />
+              </div>
             ))}
           </div>
         </ScrollReveal>
