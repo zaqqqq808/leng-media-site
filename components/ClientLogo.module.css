@@ -1,20 +1,10 @@
-.logo {
-  width: auto;
-  max-width: 140px;
-  height: 52px;
-  object-fit: contain;
-  /* Convert any logo to white */
-  filter: brightness(0) invert(1);
-  opacity: 0.35;
-  transition: opacity 0.3s ease;
-}
-
-.fallback {
-  font-family: var(--font-serif), serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: clamp(14px, 1.6vw, 20px);
-  letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.3);
+.wordmark {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  font-size: clamp(13px, 1.4vw, 17px);
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
