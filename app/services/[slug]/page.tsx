@@ -12,6 +12,11 @@ const SERVICES: Record<string, {
   description: string[]
   outcomes: string[]
   related: string[]
+  proof?: {
+    funnelTagline: string
+    statsLabel: string
+    stats: { label: string; value: string; sub: string }[]
+  }
 }> = {
   'ai-solutions': {
     num: '01',
@@ -36,6 +41,16 @@ const SERVICES: Record<string, {
     ],
     outcomes: ['Pre-campaign landing page audit & CRO','Meta, TikTok & Google Ads management','Creative strategy & production briefs','Rapid A/B testing to find winners fast','Monthly performance reporting'],
     related: ['ai-solutions','lead-generation'],
+    proof: {
+      funnelTagline: 'Platform Agnostic. Result Obsessed.',
+      statsLabel: '// Real Results · May–Jun 2025',
+      stats: [
+        { label: 'Campaign ROAS', value: '3.59×', sub: '90 purchases · £1,450 spend' },
+        { label: 'Revenue Returned', value: '£5,209', sub: 'From a single campaign' },
+        { label: 'Best Ad Set ROAS', value: '4.74×', sub: 'Website purchases' },
+        { label: 'Lowest CPA', value: '£16.11', sub: 'Per website purchase' },
+      ],
+    },
   },
   'seo': {
     num: '03',
@@ -105,6 +120,38 @@ const SERVICES: Record<string, {
   },
 }
 
+function FunnelDiagram() {
+  const platforms = ['META', 'GOOGLE ADS', 'TIKTOK', 'LINKEDIN', 'DISPLAY']
+  const px = [70, 200, 400, 600, 730]
+  const tx = [255, 310, 400, 490, 545]
+  return (
+    <svg viewBox="0 0 800 295" style={{width:'100%',maxWidth:760,display:'block',margin:'0 auto'}} aria-label="Platform agnostic funnel">
+      {px.map((x, i) => (
+        <line key={`l${i}`} x1={x} y1={52} x2={tx[i]} y2={98}
+          stroke="rgba(212,255,0,0.25)" strokeWidth="1" strokeDasharray="4,4" />
+      ))}
+      {px.map((x, i) => (
+        <circle key={`d${i}`} cx={x} cy={52} r="3" fill="#d4ff00" opacity="0.6" />
+      ))}
+      {platforms.map((p, i) => (
+        <text key={`p${i}`} x={px[i]} y={36} textAnchor="middle"
+          fontFamily="'Courier New',monospace" fontSize="9" fill="rgba(255,255,255,0.45)" letterSpacing="2">
+          {p}
+        </text>
+      ))}
+      <polygon points="220,98 580,98 450,215 350,215"
+        fill="rgba(212,255,0,0.04)" stroke="rgba(212,255,0,0.55)" strokeWidth="1.5" strokeLinejoin="round" />
+      <polygon points="350,215 450,215 400,250"
+        fill="rgba(212,255,0,0.06)" stroke="rgba(212,255,0,0.55)" strokeWidth="1.5" strokeLinejoin="round" />
+      <text x="400" y="152" textAnchor="middle" fontFamily="'Courier New',monospace" fontSize="12" fill="rgba(255,255,255,0.6)" letterSpacing="3">SMART</text>
+      <text x="400" y="170" textAnchor="middle" fontFamily="'Courier New',monospace" fontSize="12" fill="rgba(255,255,255,0.6)" letterSpacing="3">STRATEGY</text>
+      <line x1="400" y1="254" x2="400" y2="268" stroke="rgba(212,255,0,0.6)" strokeWidth="2" />
+      <polygon points="393,265 407,265 400,278" fill="rgba(212,255,0,0.7)" />
+      <text x="400" y="293" textAnchor="middle" fontFamily="'Courier New',monospace" fontSize="13" fill="#d4ff00" letterSpacing="4">ROI & PROFIT</text>
+    </svg>
+  )
+}
+
 export async function generateStaticParams() {
   return Object.keys(SERVICES).map(slug => ({ slug }))
 }
@@ -167,6 +214,36 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
+      {/* PROOF — platform funnel + live results */}
+      {s.proof && (
+        <>
+          <section className={styles.proofFunnel}>
+            <ScrollReveal>
+              <h2 className={styles.proofHeadline}>{s.proof.funnelTagline}</h2>
+            </ScrollReveal>
+            <ScrollReveal delay={1}>
+              <FunnelDiagram />
+            </ScrollReveal>
+          </section>
+          <section className={styles.proofStats}>
+            <ScrollReveal style={{marginBottom:40}}>
+              <span className="section-label">{s.proof.statsLabel}</span>
+            </ScrollReveal>
+            <div className={styles.proofGrid}>
+              {s.proof.stats.map((stat, i) => (
+                <ScrollReveal key={i} delay={(i < 2 ? 1 : 2) as 1|2}>
+                  <div className={styles.proofStat}>
+                    <span className={styles.proofValue}>{stat.value}</span>
+                    <span className={styles.proofLabel}>{stat.label}</span>
+                    <span className={styles.proofSub}>{stat.sub}</span>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+
       {/* RELATED SERVICES */}
       {s.related.length > 0 && (
         <section className={styles.related}>
@@ -197,7 +274,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <span className="section-label">// Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
-          {/* TODO: Replace with your Calendly link */}
           <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
         </ScrollReveal>
       </section>
