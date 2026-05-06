@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import Ticker from '@/components/Ticker'
+import BeforeAfterSlider from '@/components/BeforeAfterSlider'
 import styles from './page.module.css'
 
 const SERVICES: Record<string, {
@@ -19,6 +20,19 @@ const SERVICES: Record<string, {
     stats: { label: string; value: string; sub: string }[]
     proofImage?: string
   }
+  showcase?: {
+    imageRevamp?: {
+      before: string
+      after: string
+      heading: string
+      copy: string
+    }
+    chatbot?: {
+      image?: string
+      heading: string
+      copy: string
+    }
+  }
 }> = {
   'ai-solutions': {
     num: '01',
@@ -31,6 +45,18 @@ const SERVICES: Record<string, {
     ],
     outcomes: ['AI product image remastering at scale','24/7 AI chatbot for lead capture & meeting booking','CRM integration & automatic sync','Chat summaries for seamless sales handoff','Bespoke AI strategy & roadmapping'],
     related: ['direct-response','cmo-as-a-service'],
+    showcase: {
+      imageRevamp: {
+        before: '/ai-before.png',
+        after: '/ai-after.jpg',
+        heading: 'AI Product Image Revamping',
+        copy: 'We take your existing product photography and transform it into high-converting campaign imagery — all using AI. The result: studio-quality visuals at a fraction of the cost. Drag the slider to see the difference.',
+      },
+      chatbot: {
+        heading: 'AI Chatbot — 24/7 Lead Capture',
+        copy: 'Our AI chatbots qualify visitors, capture contact details, and book meetings straight into your calendar — around the clock. Every lead is automatically logged to a Google Sheet or your CRM, so your sales team has full context before the first call. One closed deal per year covers the entire cost of the software.',
+      },
+    },
   },
   'direct-response': {
     num: '02',
@@ -264,6 +290,43 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </ScrollReveal>
         </div>
       </section>
+
+      {/* SHOWCASE — interactive examples */}
+      {s.showcase && (
+        <section className={styles.showcase}>
+          {s.showcase.imageRevamp && (
+            <ScrollReveal>
+              <div className={styles.showcaseBlock}>
+                <BeforeAfterSlider
+                  before={s.showcase.imageRevamp.before}
+                  after={s.showcase.imageRevamp.after}
+                />
+                <div className={styles.showcaseText}>
+                  <span className={styles.showcaseLabel}>// Image Revamping</span>
+                  <h2 className={styles.showcaseHeading}>{s.showcase.imageRevamp.heading}</h2>
+                  <p className={styles.showcaseCopy}>{s.showcase.imageRevamp.copy}</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          )}
+          {s.showcase.chatbot && (
+            <ScrollReveal delay={1}>
+              <div className={`${styles.showcaseBlock} ${styles.showcaseBlockReverse}`}>
+                {s.showcase.chatbot.image ? (
+                  <img src={s.showcase.chatbot.image} alt="AI chatbot lead generation" className={styles.showcaseImg} />
+                ) : (
+                  <div className={styles.showcasePlaceholder}>// Screenshot coming soon</div>
+                )}
+                <div className={styles.showcaseText}>
+                  <span className={styles.showcaseLabel}>// AI Chatbot</span>
+                  <h2 className={styles.showcaseHeading}>{s.showcase.chatbot.heading}</h2>
+                  <p className={styles.showcaseCopy}>{s.showcase.chatbot.copy}</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          )}
+        </section>
+      )}
 
       {/* PROOF — platform funnel + live results */}
       {s.proof && (
