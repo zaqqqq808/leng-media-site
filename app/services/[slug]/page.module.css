@@ -151,6 +151,20 @@
   opacity: 0.88;
   border: 1px solid rgba(255,255,255,0.07);
 }
+.proofImageCaption {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--grey-4);
+  line-height: 1.6;
+}
+.proofImageLink {
+  color: var(--neon);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.proofImageLink:hover {
+  opacity: 0.8;
+}
 
 /* RELATED */
 .related {
