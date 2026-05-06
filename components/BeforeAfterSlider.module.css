@@ -1,0 +1,83 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: col-resize;
+  border-radius: 4px;
+  user-select: none;
+  touch-action: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: #000;
+}
+.imgBase {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.clip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+.imgOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #d4ff00;
+  transform: translateX(-50%);
+  cursor: col-resize;
+  z-index: 10;
+}
+.handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #d4ff00;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.55);
+  transition: transform 0.15s ease;
+}
+.handle:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.labelBefore,
+.labelAfter {
+  position: absolute;
+  bottom: 14px;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  background: rgba(0,0,0,0.65);
+  color: rgba(255,255,255,0.7);
+  pointer-events: none;
+  border-radius: 2px;
+  z-index: 5;
+}
+.labelBefore { left: 14px; }
+.labelAfter  { right: 14px; }
