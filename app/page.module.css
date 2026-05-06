@@ -179,7 +179,8 @@
 }
 .clientLogo:nth-child(3n) { border-right: none; }
 .clientLogo:nth-last-child(-n+3) { border-bottom: none; }
-.clientLogo:hover :global(img) { opacity: 0.65; }
+.clientLogo:hover :global(img),
+.clientLogo:hover :global(svg) { opacity: 0.65; }
 .clientLogo:hover :global(span) { color: rgba(255,255,255,0.65); }
 
 /* ── RESOURCES ── */
