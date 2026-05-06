@@ -99,7 +99,7 @@ export default function Home() {
       <section className={styles.services} id="services">
         <ScrollReveal className={styles.servicesHeader}>
           <span className="section-label">// 02 — What we do</span>
-          <h2 className="section-title">Our Services.</h2>
+          <h2 className="section-title">Our services.</h2>
         </ScrollReveal>
         <div className={styles.servicesGrid}>
           {SERVICES.map((s, i) => (
