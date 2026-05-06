@@ -25,11 +25,11 @@ const SERVICES = [
 ]
 
 const CLIENTS = [
-  { name: 'Hims',                          domain: 'hims.com' },
+  { name: "Barry's Bootcamp",              domain: 'barrysbootcamp.com' },
   { name: 'National Geographic Traveller', domain: 'natgeo.com' },
   { name: 'Ninety Percent',               domain: 'ninetypercent.com' },
   { name: 'Horizon Group',                domain: 'horizongroup.co.uk' },
-  { name: 'APL Media',                    domain: 'aplmedia.co.uk' },
+  { name: 'Haier',                        domain: 'haier.com' },
   { name: 'Skin + Me',                    domain: 'skinandme.com' },
 ]
 
