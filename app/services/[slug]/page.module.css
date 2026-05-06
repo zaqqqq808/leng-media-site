@@ -1,10 +1,10 @@
 .hero {
-  min-height: 65vh;
+  min-height: 44vh;
   display: flex;
   align-items: flex-end;
   position: relative;
   overflow: hidden;
-  padding: 130px 52px 80px;
+  padding: 130px 52px 52px;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .heroGrid {
@@ -49,7 +49,7 @@
 
 /* BODY */
 .body {
-  display: flex; gap: 80px; padding: 100px 52px;
+  display: flex; gap: 80px; padding: 72px 52px;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .bodyLeft { flex: 1.2; }
@@ -109,10 +109,19 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .hero { padding: 100px 24px 52px; min-height: 50vh; align-items: flex-start; }
-  .body { flex-direction: column; gap: 48px; padding: 64px 24px; }
-  .related { padding: 64px 24px; }
+  .hero {
+    min-height: 0;
+    padding: 96px 24px 40px;
+  }
+  .title { font-size: clamp(32px, 9vw, 52px); }
+  .tagline { font-size: 15px; }
+  .body {
+    flex-direction: column;
+    gap: 40px;
+    padding: 48px 24px;
+  }
+  .bodyLeft, .bodyRight { flex: none; width: 100%; }
+  .related { padding: 48px 24px; }
   .relatedGrid { grid-template-columns: 1fr; }
-  .cta { padding: 80px 24px; }
-  .title { letter-spacing: -0.5px; }
+  .cta { padding: 72px 24px; }
 }
