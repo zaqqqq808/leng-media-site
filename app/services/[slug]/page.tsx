@@ -296,6 +296,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <div className={styles.proofImageWrap}>
                   <span className={styles.proofImageLabel}>// Campaign Screenshot · May–Jun 2025</span>
                   <img src={s.proof.proofImage} alt="Meta Ads Manager — May–Jun 2025 campaign results" className={styles.proofImage} />
+                  <p className={styles.proofImageCaption}>A snapshot of one of our clients&apos; campaigns.<br />If you&apos;d like to know how we can help you just <a href="/business-enquiry" className={styles.proofImageLink}>book a call</a>.</p>
                 </div>
               </ScrollReveal>
             )}
