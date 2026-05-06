@@ -14,7 +14,7 @@ const LOGOS: Record<string, React.ReactNode> = {
   ),
   'natgeo.com': (
     <svg className={styles.logo} width="130" height="52" viewBox="0 0 130 52" fill="none">
-      <rect x="1" y="1" width="50" height="50" stroke="white" strokeWidth="2" fill="white"/>
+      <rect x="1" y="1" width="50" height="50" stroke="white" strokeWidth="2" fill="none"/>
       <text x="60" y="16" fontFamily="Arial,sans-serif" fontSize="8.5" fontWeight="700" fill="white" letterSpacing="0.5">NATIONAL</text>
       <text x="60" y="28" fontFamily="Arial,sans-serif" fontSize="8.5" fontWeight="700" fill="white" letterSpacing="0.5">GEOGRAPHIC</text>
       <text x="60" y="40" fontFamily="Arial,sans-serif" fontSize="7" fontWeight="400" fill="white" letterSpacing="1.5">TRAVELLER</text>
