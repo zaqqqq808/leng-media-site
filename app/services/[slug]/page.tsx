@@ -6,7 +6,7 @@ import styles from './page.module.css'
 
 const SERVICES: Record<string, {
   num: string
-  name: strin
+  name: string
   tagline: string
   metaDescription: string
   description: string[]
