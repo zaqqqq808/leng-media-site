@@ -6,7 +6,7 @@
   white-space: nowrap;
   background: var(--off-black);
 }
-.track { display: inline-block; animation: scroll 30s linear infinite; }
+.track { display: inline-block; animation: scroll 30s linear infinite; will-change: transform; }
 .item {
   display: inline-block;
   font-family: var(--font-mono), monospace;
