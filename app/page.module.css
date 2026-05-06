@@ -246,7 +246,7 @@
   .clientLogo:nth-child(2n) { border-right: none; }
   .clientLogo:nth-last-child(-n+3) { border-bottom: 1px solid rgba(255,255,255,0.08); }
   .clientLogo:nth-last-child(-n+2) { border-bottom: none; }
-  .clientLogo { padding: 32px 20px; }
+  .clientLogo { padding: 32px 20px; min-height: 120px; }
   .resources { padding: 64px 24px; }
   .cta { padding: 80px 24px; }
 }
