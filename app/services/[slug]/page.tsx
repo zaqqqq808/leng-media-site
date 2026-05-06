@@ -167,12 +167,37 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-{/* CTA */}
+      {/* RELATED SERVICES */}
+      {s.related.length > 0 && (
+        <section className={styles.related}>
+          <ScrollReveal style={{marginBottom:40}}>
+            <span className="section-label">// Related Services</span>
+          </ScrollReveal>
+          <div className={styles.relatedGrid}>
+            {s.related.map(relSlug => {
+              const rel = SERVICES[relSlug]
+              if (!rel) return null
+              return (
+                <Link key={relSlug} href={`/services/${relSlug}`} className={styles.relatedCard}>
+                  <div>
+                    <p style={{fontFamily:'var(--font-mono)',fontSize:'9px',letterSpacing:'2px',color:'var(--neon)',textTransform:'uppercase',marginBottom:10}}>{rel.num} / 07</p>
+                    <span className={styles.relatedName}>{rel.name}</span>
+                  </div>
+                  <span className={styles.relatedArrow}>↗</span>
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+      )}
+
+      {/* CTA */}
       <section className={styles.cta}>
         <ScrollReveal>
           <span className="section-label">// Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
+          {/* TODO: Replace with your Calendly link */}
           <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
         </ScrollReveal>
       </section>
