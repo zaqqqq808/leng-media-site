@@ -12,6 +12,7 @@ const SERVICES: Record<string, {
   description: string[]
   outcomes: string[]
   related: string[]
+  descriptionHighlights?: string[]
   proof?: {
     funnelTagline: string
     statsLabel: string
@@ -37,9 +38,13 @@ const SERVICES: Record<string, {
     tagline: 'Ads that generate positive ROAS.',
     metaDescription: 'Performance marketing agency managing Meta, TikTok and Google Ads for ecommerce brands. We fix the funnel first, then drive consistent positive ROAS across every channel.',
     description: [
-      'We fix the funnel first. Most agencies will happily take your money and drive traffic to a site that converts at 0.3%. We refuse to do that. Before a penny is spent on ads, we audit and improve your user experience — moving key purchase drivers above the fold, implementing reviews, FAQs and clear guarantees, and simplifying the path to purchase.',
-      'We don\'t identify as a "Facebook Agency" or a "PPC Agency." We identify as a Revenue Agency. We go where your customers are — Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it\'s DTC, Ecom or Lead Generation, we\'ll have the answer.',
+      'We fix the funnel first.',
+      'Most agencies will happily take your money and drive traffic to a site that converts at 0.3%.',
+      'We refuse to do that.',
+      'Before a penny is spent on ads, we audit and improve your user experience, moving key purchase drivers above the fold, implementing reviews, FAQs and clear guarantees, and simplifying the path to purchase.',
+      'We don\'t identify as a "Facebook Agency" or a "PPC Agency." We identify as a Revenue Agency. We go to where your customers are: Meta, daytime TV, Reddit, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it\'s DTC, Ecom or Lead Generation, we\'ll have a bespoke answer.',
     ],
+    descriptionHighlights: ['Revenue Agency'],
     outcomes: ['Pre-campaign landing page audit & CRO','Meta, TikTok & Google Ads management','Creative strategy & production briefs','Rapid A/B testing to find winners fast','Monthly performance reporting'],
     related: ['ai-solutions','lead-generation'],
     proof: {
@@ -225,11 +230,26 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <ScrollReveal>
             <span className="section-label">// Overview</span>
           </ScrollReveal>
-          {s.description.map((p, i) => (
-            <ScrollReveal key={i} delay={(i+1) as 1|2}>
-              <p className={styles.bodyText}>{p}</p>
-            </ScrollReveal>
-          ))}
+          {s.description.map((p, i) => {
+            const highlights = s.descriptionHighlights || []
+            let parts: (string | React.ReactElement)[] = [p]
+            for (const phrase of highlights) {
+              parts = parts.flatMap((part, pi) => {
+                if (typeof part !== 'string') return [part]
+                const segments = part.split(phrase)
+                return segments.flatMap((seg, si) =>
+                  si < segments.length - 1
+                    ? [seg, <mark key={`h-${pi}-${si}`} style={{background:'#d4ff00',color:'#000',padding:'0 3px',fontStyle:'normal'}}>{phrase}</mark>]
+                    : [seg]
+                )
+              })
+            }
+            return (
+              <ScrollReveal key={i} delay={(i+1) as 1|2}>
+                <p className={styles.bodyText}>{parts}</p>
+              </ScrollReveal>
+            )
+          })}
         </div>
         <div className={styles.bodyRight}>
           <ScrollReveal delay={2}>
