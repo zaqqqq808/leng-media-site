@@ -82,7 +82,7 @@ const SERVICES: Record<string, {
     num: '05',
     name: 'CMO as a Service',
     tagline: 'The firepower of a full marketing department. None of the overhead.',
-    metaDescription: 'Embedded marketing leadership without the full-time hire. Strategy, execution and reporting — Leng Media's CMOaaS replaces your entire marketing function from £15,000/month.',
+    metaDescription: 'Embedded marketing leadership without the full-time hire. Strategy, execution and reporting — Leng Media\'s CMOaaS replaces your entire marketing function from £15,000/month.',
     description: [
       'Hiring a CMO, a media buyer, a web developer and a strategist costs upwards of £250k a year — before software or ad spend. Leng Media replaces all of that. We step in as your fully embedded marketing engine, taking full ownership of your growth from high-level strategic vision to pixel-perfect execution.',
       'We don\'t advise from the sidelines — we execute. We\'ve helped brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group. CMOaaS starts at £15,000/month. Stop managing freelancers. Start scaling.',
