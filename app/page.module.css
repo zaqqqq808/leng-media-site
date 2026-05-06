@@ -173,20 +173,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-serif), serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: clamp(14px, 1.6vw, 20px);
-  letter-spacing: 0.5px;
-  color: rgba(255,255,255,0.22);
   border-right: 1px solid rgba(255,255,255,0.08);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   text-align: center;
-  transition: color 0.35s;
 }
 .clientLogo:nth-child(3n) { border-right: none; }
 .clientLogo:nth-last-child(-n+3) { border-bottom: none; }
-.clientLogo:hover { color: rgba(255,255,255,0.55); }
+.clientLogo:hover :global(img) { opacity: 0.65; }
+.clientLogo:hover :global(span) { color: rgba(255,255,255,0.65); }
 
 /* ── RESOURCES ── */
 .resources { padding: 110px 52px; background: var(--black); border-top: 1px solid rgba(255,255,255,0.12); text-align: center; }
@@ -251,7 +245,7 @@
   .clientLogo:nth-child(2n) { border-right: none; }
   .clientLogo:nth-last-child(-n+3) { border-bottom: 1px solid rgba(255,255,255,0.08); }
   .clientLogo:nth-last-child(-n+2) { border-bottom: none; }
-  .clientLogo { padding: 32px 20px; font-size: 13px; }
+  .clientLogo { padding: 32px 20px; }
   .resources { padding: 64px 24px; }
   .cta { padding: 80px 24px; }
 }
