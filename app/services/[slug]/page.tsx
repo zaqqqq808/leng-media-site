@@ -6,7 +6,7 @@ import styles from './page.module.css'
 
 const SERVICES: Record<string, {
   num: string
-  name: string
+  name: strin
   tagline: string
   metaDescription: string
   description: string[]
@@ -38,7 +38,7 @@ const SERVICES: Record<string, {
     metaDescription: 'Performance marketing agency managing Meta, TikTok and Google Ads for ecommerce brands. We fix the funnel first, then drive consistent positive ROAS across every channel.',
     description: [
       'We fix the funnel first. Most agencies will happily take your money and drive traffic to a site that converts at 0.3%. We refuse to do that. Before a penny is spent on ads, we audit and improve your user experience — moving key purchase drivers above the fold, implementing reviews, FAQs and clear guarantees, and simplifying the path to purchase.',
-      'We don't identify as a "Facebook Agency" or a "PPC Agency." We identify as a Revenue Agency. We go where your customers are — Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it's DTC, Ecom or Lead Generation, we'll have the answer.',
+      'We don\'t identify as a "Facebook Agency" or a "PPC Agency." We identify as a Revenue Agency. We go where your customers are — Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it\'s DTC, Ecom or Lead Generation, we\'ll have the answer.',
     ],
     outcomes: ['Pre-campaign landing page audit & CRO','Meta, TikTok & Google Ads management','Creative strategy & production briefs','Rapid A/B testing to find winners fast','Monthly performance reporting'],
     related: ['ai-solutions','lead-generation'],
