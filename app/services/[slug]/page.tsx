@@ -70,9 +70,9 @@ const SERVICES: Record<string, {
     num: '04',
     name: 'Lead Generation',
     tagline: 'The London lead generation agency that only gets paid when you do.',
-    metaDescription: 'Zero monthly retainer. London's performance-based lead generation agency — you fund the ad spend, we deliver strategy, creatives and results. Revenue share or fixed CPA model.',
+    metaDescription: 'Zero monthly retainer. London\'s performance-based lead generation agency — you fund the ad spend, we deliver strategy, creatives and results. Revenue share or fixed CPA model.',
     description: [
-      'Zero monthly fees. 100% performance based. Stop burning cash on agencies that promise the world and deliver excuses. You cover the ad spend — we cover the expertise, the strategy, and the execution. If we don't perform, we don't eat.',
+      'Zero monthly fees. 100% performance based. Stop burning cash on agencies that promise the world and deliver excuses. You cover the ad spend — we cover the expertise, the strategy, and the execution. If we don\'t perform, we don\'t eat.',
       'We design the creatives, write the copy, build the landing pages, and manage campaign optimisation — all at no charge. We agree on a fair revenue split or fixed CPA for every qualified lead or sale we generate. You own all the data. You have nothing to lose.',
     ],
     outcomes: ['Zero monthly retainer — performance-based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy & landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
@@ -85,7 +85,7 @@ const SERVICES: Record<string, {
     metaDescription: 'Embedded marketing leadership without the full-time hire. Strategy, execution and reporting — Leng Media's CMOaaS replaces your entire marketing function from £15,000/month.',
     description: [
       'Hiring a CMO, a media buyer, a web developer and a strategist costs upwards of £250k a year — before software or ad spend. Leng Media replaces all of that. We step in as your fully embedded marketing engine, taking full ownership of your growth from high-level strategic vision to pixel-perfect execution.',
-      'We don't advise from the sidelines — we execute. We've helped brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group. CMOaaS starts at £15,000/month. Stop managing freelancers. Start scaling.',
+      'We don\'t advise from the sidelines — we execute. We\'ve helped brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group. CMOaaS starts at £15,000/month. Stop managing freelancers. Start scaling.',
     ],
     outcomes: ['Executive strategy, budgeting & roadmap planning','Ad campaigns, CRO, AI automation & tech stack management','Zero training time — we embed from Day 1','Board-level reporting & OKR frameworks','Clients: Hims, National Geographic Traveller, Ninety Percent, Horizon Group'],
     related: ['ai-solutions','agency-assist'],
@@ -96,7 +96,7 @@ const SERVICES: Record<string, {
     tagline: 'Scale your agency without increasing your headcount.',
     metaDescription: 'White-label marketing fulfilment for agencies that need a trusted execution partner. AI, paid media and CRO delivered under your brand with full NDA and weekly reports.',
     description: [
-      'Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don't have in-house, we step in and integrate seamlessly to deliver white-label excellence — so you never have to turn down a contract again.',
+      'Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don\'t have in-house, we step in and integrate seamlessly to deliver white-label excellence — so you never have to turn down a contract again.',
       'We do the work. You get the credit. You receive weekly white-label reports and analysis while maintaining 100% control of the client relationship. We can also execute campaigns and train your junior staff to take them over.',
     ],
     outcomes: ['Overflow execution — never turn down a client again','White-label AI, CRO & Paid Media fulfilment','Training & handoffs to your in-house team','Weekly white-label reports & analysis','Full NDA — you maintain 100% client ownership'],
@@ -109,7 +109,7 @@ const SERVICES: Record<string, {
     metaDescription: 'High-converting, performance-first websites for ecommerce and service brands. Built in Shopify or Next.js — fast, analytics-ready and designed to convert from day one.',
     description: [
       'Your website is your most important sales asset — and most agencies treat it as an afterthought. We build performance-first websites for ecommerce and service brands that are fast, conversion-optimised, and designed to grow with you. Every project starts with your commercial goals, not a template.',
-      'We don't just make things look good — we build for results. Optimised page structure, Core Web Vitals-ready architecture, clear CTAs above the fold, and analytics baked in from day one. Every site we deliver is built to run paid traffic from launch and rank organically over time.',
+      'We don\'t just make things look good — we build for results. Optimised page structure, Core Web Vitals-ready architecture, clear CTAs above the fold, and analytics baked in from day one. Every site we deliver is built to run paid traffic from launch and rank organically over time.',
     ],
     outcomes: [
       'Shopify & Next.js ecommerce builds',
