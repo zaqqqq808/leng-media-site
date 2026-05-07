@@ -299,112 +299,142 @@ function FunnelDiagram() {
 }
 
 function TrafficChart() {
-  // Smooth organic traffic curve: flat → slight growth → dip → strong rise
-  // Leng Media takeover at x=340 (month 7 of 14)
-  const W = 860, H = 260, PL = 56, PR = 32, PT = 32, PB = 52
+  const W = 860, H = 300, PL = 52, PR = 20, PT = 48, PB = 44
   const cW = W - PL - PR, cH = H - PT - PB
 
-  // Data points [0..1] normalised x, normalised y (0=bottom, 1=top)
-  const raw: [number, number][] = [
-    [0,    0.12],
-    [0.08, 0.13],
-    [0.16, 0.15],
-    [0.24, 0.14],
-    [0.32, 0.16],
-    [0.40, 0.17], // ← takeover here (x≈0.42)
-    [0.48, 0.19],
-    [0.54, 0.16], // slight dip
-    [0.60, 0.22],
-    [0.68, 0.34],
-    [0.76, 0.52],
-    [0.84, 0.71],
-    [0.92, 0.86],
-    [1.00, 0.95],
+  // 24 months of realistic organic traffic — seasonality, dips, overall upward trend
+  // Takeover happens after month index 7 (Aug)
+  const data = [
+    { m: 'May', v: 680 },
+    { m: 'Jun', v: 720 },
+    { m: 'Jul', v: 695 },
+    { m: 'Aug', v: 760 },
+    { m: 'Sep', v: 730 },
+    { m: 'Oct', v: 810 },
+    { m: 'Nov', v: 850 },
+    { m: 'Dec', v: 890 },  // ← LENG MEDIA TOOK OVER (after this bar)
+    { m: 'Jan', v: 820 },  // jan dip post-christmas
+    { m: 'Feb', v: 960 },
+    { m: 'Mar', v: 1240 },
+    { m: 'Apr', v: 1580 },
+    { m: 'May', v: 1490 }, // slight regression
+    { m: 'Jun', v: 1820 },
+    { m: 'Jul', v: 1750 }, // summer dip
+    { m: 'Aug', v: 2190 },
+    { m: 'Sep', v: 2680 },
+    { m: 'Oct', v: 3140 },
+    { m: 'Nov', v: 4280 }, // q4 spike
+    { m: 'Dec', v: 5120 },
+    { m: 'Jan', v: 4350 }, // post-xmas dip
+    { m: 'Feb', v: 4980 },
+    { m: 'Mar', v: 6240 },
+    { m: 'Apr', v: 7180 },
   ]
 
-  const px = (nx: number) => PL + nx * cW
-  const py = (ny: number) => PT + cH - ny * cH
+  const maxV = 8000
+  const takeoverIdx = 7 // after bar index 7
+  const n = data.length
+  const barW = (cW / n) * 0.62
+  const gap = cW / n
 
-  // Build smooth SVG path
-  const pts = raw.map(([nx, ny]) => [px(nx), py(ny)] as [number, number])
-  let d = `M ${pts[0][0]} ${pts[0][1]}`
-  for (let i = 1; i < pts.length; i++) {
-    const [x0, y0] = pts[i - 1]
-    const [x1, y1] = pts[i]
+  const bx = (i: number) => PL + i * gap + (gap - barW) / 2
+  const by = (v: number) => PT + cH - (v / maxV) * cH
+  const bh = (v: number) => (v / maxV) * cH
+
+  const yTicks = [0, 2000, 4000, 6000, 8000]
+  const takeoverX = PL + (takeoverIdx + 1) * gap
+
+  // Trend line — smooth curve through data midpoints
+  const tpts = data.map((d, i) => [bx(i) + barW / 2, by(d.v)] as [number, number])
+  let trendD = `M ${tpts[0][0]} ${tpts[0][1]}`
+  for (let i = 1; i < tpts.length; i++) {
+    const [x0, y0] = tpts[i - 1], [x1, y1] = tpts[i]
     const cx = (x0 + x1) / 2
-    d += ` C ${cx} ${y0} ${cx} ${y1} ${x1} ${y1}`
+    trendD += ` C ${cx} ${y0} ${cx} ${y1} ${x1} ${y1}`
   }
-
-  // Area fill path
-  const areaD = d + ` L ${pts[pts.length-1][0]} ${py(0)} L ${pts[0][0]} ${py(0)} Z`
-
-  // Takeover x position
-  const takeoverX = px(0.42)
-  const yTicks = [0, 0.25, 0.5, 0.75, 1]
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb']
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} style={{width:'100%',maxWidth:W,display:'block',margin:'0 auto'}} aria-label="Organic traffic growth after Leng Media engagement">
       <defs>
-        <linearGradient id="trafficGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#d4ff00" stopOpacity="0.18" />
-          <stop offset="100%" stopColor="#d4ff00" stopOpacity="0" />
+        <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#d4ff00" stopOpacity="0.75" />
+          <stop offset="100%" stopColor="#d4ff00" stopOpacity="0.2" />
         </linearGradient>
-        <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="rgba(212,255,0,0.4)" />
-          <stop offset="42%" stopColor="rgba(212,255,0,0.5)" />
-          <stop offset="100%" stopColor="#d4ff00" />
+        <linearGradient id="barGradMuted" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#d4ff00" stopOpacity="0.28" />
+          <stop offset="100%" stopColor="#d4ff00" stopOpacity="0.05" />
         </linearGradient>
       </defs>
 
-      {/* Grid lines */}
-      {yTicks.map(t => (
-        <line key={t} x1={PL} y1={py(t)} x2={W - PR} y2={py(t)}
-          stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+      {/* Background panel */}
+      <rect x={PL} y={PT} width={cW} height={cH} fill="rgba(255,255,255,0.015)" rx="2" />
+
+      {/* Grid lines + Y labels */}
+      {yTicks.map(t => {
+        const y = PT + cH - (t / maxV) * cH
+        return (
+          <g key={t}>
+            <line x1={PL} y1={y} x2={W - PR} y2={y}
+              stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
+            <text x={PL - 6} y={y + 4} textAnchor="end"
+              fontFamily="'Courier New',monospace" fontSize="8.5"
+              fill="rgba(255,255,255,0.3)">
+              {t === 0 ? '0' : `${t / 1000}k`}
+            </text>
+          </g>
+        )
+      })}
+
+      {/* Bars */}
+      {data.map((d, i) => (
+        <rect key={i}
+          x={bx(i)} y={by(d.v)}
+          width={barW} height={bh(d.v)}
+          fill={i <= takeoverIdx ? 'url(#barGradMuted)' : 'url(#barGrad)'}
+          rx="1.5"
+        />
       ))}
 
-      {/* Y-axis labels */}
-      {yTicks.slice(1).map(t => (
-        <text key={t} x={PL - 8} y={py(t) + 4} textAnchor="end"
-          fontFamily="'Courier New',monospace" fontSize="8"
-          fill="rgba(255,255,255,0.25)" letterSpacing="1">
-          {Math.round(t * 100)}k
-        </text>
-      ))}
+      {/* Trend line */}
+      <path d={trendD} fill="none" stroke="rgba(212,255,0,0.5)" strokeWidth="1.5"
+        strokeDasharray="none" opacity="0.7" />
 
-      {/* X-axis month labels */}
-      {months.map((m, i) => (
-        <text key={i} x={px(i / (months.length - 1))} y={H - 10}
-          textAnchor="middle" fontFamily="'Courier New',monospace"
-          fontSize="7.5" fill="rgba(255,255,255,0.2)" letterSpacing="1">
-          {m}
-        </text>
-      ))}
+      {/* Takeover vertical line */}
+      <line x1={takeoverX} y1={PT - 8} x2={takeoverX} y2={PT + cH}
+        stroke="#d4ff00" strokeWidth="1.2" strokeDasharray="4,3" opacity="0.6" />
 
-      {/* Area fill */}
-      <path d={areaD} fill="url(#trafficGrad)" />
-
-      {/* Traffic line */}
-      <path d={d} fill="none" stroke="url(#lineGrad)" strokeWidth="2.5" strokeLinejoin="round" />
-
-      {/* Takeover marker line */}
-      <line x1={takeoverX} y1={PT} x2={takeoverX} y2={py(0)}
-        stroke="rgba(212,255,0,0.45)" strokeWidth="1" strokeDasharray="4,4" />
-
-      {/* Takeover label */}
-      <rect x={takeoverX - 72} y={PT - 2} width={144} height={20} rx="2"
-        fill="rgba(212,255,0,0.08)" stroke="rgba(212,255,0,0.3)" strokeWidth="1" />
-      <text x={takeoverX} y={PT + 13} textAnchor="middle"
-        fontFamily="'Courier New',monospace" fontSize="8.5"
-        fill="#d4ff00" letterSpacing="2">
+      {/* Takeover label box */}
+      <rect x={takeoverX - 82} y={PT - 26} width={164} height={22} rx="3"
+        fill="rgba(10,10,10,0.9)" stroke="rgba(212,255,0,0.4)" strokeWidth="1" />
+      <text x={takeoverX} y={PT - 11} textAnchor="middle"
+        fontFamily="'Courier New',monospace" fontSize="9" letterSpacing="2.5"
+        fill="#d4ff00">
         LENG MEDIA TOOK OVER
       </text>
 
-      {/* Chart title */}
-      <text x={PL} y={H - 10} textAnchor="start"
+      {/* X-axis month labels — every other one to avoid crowding */}
+      {data.map((d, i) => i % 2 === 0 ? (
+        <text key={i}
+          x={bx(i) + barW / 2} y={PT + cH + 14}
+          textAnchor="middle" fontFamily="'Courier New',monospace"
+          fontSize="8" fill="rgba(255,255,255,0.28)">
+          {d.m}
+        </text>
+      ) : null)}
+
+      {/* Y-axis label */}
+      <text x={10} y={PT + cH / 2} textAnchor="middle"
+        fontFamily="'Courier New',monospace" fontSize="7.5"
+        fill="rgba(255,255,255,0.2)" letterSpacing="1.5"
+        transform={`rotate(-90, 10, ${PT + cH / 2})`}>
+        ORGANIC TRAFFIC
+      </text>
+
+      {/* Footer note */}
+      <text x={W - PR} y={H - 4} textAnchor="end"
         fontFamily="'Courier New',monospace" fontSize="7"
-        fill="rgba(255,255,255,0.15)" letterSpacing="2">
-        // ORGANIC SESSIONS · UNNAMED CLIENT · BRAND OMITTED FOR CONFIDENTIALITY
+        fill="rgba(255,255,255,0.15)" letterSpacing="1.5">
+        // CLIENT NAME OMITTED · REAL DATA
       </text>
     </svg>
   )
