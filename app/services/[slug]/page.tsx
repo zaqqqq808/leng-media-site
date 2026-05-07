@@ -44,6 +44,10 @@ const SERVICES: Record<string, {
       mobileImg: string
     }[]
   }
+  linkBuilding?: {
+    intro: string
+    items: { type: string; description: string }[]
+  }
 }> = {
   'ai-solutions': {
     num: '01',
@@ -94,15 +98,48 @@ const SERVICES: Record<string, {
   },
   'seo': {
     num: '03',
-    name: 'Ecommerce SEO',
-    tagline: 'We help Ecom brands rank for transactional keywords, grow organic traffic and get cited by AI models.',
-    metaDescription: 'Ecommerce SEO that drives transactional traffic and AI model citations. Leng Media covers technical SEO, collection page optimisation, link building and LLM visibility strategy.',
+    name: 'D2C & Ecommerce SEO',
+    tagline: 'Rank for transactional keywords, grow organic revenue, and get your brand cited by AI models.',
+    metaDescription: 'D2C and ecommerce SEO that drives revenue, not just rankings. Leng Media covers technical SEO, collection page optimisation, holistic link building and LLM visibility strategy.',
     description: [
-      'SEO for ecommerce brands has a different focus than regular SEO. We prioritise collection pages, reviews, and comparison content — plus a shopping focus when it comes to AI citations and backlinks. We break our process into four stages: Technical Foundation & Audit, Keyword Strategy & On-Page Optimisation, Competitor Intelligence, and Holistic Link Building.',
-      'On AI SEO: AI simply scrapes search engines and high-authority websites to generate citations. We ensure your brand gets cited by building a presence on the platforms LLMs feed from — Reddit, Quora, and high-DA blogs — while shifting your keyword focus to mid and bottom-of-funnel transactional terms that capture buyers, not browsers.',
+      'Most SEO agencies treat every website the same. We don\'t. Whether you\'re running a DTC brand, an ecommerce store, or a product-led service business, your SEO strategy needs to prioritise revenue — not just rankings. That means collection pages optimised for buyer intent, product comparisons that capture mid-funnel searches, trust signals like reviews and UGC, and content that turns browsers into customers.',
+      'We structure every engagement around four stages: Technical Foundation & Audit, Keyword Strategy & On-Page Optimisation, Competitor Intelligence, and Holistic Link Building. Each stage builds on the last — there\'s no point driving traffic to a technically broken site, or building links to pages that aren\'t set up to convert.',
+      'A word on "AI SEO": most of it is a scam. Agencies are repackaging basic SEO principles with a new label, or trying to sell you expensive software you don\'t need. The fundamentals haven\'t changed — build credibility, earn real links, create content worth citing. What has changed is which platforms carry the most weight. AI models scrape search engines and high-authority community sites to generate citations, which means Reddit, Quora, niche forums, and industry blogs now feed directly into what LLMs recommend. We build your presence across all of these — not as a gimmick, but as a core part of a real SEO strategy.',
     ],
-    outcomes: ['Technical SEO audit & index health fixes','Collection & product page optimisation','Competitor gap analysis','Holistic link building & digital PR','AI citation & LLM optimisation (Reddit, Quora, high-DA)'],
+    outcomes: [
+      'Technical SEO audit & Core Web Vitals fixes',
+      'Collection & product page optimisation for buyer intent',
+      'Competitor gap analysis & keyword strategy',
+      'Holistic link building (editorial, guest posts, linkable assets)',
+      'Community presence on Reddit, Quora & niche forums',
+      'AI citation & LLM visibility strategy',
+    ],
     related: ['direct-response','ai-solutions'],
+    linkBuilding: {
+      intro: 'Link building is one of the most misunderstood parts of SEO — most brands either ignore it or hand it to someone who buys cheap links that do more harm than good. We take a holistic approach across five channels:',
+      items: [
+        {
+          type: 'Editorial outreach',
+          description: 'Earning genuine mentions and links in industry publications, trade press, and news sites through newsworthy content, data studies, and brand stories. These are the highest-value links you can get.',
+        },
+        {
+          type: 'Guest posting',
+          description: 'Placing authoritative, genuinely useful articles on relevant niche blogs and industry sites. We only pursue placements that would send you real referral traffic — not just link equity.',
+        },
+        {
+          type: 'Linkable asset creation',
+          description: 'Building tools, calculators, original research, or definitive guides so valuable that other sites link to them naturally over time. One great asset can earn dozens of links passively.',
+        },
+        {
+          type: 'Directory & aggregator listings',
+          description: 'Strategic placement in high-authority, industry-specific directories and aggregator sites that drive both referral traffic and consistent SEO equity — without the risk of spammy link farms.',
+        },
+        {
+          type: 'Community presence',
+          description: 'Building a real, helpful presence on Reddit, Quora, and niche forums where your customers already spend time. These platforms are now major sources for AI citations — and they drive qualified traffic that converts.',
+        },
+      ],
+    },
   },
   'lead-generation': {
     num: '04',
@@ -252,6 +289,118 @@ function FunnelDiagram() {
   )
 }
 
+function TrafficChart() {
+  // Smooth organic traffic curve: flat → slight growth → dip → strong rise
+  // Leng Media takeover at x=340 (month 7 of 14)
+  const W = 860, H = 260, PL = 56, PR = 32, PT = 32, PB = 52
+  const cW = W - PL - PR, cH = H - PT - PB
+
+  // Data points [0..1] normalised x, normalised y (0=bottom, 1=top)
+  const raw: [number, number][] = [
+    [0,    0.12],
+    [0.08, 0.13],
+    [0.16, 0.15],
+    [0.24, 0.14],
+    [0.32, 0.16],
+    [0.40, 0.17], // ← takeover here (x≈0.42)
+    [0.48, 0.19],
+    [0.54, 0.16], // slight dip
+    [0.60, 0.22],
+    [0.68, 0.34],
+    [0.76, 0.52],
+    [0.84, 0.71],
+    [0.92, 0.86],
+    [1.00, 0.95],
+  ]
+
+  const px = (nx: number) => PL + nx * cW
+  const py = (ny: number) => PT + cH - ny * cH
+
+  // Build smooth SVG path
+  const pts = raw.map(([nx, ny]) => [px(nx), py(ny)] as [number, number])
+  let d = `M ${pts[0][0]} ${pts[0][1]}`
+  for (let i = 1; i < pts.length; i++) {
+    const [x0, y0] = pts[i - 1]
+    const [x1, y1] = pts[i]
+    const cx = (x0 + x1) / 2
+    d += ` C ${cx} ${y0} ${cx} ${y1} ${x1} ${y1}`
+  }
+
+  // Area fill path
+  const areaD = d + ` L ${pts[pts.length-1][0]} ${py(0)} L ${pts[0][0]} ${py(0)} Z`
+
+  // Takeover x position
+  const takeoverX = px(0.42)
+  const yTicks = [0, 0.25, 0.5, 0.75, 1]
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb']
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} style={{width:'100%',maxWidth:W,display:'block',margin:'0 auto'}} aria-label="Organic traffic growth after Leng Media engagement">
+      <defs>
+        <linearGradient id="trafficGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#d4ff00" stopOpacity="0.18" />
+          <stop offset="100%" stopColor="#d4ff00" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="rgba(212,255,0,0.4)" />
+          <stop offset="42%" stopColor="rgba(212,255,0,0.5)" />
+          <stop offset="100%" stopColor="#d4ff00" />
+        </linearGradient>
+      </defs>
+
+      {/* Grid lines */}
+      {yTicks.map(t => (
+        <line key={t} x1={PL} y1={py(t)} x2={W - PR} y2={py(t)}
+          stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+      ))}
+
+      {/* Y-axis labels */}
+      {yTicks.slice(1).map(t => (
+        <text key={t} x={PL - 8} y={py(t) + 4} textAnchor="end"
+          fontFamily="'Courier New',monospace" fontSize="8"
+          fill="rgba(255,255,255,0.25)" letterSpacing="1">
+          {Math.round(t * 100)}k
+        </text>
+      ))}
+
+      {/* X-axis month labels */}
+      {months.map((m, i) => (
+        <text key={i} x={px(i / (months.length - 1))} y={H - 10}
+          textAnchor="middle" fontFamily="'Courier New',monospace"
+          fontSize="7.5" fill="rgba(255,255,255,0.2)" letterSpacing="1">
+          {m}
+        </text>
+      ))}
+
+      {/* Area fill */}
+      <path d={areaD} fill="url(#trafficGrad)" />
+
+      {/* Traffic line */}
+      <path d={d} fill="none" stroke="url(#lineGrad)" strokeWidth="2.5" strokeLinejoin="round" />
+
+      {/* Takeover marker line */}
+      <line x1={takeoverX} y1={PT} x2={takeoverX} y2={py(0)}
+        stroke="rgba(212,255,0,0.45)" strokeWidth="1" strokeDasharray="4,4" />
+
+      {/* Takeover label */}
+      <rect x={takeoverX - 72} y={PT - 2} width={144} height={20} rx="2"
+        fill="rgba(212,255,0,0.08)" stroke="rgba(212,255,0,0.3)" strokeWidth="1" />
+      <text x={takeoverX} y={PT + 13} textAnchor="middle"
+        fontFamily="'Courier New',monospace" fontSize="8.5"
+        fill="#d4ff00" letterSpacing="2">
+        LENG MEDIA TOOK OVER
+      </text>
+
+      {/* Chart title */}
+      <text x={PL} y={H - 10} textAnchor="start"
+        fontFamily="'Courier New',monospace" fontSize="7"
+        fill="rgba(255,255,255,0.15)" letterSpacing="2">
+        // ORGANIC SESSIONS · UNNAMED CLIENT · BRAND OMITTED FOR CONFIDENTIALITY
+      </text>
+    </svg>
+  )
+}
+
 export async function generateStaticParams() {
   return Object.keys(SERVICES).map(slug => ({ slug }))
 }
@@ -391,6 +540,42 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
             </ScrollReveal>
           ))}
+        </section>
+      )}
+
+      {/* SEO — link building breakdown + traffic chart */}
+      {s.linkBuilding && (
+        <section className={styles.seoSection}>
+          <div className={styles.seoLinkBuilding}>
+            <ScrollReveal>
+              <span className="section-label">// Link Building</span>
+              <h2 className={styles.seoHeading}>How we build authority.</h2>
+              <p className={styles.seoCopy}>{s.linkBuilding.intro}</p>
+            </ScrollReveal>
+            <div className={styles.seoItems}>
+              {s.linkBuilding.items.map((item, i) => (
+                <ScrollReveal key={item.type} delay={(i % 2 === 0 ? 1 : 2) as 1|2}>
+                  <div className={styles.seoItem}>
+                    <span className={styles.seoItemDot}>◆</span>
+                    <div>
+                      <span className={styles.seoItemType}>{item.type}</span>
+                      <p className={styles.seoItemDesc}>{item.description}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+          <div className={styles.seoChart}>
+            <ScrollReveal>
+              <span className="section-label">// Real Results</span>
+              <h2 className={styles.seoHeading}>What the traffic looks like.</h2>
+              <p className={styles.seoCopy}>A real client. The name&apos;s omitted — but the results aren&apos;t.</p>
+            </ScrollReveal>
+            <ScrollReveal delay={1}>
+              <TrafficChart />
+            </ScrollReveal>
+          </div>
         </section>
       )}
 
