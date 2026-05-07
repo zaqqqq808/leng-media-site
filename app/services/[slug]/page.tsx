@@ -44,9 +44,13 @@ const SERVICES: Record<string, {
       mobileImg: string
     }[]
   }
-  linkBuilding?: {
-    intro: string
-    items: { type: string; description: string }[]
+  seoPillars?: {
+    pillars: {
+      num: string
+      title: string
+      body: string
+      items?: string[]
+    }[]
   }
 }> = {
   'ai-solutions': {
@@ -98,45 +102,50 @@ const SERVICES: Record<string, {
   },
   'seo': {
     num: '03',
-    name: 'D2C & Ecommerce SEO',
-    tagline: 'Rank for transactional keywords, grow organic revenue, and get your brand cited by AI models.',
-    metaDescription: 'D2C and ecommerce SEO that drives revenue, not just rankings. Leng Media covers technical SEO, collection page optimisation, holistic link building and LLM visibility strategy.',
+    name: 'Ecommerce SEO',
+    tagline: 'Rank for transactional keywords, grow organic revenue, and get your brand cited by AI.',
+    metaDescription: 'Ecommerce SEO that drives revenue, not just rankings. Leng Media covers technical SEO, collection page optimisation, competitor intelligence and holistic link building for DTC and ecommerce brands.',
     description: [
-      'Most SEO agencies treat every website the same. We don\'t. Whether you\'re running a DTC brand, an ecommerce store, or a product-led service business, your SEO strategy needs to prioritise revenue — not just rankings. That means collection pages optimised for buyer intent, product comparisons that capture mid-funnel searches, trust signals like reviews and UGC, and content that turns browsers into customers.',
-      'We structure every engagement around four stages: Technical Foundation & Audit, Keyword Strategy & On-Page Optimisation, Competitor Intelligence, and Holistic Link Building. Each stage builds on the last — there\'s no point driving traffic to a technically broken site, or building links to pages that aren\'t set up to convert.',
-      'A word on "AI SEO": most of it is a scam. Agencies are repackaging basic SEO principles with a new label, or trying to sell you expensive software you don\'t need. The fundamentals haven\'t changed — build credibility, earn real links, create content worth citing. What has changed is which platforms carry the most weight. AI models scrape search engines and high-authority community sites to generate citations, which means Reddit, Quora, niche forums, and industry blogs now feed directly into what LLMs recommend. We build your presence across all of these — not as a gimmick, but as a core part of a real SEO strategy.',
+      'SEO for ecommerce and DTC brands is a different discipline to regular SEO. Most traffic tools will tell you to chase high-volume informational keywords. We ignore those. By the time someone is typing "how to choose a running shoe," AI has already answered it. What matters is mid and bottom-of-funnel intent — people ready to buy.',
+      'A quick note on "AI SEO": most of what you\'ll read about it is either a scam or someone trying to sell you software by repackaging the same fundamentals. The rules haven\'t changed. What has changed is which platforms AI models pull from when generating citations — Reddit, Quora, and niche community sites now feed directly into LLM recommendations. We build your presence there as part of a real, holistic strategy.',
     ],
     outcomes: [
       'Technical SEO audit & Core Web Vitals fixes',
-      'Collection & product page optimisation for buyer intent',
+      'Collection & product page optimisation',
       'Competitor gap analysis & keyword strategy',
-      'Holistic link building (editorial, guest posts, linkable assets)',
-      'Community presence on Reddit, Quora & niche forums',
+      'Holistic link building (editorial, guest posts, assets)',
+      'Community presence — Reddit, Quora, niche forums',
       'AI citation & LLM visibility strategy',
     ],
     related: ['direct-response','ai-solutions'],
-    linkBuilding: {
-      intro: 'Link building is one of the most misunderstood parts of SEO — most brands either ignore it or hand it to someone who buys cheap links that do more harm than good. We take a holistic approach across five channels:',
-      items: [
+    seoPillars: {
+      pillars: [
         {
-          type: 'Editorial outreach',
-          description: 'Earning genuine mentions and links in industry publications, trade press, and news sites through newsworthy content, data studies, and brand stories. These are the highest-value links you can get.',
+          num: '01',
+          title: 'Technical SEO',
+          body: 'The foundations everything else is built on. If your site has crawl errors, slow load times, broken internal links, or indexation issues — no amount of content or links will fix your rankings. We audit and resolve the full technical stack before anything else.',
         },
         {
-          type: 'Guest posting',
-          description: 'Placing authoritative, genuinely useful articles on relevant niche blogs and industry sites. We only pursue placements that would send you real referral traffic — not just link equity.',
+          num: '02',
+          title: 'Keyword Strategy & On-Page Optimisation',
+          body: 'AI has taken over the top of the funnel. Informational queries are increasingly answered by LLMs before a user ever clicks. We shift focus to mid and bottom-of-funnel transactional keywords — and prioritise your collection pages, which is where ecommerce revenue actually comes from.',
         },
         {
-          type: 'Linkable asset creation',
-          description: 'Building tools, calculators, original research, or definitive guides so valuable that other sites link to them naturally over time. One great asset can earn dozens of links passively.',
+          num: '03',
+          title: 'Competitor Intelligence',
+          body: 'We map exactly where your competitors are winning — which keywords they rank for, which sites link to them, and which content gaps you can exploit. Every SEO strategy we build is informed by what\'s already working in your space.',
         },
         {
-          type: 'Directory & aggregator listings',
-          description: 'Strategic placement in high-authority, industry-specific directories and aggregator sites that drive both referral traffic and consistent SEO equity — without the risk of spammy link farms.',
-        },
-        {
-          type: 'Community presence',
-          description: 'Building a real, helpful presence on Reddit, Quora, and niche forums where your customers already spend time. These platforms are now major sources for AI citations — and they drive qualified traffic that converts.',
+          num: '04',
+          title: 'Holistic Link Building',
+          body: 'Most link building is either ignored or outsourced to someone buying cheap links that damage your site. We build authority across five channels:',
+          items: [
+            'Editorial outreach — genuine mentions in industry publications and press',
+            'Guest posting — authoritative articles on relevant niche blogs',
+            'Linkable asset creation — tools, guides and data pieces that earn links passively',
+            'Directory listings — strategic placement on high-authority, niche-specific directories',
+            'Community presence — Reddit, Quora, and forums that feed AI citations and convert',
+          ],
         },
       ],
     },
@@ -543,24 +552,30 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
-      {/* SEO — link building breakdown + traffic chart */}
-      {s.linkBuilding && (
+      {/* SEO — 4 pillars + traffic chart */}
+      {s.seoPillars && (
         <section className={styles.seoSection}>
-          <div className={styles.seoLinkBuilding}>
-            <ScrollReveal>
-              <span className="section-label">// Link Building</span>
-              <h2 className={styles.seoHeading}>How we build authority.</h2>
-              <p className={styles.seoCopy}>{s.linkBuilding.intro}</p>
+          <div className={styles.seoPillarsWrap}>
+            <ScrollReveal style={{ marginBottom: 48 }}>
+              <span className="section-label">// Our Process</span>
+              <h2 className={styles.seoHeading}>The four pillars of ecommerce SEO.</h2>
             </ScrollReveal>
-            <div className={styles.seoItems}>
-              {s.linkBuilding.items.map((item, i) => (
-                <ScrollReveal key={item.type} delay={(i % 2 === 0 ? 1 : 2) as 1|2}>
-                  <div className={styles.seoItem}>
-                    <span className={styles.seoItemDot}>◆</span>
-                    <div>
-                      <span className={styles.seoItemType}>{item.type}</span>
-                      <p className={styles.seoItemDesc}>{item.description}</p>
-                    </div>
+            <div className={styles.seoPillarsGrid}>
+              {s.seoPillars.pillars.map((pillar, i) => (
+                <ScrollReveal key={pillar.num} delay={(i % 2 === 0 ? 1 : 2) as 1|2}>
+                  <div className={styles.seoPillarCard}>
+                    <p className={styles.seoPillarNum}>// {pillar.num}</p>
+                    <h3 className={styles.seoPillarTitle}>{pillar.title}</h3>
+                    <p className={styles.seoPillarBody}>{pillar.body}</p>
+                    {pillar.items && (
+                      <ul className={styles.seoPillarItems}>
+                        {pillar.items.map(item => (
+                          <li key={item} className={styles.seoPillarItem}>
+                            <span className={styles.seoPillarDot}>◆</span>{item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </ScrollReveal>
               ))}
