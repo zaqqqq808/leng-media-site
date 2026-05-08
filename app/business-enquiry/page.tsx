@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
+import ContactForm from '@/components/ContactForm'
 import styles from './page.module.css'
 import type { Metadata } from 'next'
 
@@ -30,21 +30,7 @@ export default function BusinessEnquiry() {
             <h2 className={styles.optionTitle}>Send a message</h2>
             <p className={styles.optionDesc}>Prefer to write? Leave us a message and we&apos;ll get back to you within 72 hours.</p>
           </div>
-          <form className={styles.form} action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <div className={styles.field}>
-              <label className={styles.label}>Name</label>
-              <input className={styles.input} type="text" name="name" placeholder="Your name" required />
-            </div>
-            <div className={styles.field}>
-              <label className={styles.label}>Email</label>
-              <input className={styles.input} type="email" name="email" placeholder="your@email.com" required />
-            </div>
-            <div className={styles.field}>
-              <label className={styles.label}>Message</label>
-              <textarea className={`${styles.input} ${styles.textarea}`} name="message" placeholder="Tell us about your brand and what you're looking to achieve..." required />
-            </div>
-            <button type="submit" className="btn-primary" style={{marginTop: 8}}>Send Message</button>
-          </form>
+          <ContactForm />
         </ScrollReveal>
 
         <div className={styles.rowDivider} />
