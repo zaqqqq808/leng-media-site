@@ -74,7 +74,7 @@ const SERVICES: Record<string, {
       'Full chat transcripts and summaries handed off to your sales team',
       'AI audit, strategy and roadmap tailored to your business',
     ],
-    related: ['direct-response','cmo-as-a-service'],
+    related: ['direct-response','fractional-cmo'],
     showcase: {
       imageRevamp: {
         before: '/ai-before.png',
@@ -175,18 +175,28 @@ const SERVICES: Record<string, {
       'We design the creatives, write the copy, build the landing pages, and manage campaign optimisation — all at no charge. We agree on a fair revenue split or fixed CPA for every qualified lead or sale we generate. You own all the data. You have nothing to lose.',
     ],
     outcomes: ['Zero monthly retainer — performance-based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy & landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
-    related: ['direct-response','cmo-as-a-service'],
+    related: ['direct-response','fractional-cmo'],
   },
-  'cmo-as-a-service': {
+  'fractional-cmo': {
     num: '05',
-    name: 'CMO as a Service',
-    tagline: 'The firepower of a full marketing department. None of the overhead.',
-    metaDescription: "Embedded marketing leadership without the full-time hire. Strategy, execution and reporting — Leng Media's CMOaaS replaces your entire marketing function from £15,000/month.",
+    name: 'Fractional CMO',
+    tagline: 'Senior marketing leadership without the full-time hire. Strategy, execution and full team ownership from Day 1.',
+    metaDescription: 'Leng Media is a fractional CMO agency for ecommerce and DTC brands in the USA and UK. Outsourced CMO services covering strategy, media buying, team management and execution. From £15,000/month.',
     description: [
-      'Hiring a CMO, a media buyer, a web developer and a strategist costs upwards of £250k a year — before software or ad spend. Leng Media replaces all of that. We step in as your fully embedded marketing engine, taking full ownership of your growth from high-level strategic vision to pixel-perfect execution.',
-      "We don't advise from the sidelines — we execute. We've helped brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group. CMOaaS starts at £15,000/month. Stop managing freelancers. Start scaling.",
+      'Brands searching for a fractional CMO agency want one thing: a senior marketer who shows up, takes ownership, and delivers results. No £250k salary. No equity ask. No six-week onboarding. We have worked with brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group — and we plug in on Day 1. When we arrive, we already know what good looks like across paid media, creative, SEO, CRO, AI automation and growth strategy. There is no learning curve on your time.',
+      'Whether you have an existing marketing team that needs strategic direction, or a blank slate that needs building from scratch, we adapt to your structure. We sit in your meetings, manage your budgets, ideate campaigns, brief creatives, run media buying, and own the results. This is outsourced CMO as a service, not consulting. Not a retainer for a list of deliverables. Full marketing leadership, embedded in your business, on your terms.',
     ],
-    outcomes: ['Executive strategy, budgeting & roadmap planning','Ad campaigns, CRO, AI automation & tech stack management','Zero training time — we embed from Day 1','Board-level reporting & OKR frameworks','Clients: Hims, National Geographic Traveller, Ninety Percent, Horizon Group'],
+    outcomes: [
+      'Marketing strategy, annual planning and full budget allocation',
+      'Campaign ideation and creative direction across every channel',
+      'Media buying across Meta, Google, TikTok and LinkedIn',
+      'Management or advisory of your existing marketing team — or full takeover',
+      'Tech stack audit, AI tools and marketing automation setup',
+      'Brand positioning, messaging and go-to-market strategy',
+      'Board-level reporting, OKR frameworks and growth roadmaps',
+      'CRO, funnel optimisation and landing page strategy',
+      'Weekly performance reviews and ongoing strategic pivots',
+    ],
     related: ['ai-solutions','agency-assist'],
   },
   'agency-assist': {
