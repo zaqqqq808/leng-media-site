@@ -23,22 +23,10 @@ export default function BusinessEnquiry() {
       </section>
 
       <section className={styles.body}>
-        {/* Send a message */}
+        {/* Book a call */}
         <ScrollReveal className={styles.optionRow}>
           <div className={styles.optionLabel}>
             <span className="section-label">// Option 01</span>
-            <h2 className={styles.optionTitle}>Send a message</h2>
-            <p className={styles.optionDesc}>Prefer to write? Leave us a message and we&apos;ll get back to you within 72 hours.</p>
-          </div>
-          <ContactForm />
-        </ScrollReveal>
-
-        <div className={styles.rowDivider} />
-
-        {/* Book a call */}
-        <ScrollReveal className={styles.optionRow} delay={2}>
-          <div className={styles.optionLabel}>
-            <span className="section-label">// Option 02</span>
             <h2 className={styles.optionTitle}>Book a call</h2>
             <p className={styles.optionDesc}>Choose a time that works for you. A focused 30-minute conversation about your goals and how we can help.</p>
           </div>
@@ -53,6 +41,18 @@ export default function BusinessEnquiry() {
               Book a Call →
             </a>
           </div>
+        </ScrollReveal>
+
+        <div className={styles.rowDivider} />
+
+        {/* Send a message */}
+        <ScrollReveal className={styles.optionRow} delay={2}>
+          <div className={styles.optionLabel}>
+            <span className="section-label">// Option 02</span>
+            <h2 className={styles.optionTitle}>Send a message</h2>
+            <p className={styles.optionDesc}>Prefer to write? Leave us a message and we&apos;ll get back to you within 72 hours.</p>
+          </div>
+          <ContactForm />
         </ScrollReveal>
       </section>
     </>

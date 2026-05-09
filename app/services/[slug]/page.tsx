@@ -32,6 +32,10 @@ const SERVICES: Record<string, {
       heading: string
       copy: string
     }
+    agents?: {
+      heading: string
+      copy: string
+    }
   }
   portfolio?: {
     projects: {
@@ -56,24 +60,35 @@ const SERVICES: Record<string, {
   'ai-solutions': {
     num: '01',
     name: 'AI Solutions & Automation',
-    tagline: 'Improve your conversion rate with higher quality images and lead generation.',
-    metaDescription: 'Custom AI chatbots, workflow automation and product image remastering for ambitious brands. Leng Media helps you scale operations and increase conversions with bespoke AI.',
+    tagline: 'AI chatbots, workflow automation and product image revamping for ecommerce and D2C brands.',
+    metaDescription: 'Leng Media is an AI automation agency specialising in AI chatbots for lead generation, AI agents for business automation, and product image revamping. We work with ecommerce and D2C brands in the USA and UK.',
     description: [
-      'Turn average product photos into conversion magnets. We use AI to bulk-remaster your entire product catalogue — adding branding elements, improving image quality, and increasing ROAS without the cost of an expensive graphic designer.',
-      'Plus, the 24/7 sales rep that never sleeps. Our AI chatbots capture visitor details before they leave your site, book meetings directly into your calendar, sync with your CRM, and hand off a full chat summary to your sales team. One sale per year can cover the entire cost of the software.',
+      'If you are looking for an AI automation agency, you are in the right place. We work with ecommerce and D2C brands to install three high-impact AI services: lead generation chatbots that qualify and capture visitors around the clock, AI agents that automate internal workflows so your team can focus on growth, and product image revamping that cuts creative spend while lifting conversion rates. The brands pulling ahead right now are the ones that move fast on all three.',
+      'Most businesses pour money into traffic and lose it to friction. A visitor arrives, gets no answer, and leaves. Your team manually handles tasks that an AI agent could process in seconds. Your product photography costs a fortune every time you need new assets. We fix all of it. One agency, clear ROI, and no software subscriptions you will never understand.',
     ],
-    outcomes: ['AI product image remastering at scale','24/7 AI chatbot for lead capture & meeting booking','CRM integration & automatic sync','Chat summaries for seamless sales handoff','Bespoke AI strategy & roadmapping'],
+    outcomes: [
+      '24/7 AI chatbot that captures leads and books meetings while you sleep',
+      'AI agents installed across your highest-value workflows — saving hours every day',
+      'Full product catalogue image revamping using AI — ready for ads, social and web',
+      'CRM integration so every lead lands in your pipeline automatically',
+      'Full chat transcripts and summaries handed off to your sales team',
+      'AI audit, strategy and roadmap tailored to your business',
+    ],
     related: ['direct-response','cmo-as-a-service'],
     showcase: {
       imageRevamp: {
         before: '/ai-before.png',
         after: '/ai-after.jpg',
         heading: 'AI Product Image Revamping',
-        copy: 'We take your existing product photography and transform it into high-converting campaign imagery — all using AI. The result: studio-quality visuals at a fraction of the cost. Drag the slider to see the difference.',
+        copy: 'We take your existing product photography and transform it into high-converting campaign imagery using AI. Studio-quality visuals at a fraction of the cost. No photographer, no studio hire, no waiting weeks for a reshoot. We process your entire catalogue and deliver assets ready for ads, social media, and your website. Drag the slider to see the difference.',
       },
       chatbot: {
-        heading: 'AI Chatbot — 24/7 Lead Capture',
-        copy: 'Our AI chatbots qualify visitors, capture contact details, and book meetings straight into your calendar — around the clock. Every lead is automatically logged to a Google Sheet or your CRM, so your sales team has full context before the first call. One closed deal per year covers the entire cost of the software.',
+        heading: 'AI Chatbot for Lead Generation',
+        copy: 'Our AI chatbots qualify visitors, capture contact details, and book meetings straight into your calendar around the clock. Every lead is automatically logged to a Google Sheet or your CRM, so your sales team has full context before the first call. One closed deal per year covers the entire cost of the software. For ecommerce brands, the chatbot also handles FAQs, order queries, and post-purchase support without a single human touch.',
+      },
+      agents: {
+        heading: 'AI Agents for Business Automation',
+        copy: 'AI agents are software that thinks and acts on your behalf. They monitor inboxes, process orders, update spreadsheets, respond to customer queries, generate reports, and escalate exceptions to a human only when necessary. For a growing ecommerce or D2C brand, this is the difference between hiring three additional team members or not. We map your existing workflows, identify the highest-value bottlenecks, and install AI agents that run in the background and save you hours every single day.',
       },
     },
   },
@@ -532,6 +547,18 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   <span className={styles.showcaseLabel}>// AI Chatbot</span>
                   <h2 className={styles.showcaseHeading}>{s.showcase.chatbot.heading}</h2>
                   <p className={styles.showcaseCopy}>{s.showcase.chatbot.copy}</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          )}
+          {s.showcase.agents && (
+            <ScrollReveal delay={2}>
+              <div className={styles.showcaseBlock}>
+                <div className={styles.showcasePlaceholder}>// AI Agents</div>
+                <div className={styles.showcaseText}>
+                  <span className={styles.showcaseLabel}>// AI Agents</span>
+                  <h2 className={styles.showcaseHeading}>{s.showcase.agents.heading}</h2>
+                  <p className={styles.showcaseCopy}>{s.showcase.agents.copy}</p>
                 </div>
               </div>
             </ScrollReveal>
