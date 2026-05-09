@@ -180,7 +180,7 @@ const SERVICES: Record<string, {
   'fractional-cmo': {
     num: '05',
     name: 'Fractional CMO',
-    tagline: 'Senior marketing leadership without the full-time hire. Strategy, execution and full team ownership from Day 1.',
+    tagline: 'The fractional CMO agency for ecommerce and DTC brands. Outsourced CMO services covering strategy, media buying and full team ownership — without the full-time hire.',
     metaDescription: 'Leng Media is a fractional CMO agency for ecommerce and DTC brands in the USA and UK. Outsourced CMO services covering strategy, media buying, team management and execution. From £15,000/month.',
     description: [
       'Brands searching for a fractional CMO agency want one thing: a senior marketer who shows up, takes ownership, and delivers results. No £250k salary. No equity ask. No six-week onboarding. We have worked with brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group — and we plug in on Day 1. When we arrive, we already know what good looks like across paid media, creative, SEO, CRO, AI automation and growth strategy. There is no learning curve on your time.',
