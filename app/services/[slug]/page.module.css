@@ -246,7 +246,7 @@
 }
 .seoHeading {
   font-family: var(--font-serif), serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 700;
   font-size: clamp(28px, 4vw, 52px);
   color: var(--white);
@@ -257,7 +257,7 @@
   font-family: var(--font-inter), sans-serif;
   font-size: 15px;
   line-height: 1.75;
-  color: var(--grey-3);
+  color: var(--grey-5);
   max-width: 680px;
   margin: 0 0 40px;
 }
@@ -293,7 +293,7 @@
   font-family: var(--font-inter), sans-serif;
   font-size: 14px;
   line-height: 1.75;
-  color: var(--grey-3);
+  color: var(--grey-5);
   margin: 0;
 }
 .seoPillarItems {
@@ -311,7 +311,7 @@
   font-family: var(--font-inter), sans-serif;
   font-size: 13px;
   line-height: 1.6;
-  color: var(--grey-3);
+  color: var(--grey-5);
 }
 .seoPillarDot {
   color: var(--neon);
