@@ -488,8 +488,32 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const s = SERVICES[slug]
   if (!s) notFound()
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `https://www.lengmedia.com/services/${slug}`,
+    name: s.name,
+    description: s.metaDescription,
+    url: `https://www.lengmedia.com/services/${slug}`,
+    provider: {
+      '@type': 'Organization',
+      '@id': 'https://www.lengmedia.com/#organization',
+      name: 'Leng Media',
+      url: 'https://www.lengmedia.com',
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'United States' },
+    ],
+    serviceType: s.name,
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.heroGrid} />
