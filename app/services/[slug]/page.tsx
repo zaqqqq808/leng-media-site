@@ -476,10 +476,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const s = SERVICES[slug]
   if (!s) return {}
+  const url = `https://www.lengmedia.com/services/${slug}`
   return {
     title: `${s.name} – Leng Media`,
     description: s.metaDescription,
-    alternates: { canonical: `https://www.lengmedia.com/services/${slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${s.name} – Leng Media`,
+      description: s.metaDescription,
+      url,
+      siteName: 'Leng Media',
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: `${s.name} – Leng Media` }],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${s.name} – Leng Media`,
+      description: s.metaDescription,
+      images: ['/og-image.jpg'],
+    },
   }
 }
 

@@ -7,7 +7,7 @@ const SERVICE_SLUGS = [
   'ai-solutions',
   'seo',
   'lead-generation',
-  'cmo-as-a-service',
+  'fractional-cmo',
   'website-builds',
   'agency-assist',
 ]
