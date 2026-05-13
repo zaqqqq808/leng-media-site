@@ -95,7 +95,7 @@ export default function FreeTools() {
           <span className="section-label">// Want more?</span>
           <h2 className="section-title">Let&apos;s work<br />together.</h2>
           <p className={styles.ctaSub}>These are just the tools we give away. Imagine what we build for clients.</p>
-          <Link href="/business-enquiry" className="btn-primary" style={{marginTop:40,display:'inline-block'}}>Book a Call</Link>
+          <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{marginTop:40,display:'inline-block'}}>Book a Call</a>
         </ScrollReveal>
       </section>
     </>

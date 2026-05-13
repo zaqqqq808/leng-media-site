@@ -734,7 +734,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <div className={styles.proofImageWrap}>
                   <span className={styles.proofImageLabel}>// Campaign Screenshot · May–Jun 2025</span>
                   <img src={s.proof.proofImage} alt="Meta Ads Manager — May–Jun 2025 campaign results" className={styles.proofImage} />
-                  <p className={styles.proofImageCaption}>A snapshot of one of our clients&apos; campaigns.<br />If you&apos;d like to know how we can help you just <a href="/business-enquiry" className={styles.proofImageLink}>book a call</a>.</p>
+                  <p className={styles.proofImageCaption}>A snapshot of one of our clients&apos; campaigns.<br />If you&apos;d like to know how we can help you just <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className={styles.proofImageLink}>book a call</a>.</p>
                 </div>
               </ScrollReveal>
             )}
@@ -773,7 +773,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
           {/* TODO: Replace with your Calendly link */}
-          <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
+          <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
         </ScrollReveal>
       </section>
     </>

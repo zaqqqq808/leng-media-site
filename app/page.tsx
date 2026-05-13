@@ -59,7 +59,7 @@ export default function Home() {
           <Typewriter />
           <p className={styles.heroTagline}>Performance marketing for ambitious brands. Human strategy, modern tools.</p>
           <div className={styles.heroCtas}>
-            <Link href="/business-enquiry" className="btn-primary">Let&apos;s Talk</Link>
+            <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary">Let&apos;s Talk</a>
             <Link href="#services" className="btn-ghost">Explore services <span>→</span></Link>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function Home() {
           <span className="section-label">// 04 — Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s build something remarkable together</p>
-          <Link href="/business-enquiry" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</Link>
+          <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
         </ScrollReveal>
       </section>
     </>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Book a discovery call with the Leng Media team. We work with ambitious ecommerce and service brands — tell us about your goals and we\'ll show you how we can help.',
 }
 
-const CALENDLY_URL = 'https://calendly.com/lengmedia'
+const CALENDLY_URL = 'https://calendly.com/zaq-lengmedia/leng-media-intro-call'
 
 export default function BusinessEnquiry() {
   return (
