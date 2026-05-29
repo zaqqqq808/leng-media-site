@@ -1,10 +1,10 @@
 /* ── HERO ── */
 .hero {
   position: relative;
-  min-height: 56vh;
+  min-height: 42vh;
   display: flex;
   align-items: flex-end;
-  padding: 0 var(--side-pad) 72px;
+  padding: 0 52px 60px;
   overflow: hidden;
 }
 
@@ -98,7 +98,7 @@
 
 /* ── ARTICLE BODY ── */
 .article {
-  padding: 80px var(--side-pad);
+  padding: 80px 52px;
   max-width: 780px;
   margin: 0 auto;
 }
@@ -181,7 +181,7 @@
 
 /* ── FOOTER / RELATED ── */
 .footer {
-  padding: 60px var(--side-pad) 40px;
+  padding: 60px 52px 40px;
   max-width: 780px;
   margin: 0 auto;
   display: flex;
@@ -224,7 +224,7 @@
 
 /* ── CTA ── */
 .cta {
-  padding: 120px var(--side-pad);
+  padding: 120px 52px;
   text-align: center;
   border-top: 0.5px solid rgba(255,255,255,0.06);
 }
@@ -239,7 +239,9 @@
 
 /* ── MOBILE ── */
 @media (max-width: 640px) {
-  .article { padding: 60px var(--side-pad); }
+  .hero { padding: 0 24px 40px; }
+  .article { padding: 52px 24px; }
   .callout { padding: 28px 24px; }
-  .footer { padding: 40px var(--side-pad); }
+  .footer { padding: 40px 24px; }
+  .cta { padding: 80px 24px; }
 }

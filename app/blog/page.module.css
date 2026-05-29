@@ -1,10 +1,10 @@
 /* ── HERO ── */
 .hero {
   position: relative;
-  min-height: 52vh;
+  min-height: 34vh;
   display: flex;
   align-items: flex-end;
-  padding: 0 var(--side-pad) 72px;
+  padding: 0 52px 52px;
   overflow: hidden;
 }
 
@@ -68,7 +68,7 @@
 
 /* ── POSTS ── */
 .posts {
-  padding: 80px var(--side-pad) 40px;
+  padding: 56px 52px 40px;
 }
 
 .postList {
@@ -151,7 +151,7 @@
 
 /* ── CTA ── */
 .cta {
-  padding: 120px var(--side-pad);
+  padding: 120px 52px;
   text-align: center;
   border-top: 0.5px solid rgba(255,255,255,0.06);
 }
@@ -166,6 +166,10 @@
 
 /* ── MOBILE ── */
 @media (max-width: 640px) {
+  .hero { padding: 0 24px 40px; }
+  .posts { padding: 40px 24px 32px; }
+  .cta { padding: 80px 24px; }
+
   .postRow {
     grid-template-columns: 1fr 24px;
     grid-template-rows: auto auto;
