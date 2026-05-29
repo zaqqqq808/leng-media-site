@@ -59,20 +59,20 @@ const SERVICES: Record<string, {
 }> = {
   'ai-solutions': {
     num: '01',
-    name: 'AI Solutions & Automation',
-    tagline: 'AI chatbots, workflow automation and product image revamping for ecommerce and D2C brands.',
-    metaDescription: 'Leng Media is an AI automation agency specialising in AI chatbots for lead generation, AI agents for business automation, and product image revamping. We work with ecommerce and D2C brands in the USA and UK.',
+    name: 'AI Automation Agency for Ecommerce Brands',
+    tagline: 'Custom ecommerce AI chatbots for lead generation, AI agents for business workflow automation, and product image revamping for DTC and ecommerce brands in the USA and UK.',
+    metaDescription: 'Leng Media is an AI automation agency for ecommerce and DTC brands. We build custom AI chatbots for lead generation, AI agents for business process automation, and provide product image revamping. Serving clients in the USA and UK.',
     description: [
-      'If you are looking for an AI automation agency, you are in the right place. We work with ecommerce and D2C brands to install three high-impact AI services: lead generation chatbots that qualify and capture visitors around the clock, AI agents that automate internal workflows so your team can focus on growth, and product image revamping that cuts creative spend while lifting conversion rates. The brands pulling ahead right now are the ones that move fast on all three.',
-      'Most businesses pour money into traffic and lose it to friction. A visitor arrives, gets no answer, and leaves. Your team manually handles tasks that an AI agent could process in seconds. Your product photography costs a fortune every time you need new assets. We fix all of it. One agency, clear ROI, and no software subscriptions you will never understand.',
+      'If you are searching for an AI automation agency that understands ecommerce, you are in the right place. We build and install three high-impact AI solutions for DTC and ecommerce brands: AI chatbots for lead generation that qualify visitors and book meetings around the clock, AI agents for business automation that handle your most time-consuming internal workflows, and product image revamping that slashes creative spend while lifting conversion rates. The ecommerce brands pulling ahead right now are the ones moving fast on all three.',
+      'Most ecommerce businesses pour money into traffic and lose it to friction. A visitor arrives, gets no instant answer, and leaves. Your team manually handles tasks that an AI chatbot or AI agent could process in seconds. Your product photography budget resets every time you launch a new line. As your AI automation agency, we fix all of it — one engagement, measurable ROI, and no software subscriptions you will never fully understand. We have built AI chatbot platforms for ecommerce brands generating thousands of monthly visitors, and the results compound over time.',
     ],
     outcomes: [
-      '24/7 AI chatbot that captures leads and books meetings while you sleep',
-      'AI agents installed across your highest-value workflows — saving hours every day',
+      'Custom AI chatbot for ecommerce — captures leads and books meetings 24/7',
+      'AI agents installed across your highest-value workflows, saving hours every day',
       'Full product catalogue image revamping using AI — ready for ads, social and web',
-      'CRM integration so every lead lands in your pipeline automatically',
-      'Full chat transcripts and summaries handed off to your sales team',
-      'AI audit, strategy and roadmap tailored to your business',
+      'CRM and Google Sheets integration so every lead lands in your pipeline automatically',
+      'Full chat transcripts and conversation summaries handed off to your sales team',
+      'AI strategy audit and roadmap tailored to your specific ecommerce operation',
     ],
     related: ['direct-response','fractional-cmo'],
     showcase: {

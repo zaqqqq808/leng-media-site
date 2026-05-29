@@ -12,6 +12,11 @@ const SERVICE_SLUGS = [
   'agency-assist',
 ]
 
+const BLOG_SLUGS = [
+  'what-is-an-ai-automation-agency',
+  'best-ai-chatbot-for-ecommerce',
+]
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -24,25 +29,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE}/business-enquiry`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.9,
+      priority: 0.7,
     },
     {
       url: `${BASE}/ecommerce-protocol`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: `${BASE}/free-tools`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${BASE}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     ...SERVICE_SLUGS.map(slug => ({
       url: `${BASE}/services/${slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      priority: 0.9,
+    })),
+    ...BLOG_SLUGS.map(slug => ({
+      url: `${BASE}/blog/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     })),
   ]
 }
