@@ -81,7 +81,7 @@ const SERVICES: Record<string, {
         before: '/ai-before.png',
         after: '/ai-after.jpg',
         heading: 'AI Product Image Revamping',
-        copy: 'We take your existing product photography and transform it into high-converting campaign imagery using AI. Studio-quality visuals at a fraction of the cost. No photographer, no studio hire, no waiting weeks for a reshoot. We process your entire catalogue and deliver assets ready for ads, social media, and your website. Drag the slider to see the difference.',
+        copy: 'We take your existing product photography and transform it into high converting campaign imagery using AI. Studio-quality visuals at a fraction of the cost. No photographer, no studio hire, no waiting weeks for a reshoot. We process your entire catalogue and deliver assets ready for ads, social media, and your website. Drag the slider to see the difference.',
       },
       chatbot: {
         heading: 'AI Chatbot for Lead Generation',
@@ -102,7 +102,7 @@ const SERVICES: Record<string, {
       'We fix the funnel first. Most agencies will happily take your money and drive traffic to a site that converts at 0.3%. We refuse to do that. Before a penny is spent on ads, we audit and improve your user experience — moving key purchase drivers above the fold, implementing reviews, FAQs and clear guarantees, and simplifying the path to purchase.',
       "We don't identify as a \"Facebook Agency\" or a \"PPC Agency.\" We identify as a Revenue Agency. We go where your customers are — Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it's DTC, Ecom or Lead Generation, we'll have the answer.",
     ],
-    outcomes: ['Pre-campaign landing page audit & CRO','Meta, TikTok & Google Ads management','Creative strategy & production briefs','Rapid A/B testing to find winners fast','Monthly performance reporting'],
+    outcomes: ['Pre campaign landing page audit & CRO','Meta, TikTok & Google Ads management','Creative strategy & production briefs','Rapid A/B testing to find winners fast','Monthly performance reporting'],
     related: ['ai-solutions','lead-generation'],
     proof: {
       funnelTagline: 'Platform Agnostic. Result Obsessed.',
@@ -122,14 +122,14 @@ const SERVICES: Record<string, {
     tagline: 'The ecommerce SEO agency for DTC and ecommerce brands in the USA and UK. We rank you for transactional keywords, grow organic revenue, and get your brand cited by AI.',
     metaDescription: 'Leng Media is an ecommerce SEO agency for Shopify, DTC and ecommerce brands in the USA and UK. We cover technical SEO, collection page optimisation, Shopify SEO, link building and AI citation strategy.',
     description: [
-      'Ecommerce SEO is a completely different discipline to regular SEO, and most agencies do not understand the difference. For a Shopify store, DTC brand or online retailer, the only pages that generate revenue are your collection pages and product pages. Informational blog content sits at the top of the funnel — and in 2026, AI has already taken that territory. ChatGPT, Perplexity and Google AI Overviews answer those queries before a user ever clicks. We focus entirely on mid and bottom-of-funnel transactional keywords: people who are ready to buy. That is where rankings translate directly into revenue.',
-      'As an ecommerce SEO agency working with brands in the USA and UK, we cover the full stack. Technical SEO to fix what is broken at the foundation. Collection and product page optimisation to rank the pages that drive actual sales. Shopify SEO built around how the platform structures URLs, faceted navigation and duplicate content. Competitor gap analysis to find where you can win fast. Holistic link building to build domain authority over time. And a Generative Engine Optimisation (GEO) strategy that gets your brand recommended inside AI-generated answers — one of the fastest-growing visibility channels in search right now.',
+      'Ecommerce SEO is a completely different discipline to regular SEO, and most agencies do not understand the difference. For a Shopify store, DTC brand or online retailer, the only pages that generate revenue are your collection pages and product pages. Informational blog content sits at the top of the funnel — and in 2026, AI has already taken that territory. ChatGPT, Perplexity and Google AI Overviews answer those queries before a user ever clicks. We focus entirely on mid and bottom of funnel transactional keywords: people who are ready to buy. That is where rankings translate directly into revenue.',
+      'As an ecommerce SEO agency working with brands in the USA and UK, we cover the full stack. Technical SEO to fix what is broken at the foundation. Collection and product page optimisation to rank the pages that drive actual sales. Shopify SEO built around how the platform structures URLs, faceted navigation and duplicate content. Competitor gap analysis to find where you can win fast. Holistic link building to build domain authority over time. And a Generative Engine Optimisation (GEO) strategy that gets your brand recommended inside AI generated answers — one of the fastest growing visibility channels in search right now.',
     ],
     outcomes: [
       'Technical SEO audit, crawl fixes and Core Web Vitals optimisation',
       'Shopify SEO — URL structure, faceted navigation and duplicate content',
       'Collection page and product page SEO for transactional keywords',
-      'Keyword strategy focused on mid and bottom-of-funnel buyer intent',
+      'Keyword strategy focused on mid and bottom of funnel buyer intent',
       'Competitor gap analysis — find where you can rank fast',
       'Holistic link building: editorial outreach, guest posts and digital PR',
       'Community presence — Reddit, Quora and niche forums for AI citation',
@@ -147,7 +147,7 @@ const SERVICES: Record<string, {
         {
           num: '02',
           title: 'Collection Page and Product Page SEO',
-          body: 'For ecommerce brands, collection pages are where organic revenue lives. Most SEO agencies focus on blog content — we focus on the pages that actually convert. We optimise your collection pages and product pages for transactional keywords with high buyer intent, improve on-page signals, and structure your internal linking to push authority to the pages that matter. AI has taken the top of the funnel. We win the bottom of it.',
+          body: 'For ecommerce brands, collection pages are where organic revenue lives. Most SEO agencies focus on blog content — we focus on the pages that actually convert. We optimise your collection pages and product pages for transactional keywords with high buyer intent, improve on page signals, and structure your internal linking to push authority to the pages that matter. AI has taken the top of the funnel. We win the bottom of it.',
         },
         {
           num: '03',
@@ -162,7 +162,7 @@ const SERVICES: Record<string, {
             'Editorial outreach — genuine brand mentions in industry publications and press',
             'Guest posting — authoritative articles on relevant niche blogs and trade sites',
             'Linkable asset creation — tools, data studies and guides that earn links passively',
-            'Directory listings — strategic placement on high-authority, niche-specific directories',
+            'Directory listings — strategic placement on high-authority, niche specific directories',
             'Community and GEO — Reddit, Quora and forums that feed AI citations and drive direct conversions',
           ],
         },
@@ -173,21 +173,21 @@ const SERVICES: Record<string, {
     num: '04',
     name: 'Lead Generation',
     tagline: 'The London lead generation agency that only gets paid when you do.',
-    metaDescription: "Zero monthly retainer. London's performance-based lead generation agency — you fund the ad spend, we deliver strategy, creatives and results. Revenue share or fixed CPA model.",
+    metaDescription: "Zero monthly retainer. London's performance based lead generation agency — you fund the ad spend, we deliver strategy, creatives and results. Revenue share or fixed CPA model.",
     description: [
       'Zero monthly fees. 100% performance based. Stop burning cash on agencies that promise the world and deliver excuses. You cover the ad spend — we cover the expertise, the strategy, and the execution. If we don\'t perform, we don\'t eat.',
       'We design the creatives, write the copy, build the landing pages, and manage campaign optimisation — all at no charge. We agree on a fair revenue split or fixed CPA for every qualified lead or sale we generate. You own all the data. You have nothing to lose.',
     ],
-    outcomes: ['Zero monthly retainer — performance-based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy & landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
+    outcomes: ['Zero monthly retainer — performance based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy & landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
     related: ['direct-response','fractional-cmo'],
   },
   'fractional-cmo': {
     num: '05',
     name: 'Fractional CMO',
-    tagline: 'The fractional CMO agency for ecommerce and DTC brands. Outsourced CMO services covering strategy, media buying and full team ownership — without the full-time hire.',
+    tagline: 'The fractional CMO agency for ecommerce and DTC brands. Outsourced CMO services covering strategy, media buying and full team ownership — without the full time hire.',
     metaDescription: 'Leng Media is a fractional CMO agency for ecommerce and DTC brands in the USA and UK. Outsourced CMO services covering strategy, media buying, team management and execution. From £15,000/month.',
     description: [
-      'Brands searching for a fractional CMO agency want one thing: a senior marketer who shows up, takes ownership, and delivers results. No £250k salary. No equity ask. No six-week onboarding. We have worked with brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group — and we plug in on Day 1. When we arrive, we already know what good looks like across paid media, creative, SEO, CRO, AI automation and growth strategy. There is no learning curve on your time.',
+      'Brands searching for a fractional CMO agency want one thing: a senior marketer who shows up, takes ownership, and delivers results. No £250k salary. No equity ask. No six week onboarding. We have worked with brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group — and we plug in on Day 1. When we arrive, we already know what good looks like across paid media, creative, SEO, CRO, AI automation and growth strategy. There is no learning curve on your time.',
       'Whether you have an existing marketing team that needs strategic direction, or a blank slate that needs building from scratch, we adapt to your structure. We sit in your meetings, manage your budgets, ideate campaigns, brief creatives, run media buying, and own the results. This is outsourced CMO as a service, not consulting. Not a retainer for a list of deliverables. Full marketing leadership, embedded in your business, on your terms.',
     ],
     outcomes: [
@@ -196,7 +196,7 @@ const SERVICES: Record<string, {
       'Media buying across Meta, Google, TikTok and LinkedIn',
       'Management or advisory of your existing marketing team — or full takeover',
       'Tech stack audit, AI tools and marketing automation setup',
-      'Brand positioning, messaging and go-to-market strategy',
+      'Brand positioning, messaging and go to market strategy',
       'Board-level reporting, OKR frameworks and growth roadmaps',
       'CRO, funnel optimisation and landing page strategy',
       'Weekly performance reviews and ongoing strategic pivots',
@@ -207,12 +207,12 @@ const SERVICES: Record<string, {
     num: '06',
     name: 'Agency Assist',
     tagline: 'Scale your agency without increasing your headcount.',
-    metaDescription: 'White-label marketing fulfilment for agencies that need a trusted execution partner. AI, paid media and CRO delivered under your brand with full NDA and weekly reports.',
+    metaDescription: 'White label marketing fulfilment for agencies that need a trusted execution partner. AI, paid media and CRO delivered under your brand with full NDA and weekly reports.',
     description: [
-      'Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don\'t have in-house, we step in and integrate seamlessly to deliver white-label excellence — so you never have to turn down a contract again.',
-      'We do the work. You get the credit. You receive weekly white-label reports and analysis while maintaining 100% control of the client relationship. We can also execute campaigns and train your junior staff to take them over.',
+      'Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don\'t have in house, we step in and integrate seamlessly to deliver white label excellence — so you never have to turn down a contract again.',
+      'We do the work. You get the credit. You receive weekly white label reports and analysis while maintaining 100% control of the client relationship. We can also execute campaigns and train your junior staff to take them over.',
     ],
-    outcomes: ['Overflow execution — never turn down a client again','White-label AI, CRO & Paid Media fulfilment','Training & handoffs to your in-house team','Weekly white-label reports & analysis','Full NDA — you maintain 100% client ownership'],
+    outcomes: ['Overflow execution — never turn down a client again','White label AI, CRO & Paid Media fulfilment','Training & handoffs to your in house team','Weekly white label reports & analysis','Full NDA — you maintain 100% client ownership'],
     related: ['direct-response','seo'],
   },
   'website-builds': {
@@ -651,10 +651,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   </div>
                 </div>
                 <div className={styles.portfolioScreenshots}>
-                  <div className={styles.portfolioDesktop}>
-                    <img src={project.desktopImg} alt={`${project.name} desktop`} className={styles.portfolioDesktopImg} />
-                    <span className={styles.portfolioImgLabel}>// Desktop</span>
-                  </div>
                   <div className={styles.portfolioMobile}>
                     <img src={project.mobileImg} alt={`${project.name} mobile`} className={styles.portfolioMobileImg} />
                     <span className={styles.portfolioImgLabel}>// Mobile</span>
