@@ -3,6 +3,7 @@ import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import Ticker from '@/components/Ticker'
 import BeforeAfterSlider from '@/components/BeforeAfterSlider'
+import VideoScrollHeroWrapper from '@/components/VideoScrollHeroWrapper'
 import styles from './page.module.css'
 
 const SERVICES: Record<string, {
@@ -530,16 +531,25 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* HERO */}
-      <section className={styles.hero}>
-        <div className={styles.heroGrid} />
-        <div className={styles.heroScanlines} />
-        <div className={styles.heroContent}>
+      {slug === 'website-builds' ? (
+        <VideoScrollHeroWrapper>
           <Link href="/#services" className={styles.back}>← All Services</Link>
           <p className={styles.num}>{s.num} / 07</p>
           <h1 className={styles.title}>{s.name}</h1>
           <p className={styles.tagline}>{s.tagline}</p>
-        </div>
-      </section>
+        </VideoScrollHeroWrapper>
+      ) : (
+        <section className={styles.hero}>
+          <div className={styles.heroGrid} />
+          <div className={styles.heroScanlines} />
+          <div className={styles.heroContent}>
+            <Link href="/#services" className={styles.back}>← All Services</Link>
+            <p className={styles.num}>{s.num} / 07</p>
+            <h1 className={styles.title}>{s.name}</h1>
+            <p className={styles.tagline}>{s.tagline}</p>
+          </div>
+        </section>
+      )}
 
       <Ticker />
 
@@ -618,7 +628,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
-      {/* PORTFOLIO — website showcase */}
+{/* PORTFOLIO — website showcase */}
       {s.portfolio && (
         <section className={styles.portfolio}>
           <ScrollReveal style={{ marginBottom: 56 }}>
