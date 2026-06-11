@@ -9,25 +9,12 @@ const framePath = (i: number) =>
 
 export default function VideoScrollHero({ children }: { children: React.ReactNode }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const rafRef = useRef<number>(0)
 
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
-
-    const isMobile = window.matchMedia('(max-width: 768px)').matches
-
-    if (isMobile) {
-      // Mobile: autoplay the looping video — scroll-scrub is poor UX on touch
-      const video = videoRef.current
-      if (video) {
-        video.loop = true
-        video.play().catch(() => {})
-      }
-      return
-    }
 
     const canvas = canvasRef.current
     const ctx = canvas?.getContext('2d')
@@ -112,14 +99,6 @@ export default function VideoScrollHero({ children }: { children: React.ReactNod
     <div ref={containerRef} className={styles.container}>
       <div className={styles.sticky}>
         <canvas ref={canvasRef} className={styles.canvas} />
-        <video
-          ref={videoRef}
-          className={styles.video}
-          src="/hero-website.mp4"
-          muted
-          playsInline
-          preload="metadata"
-        />
         <div className={styles.grid} />
         <div className={styles.scanlines} />
         <div className={styles.vignette} />

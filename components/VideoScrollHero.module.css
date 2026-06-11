@@ -122,24 +122,7 @@
 
 /* ─── Mobile ────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  /* On mobile the video auto-plays — no tall scroll container needed */
-  .container {
-    height: 100vh;
-  }
-
-  .canvas {
-    display: none;
-  }
-
-  .video {
-    display: block;
-  }
-
   .overlay {
     padding: 100px 24px 40px;
-  }
-
-  .scrollHint {
-    display: none;
   }
 }
