@@ -223,14 +223,7 @@ const SERVICES: Record<string, {
     description: [
       'We build performance first websites for ecommerce and service brands, starting with your commercial goals and built entirely from scratch. What you are experiencing on this page — the scroll animations, the transitions, the visual weight — is exactly what we bring to your product and brand. Every site is fully custom from the ground up, with CRM integration, backend architecture and a front end where SEO and CRO are baked into every decision, not bolted on at the end.',
     ],
-    outcomes: [
-      'Fully custom Next.js or Shopify builds',
-      'Scroll animations and custom interactive elements',
-      'CRM and backend integration built to your workflow',
-      'Core Web Vitals and performance architecture',
-      'SEO and CRO built in from day one',
-      'Analytics and GTM tracking setup',
-    ],
+    outcomes: [],
     related: ['direct-response','seo'],
     portfolio: {
       projects: [
@@ -565,18 +558,20 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </ScrollReveal>
           ))}
         </div>
-        <div className={styles.bodyRight}>
-          <ScrollReveal delay={2}>
-            <span className="section-label">// Deliverables</span>
-            <ul className={styles.outcomes}>
-              {s.outcomes.map(o => (
-                <li key={o} className={styles.outcome}>
-                  <span className={styles.outcomeDot}>◆</span>{o}
-                </li>
-              ))}
-            </ul>
-          </ScrollReveal>
-        </div>
+        {s.outcomes.length > 0 && (
+          <div className={styles.bodyRight}>
+            <ScrollReveal delay={2}>
+              <span className="section-label">// Deliverables</span>
+              <ul className={styles.outcomes}>
+                {s.outcomes.map(o => (
+                  <li key={o} className={styles.outcome}>
+                    <span className={styles.outcomeDot}>◆</span>{o}
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+          </div>
+        )}
       </section>
 
       {/* SHOWCASE — interactive examples */}
