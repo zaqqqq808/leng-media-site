@@ -4,9 +4,10 @@
   font-weight: 400;
   font-size: clamp(36px, 4.8vw, 60px);
   color: var(--neon);
-  min-height: 58px;
+  height: 2.6em;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  overflow: hidden;
 }
 .cursor {
   display: inline-block;
