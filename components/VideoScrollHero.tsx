@@ -38,6 +38,9 @@ export default function VideoScrollHero({ children }: { children: React.ReactNod
     let pendingFrame = 0
 
     // Draw image cover-fit (like object-fit: cover) at device pixel ratio
+    ctx.imageSmoothingEnabled = true
+    ctx.imageSmoothingQuality = 'high'
+
     const draw = (img: HTMLImageElement) => {
       const { width: cw, height: ch } = canvas
       const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight)
