@@ -3,33 +3,79 @@
 import { useEffect, useRef } from 'react'
 import styles from './VideoScrollHero.module.css'
 
+const FRAME_COUNT = 91
+const framePath = (i: number) =>
+  `/hero-frames/frame-${String(i + 1).padStart(3, '0')}.webp`
+
 export default function VideoScrollHero({ children }: { children: React.ReactNode }) {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const rafRef = useRef<number>(0)
 
   useEffect(() => {
-    const video = videoRef.current
     const container = containerRef.current
-    if (!video || !container) return
+    if (!container) return
 
     const isMobile = window.matchMedia('(max-width: 768px)').matches
 
     if (isMobile) {
-      // On mobile: auto-play looping — no scroll scrub
-      video.loop = true
-      video.play().catch(() => {})
+      // Mobile: autoplay the looping video — scroll-scrub is poor UX on touch
+      const video = videoRef.current
+      if (video) {
+        video.loop = true
+        video.play().catch(() => {})
+      }
       return
     }
 
-    // Desktop: scrub video.currentTime with scroll position
+    const canvas = canvasRef.current
+    const ctx = canvas?.getContext('2d')
+    if (!canvas || !ctx) return
+
+    const images: HTMLImageElement[] = new Array(FRAME_COUNT)
+    let currentFrame = -1
+    let pendingFrame = 0
+
+    // Draw image cover-fit (like object-fit: cover) at device pixel ratio
+    const draw = (img: HTMLImageElement) => {
+      const { width: cw, height: ch } = canvas
+      const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight)
+      const dw = img.naturalWidth * scale
+      const dh = img.naturalHeight * scale
+      ctx.clearRect(0, 0, cw, ch)
+      ctx.drawImage(img, (cw - dw) / 2, (ch - dh) / 2, dw, dh)
+    }
+
+    const render = () => {
+      // If the exact frame isn't loaded yet, fall back to nearest loaded one
+      let idx = pendingFrame
+      if (!images[idx]?.complete) {
+        for (let d = 1; d < FRAME_COUNT; d++) {
+          if (images[idx - d]?.complete) { idx = idx - d; break }
+          if (images[idx + d]?.complete) { idx = idx + d; break }
+        }
+      }
+      if (images[idx]?.complete && idx !== currentFrame) {
+        draw(images[idx])
+        currentFrame = idx
+      }
+    }
+
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+      canvas.width = canvas.offsetWidth * dpr
+      canvas.height = canvas.offsetHeight * dpr
+      currentFrame = -1
+      render()
+    }
+
     const update = () => {
       const rect = container.getBoundingClientRect()
-      const scrolled = -rect.top
       const scrollRange = container.offsetHeight - window.innerHeight
-      if (scrolled >= 0 && scrolled <= scrollRange && video.readyState >= 2) {
-        video.currentTime = (scrolled / scrollRange) * video.duration
-      }
+      const progress = Math.min(Math.max(-rect.top / scrollRange, 0), 1)
+      pendingFrame = Math.min(Math.round(progress * (FRAME_COUNT - 1)), FRAME_COUNT - 1)
+      render()
     }
 
     const onScroll = () => {
@@ -37,11 +83,24 @@ export default function VideoScrollHero({ children }: { children: React.ReactNod
       rafRef.current = requestAnimationFrame(update)
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true })
+    // Load frame 0 first for instant paint, then the rest in order
+    const load = (i: number) => {
+      const img = new Image()
+      img.src = framePath(i)
+      img.onload = () => { if (i === pendingFrame || currentFrame === -1) render() }
+      images[i] = img
+    }
+    load(0)
+    for (let i = 1; i < FRAME_COUNT; i++) load(i)
+
+    resize()
     update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', resize)
 
     return () => {
       window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', resize)
       cancelAnimationFrame(rafRef.current)
     }
   }, [])
@@ -49,13 +108,14 @@ export default function VideoScrollHero({ children }: { children: React.ReactNod
   return (
     <div ref={containerRef} className={styles.container}>
       <div className={styles.sticky}>
+        <canvas ref={canvasRef} className={styles.canvas} />
         <video
           ref={videoRef}
           className={styles.video}
           src="/hero-website.mp4"
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
         />
         <div className={styles.grid} />
         <div className={styles.scanlines} />

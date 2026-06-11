@@ -15,6 +15,15 @@
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
+/* Canvas renders the frame sequence on desktop */
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Video element is the mobile fallback only */
 .video {
   position: absolute;
   inset: 0;
@@ -22,6 +31,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  display: none;
 }
 
 /* Match the grid pattern from the regular hero */
@@ -115,6 +125,14 @@
   /* On mobile the video auto-plays — no tall scroll container needed */
   .container {
     height: 100vh;
+  }
+
+  .canvas {
+    display: none;
+  }
+
+  .video {
+    display: block;
   }
 
   .overlay {
