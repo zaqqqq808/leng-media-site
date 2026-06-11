@@ -218,18 +218,19 @@ const SERVICES: Record<string, {
   'website-builds': {
     num: '07',
     name: 'Website Building',
-    tagline: 'High-converting websites built to grow your brand online.',
-    metaDescription: 'High-converting, performance-first websites for ecommerce and service brands. Built in Shopify or Next.js — fast, analytics-ready and designed to convert from day one.',
+    tagline: 'Custom websites built around your commercial goals. Not a template in sight.',
+    metaDescription: 'Custom, performance-first websites for ecommerce and service brands. Built in Next.js with scroll animations, CRM integration, full backend and SEO baked in from day one.',
     description: [
-      'Your website is your most important sales asset — and most agencies treat it as an afterthought. We build performance-first websites for ecommerce and service brands that are fast, conversion-optimised, and designed to grow with you. Every project starts with your commercial goals, not a template.',
-      "We don't just make things look good — we build for results. Optimised page structure, Core Web Vitals-ready architecture, clear CTAs above the fold, and analytics baked in from day one. Every site we deliver is built to run paid traffic from launch and rank organically over time.",
+      'We build performance first websites for ecommerce and service brands. Every project begins with your commercial goals and is built entirely from scratch. What you are experiencing on this page — the scroll animations, the transitions, the visual weight — we bring that same level of craft to your product and brand. Imagine your catalogue, your service offering or your story presented at this quality.',
+      'Every site is fully custom from the ground up. Backend architecture, CRM integration, custom data flows and a front end built to convert. SEO and CRO are baked into every decision from the first line of code, not bolted on at the end. Every site we deliver is ready to run paid traffic from launch and built to compound organic rankings over time.',
     ],
     outcomes: [
-      'Shopify & Next.js ecommerce builds',
-      'Conversion-optimised landing pages',
-      'Core Web Vitals & performance-first architecture',
-      'Analytics, GTM & full tracking setup',
-      'Brand-consistent UI design & copywriting',
+      'Fully custom Next.js or Shopify builds',
+      'Scroll animations and custom interactive elements',
+      'CRM and backend integration built to your workflow',
+      'Core Web Vitals and performance architecture',
+      'SEO and CRO built in from day one',
+      'Analytics and GTM tracking setup',
     ],
     related: ['direct-response','seo'],
     portfolio: {
