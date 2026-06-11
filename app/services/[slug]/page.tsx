@@ -221,8 +221,7 @@ const SERVICES: Record<string, {
     tagline: 'Custom websites built around your commercial goals. Not a template in sight.',
     metaDescription: 'Custom, performance-first websites for ecommerce and service brands. Built in Next.js with scroll animations, CRM integration, full backend and SEO baked in from day one.',
     description: [
-      'We build performance first websites for ecommerce and service brands. Every project begins with your commercial goals and is built entirely from scratch. What you are experiencing on this page — the scroll animations, the transitions, the visual weight — we bring that same level of craft to your product and brand. Imagine your catalogue, your service offering or your story presented at this quality.',
-      'Every site is fully custom from the ground up. Backend architecture, CRM integration, custom data flows and a front end built to convert. SEO and CRO are baked into every decision from the first line of code, not bolted on at the end. Every site we deliver is ready to run paid traffic from launch and built to compound organic rankings over time.',
+      'We build performance first websites for ecommerce and service brands, starting with your commercial goals and built entirely from scratch. What you are experiencing on this page — the scroll animations, the transitions, the visual weight — is exactly what we bring to your product and brand. Every site is fully custom from the ground up, with CRM integration, backend architecture and a front end where SEO and CRO are baked into every decision, not bolted on at the end.',
     ],
     outcomes: [
       'Fully custom Next.js or Shopify builds',
