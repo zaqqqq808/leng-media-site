@@ -1,5 +1,6 @@
 .logo {
-  opacity: 0.35;
+  color: var(--white);
+  opacity: 0.45;
   transition: opacity 0.3s ease;
   max-width: 100%;
   height: auto;
@@ -10,7 +11,7 @@
   font-weight: 500;
   font-size: clamp(13px, 1.4vw, 17px);
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   transition: color 0.3s ease;
   white-space: nowrap;

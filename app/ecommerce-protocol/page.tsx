@@ -3,7 +3,7 @@ import styles from './page.module.css'
 
 export const metadata = {
   title: 'The Ecommerce Protocol – Leng Media',
-  description: 'Stop guessing and start selling. The Leng Media Ecommerce Protocol is a step-by-step system for launching and scaling your ecommerce brand within two months.',
+  description: 'Stop guessing and start selling. The Leng Media Ecommerce Protocol is a step by step system for launching and scaling your ecommerce brand within two months.',
 }
 
 export default function EcommerceProtocol() {

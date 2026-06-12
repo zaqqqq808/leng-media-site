@@ -5,6 +5,7 @@
   position: relative;
   overflow: hidden;
   padding: 130px 52px 52px;
+  background: var(--black);
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .heroGrid {
@@ -50,27 +51,28 @@
 /* BODY */
 .body {
   display: flex; gap: 80px; padding: 72px 52px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
 }
 .bodyLeft { flex: 1.2; }
 .bodyRight { flex: 0.8; }
 .bodyText {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px; color: var(--grey-5);
+  font-size: 15px; color: var(--ink-2);
   line-height: 1.8; margin-bottom: 24px;
 }
 .outcomes { list-style: none; display: flex; flex-direction: column; gap: 0; }
 .outcome {
   display: flex; align-items: flex-start; gap: 14px;
   padding: 18px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--line);
   font-family: var(--font-inter), sans-serif;
-  font-size: 14px; color: var(--grey-5); line-height: 1.5;
+  font-size: 14px; color: var(--ink-2); line-height: 1.5;
 }
-.outcome:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
-.outcomeDot { color: var(--neon); font-size: 7px; margin-top: 4px; flex-shrink: 0; }
+.outcome:first-child { border-top: 1px solid var(--line); }
+.outcomeDot { color: var(--accent-ink); font-size: 7px; margin-top: 4px; flex-shrink: 0; }
 
-/* PROOF */
+/* PROOF — funnel diagram stays dark (SVG is drawn for a dark background) */
 .proofFunnel {
   padding: 80px 52px 72px;
   border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -87,18 +89,19 @@
 }
 .proofStats {
   padding: 72px 52px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  background: var(--off-black);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
 }
 .proofGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background: rgba(255,255,255,0.08);
+  background: var(--line);
+  border: 1px solid var(--line);
   margin-top: 0;
 }
 .proofStat {
-  background: var(--grey-1);
+  background: var(--surface);
   padding: 40px 32px;
   display: flex;
   flex-direction: column;
@@ -107,7 +110,7 @@
   font-family: var(--font-inter), sans-serif;
   font-weight: 700;
   font-size: clamp(36px, 4vw, 58px);
-  color: var(--neon);
+  color: var(--accent-ink);
   line-height: 1;
   margin-bottom: 12px;
   letter-spacing: -1px;
@@ -116,29 +119,30 @@
   font-family: var(--font-inter), sans-serif;
   font-weight: 500;
   font-size: 13px;
-  color: var(--white);
+  color: var(--ink);
   margin-bottom: 6px;
 }
 .proofSub {
   font-family: var(--font-mono), monospace;
   font-size: 9px;
   letter-spacing: 1.5px;
-  color: var(--grey-4);
+  color: var(--ink-3);
   text-transform: uppercase;
   line-height: 1.5;
 }
 
 /* PROOF IMAGE */
 .proofImageWrap {
-  background: var(--grey-1);
+  background: var(--surface);
   padding: 28px 32px 32px;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid var(--line);
+  border-top: none;
 }
 .proofImageLabel {
   font-family: var(--font-mono), monospace;
   font-size: 9px;
   letter-spacing: 2px;
-  color: var(--grey-4);
+  color: var(--ink-3);
   text-transform: uppercase;
   display: block;
   margin-bottom: 18px;
@@ -148,17 +152,16 @@
   max-width: 100%;
   display: block;
   border-radius: 3px;
-  opacity: 0.88;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--line);
 }
 .proofImageCaption {
   margin-top: 18px;
   font-size: 13px;
-  color: var(--grey-4);
+  color: var(--ink-3);
   line-height: 1.6;
 }
 .proofImageLink {
-  color: var(--neon);
+  color: var(--accent-ink);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -169,8 +172,8 @@
 /* SHOWCASE */
 .showcase {
   padding: 80px 52px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  background: var(--off-black);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
 }
 .showcaseBlock {
   display: grid;
@@ -187,7 +190,7 @@
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--neon);
+  color: var(--accent-ink);
   display: block;
   margin-bottom: 20px;
 }
@@ -196,25 +199,25 @@
   font-size: clamp(22px, 2.5vw, 32px);
   font-weight: 400;
   line-height: 1.2;
-  color: var(--white);
+  color: var(--ink);
   margin-bottom: 20px;
 }
 .showcaseCopy {
   font-size: 15px;
-  color: var(--grey-4);
+  color: var(--ink-2);
   line-height: 1.75;
 }
 .showcaseImg {
   width: 100%;
   border-radius: 4px;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--line);
   display: block;
 }
 .showcasePlaceholder {
   width: 100%;
   aspect-ratio: 16/9;
-  background: var(--grey-1);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -222,7 +225,7 @@
   font-family: var(--font-mono), monospace;
   font-size: 9px;
   letter-spacing: 2px;
-  color: var(--grey-4);
+  color: var(--ink-3);
 }
 @media (max-width: 768px) {
   .showcase { padding: 60px 24px; }
@@ -233,23 +236,24 @@
 
 /* SEO SECTION */
 .seoSection {
-  background: var(--off-black);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
 }
 .seoPillarsWrap {
   padding: 96px 52px 72px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--line);
 }
+/* traffic chart stays dark — the SVG is drawn for a dark background */
 .seoChart {
   padding: 80px 52px 96px;
+  background: var(--black);
 }
 .seoHeading {
   font-family: var(--font-serif), serif;
   font-style: normal;
   font-weight: 700;
   font-size: clamp(28px, 4vw, 52px);
-  color: var(--white);
+  color: var(--t-title);
   letter-spacing: -1px;
   margin: 12px 0 0;
 }
@@ -257,19 +261,21 @@
   font-family: var(--font-inter), sans-serif;
   font-size: 15px;
   line-height: 1.75;
-  color: var(--grey-5);
+  color: var(--ink-2);
   max-width: 680px;
   margin: 0 0 40px;
 }
+.seoChart .seoCopy { color: var(--grey-5); }
 .seoPillarsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 1fr;
-  gap: 2px;
+  gap: 16px;
 }
 .seoPillarCard {
-  background: var(--grey-1);
-  border: 1px solid rgba(255,255,255,0.04);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
   padding: 40px 40px 36px;
   display: flex;
   flex-direction: column;
@@ -278,14 +284,14 @@
   font-family: var(--font-mono), monospace;
   font-size: 9px;
   letter-spacing: 2.5px;
-  color: var(--neon);
+  color: var(--accent-ink);
   margin: 0 0 14px;
 }
 .seoPillarTitle {
   font-family: var(--font-inter), sans-serif;
   font-weight: 600;
   font-size: 18px;
-  color: var(--white);
+  color: var(--ink);
   letter-spacing: -0.2px;
   margin: 0 0 14px;
 }
@@ -293,7 +299,7 @@
   font-family: var(--font-inter), sans-serif;
   font-size: 14px;
   line-height: 1.75;
-  color: var(--grey-5);
+  color: var(--ink-2);
   margin: 0;
 }
 .seoPillarItems {
@@ -311,10 +317,10 @@
   font-family: var(--font-inter), sans-serif;
   font-size: 13px;
   line-height: 1.6;
-  color: var(--grey-5);
+  color: var(--ink-2);
 }
 .seoPillarDot {
-  color: var(--neon);
+  color: var(--accent-ink);
   font-size: 7px;
   margin-top: 5px;
   flex-shrink: 0;
@@ -323,14 +329,14 @@
 /* PORTFOLIO */
 .portfolio {
   padding: 80px 52px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  background: var(--black);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
 }
 .portfolioTitle {
   font-family: var(--font-inter), sans-serif;
   font-weight: 500;
   font-size: clamp(28px, 3.5vw, 48px);
-  color: var(--white);
+  color: var(--ink);
   letter-spacing: -0.5px;
   margin-top: 16px;
   margin-bottom: 0;
@@ -341,16 +347,16 @@
   gap: 64px;
   align-items: start;
   padding: 56px 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--line);
 }
 .portfolioItem:last-child {
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--line);
 }
 .portfolioNum {
   font-family: var(--font-mono), monospace;
   font-size: 9px;
   letter-spacing: 2px;
-  color: var(--neon);
+  color: var(--accent-ink);
   text-transform: uppercase;
   margin-bottom: 14px;
 }
@@ -358,7 +364,7 @@
   font-family: var(--font-inter), sans-serif;
   font-weight: 500;
   font-size: clamp(24px, 2.5vw, 36px);
-  color: var(--white);
+  color: var(--ink);
   letter-spacing: -0.3px;
   margin-bottom: 10px;
 }
@@ -366,22 +372,22 @@
   font-family: var(--font-mono), monospace;
   font-size: 11px;
   letter-spacing: 1px;
-  color: var(--neon);
+  color: var(--accent-ink);
   text-decoration: none;
   text-transform: lowercase;
   display: inline-block;
   margin-bottom: 32px;
-  border-bottom: 1px solid rgba(212,255,0,0.3);
+  border-bottom: 1px solid var(--accent-ink-soft);
   padding-bottom: 2px;
   transition: border-color .2s, opacity .2s;
 }
-.portfolioUrl:hover { opacity: 0.7; border-color: var(--neon); }
+.portfolioUrl:hover { opacity: 0.7; border-color: var(--accent-ink); }
 .portfolioMeta { display: flex; flex-direction: column; gap: 24px; }
 .portfolioBlockLabel {
   font-family: var(--font-mono), monospace;
   font-size: 9px;
   letter-spacing: 2px;
-  color: var(--grey-4);
+  color: var(--ink-3);
   text-transform: uppercase;
   display: block;
   margin-bottom: 10px;
@@ -389,7 +395,7 @@
 .portfolioBlockText {
   font-family: var(--font-inter), sans-serif;
   font-size: 14px;
-  color: var(--grey-5);
+  color: var(--ink-2);
   line-height: 1.7;
 }
 .portfolioScreenshots {
@@ -402,28 +408,29 @@
 .portfolioDesktopImg {
   width: 100%;
   border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--line);
   display: block;
   aspect-ratio: 16/10;
   object-fit: cover;
   object-position: top;
-  background: var(--grey-1);
+  background: var(--bg-alt);
 }
 .portfolioMobileImg {
   width: 100%;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--line);
   display: block;
   aspect-ratio: 9/16;
   object-fit: cover;
   object-position: top;
-  background: var(--grey-1);
+  background: var(--bg-alt);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
 }
 .portfolioImgLabel {
   font-family: var(--font-mono), monospace;
   font-size: 9px;
   letter-spacing: 1.5px;
-  color: var(--grey-4);
+  color: var(--ink-3);
   text-transform: uppercase;
   text-align: center;
   display: block;
@@ -432,21 +439,22 @@
 /* RELATED */
 .related {
   padding: 80px 52px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  background: var(--off-black);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
 }
-.relatedGrid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; }
+.relatedGrid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
 .relatedCard {
-  background: var(--grey-1); padding: 36px;
+  background: var(--surface); padding: 36px;
   text-decoration: none; display: flex;
   align-items: center; justify-content: space-between;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid var(--line);
+  border-radius: 6px;
   transition: border-color .25s, background .25s;
 }
-.relatedCard:hover { border-color: rgba(212,255,0,0.3); background: rgba(212,255,0,0.03); }
-.relatedName { font-family: var(--font-inter), sans-serif; font-weight: 500; font-size: 18px; letter-spacing: -0.2px; color: var(--white); }
-.relatedArrow { font-size: 20px; color: var(--grey-3); transition: color .3s, transform .3s; }
-.relatedCard:hover .relatedArrow { color: var(--neon); transform: translate(4px,-4px); }
+.relatedCard:hover { border-color: var(--accent-ink-soft); background: var(--accent-tint); }
+.relatedName { font-family: var(--font-inter), sans-serif; font-weight: 500; font-size: 18px; letter-spacing: -0.2px; color: var(--ink); }
+.relatedArrow { font-size: 20px; color: rgba(255,255,255,0.30); transition: color .3s, transform .3s; }
+.relatedCard:hover .relatedArrow { color: var(--accent-ink); transform: translate(4px,-4px); }
 
 /* CTA */
 .cta {
@@ -462,7 +470,7 @@
 }
 .ctaSub {
   font-family: var(--font-mono),monospace; font-size: 10px;
-  letter-spacing: 3px; color: var(--grey-4); text-transform: uppercase;
+  letter-spacing: 3px; color: var(--grey-5); text-transform: uppercase;
   margin: 16px 0 52px;
 }
 

@@ -20,8 +20,8 @@ const SERVICES = [
   { num:'03', slug:'seo',              name:'Ecommerce SEO',             desc:'Technical SEO & intent-driven scaling for ambitious brands.' },
   { num:'04', slug:'lead-generation',  name:'Lead Generation',           desc:'High-quality B2B & B2C prospecting that fills your pipeline.' },
   { num:'05', slug:'cmo-as-a-service', name:'CMO as a Service',          desc:'Executive-level marketing leadership, without the executive price tag.' },
-  { num:'06', slug:'website-builds',   name:'Website Building',          desc:'High-converting, performance-first websites built to grow your brand online.' },
-  { num:'07', slug:'agency-assist',    name:'Agency Assistance',         desc:'White-label fulfilment support for agencies that need a trusted partner.', gold: true, full: true },
+  { num:'06', slug:'website-builds',   name:'Website Building',          desc:'High converting, performance first websites built to grow your brand online.' },
+  { num:'07', slug:'agency-assist',    name:'Agency Assistance',         desc:'White label fulfilment support for agencies that need a trusted partner.', gold: true, full: true },
 ]
 
 const CLIENTS = [
@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className={styles.hero}>
+      <section className={`${styles.hero} theme-dark`}>
         <div className={styles.heroGrid} />
         <div className={styles.heroScanlines} />
         <div className={styles.heroVignette} />
@@ -134,7 +134,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section className={styles.cta} id="contact">
+      <section className={`${styles.cta} theme-dark`} id="contact">
         <ScrollReveal>
           <span className="section-label">// 04 — Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>

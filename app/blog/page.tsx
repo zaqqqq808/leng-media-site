@@ -76,7 +76,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className={styles.cta}>
+      <section className={`${styles.cta} theme-dark`}>
         <ScrollReveal>
           <span className="section-label">// Want results, not just reading?</span>
           <h2 className="section-title">Let&apos;s work<br />together.</h2>

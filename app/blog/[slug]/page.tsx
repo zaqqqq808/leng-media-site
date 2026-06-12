@@ -46,7 +46,7 @@ const POSTS: Record<string, Post> = {
       },
       {
         type: 'p',
-        text: 'An AI automation agency builds, installs and manages AI-powered systems inside your business. The goal is always the same: remove friction, reduce manual work, and increase the speed at which your business captures revenue. In practice, that means three distinct service categories.',
+        text: 'An AI automation agency builds, installs and manages AI powered systems inside your business. The goal is always the same: remove friction, reduce manual work, and increase the speed at which your business captures revenue. In practice, that means three distinct service categories.',
       },
       {
         type: 'h3',
@@ -66,11 +66,11 @@ const POSTS: Record<string, Post> = {
       },
       {
         type: 'h3',
-        text: '3. AI-powered creative and content production',
+        text: '3. AI powered creative and content production',
       },
       {
         type: 'p',
-        text: 'Product image revamping, ad creative generation, and AI-assisted copy are increasingly part of the AI automation agency toolkit. Brands that previously spent tens of thousands on photoshoots can now generate studio-quality imagery at a fraction of the cost. This is particularly powerful for ecommerce brands with large product catalogues that need constant creative refreshes for ads, email, and social.',
+        text: 'Product image revamping, ad creative generation, and AI assisted copy are increasingly part of the AI automation agency toolkit. Brands that previously spent tens of thousands on photoshoots can now generate studio-quality imagery at a fraction of the cost. This is particularly powerful for ecommerce brands with large product catalogues that need constant creative refreshes for ads, email, and social.',
       },
       {
         type: 'h2',
@@ -147,7 +147,7 @@ const POSTS: Record<string, Post> = {
       },
       {
         type: 'p',
-        text: 'But not all ecommerce AI chatbots are built the same. Some are off-the-shelf platforms with limited customisation. Some are customer support tools being retrofitted into a sales context. And some — the most powerful — are built specifically for your brand and your workflows. This article breaks down the best options in 2026 so you can make the right call for your store.',
+        text: 'But not all ecommerce AI chatbots are built the same. Some are off the shelf platforms with limited customisation. Some are customer support tools being retrofitted into a sales context. And some — the most powerful — are built specifically for your brand and your workflows. This article breaks down the best options in 2026 so you can make the right call for your store.',
       },
       {
         type: 'h2',
@@ -159,7 +159,7 @@ const POSTS: Record<string, Post> = {
       },
       {
         type: 'p',
-        text: 'Beyond lead capture, the best ecommerce AI chatbots handle order tracking queries, returns guidance, post-purchase support, and product recommendation flows — all without a human. For DTC brands with a small team, that is the equivalent of adding a full-time customer service and sales rep who never sleeps, never takes a holiday, and costs a fraction of a salary.',
+        text: 'Beyond lead capture, the best ecommerce AI chatbots handle order tracking queries, returns guidance, post-purchase support, and product recommendation flows — all without a human. For DTC brands with a small team, that is the equivalent of adding a full time customer service and sales rep who never sleeps, never takes a holiday, and costs a fraction of a salary.',
       },
       {
         type: 'h2',
@@ -186,7 +186,7 @@ const POSTS: Record<string, Post> = {
       },
       {
         type: 'p',
-        text: 'Tidio is one of the most popular off-the-shelf AI chatbot platforms for ecommerce, particularly for Shopify stores. It integrates natively with Shopify, WooCommerce, and most major ecommerce platforms, and its Lyro AI layer handles a solid range of customer queries automatically. Pricing starts at around £29/month and scales with usage. The limitation is customisation — Tidio is built for common support queries and works well for that, but if you need a chatbot that sells, qualifies leads, or integrates deeply with your specific CRM and workflow, you hit the ceiling quickly.',
+        text: 'Tidio is one of the most popular off the shelf AI chatbot platforms for ecommerce, particularly for Shopify stores. It integrates natively with Shopify, WooCommerce, and most major ecommerce platforms, and its Lyro AI layer handles a solid range of customer queries automatically. Pricing starts at around £29/month and scales with usage. The limitation is customisation — Tidio is built for common support queries and works well for that, but if you need a chatbot that sells, qualifies leads, or integrates deeply with your specific CRM and workflow, you hit the ceiling quickly.',
       },
       {
         type: 'h3',
@@ -206,19 +206,19 @@ const POSTS: Record<string, Post> = {
       },
       {
         type: 'h3',
-        text: 'Custom-built AI chatbot (via an agency)',
+        text: 'Custom built AI chatbot (via an agency)',
       },
       {
         type: 'p',
-        text: 'This is the option most ecommerce brands overlook because it sounds expensive and complicated. In practice, a custom AI chatbot built by an experienced agency costs less than most brands expect, integrates exactly with your existing tools, and is trained specifically on your brand voice, product catalogue, and customer questions. Unlike an off-the-shelf platform, a custom build has no arbitrary usage caps, no features you are paying for but not using, and no limitation on what it can do. It can qualify leads, book meetings into your Calendly, push prospects into your email flow, update your CRM, and handle the full post-purchase support layer — all in one.',
+        text: 'This is the option most ecommerce brands overlook because it sounds expensive and complicated. In practice, a custom AI chatbot built by an experienced agency costs less than most brands expect, integrates exactly with your existing tools, and is trained specifically on your brand voice, product catalogue, and customer questions. Unlike an off the shelf platform, a custom build has no arbitrary usage caps, no features you are paying for but not using, and no limitation on what it can do. It can qualify leads, book meetings into your Calendly, push prospects into your email flow, update your CRM, and handle the full post-purchase support layer — all in one.',
       },
       {
         type: 'h2',
-        text: 'Off-the-shelf vs custom: the real difference',
+        text: 'Off the shelf vs custom: the real difference',
       },
       {
         type: 'p',
-        text: 'Off-the-shelf AI chatbot platforms are the right call if you are just getting started, have a simple product range, and want something live quickly without a large upfront investment. They are not the right call if you are scaling, running significant ad spend, or have specific workflow integrations that a generic platform cannot handle.',
+        text: 'Off the shelf AI chatbot platforms are the right call if you are just getting started, have a simple product range, and want something live quickly without a large upfront investment. They are not the right call if you are scaling, running significant ad spend, or have specific workflow integrations that a generic platform cannot handle.',
       },
       {
         type: 'p',
@@ -230,7 +230,7 @@ const POSTS: Record<string, Post> = {
       },
       {
         type: 'p',
-        text: 'If you are doing under £20k/month in revenue and want something running quickly: start with Tidio. It is affordable, integrates with Shopify, and handles the basics well. If you are scaling and running paid traffic: a custom AI chatbot built by an agency will outperform any off-the-shelf tool once you factor in the leads you are currently losing. The ROI case becomes straightforward once you know your average order value and your current after-hours enquiry volume.',
+        text: 'If you are doing under £20k/month in revenue and want something running quickly: start with Tidio. It is affordable, integrates with Shopify, and handles the basics well. If you are scaling and running paid traffic: a custom AI chatbot built by an agency will outperform any off the shelf tool once you factor in the leads you are currently losing. The ROI case becomes straightforward once you know your average order value and your current after-hours enquiry volume.',
       },
       {
         type: 'p',
@@ -380,7 +380,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </ScrollReveal>
       </section>
 
-      <section className={styles.cta}>
+      <section className={`${styles.cta} theme-dark`}>
         <ScrollReveal>
           <span className="section-label">// Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>

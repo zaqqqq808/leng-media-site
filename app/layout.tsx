@@ -25,10 +25,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.lengmedia.com'),
   title: 'Leng Media – Performance Marketing Agency for Ecommerce Brands',
-  description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue-driven growth strategy. London-based agency trusted by Nat Geo Traveller, Skin+Me and leading DTC brands.',
+  description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue driven growth strategy. London based agency trusted by Nat Geo Traveller, Skin+Me and leading DTC brands.',
   openGraph: {
     title: 'Leng Media – Performance Marketing Agency for Ecommerce Brands',
-    description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue-driven growth strategy. London-based agency trusted by Nat Geo Traveller, Skin+Me and leading DTC brands.',
+    description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue driven growth strategy. London based agency trusted by Nat Geo Traveller, Skin+Me and leading DTC brands.',
     url: 'https://www.lengmedia.com',
     siteName: 'Leng Media',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Leng Media – Performance Marketing Agency for Ecommerce Brands' }],
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Leng Media – Performance Marketing Agency for Ecommerce Brands',
-    description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue-driven growth strategy.',
+    description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue driven growth strategy.',
     images: ['/og-image.jpg'],
   },
 }
@@ -50,7 +50,7 @@ const jsonLd = {
       '@id': 'https://www.lengmedia.com/#organization',
       name: 'Leng Media',
       url: 'https://www.lengmedia.com',
-      description: 'Performance marketing agency for ecommerce brands. We scale DTC brands through paid media, SEO, AI solutions and revenue-driven growth strategy.',
+      description: 'Performance marketing agency for ecommerce brands. We scale DTC brands through paid media, SEO, AI solutions and revenue driven growth strategy.',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'London',

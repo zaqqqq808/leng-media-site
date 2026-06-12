@@ -98,7 +98,7 @@
 .vslFrame {
   position: relative;
   padding-bottom: 56.25%;
-  background: #090909;
+  background: #262626;
   border: 1px solid rgba(255,255,255,0.1);
   z-index: 2;
 }
@@ -139,7 +139,7 @@
 }
 
 .filterCard {
-  background: #0c0c0c;
+  background: var(--grey-1);
   border: 1px solid rgba(255,255,255,0.07);
   padding: 44px;
 }
@@ -194,7 +194,7 @@
 /* ── TIME TRAP ── */
 .timeTrap {
   padding: 100px 0;
-  background: #080808;
+  background: var(--off-black);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
@@ -294,7 +294,7 @@
 }
 
 .moduleCard {
-  background: #0c0c0c;
+  background: var(--grey-1);
   border: 1px solid rgba(255,255,255,0.07);
   padding: 34px;
   position: relative;
@@ -325,7 +325,7 @@
   font-family: var(--font-mono), monospace;
   font-size: 9px;
   color: #444;
-  border: 1px solid #222;
+  border: 1px solid var(--grey-3);
   padding: 3px 8px;
   letter-spacing: 1px;
 }
@@ -350,7 +350,7 @@
 /* ── REVIEWS ── */
 .reviews {
   padding: 100px 0;
-  background: #080808;
+  background: var(--off-black);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
@@ -376,7 +376,7 @@
 .avatar {
   width: 42px;
   height: 42px;
-  background: #1a1a1a;
+  background: var(--grey-2);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -412,7 +412,7 @@
 }
 
 .reviewStat {
-  border-top: 1px solid #1a1a1a;
+  border-top: 1px solid var(--grey-3);
   padding-top: 14px;
   font-family: var(--font-mono), monospace;
   font-size: 9px;
@@ -438,7 +438,7 @@
 }
 
 .mentorCard {
-  background: #0c0c0c;
+  background: var(--grey-1);
   border: 1px solid rgba(212,255,0,0.2);
   padding: 50px;
   box-shadow: 0 0 60px rgba(212,255,0,0.03);
@@ -451,7 +451,7 @@
 }
 
 .mentorFeat {
-  background: #141414;
+  background: var(--grey-2);
   padding: 24px;
   border-left: 2px solid var(--neon);
 }
@@ -474,7 +474,7 @@
 /* ── AI SECTION ── */
 .aiSection {
   padding: 100px 0;
-  background: #080808;
+  background: var(--off-black);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
@@ -498,7 +498,7 @@
 .aiFrame {
   position: relative;
   padding-bottom: 56.25%;
-  background: #090909;
+  background: #262626;
   border: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -522,7 +522,7 @@
   border: 1px dashed rgba(212,255,0,0.4);
   padding: 64px;
   text-align: center;
-  background: #070707;
+  background: var(--off-black);
 }
 
 .guaranteeTitle {
@@ -568,7 +568,7 @@
 }
 
 .priceCard {
-  background: #0c0c0c;
+  background: var(--grey-1);
   border: 1px solid rgba(255,255,255,0.08);
   padding: 52px;
   display: flex;
@@ -577,7 +577,7 @@
 }
 
 .priceCardFeatured {
-  background: #080808;
+  background: var(--off-black);
   border-color: rgba(255,255,255,0.18);
 }
 

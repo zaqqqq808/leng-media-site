@@ -691,7 +691,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               ))}
             </div>
           </div>
-          <div className={styles.seoChart}>
+          <div className={`${styles.seoChart} theme-dark`}>
             <ScrollReveal>
               <span className="section-label">// Real Results</span>
               <h2 className={styles.seoHeading}>What the traffic looks like.</h2>
@@ -756,7 +756,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               return (
                 <Link key={relSlug} href={`/services/${relSlug}`} className={styles.relatedCard}>
                   <div>
-                    <p style={{fontFamily:'var(--font-mono)',fontSize:'9px',letterSpacing:'2px',color:'var(--neon)',textTransform:'uppercase',marginBottom:10}}>{rel.num} / 07</p>
+                    <p style={{fontFamily:'var(--font-mono)',fontSize:'9px',letterSpacing:'2px',color:'var(--accent-ink)',textTransform:'uppercase',marginBottom:10}}>{rel.num} / 07</p>
                     <span className={styles.relatedName}>{rel.name}</span>
                   </div>
                   <span className={styles.relatedArrow}>↗</span>
@@ -768,7 +768,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* CTA */}
-      <section className={styles.cta}>
+      <section className={`${styles.cta} theme-dark`}>
         <ScrollReveal>
           <span className="section-label">// Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>

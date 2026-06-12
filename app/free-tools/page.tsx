@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Free Growth Tools – Leng Media',
-  description: 'Free ecommerce growth tools, ad spec cheat sheets and AI guides used by our top-performing clients. No email required — download and apply immediately.',
+  description: 'Free ecommerce growth tools, ad spec cheat sheets and AI guides used by our top performing clients. No email required — download and apply immediately.',
 }
 
 const TOOLS = [
@@ -26,7 +26,7 @@ const TOOLS = [
   },
   {
     name: 'AI For Ecommerce Tutorial',
-    desc: 'A step-by-step video tutorial on applying AI to your ecommerce workflow.',
+    desc: 'A step by step video tutorial on applying AI to your ecommerce workflow.',
     href: '#',
     free: false,
     category: 'AI',
@@ -90,7 +90,7 @@ export default function FreeTools() {
         </div>
       </section>
 
-      <section className={styles.cta}>
+      <section className={`${styles.cta} theme-dark`}>
         <ScrollReveal>
           <span className="section-label">// Want more?</span>
           <h2 className="section-title">Let&apos;s work<br />together.</h2>
