@@ -34,6 +34,7 @@ const SERVICES: Record<string, {
       copy: string
     }
     agents?: {
+      image?: string
       heading: string
       copy: string
     }
@@ -68,6 +69,7 @@ const SERVICES: Record<string, {
       'Our AI chatbots generate and qualify leads around the clock. They capture contact details, record data directly into Google Sheets or your CRM, and book meetings and appointments into your calendar without any human involvement. For ecommerce brands this means your pipeline keeps moving even while you sleep.',
       'We also revamp product imagery using AI. Better visuals directly improve conversion rates and reduce your dependency on expensive shoots. We price this based on the size of your image library, making it viable whether you have 20 products or 2,000.',
       'For wider business automation we build custom workflows using Make.com. The goal is simple: if a task is repetitive, we automate it. Typical setups include social media content creation, CRM pipeline management, email marketing optimisation, and reporting. Your team gets their time back and the business runs leaner.',
+      'If you are interested in saving time, reducing costs, or finding ways to use AI to increase your revenue, get on a call with us. We will look at your current operations, identify where AI can have the biggest impact, and give you a clear picture of what is possible.',
     ],
     outcomes: [
       'Custom AI chatbot for ecommerce — captures leads and books meetings 24/7',
@@ -86,10 +88,12 @@ const SERVICES: Record<string, {
         copy: 'We take your existing product photography and transform it into high converting campaign imagery using AI. Studio-quality visuals at a fraction of the cost. No photographer, no studio hire, no waiting weeks for a reshoot. We process your entire catalogue and deliver assets ready for ads, social media, and your website. Drag the slider to see the difference.',
       },
       chatbot: {
+        image: '/ai-chatbot-leads.png',
         heading: 'AI Chatbot for Lead Generation',
         copy: 'Our AI chatbots qualify visitors, capture contact details, and book meetings straight into your calendar around the clock. Every lead is automatically logged to a Google Sheet or your CRM, so your sales team has full context before the first call. One closed deal per year covers the entire cost of the software. For ecommerce brands, the chatbot also handles FAQs, order queries, and post-purchase support without a single human touch.',
       },
       agents: {
+        image: '/ai-automation-make.png',
         heading: 'AI Agents for Business Automation',
         copy: 'AI agents are software that thinks and acts on your behalf. They monitor inboxes, process orders, update spreadsheets, respond to customer queries, generate reports, and escalate exceptions to a human only when necessary. For a growing ecommerce or D2C brand, this is the difference between hiring three additional team members or not. We map your existing workflows, identify the highest-value bottlenecks, and install AI agents that run in the background and save you hours every single day.',
       },
@@ -615,7 +619,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           {s.showcase.agents && (
             <ScrollReveal delay={2}>
               <div className={styles.showcaseBlock}>
-                <div className={styles.showcasePlaceholder}>// AI Agents</div>
+                {s.showcase.agents.image ? (
+                  <img src={s.showcase.agents.image} alt="AI business automation Make.com workflow" className={styles.showcaseImg} />
+                ) : (
+                  <div className={styles.showcasePlaceholder}>// AI Agents</div>
+                )}
                 <div className={styles.showcaseText}>
                   <span className={styles.showcaseLabel}>// AI Agents</span>
                   <h2 className={styles.showcaseHeading}>{s.showcase.agents.heading}</h2>
