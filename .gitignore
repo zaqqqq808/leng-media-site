@@ -18,3 +18,9 @@ npm-debug.log*
 
 # Vercel
 .vercel
+
+# Local dev artifacts
+.claude/
+homepage-preview.html
+portfolio-lengmedia-desktop.jpg
+portfolio-lengmedia-mobile.jpg

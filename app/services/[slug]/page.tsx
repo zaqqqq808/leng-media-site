@@ -134,12 +134,9 @@ const SERVICES: Record<string, {
     ],
     outcomes: [
       'Technical SEO audit, crawl fixes and Core Web Vitals optimisation',
-      'Shopify SEO: URL structure, faceted navigation and duplicate content',
-      'Collection page and product page SEO for transactional keywords',
       'Keyword strategy focused on mid and bottom of funnel buyer intent',
       'Competitor gap analysis: find where you can rank fast',
       'Link building: finding relevant contacts, creating linkable assets, editorial outreach',
-      'Community presence: Reddit, Quora and niche forums for AI citation',
       'Generative Engine Optimisation (GEO): get cited by ChatGPT and Perplexity',
       'Monthly reporting tied to organic revenue, not just keyword rankings',
     ],
