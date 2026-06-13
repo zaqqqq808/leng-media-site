@@ -764,6 +764,16 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </>
       )}
 
+      {/* CTA */}
+      <section className={`${styles.cta} theme-dark`}>
+        <ScrollReveal>
+          <span className="section-label">// Get in touch</span>
+          <h2 className="section-title">Want to <em>chat?</em></h2>
+          <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
+          <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
+        </ScrollReveal>
+      </section>
+
       {/* RELATED SERVICES */}
       {s.related.length > 0 && (
         <section className={styles.related}>
@@ -787,17 +797,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
         </section>
       )}
-
-      {/* CTA */}
-      <section className={`${styles.cta} theme-dark`}>
-        <ScrollReveal>
-          <span className="section-label">// Get in touch</span>
-          <h2 className="section-title">Want to <em>chat?</em></h2>
-          <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
-          {/* TODO: Replace with your Calendly link */}
-          <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
-        </ScrollReveal>
-      </section>
     </>
   )
 }
