@@ -66,16 +66,16 @@ const SERVICES: Record<string, {
     tagline: 'Custom ecommerce AI chatbots for lead generation, AI agents for business workflow automation, and product image revamping for DTC and ecommerce brands in the USA and UK.',
     metaDescription: 'Leng Media is an AI automation agency for ecommerce and DTC brands. We build custom AI chatbots for lead generation, AI agents for business process automation, and provide product image revamping. Serving clients in the USA and UK.',
     description: [
-      <>We have listed our core AI services below, but with the pace at which AI is evolving, new capabilities are emerging constantly. We stay at the forefront, testing and applying the latest tools with ecommerce and DTC brands always in mind. This is why we keep a regularly updated <Link href="/free-tools" style={{color:'var(--neon)',textDecoration:'underline'}}>AI for Ecommerce Cheat Sheet</Link> — so you can stay current too.</>,
+      <>We have listed our core AI services below, but with the pace at which AI is evolving, new capabilities are emerging constantly. We stay at the forefront, testing and applying the latest tools with ecommerce and DTC brands always in mind. This is why we keep a regularly updated <Link href="/free-tools" style={{color:'var(--neon)',textDecoration:'underline'}}>AI for Ecommerce Cheat Sheet</Link> so you can stay current too.</>,
       'Our AI chatbots generate and qualify leads around the clock. They capture contact details, record data directly into Google Sheets or your CRM, and book meetings and appointments into your calendar without any human involvement. For ecommerce brands this means your pipeline keeps moving even while you sleep.',
       'We also revamp product imagery using AI. Better visuals directly improve conversion rates and reduce your dependency on expensive shoots. We price this based on the size of your image library, making it viable whether you have 20 products or 2,000.',
       'For wider business automation we build custom workflows using Make.com. The goal is simple: if a task is repetitive, we automate it. Typical setups include social media content creation, CRM pipeline management, email marketing optimisation, and reporting. Your team gets their time back and the business runs leaner.',
       'If you are interested in saving time, reducing costs, or finding ways to use AI to increase your revenue, get on a call with us. We will look at your current operations, identify where AI can have the biggest impact, and give you a clear picture of what is possible.',
     ],
     outcomes: [
-      'Custom AI chatbot for ecommerce — captures leads and books meetings 24/7',
+      'Custom AI chatbot for ecommerce: captures leads and books meetings 24/7',
       'AI agents installed across your highest-value workflows, saving hours every day',
-      'Full product catalogue image revamping using AI — ready for ads, social and web',
+      'Full product catalogue image revamping using AI: ready for ads, social and web',
       'CRM and Google Sheets integration so every lead lands in your pipeline automatically',
       'Full chat transcripts and conversation summaries handed off to your sales team',
       'AI strategy audit and roadmap tailored to your specific ecommerce operation',
@@ -106,8 +106,8 @@ const SERVICES: Record<string, {
     tagline: 'Ads that generate positive ROAS.',
     metaDescription: 'Performance marketing agency managing Meta, TikTok and Google Ads for ecommerce brands. We fix the funnel first, then drive consistent positive ROAS across every channel.',
     description: [
-      'We fix the funnel first. Most agencies will happily take your money and drive traffic to a site that converts at 0.3%. We refuse to do that. Before a penny is spent on ads, we audit and improve your user experience — moving key purchase drivers above the fold, implementing reviews, FAQs and clear guarantees, and simplifying the path to purchase.',
-      "We don't identify as a \"Facebook Agency\" or a \"PPC Agency.\" We identify as a Revenue Agency. We go where your customers are — Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it's DTC, Ecom or Lead Generation, we'll have the answer.",
+      'We fix the funnel first. Most agencies will happily take your money and drive traffic to a site that converts at 0.3%. We refuse to do that. Before a penny is spent on ads, we audit and improve your user experience by moving key purchase drivers above the fold, implementing reviews, FAQs and clear guarantees, and simplifying the path to purchase.',
+      "We don't identify as a \"Facebook Agency\" or a \"PPC Agency.\" We identify as a Revenue Agency. We go where your customers are: Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it's DTC, Ecom or Lead Generation, we'll have the answer.",
     ],
     outcomes: ['Pre campaign landing page audit & CRO','Meta, TikTok & Google Ads management','Creative strategy & production briefs','Rapid A/B testing to find winners fast','Monthly performance reporting'],
     related: ['ai-solutions','lead-generation'],
@@ -149,7 +149,7 @@ const SERVICES: Record<string, {
         {
           num: '01',
           title: 'Technical SEO for Ecommerce',
-          body: 'The foundation that everything else is built on. If your Shopify or ecommerce site has crawl errors, slow load times, duplicate content from faceted navigation, broken internal links, or indexation issues — no amount of content or links will fix your rankings. We run a full technical SEO audit and resolve every issue before anything else. Core Web Vitals, structured data (schema markup), canonical tags, sitemap health and crawl budget optimisation are all part of the process.',
+          body: 'The foundation that everything else is built on. If your Shopify or ecommerce site has crawl errors, slow load times, duplicate content from faceted navigation, broken internal links, or indexation issues, no amount of content or links will fix your rankings. We run a full technical SEO audit and resolve every issue before anything else. Core Web Vitals, structured data (schema markup), canonical tags, sitemap health and crawl budget optimisation are all part of the process.',
         },
         {
           num: '02',
@@ -182,10 +182,11 @@ const SERVICES: Record<string, {
     tagline: 'The London lead generation agency that only gets paid when you do.',
     metaDescription: "Zero monthly retainer. London's performance based lead generation agency — you fund the ad spend, we deliver strategy, creatives and results. Revenue share or fixed CPA model.",
     description: [
-      'Zero monthly fees. 100% performance based. Stop burning cash on agencies that promise the world and deliver excuses. You cover the ad spend — we cover the expertise, the strategy, and the execution. If we don\'t perform, we don\'t eat.',
-      'We design the creatives, write the copy, build the landing pages, and manage campaign optimisation — all at no charge. We agree on a fair revenue split or fixed CPA for every qualified lead or sale we generate. You own all the data. You have nothing to lose.',
+      'This service is built for high ticket businesses. Trading and investment coaches, online course creators, business consultants, property educators, financial advisors. If your product or service sells for £2,000 or more and you need a consistent pipeline of qualified prospects, this is designed for you.',
+      'The model is straightforward. You fund the ad spend directly. We build the creatives, write the copy, set up the landing pages and manage the campaigns. No monthly retainer. We agree a revenue share or fixed cost per acquisition and we only earn when you do. If we do not perform, we do not eat.',
+      'High ticket businesses are the perfect fit for this model because the numbers work. One closed deal can be worth thousands. We build funnels designed to attract serious prospects and filter out the wrong ones, so your sales team spends time on conversations that are likely to convert. We are not chasing volume. We want qualified leads that your closers can close.',
     ],
-    outcomes: ['Zero monthly retainer — performance based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy & landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
+    outcomes: ['Zero monthly retainer, performance based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy and landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
     related: ['direct-response','fractional-cmo'],
   },
   'fractional-cmo': {
@@ -203,7 +204,7 @@ const SERVICES: Record<string, {
       'Marketing strategy, annual planning and full budget allocation',
       'Campaign ideation and creative direction across every channel',
       'Media buying across Meta, Google, TikTok and LinkedIn',
-      'Management or advisory of your existing marketing team — or full takeover',
+      'Management or advisory of your existing marketing team, or full takeover',
       'Tech stack audit, AI tools and marketing automation setup',
       'Brand positioning, messaging and go to market strategy',
       'Board-level reporting, OKR frameworks and growth roadmaps',
@@ -218,10 +219,10 @@ const SERVICES: Record<string, {
     tagline: 'Scale your agency without increasing your headcount.',
     metaDescription: 'White label marketing fulfilment for agencies that need a trusted execution partner. AI, paid media and CRO delivered under your brand with full NDA and weekly reports.',
     description: [
-      'Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don\'t have in house, we step in and integrate seamlessly to deliver white label excellence — so you never have to turn down a contract again.',
+      'Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don\'t have in house, we step in and integrate seamlessly to deliver white label excellence, so you never have to turn down a contract again.',
       'We do the work. You get the credit. You receive weekly white label reports and analysis while maintaining 100% control of the client relationship. We can also execute campaigns and train your junior staff to take them over.',
     ],
-    outcomes: ['Overflow execution — never turn down a client again','White label AI, CRO & Paid Media fulfilment','Training & handoffs to your in house team','Weekly white label reports & analysis','Full NDA — you maintain 100% client ownership'],
+    outcomes: ['Overflow execution: never turn down a client again','White label AI, CRO & Paid Media fulfilment','Training & handoffs to your in house team','Weekly white label reports & analysis','Full NDA: you maintain 100% client ownership'],
     related: ['direct-response','seo'],
   },
   'website-builds': {
@@ -230,7 +231,7 @@ const SERVICES: Record<string, {
     tagline: 'Custom websites built around your commercial goals. Not a template in sight.',
     metaDescription: 'Custom performance first websites for ecommerce and service brands. Built in Next.js with scroll animations, CRM integration, full backend and SEO baked in from day one.',
     description: [
-      'We build performance first websites for ecommerce and service brands, starting with your commercial goals and built entirely from scratch. What you are experiencing on this page — the scroll animations, the transitions, the visual weight — is exactly what we bring to your product and brand. Every site is fully custom from the ground up, with CRM integration, backend architecture and a front end where SEO and CRO are baked into every decision, not bolted on at the end.',
+      'We build performance first websites for ecommerce and service brands, starting with your commercial goals and built entirely from scratch. What you are experiencing on this page, the scroll animations, the transitions, the visual weight, is exactly what we bring to your product and brand. Every site is fully custom from the ground up, with CRM integration, backend architecture and a front end where SEO and CRO are baked into every decision, not bolted on at the end.',
     ],
     outcomes: [],
     related: ['direct-response','seo'],
@@ -240,8 +241,8 @@ const SERVICES: Record<string, {
           name: 'WhichPodcast',
           url: 'https://www.whichpodcast.com',
           urlLabel: 'whichpodcast.com',
-          challenge: 'Client wanted to create the Netflix of podcasts — a rich discovery platform with a familiar content grid feel and the ability for creators to upload their own shows.',
-          solution: 'We built a Netflix inspired UI and introduced AI powered natural language search, letting users find podcasts by mood, topic, guest, or feeling — not just keyword.',
+          challenge: 'Client wanted to create the Netflix of podcasts, a rich discovery platform with a familiar content grid feel and the ability for creators to upload their own shows.',
+          solution: 'We built a Netflix inspired UI and introduced AI powered natural language search, letting users find podcasts by mood, topic, guest, or feeling rather than just keyword.',
           desktopImg: '/portfolio-whichpodcast-desktop.jpg',
           mobileImg: '/portfolio-whichpodcast-mobile.jpg',
         },
@@ -258,7 +259,7 @@ const SERVICES: Record<string, {
           name: 'Leng Media',
           url: 'https://www.lengmedia.com',
           urlLabel: 'lengmedia.com',
-          challenge: 'Our own site needed a major upgrade — something modern and unmistakably distinct from the generic agency template.',
+          challenge: 'Our own site needed a major upgrade. Something modern and unmistakably distinct from the generic agency template.',
           solution: 'Built from scratch in Next.js with a custom canvas animation, dark design system, and Core Web Vitals optimisation. Ready to run paid traffic from day one.',
           desktopImg: '/portfolio-lengmedia-desktop.jpg',
           mobileImg: '/portfolio-lengmedia-mobile.jpg',
@@ -724,7 +725,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <ScrollReveal>
                 <span className="section-label">// Real Results</span>
                 <h2 className={styles.seoHeading}>What the traffic looks like.</h2>
-                <p className={styles.seoCopy}>A real client. The name&apos;s omitted — but the results aren&apos;t.</p>
+                <p className={styles.seoCopy}>A real client. The name is omitted. The results are not.</p>
               </ScrollReveal>
               <ScrollReveal delay={1}>
                 <TrafficChart />
