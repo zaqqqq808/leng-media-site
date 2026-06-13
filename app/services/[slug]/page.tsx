@@ -57,6 +57,7 @@ const SERVICES: Record<string, {
       body: string
       items?: string[]
     }[]
+    proofImages?: { src: string; alt: string }[]
   }
 }> = {
   'ai-solutions': {
@@ -128,18 +129,18 @@ const SERVICES: Record<string, {
     tagline: 'The ecommerce SEO agency for DTC and ecommerce brands in the USA and UK. We rank you for transactional keywords, grow organic revenue, and get your brand cited by AI.',
     metaDescription: 'Leng Media is an ecommerce SEO agency for Shopify, DTC and ecommerce brands in the USA and UK. We cover technical SEO, collection page optimisation, Shopify SEO, link building and AI citation strategy.',
     description: [
-      'Ecommerce SEO is a completely different discipline to regular SEO, and most agencies do not understand the difference. For a Shopify store, DTC brand or online retailer, the only pages that generate revenue are your collection pages and product pages. Informational blog content sits at the top of the funnel — and in 2026, AI has already taken that territory. ChatGPT, Perplexity and Google AI Overviews answer those queries before a user ever clicks. We focus entirely on mid and bottom of funnel transactional keywords: people who are ready to buy. That is where rankings translate directly into revenue.',
-      'As an ecommerce SEO agency working with brands in the USA and UK, we cover the full stack. Technical SEO to fix what is broken at the foundation. Collection and product page optimisation to rank the pages that drive actual sales. Shopify SEO built around how the platform structures URLs, faceted navigation and duplicate content. Competitor gap analysis to find where you can win fast. Holistic link building to build domain authority over time. And a Generative Engine Optimisation (GEO) strategy that gets your brand recommended inside AI generated answers — one of the fastest growing visibility channels in search right now.',
+      'Ecommerce SEO is not the same as regular SEO. For a Shopify store or DTC brand, the pages that drive revenue are your collection pages and product pages. Informational blog content sits at the top of the funnel, and in 2026 AI has already taken that territory. We focus entirely on transactional keywords where people are ready to buy. That is where rankings convert directly into revenue.',
+      'We cover the full stack: technical SEO, collection and product page optimisation, and link building that actually moves domain authority. We research and identify relevant contacts in your industry, create genuinely linkable assets worth pointing to, and build authority through editorial outreach and digital PR. The result is a site that earns trust over time and compounds in organic traffic.',
     ],
     outcomes: [
       'Technical SEO audit, crawl fixes and Core Web Vitals optimisation',
-      'Shopify SEO — URL structure, faceted navigation and duplicate content',
+      'Shopify SEO: URL structure, faceted navigation and duplicate content',
       'Collection page and product page SEO for transactional keywords',
       'Keyword strategy focused on mid and bottom of funnel buyer intent',
-      'Competitor gap analysis — find where you can rank fast',
-      'Holistic link building: editorial outreach, guest posts and digital PR',
-      'Community presence — Reddit, Quora and niche forums for AI citation',
-      'Generative Engine Optimisation (GEO) — get cited by ChatGPT and Perplexity',
+      'Competitor gap analysis: find where you can rank fast',
+      'Link building: finding relevant contacts, creating linkable assets, editorial outreach',
+      'Community presence: Reddit, Quora and niche forums for AI citation',
+      'Generative Engine Optimisation (GEO): get cited by ChatGPT and Perplexity',
       'Monthly reporting tied to organic revenue, not just keyword rankings',
     ],
     related: ['direct-response','ai-solutions'],
@@ -153,23 +154,23 @@ const SERVICES: Record<string, {
         {
           num: '02',
           title: 'Collection Page and Product Page SEO',
-          body: 'For ecommerce brands, collection pages are where organic revenue lives. Most SEO agencies focus on blog content — we focus on the pages that actually convert. We optimise your collection pages and product pages for transactional keywords with high buyer intent, improve on page signals, and structure your internal linking to push authority to the pages that matter. AI has taken the top of the funnel. We win the bottom of it.',
+          body: 'For ecommerce brands, collection pages are where organic revenue lives. Most SEO agencies focus on blog content. We focus on the pages that actually convert. We optimise your collection and product pages for transactional keywords with high buyer intent, improve on page signals, and structure internal linking to push authority to the pages that matter. AI has taken the top of the funnel. We win the bottom of it.',
         },
         {
           num: '03',
           title: 'Competitor Intelligence and Keyword Gap Analysis',
-          body: 'We map exactly where your competitors are winning — which transactional keywords they rank for, which sites link to them, and which gaps in their coverage you can exploit quickly. Every ecommerce SEO strategy we build is informed by what is already working in your specific niche. We do not guess. We reverse-engineer rankings that already exist and build a faster path to the same results.',
+          body: 'We map exactly where your competitors are winning: which transactional keywords they rank for, which sites link to them, and which gaps you can exploit quickly. Every ecommerce SEO strategy we build is informed by what is already working in your specific niche. We do not guess. We reverse engineer rankings that already exist and build a faster path to the same results.',
         },
         {
           num: '04',
-          title: 'Holistic Link Building and GEO',
-          body: 'Most ecommerce link building is either ignored entirely or outsourced to someone buying cheap links that actively damage your domain. We build authority across five channels — and layer in Generative Engine Optimisation so your brand gets cited when AI models generate recommendations in your category:',
+          title: 'Link Building and GEO',
+          body: 'Most ecommerce link building is ignored or outsourced to someone buying cheap links that damage your domain. We find relevant contacts, build linkable assets worth sharing, and earn authority through genuine outreach. We also layer in Generative Engine Optimisation so your brand gets cited when AI models generate recommendations in your category:',
           items: [
-            'Editorial outreach — genuine brand mentions in industry publications and press',
-            'Guest posting — authoritative articles on relevant niche blogs and trade sites',
-            'Linkable asset creation — tools, data studies and guides that earn links passively',
-            'Directory listings — strategic placement on high-authority, niche specific directories',
-            'Community and GEO — Reddit, Quora and forums that feed AI citations and drive direct conversions',
+            'Editorial outreach: genuine brand mentions in industry publications and press',
+            'Guest posting: authoritative articles on relevant niche blogs and trade sites',
+            'Linkable asset creation: tools, data studies and guides that earn links passively',
+            'Directory listings: strategic placement on high authority, niche specific directories',
+            'Community and GEO: Reddit, Quora and forums that feed AI citations and direct conversions',
           ],
         },
       ],
@@ -703,16 +704,33 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               ))}
             </div>
           </div>
-          <div className={`${styles.seoChart} theme-dark`}>
-            <ScrollReveal>
-              <span className="section-label">// Real Results</span>
-              <h2 className={styles.seoHeading}>What the traffic looks like.</h2>
-              <p className={styles.seoCopy}>A real client. The name&apos;s omitted — but the results aren&apos;t.</p>
-            </ScrollReveal>
-            <ScrollReveal delay={1}>
-              <TrafficChart />
-            </ScrollReveal>
-          </div>
+          {s.seoPillars.proofImages && s.seoPillars.proofImages.length > 0 ? (
+            <div className={`${styles.seoChart} theme-dark`}>
+              <ScrollReveal>
+                <span className="section-label">// Real Results</span>
+                <h2 className={styles.seoHeading}>What the traffic looks like.</h2>
+                <p className={styles.seoCopy}>Real clients. Names omitted, results are not.</p>
+              </ScrollReveal>
+              <ScrollReveal delay={1}>
+                <div className={styles.seoProofImages}>
+                  {s.seoPillars.proofImages.map(img => (
+                    <img key={img.src} src={img.src} alt={img.alt} className={styles.seoProofImg} />
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
+          ) : (
+            <div className={`${styles.seoChart} theme-dark`}>
+              <ScrollReveal>
+                <span className="section-label">// Real Results</span>
+                <h2 className={styles.seoHeading}>What the traffic looks like.</h2>
+                <p className={styles.seoCopy}>A real client. The name&apos;s omitted — but the results aren&apos;t.</p>
+              </ScrollReveal>
+              <ScrollReveal delay={1}>
+                <TrafficChart />
+              </ScrollReveal>
+            </div>
+          )}
         </section>
       )}
 

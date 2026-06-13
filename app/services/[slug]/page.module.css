@@ -270,7 +270,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 1fr;
-  gap: 16px;
+  gap: 6px;
 }
 .seoPillarCard {
   background: var(--surface);
@@ -324,6 +324,17 @@
   font-size: 7px;
   margin-top: 5px;
   flex-shrink: 0;
+}
+.seoProofImages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.seoProofImg {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 /* PORTFOLIO */
