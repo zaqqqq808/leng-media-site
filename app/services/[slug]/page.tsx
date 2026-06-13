@@ -184,11 +184,12 @@ const SERVICES: Record<string, {
   'fractional-cmo': {
     num: '05',
     name: 'Fractional CMO',
-    tagline: 'The fractional CMO agency for ecommerce and DTC brands. Outsourced CMO services covering strategy, media buying and full team ownership — without the full time hire.',
+    tagline: 'The fractional CMO agency for ecommerce and DTC brands.',
     metaDescription: 'Leng Media is a fractional CMO agency for ecommerce and DTC brands in the USA and UK. Outsourced CMO services covering strategy, media buying, team management and execution. From £15,000/month.',
     description: [
-      'Brands searching for a fractional CMO agency want one thing: a senior marketer who shows up, takes ownership, and delivers results. No £250k salary. No equity ask. No six week onboarding. We have worked with brands including Hims, National Geographic Traveller, Ninety Percent, and Horizon Group — and we plug in on Day 1. When we arrive, we already know what good looks like across paid media, creative, SEO, CRO, AI automation and growth strategy. There is no learning curve on your time.',
-      'Whether you have an existing marketing team that needs strategic direction, or a blank slate that needs building from scratch, we adapt to your structure. We sit in your meetings, manage your budgets, ideate campaigns, brief creatives, run media buying, and own the results. This is outsourced CMO as a service, not consulting. Not a retainer for a list of deliverables. Full marketing leadership, embedded in your business, on your terms.',
+      'Most brands find us at the same point. Marketing is working, revenue is growing, but there is no one senior enough to own it. The founder is still signing off on ad creative. The team has no strategic north star. A full time CMO at £200k feels like the wrong move at this stage. That is exactly what a fractional CMO is built for — and it is what we do.',
+      'We have launched brands including WhichPodcast and Ayla Property from scratch — building positioning, go to market strategy and paid acquisition from zero. We have scaled established names including Barry\'s Bootcamp, Rhythm Nutrition and Chesneys, stepping in as the senior marketing voice and driving growth across paid and organic. The businesses that hire a fractional CMO do not need more hands. They need leadership.',
+      'We integrate into your structure from day one. We attend your standups, own your media budgets, manage agency relationships or run the channels ourselves, and report directly to the founder or board. Unlike most CMO level consultants, we can both set the strategy and execute it — running Meta and Google Ads, managing SEO, and directing creative. Not just pointing at what needs to be done.',
     ],
     outcomes: [
       'Marketing strategy, annual planning and full budget allocation',
