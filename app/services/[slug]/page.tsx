@@ -11,7 +11,7 @@ const SERVICES: Record<string, {
   name: string
   tagline: string
   metaDescription: string
-  description: string[]
+  description: React.ReactNode[]
   outcomes: string[]
   related: string[]
   descriptionHighlights?: string[]
@@ -64,8 +64,10 @@ const SERVICES: Record<string, {
     tagline: 'Custom ecommerce AI chatbots for lead generation, AI agents for business workflow automation, and product image revamping for DTC and ecommerce brands in the USA and UK.',
     metaDescription: 'Leng Media is an AI automation agency for ecommerce and DTC brands. We build custom AI chatbots for lead generation, AI agents for business process automation, and provide product image revamping. Serving clients in the USA and UK.',
     description: [
-      'If you are searching for an AI automation agency that understands ecommerce, you are in the right place. We build and install three high-impact AI solutions for DTC and ecommerce brands: AI chatbots for lead generation that qualify visitors and book meetings around the clock, AI agents for business automation that handle your most time-consuming internal workflows, and product image revamping that slashes creative spend while lifting conversion rates. The ecommerce brands pulling ahead right now are the ones moving fast on all three.',
-      'Most ecommerce businesses pour money into traffic and lose it to friction. A visitor arrives, gets no instant answer, and leaves. Your team manually handles tasks that an AI chatbot or AI agent could process in seconds. Your product photography budget resets every time you launch a new line. As your AI automation agency, we fix all of it — one engagement, measurable ROI, and no software subscriptions you will never fully understand. We have built AI chatbot platforms for ecommerce brands generating thousands of monthly visitors, and the results compound over time.',
+      <>We have listed our core AI services below, but with the pace at which AI is evolving, new capabilities are emerging constantly. We stay at the forefront, testing and applying the latest tools with ecommerce and DTC brands always in mind. This is why we keep a regularly updated <Link href="/free-tools" style={{color:'var(--neon)',textDecoration:'underline'}}>AI for Ecommerce Cheat Sheet</Link> — so you can stay current too.</>,
+      'Our AI chatbots generate and qualify leads around the clock. They capture contact details, record data directly into Google Sheets or your CRM, and book meetings and appointments into your calendar without any human involvement. For ecommerce brands this means your pipeline keeps moving even while you sleep.',
+      'We also revamp product imagery using AI. Better visuals directly improve conversion rates and reduce your dependency on expensive shoots. We price this based on the size of your image library, making it viable whether you have 20 products or 2,000.',
+      'For wider business automation we build custom workflows using Make.com. The goal is simple: if a task is repetitive, we automate it. Typical setups include social media content creation, CRM pipeline management, email marketing optimisation, and reporting. Your team gets their time back and the business runs leaner.',
     ],
     outcomes: [
       'Custom AI chatbot for ecommerce — captures leads and books meetings 24/7',
@@ -555,7 +557,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <span className="section-label">// Overview</span>
           </ScrollReveal>
           {s.description.map((p, i) => (
-            <ScrollReveal key={i} delay={(i+1) as 1|2}>
+            <ScrollReveal key={i} delay={(Math.min(i+1,4)) as 1|2|3|4}>
               <p className={styles.bodyText}>{p}</p>
             </ScrollReveal>
           ))}
