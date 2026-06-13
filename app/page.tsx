@@ -88,16 +88,6 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* ── STATS ── */}
-      <div className={styles.stats}>
-        {[{n:'3.59',s:'×',l:'Avg Campaign ROAS'},{n:'7',s:'+',l:'Brands Launched'},{n:'£3.2',s:'M+',l:'Ad Spend Managed'},{n:'14',s:'yr',l:'Industry Experience'}].map((st,i)=>(
-          <ScrollReveal key={st.l} className={styles.stat} delay={(i+1) as 1|2|3|4}>
-            <div className={styles.statNum}>{st.n}<em>{st.s}</em></div>
-            <span className={styles.statLabel}>{st.l}</span>
-          </ScrollReveal>
-        ))}
-      </div>
-
       {/* ── SERVICES ── */}
       <section className={styles.services} id="services">
         <ScrollReveal className={styles.servicesHeader}>
@@ -117,6 +107,16 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ── STATS ── */}
+      <div className={styles.stats}>
+        {[{n:'3.59',s:'×',l:'Avg Campaign ROAS'},{n:'7',s:'+',l:'Brands Launched'},{n:'£3.2',s:'M+',l:'Ad Spend Managed'},{n:'14',s:'yr',l:'Industry Experience'}].map((st,i)=>(
+          <ScrollReveal key={st.l} className={styles.stat} delay={(i+1) as 1|2|3|4}>
+            <div className={styles.statNum}>{st.n}<em>{st.s}</em></div>
+            <span className={styles.statLabel}>{st.l}</span>
+          </ScrollReveal>
+        ))}
+      </div>
 
       {/* ── RESOURCES ── */}
       <section className={styles.resources} id="resources">
