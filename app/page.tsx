@@ -80,7 +80,7 @@ export default function Home() {
         <ScrollReveal delay={2}>
           <div className={styles.clientGrid}>
             {CLIENTS.map(c => (
-              <div key={c.name} className={styles.clientLogo}>
+              <div key={c.name} className={styles.clientLogo} data-domain={c.domain}>
                 <ClientLogo name={c.name} domain={c.domain} />
               </div>
             ))}
