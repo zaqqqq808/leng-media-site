@@ -160,11 +160,11 @@
 
 /* ── STATS ── */
 .stats { display: grid; grid-template-columns: repeat(4,1fr); background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.stat { padding: 72px 40px; text-align: center; border-right: 1px solid var(--line-soft); }
+.stat { padding: 46px 26px; text-align: center; border-right: 1px solid var(--line-soft); }
 .stat:last-child { border-right: none; }
-.statNum { font-family: var(--font-inter),sans-serif; font-weight: 700; font-size: clamp(52px,6vw,80px); color: var(--ink); line-height: 1; }
+.statNum { font-family: var(--font-inter),sans-serif; font-weight: 700; font-size: clamp(34px,3.8vw,51px); color: var(--ink); line-height: 1; }
 .statNum em { font-style: normal; color: var(--accent-ink); }
-.statLabel { font-family: var(--font-mono),monospace; font-size: 9px; letter-spacing: 2.5px; color: var(--ink-3); text-transform: uppercase; margin-top: 10px; display: block; }
+.statLabel { font-family: var(--font-mono),monospace; font-size: 7px; letter-spacing: 1.5px; color: var(--ink-3); text-transform: uppercase; margin-top: 6px; display: block; }
 
 /* ── CLIENTS ── */
 .clients { padding: 110px 52px; background: var(--bg); text-align: center; }
@@ -245,7 +245,7 @@
   .scDesc { font-size: 12px; display: block; -webkit-line-clamp: 2; }
   .scArrow { display: none; }
   .stats { grid-template-columns: repeat(2,1fr); }
-  .stat { padding: 48px 24px; }
+  .stat { padding: 30px 16px; }
   .clients { padding: 64px 24px; }
   .clientGrid { grid-template-columns: repeat(2,1fr); }
   .clientLogo:nth-child(3n) { border-right: 1px solid var(--line-soft); }
