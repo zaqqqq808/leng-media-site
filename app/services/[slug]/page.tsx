@@ -148,30 +148,23 @@ const SERVICES: Record<string, {
       pillars: [
         {
           num: '01',
-          title: 'Technical SEO for Ecommerce',
-          body: 'The foundation that everything else is built on. If your Shopify or ecommerce site has crawl errors, slow load times, duplicate content from faceted navigation, broken internal links, or indexation issues, no amount of content or links will fix your rankings. We run a full technical SEO audit and resolve every issue before anything else. Core Web Vitals, structured data (schema markup), canonical tags, sitemap health and crawl budget optimisation are all part of the process.',
+          title: 'Technical SEO',
+          body: 'The foundation everything else is built on. Crawl errors, slow load times, duplicate content from faceted navigation, broken internal links or indexation issues will silently kill your rankings regardless of how strong your content is. We run a full technical audit and fix every issue first: Core Web Vitals, schema markup, canonical tags, sitemap health and crawl budget optimisation.',
         },
         {
           num: '02',
-          title: 'Collection Page and Product Page SEO',
-          body: 'For ecommerce brands, collection pages are where organic revenue lives. Most SEO agencies focus on blog content. We focus on the pages that actually convert. We optimise your collection and product pages for transactional keywords with high buyer intent, improve on page signals, and structure internal linking to push authority to the pages that matter. AI has taken the top of the funnel. We win the bottom of it.',
+          title: 'Collection and Product Page SEO',
+          body: 'For ecommerce brands, collection pages are where organic revenue lives. Most SEO agencies optimise blog content. We optimise the pages that actually convert. We target transactional keywords with high buyer intent, strengthen on page signals, and build internal linking structures that push authority to the pages that drive sales. AI has taken the top of the funnel. We win the bottom.',
         },
         {
           num: '03',
-          title: 'Competitor Intelligence and Keyword Gap Analysis',
-          body: 'We map exactly where your competitors are winning: which transactional keywords they rank for, which sites link to them, and which gaps you can exploit quickly. Every ecommerce SEO strategy we build is informed by what is already working in your specific niche. We do not guess. We reverse engineer rankings that already exist and build a faster path to the same results.',
+          title: 'Competitor Intelligence',
+          body: 'We map exactly where your competitors are winning: which keywords they rank for, which sites link to them, and which gaps in their coverage you can exploit quickly. Every strategy we build is informed by what is already working in your niche. We do not guess. We reverse engineer rankings that exist and find you the fastest path to the same results.',
         },
         {
           num: '04',
           title: 'Link Building and GEO',
-          body: 'Most ecommerce link building is ignored or outsourced to someone buying cheap links that damage your domain. We find relevant contacts, build linkable assets worth sharing, and earn authority through genuine outreach. We also layer in Generative Engine Optimisation so your brand gets cited when AI models generate recommendations in your category:',
-          items: [
-            'Editorial outreach: genuine brand mentions in industry publications and press',
-            'Guest posting: authoritative articles on relevant niche blogs and trade sites',
-            'Linkable asset creation: tools, data studies and guides that earn links passively',
-            'Directory listings: strategic placement on high authority, niche specific directories',
-            'Community and GEO: Reddit, Quora and forums that feed AI citations and direct conversions',
-          ],
+          body: 'Most ecommerce link building is ignored or handed to someone buying cheap links that actively damage your domain. We research relevant contacts, create genuinely linkable assets and earn authority through editorial outreach, guest posting and digital PR. We also apply Generative Engine Optimisation so your brand gets cited when AI tools generate recommendations in your category.',
         },
       ],
     },
