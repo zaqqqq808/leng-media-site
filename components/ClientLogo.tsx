@@ -45,6 +45,22 @@ const LOGOS: Record<string, React.ReactNode> = {
       <text x="60" y="20" fontFamily="Georgia,serif" fontSize="16" fontWeight="400" fill="currentColor" letterSpacing="1">me</text>
     </svg>
   ),
+  'fox.com': (
+    <svg className={styles.logo} width="80" height="44" viewBox="0 0 80 44" fill="none">
+      <text x="0" y="38" fontFamily="'Arial Black',Arial,sans-serif" fontSize="40" fontWeight="900" fill="currentColor" letterSpacing="-1">FOX</text>
+    </svg>
+  ),
+  'whichpodcast.com': (
+    <svg className={styles.logo} width="196" height="28" viewBox="0 0 196 28" fill="none">
+      <text x="0" y="21" fontFamily="'Arial Black',Arial,sans-serif" fontSize="18" fontWeight="900" fill="#00C48C">WHICH</text>
+      <text x="87" y="21" fontFamily="'Arial Black',Arial,sans-serif" fontSize="18" fontWeight="900" fill="currentColor">PODCAST</text>
+    </svg>
+  ),
+  'chesneys.co.uk': (
+    <svg className={styles.logo} width="148" height="28" viewBox="0 0 148 28" fill="none">
+      <text x="0" y="20" fontFamily="Georgia,'Times New Roman',serif" fontSize="13" fontWeight="400" fill="currentColor" letterSpacing="3.5">CHESNEYS</text>
+    </svg>
+  ),
 }
 
 export default function ClientLogo({ name, domain }: Props) {

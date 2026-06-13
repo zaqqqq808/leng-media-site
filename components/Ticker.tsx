@@ -1,7 +1,7 @@
 'use client'
 import styles from './Ticker.module.css'
 
-const ITEMS = ['High Ticket Lead Gen','AI Agents and Automation','Rapid A/B Testing','Fast Website Builds','Link Building','CR% Audits','Growth Hacking','Revenue Share Models']
+const ITEMS = ['High Ticket Lead Gen','AI Agents and Automation','Rapid A/B Testing','Custom Website Builds','Link Building','CR% Audits','Growth Hacking','Revenue Share Models']
 
 export default function Ticker() {
   const doubled = [...ITEMS, ...ITEMS]
