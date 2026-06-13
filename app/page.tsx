@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* ── STATS ── */}
       <div className={styles.stats}>
-        {[{n:'3.59',s:'×',l:'Avg Campaign ROAS'},{n:'£0',s:'',l:'Lead Gen Retainer'},{n:'£3.2',s:'M+',l:'Ad Spend Managed'},{n:'14',s:'yr',l:'Industry Experience'}].map((st,i)=>(
+        {[{n:'3.59',s:'×',l:'Avg Campaign ROAS'},{n:'7',s:'+',l:'Brands Launched'},{n:'£3.2',s:'M+',l:'Ad Spend Managed'},{n:'14',s:'yr',l:'Industry Experience'}].map((st,i)=>(
           <ScrollReveal key={st.l} className={styles.stat} delay={(i+1) as 1|2|3|4}>
             <div className={styles.statNum}>{st.n}<em>{st.s}</em></div>
             <span className={styles.statLabel}>{st.l}</span>
