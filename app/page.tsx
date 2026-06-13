@@ -67,10 +67,8 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.blobWrap}><BlobCanvas /></div>
+        <div className={styles.heroFade} />
       </section>
-
-      {/* ── TICKER ── */}
-      <Ticker />
 
       {/* ── CLIENTS ── */}
       <section className={styles.clients}>
@@ -87,6 +85,9 @@ export default function Home() {
           </div>
         </ScrollReveal>
       </section>
+
+      {/* ── TICKER ── */}
+      <Ticker />
 
       {/* ── SERVICES ── */}
       <section className={styles.services} id="services">
