@@ -1,0 +1,174 @@
+.page { max-width: 900px; }
+
+.header { margin-bottom: 52px; }
+
+.label {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #d4ff00;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Sections */
+.section { margin-bottom: 52px; }
+
+.sectionLabel {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #444;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Cards */
+.card {
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.25s;
+  text-decoration: none;
+}
+
+.cardOwned { cursor: pointer; }
+.cardOwned:hover { border-color: rgba(212,255,0,0.3); }
+
+.cardLocked {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.cardTag {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #d4ff00;
+  text-transform: uppercase;
+}
+
+.lockedBadge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #444;
+  border: 1px solid #333;
+  padding: 3px 8px;
+  text-transform: uppercase;
+}
+
+.cardName {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.cardDesc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.cardModules {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #444;
+  text-transform: uppercase;
+}
+
+.cardCta {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #d4ff00;
+  text-transform: uppercase;
+}
+
+.upgradeBtn {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 14px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.upgradeBtn:hover { border-color: #d4ff00; color: #d4ff00; }
+
+/* Empty state */
+.emptyState {
+  padding: 52px;
+  border: 1px dashed rgba(255,255,255,0.1);
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.emptyState p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.emptyLink {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #d4ff00;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+}

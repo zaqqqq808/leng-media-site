@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Space_Mono, Inter } from 'next/font/google'
 import Script from 'next/script'
+import { ClerkProvider } from '@clerk/nextjs'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -69,6 +70,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+    <ClerkProvider>
     <html lang="en" className={`${cormorant.variable} ${spaceMono.variable} ${inter.variable}`}>
       <body>
         {/* Google Analytics */}
@@ -93,5 +95,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
       </body>
     </html>
+    </ClerkProvider>
   )
 }

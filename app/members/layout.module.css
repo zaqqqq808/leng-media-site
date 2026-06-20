@@ -1,0 +1,161 @@
+/* ── MEMBERS AREA SHELL ── */
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: #111;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+  padding: 28px 0;
+}
+
+.sidebarTop { display: flex; flex-direction: column; }
+.sidebarBottom { padding: 0 20px; }
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 32px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 28px;
+}
+
+.logoMark {
+  width: 32px;
+  height: 32px;
+  background: #d4ff00;
+  color: #000;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 12px;
+  gap: 2px;
+}
+
+.navLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #444;
+  text-transform: uppercase;
+  padding: 0 8px;
+  margin-bottom: 8px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.navItem:hover { color: #fff; background: rgba(255,255,255,0.04); }
+
+.navActive {
+  color: #d4ff00 !important;
+  background: rgba(212,255,0,0.06) !important;
+}
+
+.navIcon {
+  font-size: 0.95rem;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Bottom */
+.userRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.accountLabel {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.backLink {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.backLink:hover { color: #888; }
+
+/* ── MAIN CONTENT ── */
+.main {
+  flex: 1;
+  margin-left: 240px;
+  padding: 48px 52px;
+  min-height: 100vh;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .sidebarTop { flex-direction: row; align-items: center; gap: 16px; }
+  .sidebarBottom { display: none; }
+  .logo { padding: 0; border: none; margin: 0; }
+  .nav { flex-direction: row; padding: 0; gap: 4px; }
+  .navLabel { display: none; }
+  .navItem { padding: 8px 10px; font-size: 0.78rem; }
+  .main { margin-left: 0; padding: 28px 20px; }
+}

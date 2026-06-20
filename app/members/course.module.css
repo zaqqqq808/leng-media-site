@@ -1,0 +1,219 @@
+.page { max-width: 820px; }
+
+/* Header */
+.header { margin-bottom: 48px; }
+
+.label {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #d4ff00;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.sub {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Modules */
+.module {
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 36px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+
+.moduleLocked { opacity: 0.5; }
+
+.moduleHeader { margin-bottom: 16px; }
+
+.moduleNum {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #d4ff00;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.moduleName {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.moduleDesc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* Checklist */
+.checklist { display: flex; flex-direction: column; gap: 14px; margin-bottom: 0; }
+
+.checkItem {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.checkMark {
+  color: #d4ff00;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checkItem p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #d4ff00;
+  color: #000;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 28px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 24px rgba(212,255,0,0.3);
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 24px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: border-color 0.2s;
+}
+
+.btnSecondary:hover { border-color: rgba(255,255,255,0.5); }
+
+/* Module grid (for Protocol page) */
+.sectionLabel {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #444;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.moduleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.moduleCard {
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 28px;
+  transition: border-color 0.2s;
+}
+
+.moduleCard:hover { border-color: rgba(212,255,0,0.2); }
+
+.moduleCardNum {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #d4ff00;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.moduleCardName {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.moduleCardDesc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.82rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.moduleStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #d4ff00;
+  text-transform: uppercase;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  background: #d4ff00;
+  border-radius: 50%;
+}
+
+/* Coming soon */
+.comingSoonBadge {
+  display: inline-block;
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #555;
+  border: 1px solid #333;
+  padding: 6px 14px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .moduleGrid { grid-template-columns: 1fr; }
+  .module { padding: 24px; }
+}
