@@ -12,16 +12,16 @@ const TOOLS = [
   {
     name: 'Google Display Network (GDN) Ad Specs Cheat Sheet',
     desc: 'Every ad size, format and spec you need for GDN campaigns in one clean reference sheet.',
-    href: '#', // TODO: link to actual download
+    href: '/gdn-cheat-sheet.jpg',
+    download: 'GDN-Ad-Specs-Cheat-Sheet.jpg',
     free: true,
     category: 'Advertising',
   },
   {
     name: 'AI For Ecommerce Cheat Sheet',
-    desc: 'The exact AI tools and prompts we use to grow ecommerce brands faster. Every tool tested on real campaigns.',
-    href: '/ai-cheat-sheet',
-    free: false,
-    isPaid: true,
+    desc: 'The exact AI tools and prompts we use to grow ecommerce brands faster.',
+    href: 'https://ethereal-saturday-a3b.notion.site/AI-Cheat-Sheet-for-Ecom-DTC-2e74354e4a8880b8bc20f0e9ad6ba007',
+    free: true,
     category: 'AI',
   },
   {
@@ -70,7 +70,7 @@ export default function FreeTools() {
         <div className={styles.toolsList}>
           {TOOLS.map((t, i) => (
             <ScrollReveal key={t.name} delay={(Math.min(i+1,6)) as 1|2|3|4|5|6}>
-              <a href={t.href} className={`${styles.toolRow} ${!t.free && !t.isPaid ? styles.toolDimmed : ''}`} {...(t.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+              <a href={t.href} className={`${styles.toolRow} ${!t.free && !t.isPaid ? styles.toolDimmed : ''}`} {...(t.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} {...('download' in t && t.download ? { download: t.download } : {})}>
                 <div className={styles.toolLeft}>
                   <span className={styles.toolCategory}>{t.category}</span>
                   <span className={styles.toolName}>{t.name}</span>
