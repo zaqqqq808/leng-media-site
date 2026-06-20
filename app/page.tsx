@@ -38,9 +38,9 @@ const CLIENTS = [
 
 const RESOURCES = [
   { name:'GDN Ad Specs Cheat Sheet',            href:'/free-tools', free:true },
-  { name:'AI For Ecommerce Cheat Sheet',         href:'/free-tools', free:true },
+  { name:'AI For Ecommerce Cheat Sheet',         href:'/ai-cheat-sheet', free:false, paid:true },
   { name:'AI For Ecommerce Tutorial',            href:'/free-tools', free:false },
-  { name:'Ecommerce Protocol',                   href:'/free-tools', free:false },
+  { name:'Ecommerce Protocol',                   href:'/ecommerce-protocol', free:false },
   { name:'AI for Ecommerce Skool',               href:'/free-tools', free:false },
 ]
 
@@ -131,7 +131,7 @@ export default function Home() {
           {RESOURCES.map(r=>(
             <Link key={r.name} href={r.href} className={styles.resourceRow}>
               <span className={styles.resourceName}>{r.name}</span>
-              <span className={`${styles.resourceBadge} ${r.free ? styles.badgeFree : styles.badgeSoon}`}>{r.free?'Free':'Coming Soon'}</span>
+              <span className={`${styles.resourceBadge} ${r.free ? styles.badgeFree : r.paid ? styles.badgePaid : styles.badgeSoon}`}>{r.free ? 'Free' : r.paid ? 'Paid ↗' : 'Coming Soon'}</span>
             </Link>
           ))}
         </div>

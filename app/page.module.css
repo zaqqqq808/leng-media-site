@@ -211,6 +211,7 @@
 .resourceBadge { font-family: var(--font-mono),monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; }
 .badgeFree { color: var(--accent-ink); border: 1px solid var(--accent-ink-soft); }
 .badgeSoon { color: var(--ink-3); border: 1px solid var(--line); }
+.badgePaid { color: #FFB700; border: 1px solid rgba(255,183,0,0.35); }
 
 /* ── CONTACT CTA ── */
 .cta { padding: 140px 52px; background: var(--off-black); text-align: center; border-top: 1px solid rgba(255,255,255,0.12); position: relative; overflow: hidden; }

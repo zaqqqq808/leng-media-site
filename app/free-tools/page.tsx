@@ -18,9 +18,10 @@ const TOOLS = [
   },
   {
     name: 'AI For Ecommerce Cheat Sheet',
-    desc: 'The exact AI tools and prompts we use to grow ecommerce brands faster.',
-    href: 'https://ethereal-saturday-a3b.notion.site/AI-Cheat-Sheet-for-Ecom-DTC-2e74354e4a8880b8bc20f0e9ad6ba007',
-    free: true,
+    desc: 'The exact AI tools and prompts we use to grow ecommerce brands faster. Every tool tested on real campaigns.',
+    href: '/ai-cheat-sheet',
+    free: false,
+    isPaid: true,
     category: 'AI',
   },
   {

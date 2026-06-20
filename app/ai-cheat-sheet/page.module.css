@@ -1,0 +1,658 @@
+/* ────────────────────────────────────────────
+   AI for Ecommerce Cheat Sheet — Sales Page
+   Mirrors ecommerce-protocol design language
+──────────────────────────────────────────── */
+
+.page {
+  background: var(--black);
+  color: var(--white);
+  padding-top: 90px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── TYPOGRAPHY ── */
+.sectionLabel {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--neon);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 48px;
+}
+
+.accent { color: var(--neon); }
+
+/* ── HERO ── */
+.hero {
+  padding: 80px 0 100px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid var(--neon);
+  color: var(--neon);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.heroTitle {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+
+.heroSub {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.05rem;
+  color: var(--grey-4);
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+
+.heroSub strong { color: var(--white); }
+
+.heroNote {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #444;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+/* ── COMPARISON ── */
+.filterSection {
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.filterCard {
+  background: var(--grey-1);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 44px;
+}
+
+.filterCardHighlight { border-color: rgba(212,255,0,0.3); }
+
+.filterLabel {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--grey-4);
+  margin-bottom: 28px;
+}
+
+.painList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.painList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  color: #bbb;
+  line-height: 1.5;
+}
+
+.xMark { color: #FF4444; font-weight: 700; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+.checkMark { color: var(--neon); font-weight: 700; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+
+/* ── PROBLEM ── */
+.timeTrap {
+  padding: 100px 0;
+  background: var(--off-black);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.trapGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.trapPains { display: flex; flex-direction: column; gap: 32px; }
+
+.painItem { display: flex; gap: 20px; }
+.painItem .xMark { font-size: 1.1rem; margin-top: 3px; }
+.painItem strong {
+  display: block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.painItem p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.9rem;
+  color: var(--grey-4);
+  line-height: 1.6;
+}
+
+.solutionCard {
+  background: var(--black);
+  border: 1px solid rgba(212,255,0,0.35);
+  padding: 44px;
+  box-shadow: 0 0 40px rgba(212,255,0,0.04);
+  position: sticky;
+  top: 110px;
+}
+
+.checkBig { display: block; font-size: 2rem; color: var(--neon); margin-bottom: 20px; }
+
+.solutionCard h3 {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.solutionCard p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: var(--grey-4);
+  line-height: 1.7;
+}
+
+.roiBadge {
+  display: inline-block;
+  margin-top: 28px;
+  background: var(--neon);
+  color: var(--black);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 14px;
+}
+
+/* ── WHAT'S INSIDE ── */
+.modules {
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.moduleCard {
+  background: var(--grey-1);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 34px;
+  position: relative;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s;
+}
+
+.moduleCard:hover { border-color: rgba(212,255,0,0.3); }
+
+.moduleNum {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--neon);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.moduleTitle {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.moduleDesc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.88rem;
+  color: var(--grey-4);
+  line-height: 1.6;
+  margin-top: auto;
+}
+
+/* ── WHO IT'S FOR ── */
+.forSection {
+  padding: 100px 0;
+  background: var(--off-black);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.forGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.forCard {
+  display: flex;
+  gap: 16px;
+  background: var(--black);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 32px;
+  transition: border-color 0.3s;
+}
+
+.forCard:hover { border-color: rgba(212,255,0,0.2); }
+
+.forCard .checkMark { margin-top: 3px; flex-shrink: 0; }
+
+.forCard strong {
+  display: block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.forCard p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.88rem;
+  color: var(--grey-4);
+  line-height: 1.6;
+}
+
+/* ── SOCIAL PROOF ── */
+.reviews {
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.reviewGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.reviewCard {
+  background: var(--grey-1);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 32px;
+}
+
+.reviewHeader { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background: var(--grey-2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.reviewName {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.verified {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: var(--neon);
+  margin-top: 3px;
+}
+
+.reviewText {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.92rem;
+  color: #ccc;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.reviewStat {
+  border-top: 1px solid var(--grey-3);
+  padding-top: 14px;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--grey-4);
+  text-transform: uppercase;
+}
+
+/* ── UPDATES ── */
+.updatesSection {
+  padding: 100px 0;
+  background: var(--off-black);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.updatesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.updateDesc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: var(--grey-4);
+  line-height: 1.7;
+  margin-top: -28px;
+  max-width: 460px;
+}
+
+.updateFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.updateFeat {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--black);
+  border-left: 2px solid var(--neon);
+}
+
+.updateFeat span:last-child {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.92rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* ── GUARANTEE ── */
+.guarantee {
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.guaranteeBox {
+  border: 1px dashed rgba(212,255,0,0.4);
+  padding: 64px;
+  text-align: center;
+  background: var(--off-black);
+}
+
+.guaranteeTitle {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--white);
+  margin: 20px 0 28px;
+}
+
+.guaranteeDetail {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: var(--grey-4);
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0 auto 20px;
+}
+
+.guaranteeDetail strong { color: var(--white); }
+
+.guaranteeCta {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--neon);
+  text-transform: uppercase;
+}
+
+/* ── PRICING ── */
+.pricing { padding: 100px 0 120px; }
+
+.pricingSingle {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.priceCard {
+  background: var(--grey-1);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 52px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.priceCardFeatured {
+  background: var(--off-black);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.featuredTag {
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--neon);
+  color: var(--black);
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 14px;
+}
+
+.priceCardTitle {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.oldPrice {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.4rem;
+  color: #444;
+  text-decoration: line-through;
+}
+
+.currentPrice {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.saleBadge {
+  background: #FF3333;
+  color: var(--white);
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 4px 8px;
+  text-transform: uppercase;
+  align-self: center;
+}
+
+.priceDesc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.9rem;
+  color: var(--grey-4);
+  margin-bottom: 28px;
+}
+
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
+  flex-grow: 1;
+}
+
+.checklist li {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.92rem;
+  color: #ccc;
+  padding-left: 26px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--neon);
+  font-weight: 700;
+}
+
+.priceNote {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #333;
+  text-transform: uppercase;
+  margin-top: 14px;
+}
+
+/* ── BOTTOM CTA ── */
+.bottomCta {
+  padding: 100px 0;
+  background: var(--off-black);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+
+.bottomCtaTitle {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.bottomCtaSub {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  color: var(--grey-4);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 40px;
+}
+
+/* ── BUTTONS ── */
+.btnMain {
+  display: inline-block;
+  background: var(--neon);
+  color: var(--black);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 32px;
+  transition: all 0.2s;
+}
+
+.btnMain:hover {
+  box-shadow: 0 0 28px rgba(212,255,0,0.35);
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.2s;
+}
+
+.btnSecondary:hover {
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .filterGrid,
+  .trapGrid,
+  .bentoGrid,
+  .forGrid,
+  .reviewGrid,
+  .updatesGrid { grid-template-columns: 1fr; }
+  .solutionCard { position: static; }
+  .bentoGrid { grid-template-columns: repeat(2, 1fr); }
+  .guaranteeBox { padding: 36px 24px; }
+  .priceCard { padding: 36px 24px; }
+}
