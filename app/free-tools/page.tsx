@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import Ticker from '@/components/Ticker'
 import styles from './page.module.css'
@@ -20,7 +19,7 @@ const TOOLS = [
   {
     name: 'AI For Ecommerce Cheat Sheet',
     desc: 'The exact AI tools and prompts we use to grow ecommerce brands faster.',
-    href: '#', // TODO: link to actual download
+    href: 'https://ethereal-saturday-a3b.notion.site/AI-Cheat-Sheet-for-Ecom-DTC-2e74354e4a8880b8bc20f0e9ad6ba007',
     free: true,
     category: 'AI',
   },
@@ -70,7 +69,7 @@ export default function FreeTools() {
         <div className={styles.toolsList}>
           {TOOLS.map((t, i) => (
             <ScrollReveal key={t.name} delay={(Math.min(i+1,6)) as 1|2|3|4|5|6}>
-              <Link href={t.href} className={`${styles.toolRow} ${!t.free && !t.isPaid ? styles.toolDimmed : ''}`}>
+              <a href={t.href} className={`${styles.toolRow} ${!t.free && !t.isPaid ? styles.toolDimmed : ''}`} {...(t.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
                 <div className={styles.toolLeft}>
                   <span className={styles.toolCategory}>{t.category}</span>
                   <span className={styles.toolName}>{t.name}</span>
@@ -84,7 +83,7 @@ export default function FreeTools() {
                     : <span className={`${styles.badge} ${styles.badgeSoon}`}>Coming Soon</span>
                   }
                 </div>
-              </Link>
+              </a>
             </ScrollReveal>
           ))}
         </div>
