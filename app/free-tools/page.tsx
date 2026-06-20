@@ -12,8 +12,7 @@ const TOOLS = [
   {
     name: 'Google Display Network (GDN) Ad Specs Cheat Sheet',
     desc: 'Every ad size, format and spec you need for GDN campaigns in one clean reference sheet.',
-    href: '/gdn-cheat-sheet.jpg',
-    download: 'GDN-Ad-Specs-Cheat-Sheet.jpg',
+    href: '/free-tools/gdn-ad-specs',
     free: true,
     category: 'Advertising',
   },
