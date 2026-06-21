@@ -41,7 +41,7 @@ const RESOURCES = [
   { name:'AI For Ecommerce Cheat Sheet',          href:'https://app.notion.com/p/AI-Cheat-Sheet-for-Ecom-DTC-2e74354e4a8880b8bc20f0e9ad6ba007',             free:true },
   { name:'AI for Ecom: Cheat Sheet Tutorials',    href:'/ai-software-tutorials',                                                                             free:false, paid:true },
   { name:'Ecom Launch Protocol',                  href:'/ecommerce-protocol',                                                                                free:false, paid:true },
-  { name:'AI for Ecom SKOOL',                     href:'#',                                                                                                  free:false },
+  { name:'AI for Ecom SKOOL',                     href:'https://www.skool.com/ai-for-ecommerce-8645',                                                free:true },
 ]
 
 export default function Home() {
