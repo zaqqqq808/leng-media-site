@@ -32,7 +32,7 @@ const FAQS = [
     a: 'An agency charges $3,000–$10,000/month to manage what we\'re handing you. We\'re giving you the actual playbook — the supplier list, the Shopify setup, the ad templates, the email flows. You own it permanently. No monthly fees, no dependency.',
   },
   {
-    q: 'I\'ve just spent £997 on this. I don\'t have money left for ads.',
+    q: 'I\'ve just spent $1,299 on this. I don\'t have money left for ads.',
     a: 'This comes up a lot, and it\'s worth being direct: if you have zero budget left after buying, wait. The Protocol will still be here. What you don\'t want is to launch with no ad spend and conclude it doesn\'t work. When you\'re ready, $500–$1,000 is enough to run a proper first test. Module 05 shows you exactly how to structure it so none of it is wasted.',
   },
   {
@@ -330,10 +330,10 @@ export default function EcommerceProtocol() {
             {/* Right — price + CTA */}
             <div className={styles.priceRight}>
               <div className={styles.priceRightInner}>
-                <span className={styles.totalValue}>Total Value: £2,394</span>
+                <span className={styles.totalValue}>Total Value: $2,394</span>
                 <div className={styles.priceBig}>
                   <span className={styles.priceLabel}>Your investment today</span>
-                  <span className={styles.currentPrice}>£997</span>
+                  <span className={styles.currentPrice}>$1,299</span>
                 </div>
                 <ul className={styles.checklist}>
                   <li>All 6 modules (The Launchpad)</li>
