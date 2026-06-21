@@ -41,7 +41,7 @@ export default function Nav() {
           <li><Link href="/business-enquiry" className={styles.enquiry}>Business Enquiry</Link></li>
           <li className={styles.authControls}>
             {isSignedIn ? (
-              <UserButton afterSignOutUrl="/" />
+              <UserButton />
             ) : (
               <>
                 <SignInButton mode="modal"><button className={styles.signIn}>Sign In</button></SignInButton>
