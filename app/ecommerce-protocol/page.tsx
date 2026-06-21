@@ -119,7 +119,6 @@ export default function EcommerceProtocol() {
             ].map(m => (
               <div key={m.num} className={styles.moduleCard}>
                 <span className={styles.moduleNum}>{m.num} // {m.tag}</span>
-                <span className={styles.modulePrice}>Valued $399</span>
                 <h3 className={styles.moduleTitle}>{m.title}</h3>
                 <p className={styles.moduleDesc}>{m.desc}</p>
               </div>
@@ -136,7 +135,7 @@ export default function EcommerceProtocol() {
           <div className={styles.reviewGrid}>
             {[
               { initials: 'JM', name: 'James M.', stat: 'Time to Launch: 3 Days', quote: "I didn't want a course. I wanted a shortcut. I launched the store on Tuesday, first sale Thursday." },
-              { initials: 'SK', name: 'Sarah K.', stat: 'Supplier: Secured', quote: "The supplier list alone is worth the $999. I wasted weeks talking to factories. These guys replied in 2 hours." },
+              { initials: 'SK', name: 'Sarah K.', stat: 'Supplier: Secured', quote: "The supplier list alone is worth the price. I wasted weeks talking to factories. These guys replied in 2 hours." },
               { initials: 'DR', name: 'David R.', stat: 'ROI: Positive', quote: "My agency charges clients $5k to set up what is in Module 3. It's literally the agency SOP document." },
             ].map(r => (
               <div key={r.initials} className={styles.reviewCard}>
@@ -219,27 +218,25 @@ export default function EcommerceProtocol() {
       {/* ── PRICING ── */}
       <section className={styles.pricing} id="pricing">
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>// LIMITED TIME OFFERS</span>
+          <span className={styles.sectionLabel}>// GET ACCESS</span>
           <h2 className={styles.sectionTitle}>Choose Your Entry Point</h2>
           <div className={styles.pricingGrid}>
 
             {/* Tier 1 */}
             <div className={styles.priceCard}>
-              <h3 className={styles.priceCardTitle}>AI Systems Only</h3>
+              <h3 className={styles.priceCardTitle}>AI Session Only</h3>
               <div className={styles.priceRow}>
-                <span className={styles.oldPrice}>$399</span>
-                <span className={styles.currentPrice}>$199</span>
-                <span className={styles.saleBadge}>50% OFF</span>
+                <span className={styles.currentPrice}>£197</span>
               </div>
-              <p className={styles.priceDesc}>For those who just want the automation tools.</p>
+              <p className={styles.priceDesc}>For those who want to apply AI to their existing store fast.</p>
               <ul className={styles.checklist}>
-                <li>AI For Ecommerce Course</li>
-                <li>Prompt Library</li>
-                <li>Agency Support</li>
-                <li>Green Light Guarantee</li>
+                <li>60-minute live 1-on-1 session</li>
+                <li>AI for Ecommerce Cheat Sheet</li>
+                <li>Prompt library access</li>
+                <li>Session recording</li>
+                <li>Full refund guarantee</li>
               </ul>
-              <Link href="/business-enquiry" className={styles.btnSecondary}>Get AI Only</Link>
-              <p className={styles.priceNote}>Optional AI upgrade available at checkout</p>
+              <Link href="https://buy.stripe.com/test_9B66oBgrngSRcvV2s228800" className={styles.btnSecondary} target="_blank" rel="noopener noreferrer">Book the Session</Link>
             </div>
 
             {/* Tier 2 — Featured */}
@@ -247,19 +244,17 @@ export default function EcommerceProtocol() {
               <span className={styles.featuredTag}>Best Value</span>
               <h3 className={styles.priceCardTitle}>The Full Protocol</h3>
               <div className={styles.priceRow}>
-                <span className={styles.oldPrice}>$2,499</span>
-                <span className={styles.currentPrice}>$1,299</span>
-                <span className={styles.saleBadge}>SALE</span>
+                <span className={styles.currentPrice}>£997</span>
               </div>
-              <p className={styles.priceDesc}>The complete A-Z system + Agency Oversight.</p>
+              <p className={styles.priceDesc}>The complete A-Z system for launching and scaling your store.</p>
               <ul className={styles.checklist}>
-                <li>Modules 1–6 (The Launchpad)</li>
-                <li>Mentorship: 2 Months / 4 Bi-Weekly 1-on-1 Calls</li>
-                <li>Supplier Black Book</li>
-                <li>Green Light Guarantee</li>
+                <li>All 6 modules (The Launchpad)</li>
+                <li>4 bi-weekly mentorship calls</li>
+                <li>Supplier black book</li>
+                <li>Green light store review before launch</li>
+                <li>Full refund guarantee</li>
               </ul>
-              <Link href="/business-enquiry" className={styles.btnMain}>Get The Protocol</Link>
-              <p className={styles.priceNote}>Optional AI upgrade available at checkout</p>
+              <Link href="https://buy.stripe.com/test_5kQ00d0sp8mlgMbfeO28801" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Get The Protocol</Link>
             </div>
 
           </div>
