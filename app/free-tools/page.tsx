@@ -18,10 +18,17 @@ const TOOLS = [
   },
   {
     name: 'AI For Ecommerce Cheat Sheet',
-    desc: 'Every AI tool and prompt that actually works for ecommerce. Tested on real campaigns. Free Notion document.',
-    href: 'https://app.notion.com/p/AI-Cheat-Sheet-for-Ecom-DTC-2e74354e4a8880b8bc20f0e9ad6ba007',
+    desc: 'Every AI tool and prompt that actually works for ecommerce. 6 categories, hundreds of prompts. Free Notion document.',
+    href: '/free-tools/ai-cheat-sheet',
     free: true,
     category: 'AI',
+  },
+  {
+    name: 'PPC AI Skills for Claude',
+    desc: '12 specialist Claude AI skills for paid media — keyword analysis, ad copy, audits, budget monitoring and more.',
+    href: '/free-tools/ppc-ai-skills',
+    free: true,
+    category: 'PPC',
   },
   {
     name: 'Ecom Launch Protocol',
