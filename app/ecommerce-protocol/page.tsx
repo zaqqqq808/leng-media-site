@@ -58,6 +58,15 @@ export default function EcommerceProtocol() {
             Launch your brand within<br />
             <span className={styles.accent}>two months.</span>
           </h1>
+          <div className={styles.vslWrap}>
+            <div className={styles.vslGlow} />
+            <div className={styles.vslFrame}>
+              <div className={styles.vslInner}>
+                <span className={styles.playIcon}>▶</span>
+                <span className={styles.vslLabel}>Watch the Briefing (2 Min)</span>
+              </div>
+            </div>
+          </div>
           <p className={styles.heroSub}>
             Install a new ecommerce revenue stream. No theory. Just the manual.<br />
             First sale within 7 days of launch — <strong>or we refund you 100%.</strong>
@@ -65,21 +74,6 @@ export default function EcommerceProtocol() {
           <div className={styles.heroActions}>
             <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
             <span className={styles.spotsHero}>⚡ Only 8 spots remaining this month</span>
-          </div>
-        </div>
-      </section>
-
-      {/* ── VSL ── */}
-      <section className={styles.vslSection}>
-        <div className={styles.container}>
-          <div className={styles.vslWrap}>
-            <div className={styles.vslGlow} />
-            <div className={styles.vslFrame}>
-              <div className={styles.vslInner}>
-                <span className={styles.playIcon}>▶</span>
-                <span className={styles.vslLabel}>Watch: The Full Breakdown</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
