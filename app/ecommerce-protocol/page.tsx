@@ -39,6 +39,10 @@ export default function EcommerceProtocol() {
       {/* ── THE FILTER ── */}
       <section className={styles.filterSection}>
         <div className={styles.container}>
+          <div className={styles.filterHeader}>
+            <span className={styles.sectionLabel}>// THE DECISION</span>
+            <h2 className={styles.filterHeading}>You have 2 choices.</h2>
+          </div>
           <div className={styles.filterGrid}>
             <div className={styles.filterCard}>
               <span className={styles.filterLabel}>Option A: The Hard Way</span>
@@ -69,29 +73,26 @@ export default function EcommerceProtocol() {
           <h2 className={styles.sectionTitle}>
             You are a Creative.<br />Stop playing Logistics Manager.
           </h2>
+          <p className={styles.trapSub}>You are a decision maker. You don&apos;t need to research all the bullshit.</p>
           <div className={styles.trapGrid}>
             <div className={styles.trapPains}>
-              <div className={styles.painItem}>
-                <span className={styles.xMark}>✕</span>
-                <div>
-                  <strong>The Supplier Hunt</strong>
-                  <p>40+ hours scrolling Alibaba, getting samples that look like trash, and getting scammed.</p>
-                </div>
-              </div>
-              <div className={styles.painItem}>
-                <span className={styles.xMark}>✕</span>
-                <div>
-                  <strong>The Meta Ads Curve</strong>
-                  <p>Burning $2,000 on "testing" because you set the pixel up wrong.</p>
-                </div>
-              </div>
-              <div className={styles.painItem}>
-                <span className={styles.xMark}>✕</span>
-                <div>
-                  <strong>The 3PL Nightmare</strong>
-                  <p>Figuring out shipping zones and returns while customers yell at you.</p>
-                </div>
-              </div>
+              <ul className={styles.dontList}>
+                {[
+                  'Best suppliers for your niche',
+                  'How to negotiate with them',
+                  'How to build a website',
+                  'Which tools to use',
+                  'How to optimise Shopify',
+                  'How to run Meta Ads or TikTok',
+                  'How to apply for business finance',
+                  'How to structure the business',
+                ].map(item => (
+                  <li key={item}>
+                    <span className={styles.xMark}>✕</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className={styles.solutionCard}>
               <span className={styles.checkBig}>✓</span>
@@ -119,6 +120,7 @@ export default function EcommerceProtocol() {
             ].map(m => (
               <div key={m.num} className={styles.moduleCard}>
                 <span className={styles.moduleNum}>{m.num} // {m.tag}</span>
+                <span className={styles.modulePrice}>Valued $399</span>
                 <h3 className={styles.moduleTitle}>{m.title}</h3>
                 <p className={styles.moduleDesc}>{m.desc}</p>
               </div>
@@ -135,7 +137,7 @@ export default function EcommerceProtocol() {
           <div className={styles.reviewGrid}>
             {[
               { initials: 'JM', name: 'James M.', stat: 'Time to Launch: 3 Days', quote: "I didn't want a course. I wanted a shortcut. I launched the store on Tuesday, first sale Thursday." },
-              { initials: 'SK', name: 'Sarah K.', stat: 'Supplier: Secured', quote: "The supplier list alone is worth the price. I wasted weeks talking to factories. These guys replied in 2 hours." },
+              { initials: 'SK', name: 'Sarah K.', stat: 'Supplier: Secured', quote: "The supplier list alone is worth the $999. I wasted weeks talking to factories. These guys replied in 2 hours." },
               { initials: 'DR', name: 'David R.', stat: 'ROI: Positive', quote: "My agency charges clients $5k to set up what is in Module 3. It's literally the agency SOP document." },
             ].map(r => (
               <div key={r.initials} className={styles.reviewCard}>
@@ -183,15 +185,15 @@ export default function EcommerceProtocol() {
         <div className={styles.container}>
           <div className={styles.aiGrid}>
             <div>
-              <span className={styles.sectionLabel}>// FOR EXISTING OWNERS</span>
+              <span className={styles.sectionLabel}>// THE COMMUNITY</span>
               <h2 className={styles.sectionTitle}>Already have a brand? Scale it with AI.</h2>
-              <p className={styles.aiDesc}>If you already have an ecommerce brand and just want to learn how to scale it with AI by yourself, you might need the AI Systems Tutorial. We show you the exact guides on using the best AI tools currently available to automate your copy, design, and customer support.</p>
-              <Link href="#pricing" className={styles.btnSecondary}>View AI Curriculum</Link>
+              <p className={styles.aiDesc}>Join a private community of founders and creators scaling their ecommerce brands using AI. Strategy breakdowns, ad teardowns, weekly accountability, and direct access to the Leng Media team — all in one place.</p>
+              <a href="#" className={styles.btnMain}>Join the Community →</a>
             </div>
             <div className={styles.aiFrame}>
               <div className={styles.aiFrameInner}>
                 <span className={styles.playIcon}>▶</span>
-                <span className={styles.vslLabel}>AI Systems Preview</span>
+                <span className={styles.vslLabel}>Community Preview</span>
               </div>
             </div>
           </div>
@@ -218,30 +220,10 @@ export default function EcommerceProtocol() {
       {/* ── PRICING ── */}
       <section className={styles.pricing} id="pricing">
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>// GET ACCESS</span>
-          <h2 className={styles.sectionTitle}>Choose Your Entry Point</h2>
-          <div className={styles.pricingGrid}>
-
-            {/* Tier 1 */}
-            <div className={styles.priceCard}>
-              <h3 className={styles.priceCardTitle}>AI Session Only</h3>
-              <div className={styles.priceRow}>
-                <span className={styles.currentPrice}>£197</span>
-              </div>
-              <p className={styles.priceDesc}>For those who want to apply AI to their existing store fast.</p>
-              <ul className={styles.checklist}>
-                <li>60-minute live 1-on-1 session</li>
-                <li>AI for Ecommerce Cheat Sheet</li>
-                <li>Prompt library access</li>
-                <li>Session recording</li>
-                <li>Full refund guarantee</li>
-              </ul>
-              <Link href="https://buy.stripe.com/test_9B66oBgrngSRcvV2s228800" className={styles.btnSecondary} target="_blank" rel="noopener noreferrer">Book the Session</Link>
-            </div>
-
-            {/* Tier 2 — Featured */}
+          <span className={styles.sectionLabel}>// GET STARTED</span>
+          <h2 className={styles.sectionTitle}>The Protocol</h2>
+          <div className={styles.pricingSingle}>
             <div className={`${styles.priceCard} ${styles.priceCardFeatured}`}>
-              <span className={styles.featuredTag}>Best Value</span>
               <h3 className={styles.priceCardTitle}>The Full Protocol</h3>
               <div className={styles.priceRow}>
                 <span className={styles.currentPrice}>£997</span>
@@ -256,7 +238,6 @@ export default function EcommerceProtocol() {
               </ul>
               <Link href="https://buy.stripe.com/test_5kQ00d0sp8mlgMbfeO28801" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Get The Protocol</Link>
             </div>
-
           </div>
         </div>
       </section>

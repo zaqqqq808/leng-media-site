@@ -132,6 +132,21 @@
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
+.filterHeader {
+  margin-bottom: 40px;
+}
+
+.filterHeading {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin: 0;
+}
+
 .filterGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -189,6 +204,33 @@
   font-size: 1rem;
   flex-shrink: 0;
   margin-top: 2px;
+}
+
+.trapSub {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.1rem;
+  color: var(--grey-4);
+  line-height: 1.6;
+  margin-top: -32px;
+  margin-bottom: 52px;
+  max-width: 560px;
+}
+
+.dontList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.dontList li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
 }
 
 /* ── TIME TRAP ── */
@@ -559,6 +601,11 @@
 /* ── PRICING ── */
 .pricing {
   padding: 100px 0 120px;
+}
+
+.pricingSingle {
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .pricingGrid {
