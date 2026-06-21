@@ -75,6 +75,10 @@ export default function AiCheatSheet() {
           </p>
           <a href={NOTION_URL} target="_blank" rel="noopener noreferrer" className={styles.btnMain}>Access for Free</a>
           <p className={styles.heroNote}>Free access &middot; Notion-based &middot; Updated as AI evolves</p>
+          <p className={styles.heroNote} style={{marginTop:'10px'}}>
+            Then go deeper in the community &rarr;{' '}
+            <a href="https://www.skool.com/ai-for-ecommerce-8645" target="_blank" rel="noopener noreferrer" style={{color:'var(--accent, #d4ff00)', textDecoration:'none', fontWeight:600}}>AI for Ecom SKOOL</a>
+          </p>
         </div>
       </section>
 
@@ -253,12 +257,15 @@ export default function AiCheatSheet() {
         </div>
       </section>
 
-      {/* ── BOTTOM CTA ── */}
+      {/* ── SKOOL CTA ── */}
       <section className={styles.bottomCta}>
         <div className={styles.container}>
-          <h2 className={styles.bottomCtaTitle}>Want to see the tools in action?</h2>
-          <p className={styles.bottomCtaSub}>The cheat sheet tells you which tools to use. The Software Tutorials show you exactly how to use them — applied to ecommerce, step by step.</p>
-          <a href="/ai-software-tutorials" className={styles.btnSecondary}>View the Tutorials</a>
+          <span className={styles.sectionLabel}>// Go Deeper</span>
+          <h2 className={styles.bottomCtaTitle}>The cheat sheet tells you what.<br />The community shows you how.</h2>
+          <p className={styles.bottomCtaSub}>
+            The AI for Ecom SKOOL group is where the cheat sheet comes alive. Community driven content covering Meta ads, CRO, sales, lead gen, direct response, branding, content creation and video AI. All through an ecommerce lens. New strategies, real case studies and people doing the actual work every day. This is not a passive feed. It is a room full of operators.
+          </p>
+          <a href="https://www.skool.com/ai-for-ecommerce-8645" target="_blank" rel="noopener noreferrer" className={styles.btnSecondary}>Join the Community</a>
         </div>
       </section>
 
