@@ -24,7 +24,7 @@ const TOOLS = [
     category: 'AI',
   },
   {
-    name: 'AI For Ecommerce Software Tutorials',
+    name: 'AI for Ecom: Cheat Sheet Tutorials',
     desc: 'Video walkthroughs for every AI tool in the cheat sheet — applied to ecommerce tasks, not generic demos.',
     href: '/ai-software-tutorials',
     free: false,
@@ -32,20 +32,19 @@ const TOOLS = [
     category: 'AI',
   },
   {
-    name: 'AI For Ecommerce Course',
-    desc: 'Live 1-on-1 session where we apply AI directly to your store, your ads, your workflows.',
-    href: '/ai-course',
-    free: false,
-    isPaid: true,
-    category: 'AI',
-  },
-  {
-    name: 'Ecommerce Protocol',
+    name: 'Ecom Launch Protocol',
     desc: 'The full A-Z system for launching and scaling an ecommerce brand in two months.',
     href: '/ecommerce-protocol',
     free: false,
     isPaid: true,
     category: 'Strategy',
+  },
+  {
+    name: 'AI for Ecom SKOOL',
+    desc: 'The community for ecommerce founders and marketers using AI to scale their stores.',
+    href: '#',
+    free: false,
+    category: 'Community',
   },
 ]
 
