@@ -887,6 +887,235 @@
   color: var(--white);
 }
 
+/* ── HERO ACTIONS ── */
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.spotsHero {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--grey-4);
+  text-transform: uppercase;
+}
+
+/* ── MID-PAGE CTAs ── */
+.midCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 56px;
+}
+
+.spotsInline {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--grey-4);
+  text-transform: uppercase;
+}
+
+/* ── SPOTS BAR ── */
+.spotsBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--grey-4);
+  text-transform: uppercase;
+}
+
+.spotsDot {
+  width: 8px;
+  height: 8px;
+  background: #FF4444;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+/* ── GUARANTEE BUTTON ── */
+.guaranteeBtn {
+  margin-top: 32px;
+}
+
+/* ── FOUNDER ── */
+.founder {
+  padding: 100px 0;
+  background: var(--off-black);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.founderGrid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.founderPhoto {
+  position: sticky;
+  top: 110px;
+}
+
+.founderPhotoPlaceholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--grey-2);
+  border: 1px solid rgba(212,255,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founderPhotoPlaceholder span {
+  font-family: var(--font-mono), monospace;
+  font-size: 2rem;
+  color: var(--grey-4);
+  letter-spacing: 4px;
+}
+
+.founderText .sectionLabel {
+  margin-bottom: 18px;
+}
+
+.founderTitle {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+
+.founderText p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: var(--grey-4);
+  line-height: 1.75;
+  margin-bottom: 18px;
+  max-width: 620px;
+}
+
+.founderStats {
+  display: flex;
+  gap: 48px;
+  margin-top: 40px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.founderStat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.founderStat strong {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--neon);
+  letter-spacing: -0.02em;
+}
+
+.founderStat span {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--grey-4);
+  text-transform: uppercase;
+}
+
+/* ── INSTALLMENT ── */
+.installmentRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.installmentOr {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--grey-3);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.installmentLink {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--grey-5);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.installmentLink:hover {
+  color: var(--white);
+}
+
+/* ── FAQ ── */
+.faq {
+  padding: 100px 0 120px;
+  background: var(--off-black);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.faqItem {
+  padding: 36px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.faqItem:nth-child(even) {
+  border-right: none;
+}
+
+.faqQ {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.faqA {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.9rem;
+  color: var(--grey-4);
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
@@ -896,12 +1125,17 @@
   .reviewGrid,
   .mentorFeatures,
   .aiGrid,
-  .pricingGrid { grid-template-columns: 1fr; }
+  .pricingGrid,
+  .founderGrid,
+  .faqGrid { grid-template-columns: 1fr; }
   .solutionCard { position: static; }
+  .founderPhoto { position: static; }
   .bentoGrid { grid-template-columns: repeat(2, 1fr); }
   .guaranteeBox { padding: 36px 24px; }
   .priceCardFull { grid-template-columns: 1fr; }
   .priceLeft { padding: 36px 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .priceRight { padding: 36px 24px; }
   .modulePriceGrid { grid-template-columns: 1fr; }
+  .founderStats { gap: 28px; flex-wrap: wrap; }
+  .faqItem { padding: 28px 24px; border-right: none; }
 }

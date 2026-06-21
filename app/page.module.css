@@ -251,10 +251,14 @@
     opacity: 0.25;
     z-index: 2;
   }
-  .services { padding: 64px 24px; }
-  .servicesGrid { grid-template-columns: 1fr; gap: 12px; }
-  .serviceCard { padding: 22px 22px 34px; }
-  .scDesc { font-size: 12px; display: block; -webkit-line-clamp: 2; }
+  .services { padding: 44px 16px; }
+  .servicesHeader { margin-bottom: 32px; }
+  .servicesGrid { grid-template-columns: 1fr; gap: 8px; }
+  .serviceCard { padding: 14px 16px 16px; border-radius: 8px; }
+  .serviceCard::before { font-size: 44px; bottom: -4px; }
+  .scNum::after { margin: 8px 0 10px; }
+  .scName { font-size: 14px; }
+  .scDesc { font-size: 12px; display: block; -webkit-line-clamp: 2; margin-top: 4px; }
   .scArrow { display: none; }
   .stats { grid-template-columns: repeat(2,1fr); }
   .stat { padding: 30px 16px; }
