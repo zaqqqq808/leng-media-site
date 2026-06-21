@@ -79,6 +79,11 @@
 }
 
 /* VSL */
+.vslSection {
+  padding: 0 0 80px;
+  background: var(--black);
+}
+
 .vslWrap {
   position: relative;
   max-width: 780px;

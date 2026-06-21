@@ -69,6 +69,21 @@ export default function EcommerceProtocol() {
         </div>
       </section>
 
+      {/* ── VSL ── */}
+      <section className={styles.vslSection}>
+        <div className={styles.container}>
+          <div className={styles.vslWrap}>
+            <div className={styles.vslGlow} />
+            <div className={styles.vslFrame}>
+              <div className={styles.vslInner}>
+                <span className={styles.playIcon}>▶</span>
+                <span className={styles.vslLabel}>Watch: The Full Breakdown</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── THE FILTER ── */}
       <section className={styles.filterSection}>
         <div className={styles.container}>
