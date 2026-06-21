@@ -12,6 +12,7 @@ const PRODUCT_LABELS: Record<string, string> = {
   'ai-course':            'AI for Ecommerce Course',
   'ecommerce-protocol':   'The Ecommerce Protocol',
   'ai-cheat-sheet':       'AI for Ecommerce Cheat Sheet',
+  'bundle':               'AI Course + Ecommerce Protocol Bundle',
 }
 
 export default async function JoinPage({
