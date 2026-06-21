@@ -1,12 +1,13 @@
-import Link from 'next/link'
 import styles from './page.module.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'AI for Ecommerce Cheat Sheet – Leng Media',
-  description: 'Every AI tool and prompt that actually works for ecommerce brands. Tested across real campaigns. No fluff, no theory — just the shortcuts.',
+  description: 'Every AI tool and prompt that actually works for ecommerce brands. Tested across real campaigns. No fluff, no theory — just the shortcuts. Free Notion document.',
   alternates: { canonical: 'https://www.lengmedia.com/ai-cheat-sheet' },
 }
+
+const NOTION_URL = 'https://app.notion.com/p/AI-Cheat-Sheet-for-Ecom-DTC-2e74354e4a8880b8bc20f0e9ad6ba007'
 
 const CONTENTS = [
   {
@@ -72,8 +73,8 @@ export default function AiCheatSheet() {
             We spent 12 months testing every AI tool on the market across real ecommerce campaigns.<br />
             This is what actually works. <strong>No theory. No fluff. Just the shortcuts.</strong>
           </p>
-          <Link href="#pricing" className={styles.btnMain}>Get the Cheat Sheet</Link>
-          <p className={styles.heroNote}>Instant access &middot; Notion-based &middot; Updated as AI evolves</p>
+          <a href={NOTION_URL} target="_blank" rel="noopener noreferrer" className={styles.btnMain}>Access for Free</a>
+          <p className={styles.heroNote}>Free access &middot; Notion-based &middot; Updated as AI evolves</p>
         </div>
       </section>
 
@@ -188,7 +189,7 @@ export default function AiCheatSheet() {
                   <div className={styles.avatar}>{r.initials}</div>
                   <div>
                     <div className={styles.reviewName}>{r.name}</div>
-                    <div className={styles.verified}>✓ Verified Buyer</div>
+                    <div className={styles.verified}>✓ Verified</div>
                   </div>
                 </div>
                 <p className={styles.reviewText}>&ldquo;{r.quote}&rdquo;</p>
@@ -206,14 +207,14 @@ export default function AiCheatSheet() {
             <div>
               <span className={styles.sectionLabel}>// Always Current</span>
               <h2 className={styles.sectionTitle}>AI moves fast.<br />So does this.</h2>
-              <p className={styles.updateDesc}>New tools drop every week. Most cheat sheets are out of date the moment they are published. This one is a living Notion document. When something better comes out, we update it. When something stops working, we remove it. You get access to every update at no extra cost.</p>
+              <p className={styles.updateDesc}>New tools drop every week. Most cheat sheets are out of date the moment they are published. This one is a living Notion document. When something better comes out, we update it. When something stops working, we remove it. You always have the current version.</p>
             </div>
             <div className={styles.updateFeatures}>
               {[
                 'Updated when major new AI tools launch',
                 'Dead tools removed, not left to clutter the page',
                 'New prompt categories added as use cases emerge',
-                'Access to every future version included in one purchase',
+                'Free access to every future version as the cheat sheet evolves',
               ].map(f => (
                 <div key={f} className={styles.updateFeat}>
                   <span className={styles.checkMark}>✓</span>
@@ -225,49 +226,28 @@ export default function AiCheatSheet() {
         </div>
       </section>
 
-      {/* ── GUARANTEE ── */}
-      <section className={styles.guarantee} id="guarantee">
-        <div className={styles.container}>
-          <div className={styles.guaranteeBox}>
-            <span className={styles.sectionLabel}>// The Guarantee</span>
-            <h2 className={styles.guaranteeTitle}>
-              If you don&apos;t find one tactic you can use today,<br />
-              we will refund you. No questions asked.
-            </h2>
-            <p className={styles.guaranteeDetail}>
-              Open it. Use it for 15 minutes. If you do not find a single prompt, tool, or workflow you can apply to your store immediately, email us and we will send the money straight back.
-            </p>
-            <p className={styles.guaranteeCta}>Zero risk. Maximum leverage.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PRICING ── */}
-      <section className={styles.pricing} id="pricing">
+      {/* ── FREE ACCESS ── */}
+      <section className={styles.pricing} id="access">
         <div className={styles.container}>
           <span className={styles.sectionLabel}>// Get Access</span>
-          <h2 className={styles.sectionTitle}>One price. Lifetime access.</h2>
+          <h2 className={styles.sectionTitle}>It is completely free.</h2>
           <div className={styles.pricingSingle}>
             <div className={`${styles.priceCard} ${styles.priceCardFeatured}`}>
-              <span className={styles.featuredTag}>Most Popular</span>
+              <span className={styles.featuredTag}>Free</span>
               <h3 className={styles.priceCardTitle}>AI for Ecommerce Cheat Sheet</h3>
               <div className={styles.priceRow}>
-                <span className={styles.oldPrice}>£49</span>
-                <span className={styles.currentPrice}>£[PRICE]</span>
-                <span className={styles.saleBadge}>Launch Price</span>
+                <span className={styles.currentPrice}>Free</span>
               </div>
-              <p className={styles.priceDesc}>One-time payment. Instant Notion access. Every future update included.</p>
+              <p className={styles.priceDesc}>Open the Notion document. Start using it. No payment, no email required.</p>
               <ul className={styles.checklist}>
                 <li>6 sections covering every core AI use case for ecommerce</li>
                 <li>40+ copy-and-paste prompts built for ecommerce brands</li>
-                <li>Tool recommendations with honest notes on what each one is actually good for</li>
+                <li>Tool recommendations with notes on what each one is actually good for</li>
                 <li>Ad creative, SEO, copy, support and image workflows</li>
-                <li>Lifetime access including all future updates</li>
-                <li>15-minute money-back guarantee</li>
+                <li>Free access to every future update</li>
               </ul>
-              {/* TODO: Replace href with Gumroad / Stripe link when payment is set up */}
-              <Link href="/business-enquiry" className={styles.btnMain}>Get Instant Access</Link>
-              <p className={styles.priceNote}>Instant delivery via Notion · No subscription</p>
+              <a href={NOTION_URL} target="_blank" rel="noopener noreferrer" className={styles.btnMain}>Access the Cheat Sheet</a>
+              <p className={styles.priceNote}>Opens in Notion &middot; No account required</p>
             </div>
           </div>
         </div>
@@ -276,9 +256,9 @@ export default function AiCheatSheet() {
       {/* ── BOTTOM CTA ── */}
       <section className={styles.bottomCta}>
         <div className={styles.container}>
-          <h2 className={styles.bottomCtaTitle}>Questions? Talk to us.</h2>
-          <p className={styles.bottomCtaSub}>If you are not sure whether this is right for your situation, book a quick call. We will tell you honestly if it is worth your time.</p>
-          <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className={styles.btnSecondary}>Book a Free Call</a>
+          <h2 className={styles.bottomCtaTitle}>Want to see the tools in action?</h2>
+          <p className={styles.bottomCtaSub}>The cheat sheet tells you which tools to use. The Software Tutorials show you exactly how to use them — applied to ecommerce, step by step.</p>
+          <a href="/ai-software-tutorials" className={styles.btnSecondary}>View the Tutorials</a>
         </div>
       </section>
 
