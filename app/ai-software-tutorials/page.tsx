@@ -3,7 +3,7 @@ import styles from '../ecommerce-protocol/page.module.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AI Software Tutorials for Ecommerce – Leng Media',
+  title: 'AI for Ecom: Cheat Sheet Tutorials – Leng Media',
   description: 'Video walkthroughs for every AI tool in the Leng Media cheat sheet. Applied to ecommerce — not generic content creator fluff. See the software in action.',
   alternates: { canonical: 'https://www.lengmedia.com/ai-software-tutorials' },
 }
@@ -63,7 +63,7 @@ export default function AiSoftwareTutorials() {
       {/* ── HERO ── */}
       <section className={styles.hero}>
         <div className={styles.container}>
-          <span className={styles.tag}>Leng Media // AI for Ecommerce</span>
+          <span className={styles.tag}>Leng Media // AI for Ecom: Cheat Sheet Tutorials</span>
           <h1 className={styles.heroTitle}>
             See the tools.<br />
             Watch them work.<br />
