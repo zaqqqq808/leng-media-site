@@ -168,7 +168,7 @@ export default function AiCoursePage() {
             <div className={styles.priceCard}>
               <h3 className={styles.priceCardTitle}>AI Session Only</h3>
               <div className={styles.priceRow}>
-                <span className={styles.currentPrice}>£[PRICE]</span>
+                <span className={styles.currentPrice}>£197</span>
               </div>
               <p className={styles.priceDesc}>For founders who want to apply AI to their existing store.</p>
               <ul className={styles.checklist}>
@@ -178,15 +178,14 @@ export default function AiCoursePage() {
                 <li>Session recording (yours to keep)</li>
                 <li>Full refund guarantee</li>
               </ul>
-              {/* TODO: Replace href with Stripe Payment Link */}
-              <Link href="/business-enquiry" className={styles.btnSecondary}>Book the Session</Link>
+              <Link href="https://buy.stripe.com/test_9B66oBgrngSRcvV2s228800" className={styles.btnSecondary} target="_blank" rel="noopener noreferrer">Book the Session</Link>
             </div>
 
             <div className={`${styles.priceCard} ${styles.priceCardFeatured}`}>
               <span className={styles.featuredTag}>Best Value</span>
               <h3 className={styles.priceCardTitle}>Session + Protocol</h3>
               <div className={styles.priceRow}>
-                <span className={styles.currentPrice}>£[PRICE]</span>
+                <span className={styles.currentPrice}>£1,049</span>
                 <span className={styles.saleBadge}>Bundle</span>
               </div>
               <p className={styles.priceDesc}>AI session plus the full Ecommerce Protocol for building or scaling your store.</p>
@@ -197,8 +196,7 @@ export default function AiCoursePage() {
                 <li>Supplier black book access</li>
                 <li>Green light store review before launch</li>
               </ul>
-              {/* TODO: Replace href with Stripe Payment Link */}
-              <Link href="/business-enquiry" className={styles.btnMain}>Get the Bundle</Link>
+              <Link href="https://buy.stripe.com/test_bJe00d0spcCB9jJ6Ii28802" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Get the Bundle</Link>
             </div>
 
           </div>
