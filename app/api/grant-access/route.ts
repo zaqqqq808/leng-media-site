@@ -2,7 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import { auth, clerkClient } from '@clerk/nextjs/server'
 import Stripe from 'stripe'
 
-const VALID_PRODUCTS = ['ai-course', 'ecommerce-protocol', 'ai-cheat-sheet']
+const VALID_PRODUCTS = ['ai-course', 'ecommerce-protocol', 'ai-cheat-sheet', 'bundle']
+
+// What each product ID unlocks in the members area
+const PRODUCT_GRANTS: Record<string, string[]> = {
+  'ai-course':          ['ai-course'],
+  'ecommerce-protocol': ['ecommerce-protocol'],
+  'ai-cheat-sheet':     ['ai-cheat-sheet'],
+  'bundle':             ['ai-course', 'ecommerce-protocol'],
+}
 
 export async function GET(req: NextRequest) {
   const { userId } = await auth()
@@ -27,16 +35,16 @@ export async function GET(req: NextRequest) {
       return NextResponse.redirect(new URL('/members', req.url))
     }
 
-    // Get current purchases and add the new one (deduplicated)
+    // Get current purchases and add all unlocked products (deduplicated)
     const clerk = await clerkClient()
     const user  = await clerk.users.getUser(userId)
     const existing = (user.publicMetadata?.purchases as string[]) ?? []
+    const toGrant  = PRODUCT_GRANTS[product] ?? [product]
+    const updated  = [...new Set([...existing, ...toGrant])]
 
-    if (!existing.includes(product)) {
+    if (updated.length !== existing.length) {
       await clerk.users.updateUserMetadata(userId, {
-        publicMetadata: {
-          purchases: [...existing, product],
-        },
+        publicMetadata: { purchases: updated },
       })
     }
   } catch (err) {
