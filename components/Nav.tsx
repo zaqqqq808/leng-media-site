@@ -36,7 +36,8 @@ export default function Nav() {
           <li><Link href="/#services">Services</Link></li>
           <li><Link href="/blog">Blog</Link></li>
           <li><Link href="/free-tools">Resources</Link></li>
-          <li><Link href="/ecommerce-protocol" className={styles.course}>The Ecommerce Protocol</Link></li>
+          <li><Link href="/ai-course" className={styles.course}>AI Course</Link></li>
+          <li><Link href="/ecommerce-protocol" className={styles.course}>Ecommerce Protocol</Link></li>
           <li><Link href="/business-enquiry" className={styles.enquiry}>Business Enquiry</Link></li>
           <li className={styles.authControls}>
             {isSignedIn ? (
@@ -67,7 +68,8 @@ export default function Nav() {
           <li><Link href="/#services" onClick={close}>Services</Link></li>
           <li><Link href="/blog" onClick={close}>Blog</Link></li>
           <li><Link href="/free-tools" onClick={close}>Resources</Link></li>
-          <li><Link href="/ecommerce-protocol" className={styles.mobileCourse} onClick={close}>The Ecommerce Protocol</Link></li>
+          <li><Link href="/ai-course" className={styles.mobileCourse} onClick={close}>AI Course</Link></li>
+          <li><Link href="/ecommerce-protocol" className={styles.mobileCourse} onClick={close}>Ecommerce Protocol</Link></li>
           <li><Link href="/business-enquiry" className={styles.mobileEnquiry} onClick={close}>Business Enquiry</Link></li>
         </ul>
       </div>
