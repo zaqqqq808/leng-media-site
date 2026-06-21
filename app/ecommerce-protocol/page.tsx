@@ -222,22 +222,52 @@ export default function EcommerceProtocol() {
         <div className={styles.container}>
           <span className={styles.sectionLabel}>// GET STARTED</span>
           <h2 className={styles.sectionTitle}>The Protocol</h2>
-          <div className={styles.pricingSingle}>
-            <div className={`${styles.priceCard} ${styles.priceCardFeatured}`}>
-              <h3 className={styles.priceCardTitle}>The Full Protocol</h3>
-              <div className={styles.priceRow}>
-                <span className={styles.currentPrice}>£997</span>
+          <div className={styles.priceCardFull}>
+
+            {/* Left — what's inside */}
+            <div className={styles.priceLeft}>
+              <h3 className={styles.priceFullTitle}>Everything you need.<br />Nothing you don&apos;t.</h3>
+              <p className={styles.priceFullSub}>Six modules. Four mentorship calls. A personal store review before you spend a penny on ads. The exact systems we use with agency clients — handed to you in a box.</p>
+              <div className={styles.modulePriceGrid}>
+                {[
+                  { tag: '01 // Research', title: 'Winning Product Algo', desc: 'Our exact checklist for finding products that sell before you spend a penny.' },
+                  { tag: '02 // Sourcing', title: 'Supplier Black Book', desc: 'Vetted suppliers. Fast shipping. Zero scams.' },
+                  { tag: '03 // Build', title: '4-Hour Shopify Setup', desc: 'Exact theme settings and apps. Click, install, done.' },
+                  { tag: '04 // Logistics', title: '3PL & Automation', desc: 'Automate fulfilment. Never touch a box.' },
+                  { tag: '05 // Traffic', title: 'Meta Ads Copy-Paste', desc: 'Our agency ad structures. Plug in your creative and spend.' },
+                  { tag: '06 // Scale', title: 'CRO & Email Printer', desc: 'Abandoned cart flows that recover 15% of lost sales.' },
+                ].map(m => (
+                  <div key={m.tag} className={styles.priceMini}>
+                    <span className={styles.priceMiniTag}>{m.tag}</span>
+                    <strong>{m.title}</strong>
+                    <p>{m.desc}</p>
+                  </div>
+                ))}
               </div>
-              <p className={styles.priceDesc}>The complete A-Z system for launching and scaling your store.</p>
-              <ul className={styles.checklist}>
-                <li>All 6 modules (The Launchpad)</li>
-                <li>4 bi-weekly mentorship calls</li>
-                <li>Supplier black book</li>
-                <li>Green light store review before launch</li>
-                <li>Full refund guarantee</li>
-              </ul>
-              <Link href="https://buy.stripe.com/test_5kQ00d0sp8mlgMbfeO28801" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Get The Protocol</Link>
             </div>
+
+            {/* Right — price + CTA */}
+            <div className={styles.priceRight}>
+              <div className={styles.priceRightInner}>
+                <span className={styles.totalValue}>Total Value: £2,394</span>
+                <div className={styles.priceBig}>
+                  <span className={styles.priceLabel}>Your investment today</span>
+                  <span className={styles.currentPrice}>£997</span>
+                </div>
+                <ul className={styles.checklist}>
+                  <li>All 6 modules (The Launchpad)</li>
+                  <li>4 bi-weekly mentorship calls</li>
+                  <li>Supplier black book access</li>
+                  <li>Agency ad templates included</li>
+                  <li>Email flow library</li>
+                  <li>Green light store review before launch</li>
+                  <li>Full refund guarantee</li>
+                </ul>
+                <Link href="https://buy.stripe.com/test_5kQ00d0sp8mlgMbfeO28801" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Get The Protocol</Link>
+                <p className={styles.guaranteeNote}>First sale within 7 days of launch — or 100% refund. No questions.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

@@ -614,6 +614,128 @@
   gap: 28px;
 }
 
+.priceCardFull {
+  display: grid;
+  grid-template-columns: 1.45fr 0.55fr;
+  border: 1px solid rgba(212,255,0,0.22);
+  background: var(--grey-1);
+  overflow: hidden;
+}
+
+.priceLeft {
+  padding: 60px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.priceFullTitle {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.priceFullSub {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: var(--grey-4);
+  line-height: 1.7;
+  margin-bottom: 44px;
+  max-width: 520px;
+}
+
+.modulePriceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.priceMini {
+  padding: 20px 22px;
+  background: var(--off-black);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.priceMiniTag {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--neon);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.priceMini strong {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.88rem;
+  color: var(--white);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.priceMini p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.8rem;
+  color: var(--grey-4);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.priceRight {
+  padding: 60px 44px;
+  background: var(--off-black);
+  display: flex;
+  flex-direction: column;
+}
+
+.priceRightInner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.totalValue {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--grey-3);
+  text-transform: uppercase;
+  text-decoration: line-through;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.priceLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--grey-4);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.priceBig {
+  margin-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding-bottom: 28px;
+}
+
+.guaranteeNote {
+  margin-top: 20px;
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: var(--neon);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.8;
+}
+
 .priceCard {
   background: var(--grey-1);
   border: 1px solid rgba(255,255,255,0.08);
@@ -778,4 +900,8 @@
   .solutionCard { position: static; }
   .bentoGrid { grid-template-columns: repeat(2, 1fr); }
   .guaranteeBox { padding: 36px 24px; }
+  .priceCardFull { grid-template-columns: 1fr; }
+  .priceLeft { padding: 36px 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .priceRight { padding: 36px 24px; }
+  .modulePriceGrid { grid-template-columns: 1fr; }
 }
