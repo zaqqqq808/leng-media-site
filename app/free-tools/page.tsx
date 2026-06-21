@@ -42,8 +42,8 @@ const TOOLS = [
   {
     name: 'AI for Ecom SKOOL',
     desc: 'The community for ecommerce founders and marketers using AI to scale their stores.',
-    href: '#',
-    free: false,
+    href: 'https://www.skool.com/ai-for-ecommerce-8645',
+    free: true,
     category: 'Community',
   },
 ]
