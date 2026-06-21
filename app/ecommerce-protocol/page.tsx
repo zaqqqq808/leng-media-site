@@ -54,7 +54,7 @@ export default function EcommerceProtocol() {
         <div className={styles.container}>
           <span className={styles.tag}>Leng Media Ecommerce Protocol</span>
           <h1 className={styles.heroTitle}>
-            Stop Guessing.<br />
+            Save 100 hours.<br />
             Launch your brand within<br />
             <span className={styles.accent}>two months.</span>
           </h1>
