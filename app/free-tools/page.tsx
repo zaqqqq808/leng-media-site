@@ -18,23 +18,26 @@ const TOOLS = [
   },
   {
     name: 'AI For Ecommerce Cheat Sheet',
-    desc: 'The exact AI tools and prompts we use to grow ecommerce brands faster.',
-    href: 'https://ethereal-saturday-a3b.notion.site/AI-Cheat-Sheet-for-Ecom-DTC-2e74354e4a8880b8bc20f0e9ad6ba007',
-    free: true,
+    desc: 'Every AI tool and prompt that actually works for ecommerce. Tested on real campaigns.',
+    href: '/ai-cheat-sheet',
+    free: false,
+    isPaid: true,
     category: 'AI',
   },
   {
-    name: 'AI For Ecommerce Tutorial',
-    desc: 'A step by step video tutorial on applying AI to your ecommerce workflow.',
-    href: '#',
+    name: 'AI For Ecommerce Course',
+    desc: 'Live 1-on-1 session where we apply AI directly to your store, your ads, your workflows.',
+    href: '/ai-course',
     free: false,
+    isPaid: true,
     category: 'AI',
   },
   {
     name: 'Ecommerce Protocol',
-    desc: 'Our full growth framework for scaling ecommerce brands from 6 to 7 figures.',
-    href: '#',
+    desc: 'The full A-Z system for launching and scaling an ecommerce brand in two months.',
+    href: '/ecommerce-protocol',
     free: false,
+    isPaid: true,
     category: 'Strategy',
   },
   {
@@ -43,7 +46,6 @@ const TOOLS = [
     href: '#',
     free: false,
     category: 'Course',
-    isPaid: true,
   },
 ]
 
