@@ -54,7 +54,7 @@ export default function EcommerceProtocol() {
         <div className={styles.container}>
           <span className={styles.tag}>Leng Media Ecommerce Protocol</span>
           <h1 className={styles.heroTitle}>
-            Save 100 hours.<br />
+            Save 119 hours.<br />
             Launch your brand within<br />
             <span className={styles.accent}>two months.</span>
           </h1>
@@ -140,7 +140,7 @@ export default function EcommerceProtocol() {
               <span className={styles.checkBig}>✓</span>
               <h3>We did the boring part.</h3>
               <p>We spent 5 years vetting suppliers so you can just pick one. We built the ad templates so you can just plug in art. We wrote the policies so you can just copy-paste.</p>
-              <span className={styles.roiBadge}>Save 200+ Hours</span>
+              <span className={styles.roiBadge}>Save 100+ Hours</span>
             </div>
           </div>
         </div>
