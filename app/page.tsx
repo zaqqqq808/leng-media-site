@@ -37,11 +37,11 @@ const CLIENTS = [
 ]
 
 const RESOURCES = [
-  { name:'GDN Ad Specs Cheat Sheet',                 href:'/free-tools/gdn-ad-specs',                                                                           free:true },
-  { name:'AI For Ecommerce Cheat Sheet',              href:'https://app.notion.com/p/AI-Cheat-Sheet-for-Ecom-DTC-2e74354e4a8880b8bc20f0e9ad6ba007',             free:true },
-  { name:'AI For Ecommerce Software Tutorials',       href:'/ai-software-tutorials',                                                                             free:false, paid:true },
-  { name:'AI For Ecommerce Course',                   href:'/ai-course',                                                                                         free:false, paid:true },
-  { name:'Ecommerce Protocol',                        href:'/ecommerce-protocol',                                                                                free:false, paid:true },
+  { name:'GDN Ad Specs Cheat Sheet',             href:'/free-tools/gdn-ad-specs',                                                                           free:true },
+  { name:'AI For Ecommerce Cheat Sheet',          href:'https://app.notion.com/p/AI-Cheat-Sheet-for-Ecom-DTC-2e74354e4a8880b8bc20f0e9ad6ba007',             free:true },
+  { name:'AI for Ecom: Cheat Sheet Tutorials',    href:'/ai-software-tutorials',                                                                             free:false, paid:true },
+  { name:'Ecom Launch Protocol',                  href:'/ecommerce-protocol',                                                                                free:false, paid:true },
+  { name:'AI for Ecom SKOOL',                     href:'#',                                                                                                  free:false },
 ]
 
 export default function Home() {
