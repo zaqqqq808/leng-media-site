@@ -18,8 +18,15 @@ const TOOLS = [
   },
   {
     name: 'AI For Ecommerce Cheat Sheet',
-    desc: 'Every AI tool and prompt that actually works for ecommerce. Tested on real campaigns.',
-    href: '/ai-cheat-sheet',
+    desc: 'Every AI tool and prompt that actually works for ecommerce. Tested on real campaigns. Free Notion document.',
+    href: 'https://app.notion.com/p/AI-Cheat-Sheet-for-Ecom-DTC-2e74354e4a8880b8bc20f0e9ad6ba007',
+    free: true,
+    category: 'AI',
+  },
+  {
+    name: 'AI For Ecommerce Software Tutorials',
+    desc: 'Video walkthroughs for every AI tool in the cheat sheet — applied to ecommerce tasks, not generic demos.',
+    href: '/ai-software-tutorials',
     free: false,
     isPaid: true,
     category: 'AI',
@@ -39,13 +46,6 @@ const TOOLS = [
     free: false,
     isPaid: true,
     category: 'Strategy',
-  },
-  {
-    name: 'AI for Ecommerce School & Community',
-    desc: 'Structured course + private community for founders using AI to scale their store.',
-    href: '#',
-    free: false,
-    category: 'Course',
   },
 ]
 
