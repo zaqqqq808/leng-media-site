@@ -170,6 +170,41 @@
   color: var(--neon) !important;
 }
 
+.authControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 4px;
+}
+.signIn {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--grey-5);
+  background: none;
+  border: 1px solid var(--line);
+  padding: 7px 14px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.signIn:hover { color: var(--white); border-color: rgba(255,255,255,0.3); }
+.signUp {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--neon);
+  border: none;
+  padding: 7px 14px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: opacity 0.2s;
+}
+.signUp:hover { opacity: 0.85; }
+
 /* ── Responsive ── */
 @media (max-width: 860px) {
   .nav { padding: 18px 24px; }

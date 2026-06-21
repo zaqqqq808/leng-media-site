@@ -1,9 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { SignInButton, SignUpButton, UserButton, useAuth } from '@clerk/nextjs'
 import styles from './Nav.module.css'
 
 export default function Nav() {
+  const { isSignedIn } = useAuth()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -36,6 +38,16 @@ export default function Nav() {
           <li><Link href="/free-tools">Resources</Link></li>
           <li><Link href="/ecommerce-protocol" className={styles.course}>The Ecommerce Protocol</Link></li>
           <li><Link href="/business-enquiry" className={styles.enquiry}>Business Enquiry</Link></li>
+          <li className={styles.authControls}>
+            {isSignedIn ? (
+              <UserButton afterSignOutUrl="/" />
+            ) : (
+              <>
+                <SignInButton mode="modal"><button className={styles.signIn}>Sign In</button></SignInButton>
+                <SignUpButton mode="modal"><button className={styles.signUp}>Sign Up</button></SignUpButton>
+              </>
+            )}
+          </li>
         </ul>
 
         {/* Hamburger */}
