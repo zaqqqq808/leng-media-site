@@ -60,11 +60,15 @@ export default function EcommerceProtocol() {
           </h1>
           <div className={styles.vslWrap}>
             <div className={styles.vslGlow} />
-            <div className={styles.vslFrame}>
-              <div className={styles.vslInner}>
-                <span className={styles.playIcon}>▶</span>
-                <span className={styles.vslLabel}>Watch the Briefing (2 Min)</span>
-              </div>
+            <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
+              <iframe
+                src="https://player.vimeo.com/video/1203781053?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                style={{position:'absolute', top:0, left:0, width:'100%', height:'100%'}}
+                title="Leng Media Ecom video VSL"
+              />
             </div>
           </div>
           <p className={styles.heroSub}>
