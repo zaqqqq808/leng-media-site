@@ -342,11 +342,41 @@ export default function EcommerceProtocol() {
           </div>
           <p className={styles.logosLabel}>Brands we&apos;ve launched and grown:</p>
           <div className={styles.logosGrid}>
-            {[1,2,3,4,5,6].map(i => (
-              <div key={i} className={styles.logoPlaceholder}>
-                <span>Brand {i}</span>
-              </div>
-            ))}
+            <div className={styles.logoPlaceholder}>
+              <svg className={styles.logoSvg} width="90" height="28" viewBox="0 0 90 28" fill="none" aria-label="111SKIN">
+                <text x="45" y="20" textAnchor="middle" fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="15" fontWeight="300" letterSpacing="4" fill="currentColor">111SKIN</text>
+              </svg>
+            </div>
+            <div className={styles.logoPlaceholder}>
+              <svg className={styles.logoSvg} width="120" height="34" viewBox="0 0 120 34" fill="none" aria-label="Rhythm Nutrition">
+                <text x="60" y="16" textAnchor="middle" fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="11" fontWeight="700" letterSpacing="4" fill="currentColor">RHYTHM</text>
+                <text x="60" y="30" textAnchor="middle" fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="7.5" fontWeight="300" letterSpacing="4.5" fill="currentColor">NUTRITION</text>
+              </svg>
+            </div>
+            <div className={styles.logoPlaceholder}>
+              <svg className={styles.logoSvg} width="110" height="32" viewBox="0 0 110 32" fill="none" aria-label="Healthy Petz">
+                <text x="55" y="15" textAnchor="middle" fontFamily="Arial,sans-serif" fontSize="10" fontWeight="700" letterSpacing="2.5" fill="currentColor">HEALTHY</text>
+                <text x="55" y="28" textAnchor="middle" fontFamily="Arial,sans-serif" fontSize="9" fontWeight="400" letterSpacing="2" fill="currentColor">Petz</text>
+              </svg>
+            </div>
+            <div className={styles.logoPlaceholder}>
+              <svg className={styles.logoSvg} width="120" height="36" viewBox="0 0 120 36" fill="none" aria-label="Playa London">
+                <circle cx="18" cy="18" r="14" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <text x="40" y="15" fontFamily="Arial,sans-serif" fontSize="9.5" fontWeight="700" letterSpacing="3" fill="currentColor">PLAYA</text>
+                <text x="40" y="27" fontFamily="Arial,sans-serif" fontSize="7.5" fontWeight="300" letterSpacing="3.5" fill="currentColor">LONDON</text>
+              </svg>
+            </div>
+            <div className={styles.logoPlaceholder}>
+              <svg className={styles.logoSvg} width="130" height="34" viewBox="0 0 130 34" fill="none" aria-label="Biopeptech">
+                <polygon points="16,2 27,8 27,26 16,32 5,26 5,8" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <text x="38" y="21" fontFamily="'Helvetica Neue',Arial,sans-serif" fontSize="9" fontWeight="600" letterSpacing="2.5" fill="currentColor">BIOPEPTECH</text>
+              </svg>
+            </div>
+            <div className={styles.logoPlaceholder}>
+              <svg className={styles.logoSvg} width="110" height="28" viewBox="0 0 110 28" fill="none" aria-label="Auralign">
+                <text x="55" y="20" textAnchor="middle" fontFamily="Arial,sans-serif" fontSize="10" fontWeight="300" letterSpacing="5" fill="currentColor">AURALIGN</text>
+              </svg>
+            </div>
           </div>
         </div>
       </section>
