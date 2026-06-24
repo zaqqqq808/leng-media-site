@@ -317,7 +317,7 @@ export default function EcommerceProtocol() {
           <h2 className={styles.sectionTitle}>Here&apos;s exactly what to expect.</h2>
           <div className={styles.stepsGrid}>
             {[
-              { num: '01', title: 'You enrol and book your Kickoff Call', desc: 'The moment you purchase, you get a link to book your first 1-on-1 call. Pick a slot that works for you, usually within 48 hours.' },
+              { num: '01', title: 'You enrol and book your Kickoff Call', desc: 'The moment you purchase, you are taken straight to our booking page. Pick a slot that works for you, usually within 48 hours.' },
               { num: '02', title: 'We map out your entire launch plan', desc: 'On the Kickoff Call we walk through your idea, your budget, and your timeline. You leave with a personalised action plan. Not a login link and a good luck.' },
               { num: '03', title: 'You work through the modules', desc: 'Eight modules, each ending with a clear deliverable and checklist. Nothing vague. You always know what to do next.' },
               { num: '04', title: 'Bi-weekly check-in calls', desc: 'Every two weeks we get back on a call. We review progress, unblock anything in the way, and tell you exactly what to do next.' },
@@ -386,7 +386,8 @@ export default function EcommerceProtocol() {
                   <li>Green light store review before launch</li>
                   <li>First-sale guarantee or full refund</li>
                 </ul>
-                <a href="https://buy.stripe.com/6oUcMZ6vGeRhcRn6zcbjW00" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Start The Protocol →</a>
+                <a href="https://buy.stripe.com/aFadR36vG7oPaJfg9MbjW01" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Start The Protocol →</a>
+                <p className={styles.guaranteeNote}>After purchase you will be taken straight to our booking page to schedule your Kickoff Call.</p>
                 <p className={styles.guaranteeNote}>First sale within 7 days of launch. Or 100% refund, no questions.</p>
               </div>
             </div>
