@@ -1231,6 +1231,133 @@
   margin: 0;
 }
 
+/* ── DREAM OUTCOME ── */
+.dreamSection {
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: var(--off-black);
+  text-align: center;
+}
+
+.dreamTitle {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 36px;
+}
+
+.dreamText {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.05rem;
+  color: var(--grey-4);
+  line-height: 1.75;
+  max-width: 680px;
+  margin: 0 auto 18px;
+}
+
+.dreamStats {
+  display: flex;
+  justify-content: center;
+  gap: 72px;
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.dreamStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.dreamStatNum {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--neon);
+  letter-spacing: -0.02em;
+}
+
+.dreamStatLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  color: var(--grey-4);
+  text-transform: uppercase;
+}
+
+/* ── NOT FOR YOU ── */
+.notForYou {
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.notForYouGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.notCol,
+.forCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.notList,
+.forList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notList li,
+.forList li {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: var(--grey-4);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.notList li .xMark {
+  color: #FF4444;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.forList li .checkMark {
+  color: var(--neon);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── PRICING HOOK ── */
+.pricingHook {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.05rem;
+  color: var(--grey-4);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
@@ -1252,4 +1379,6 @@
   .modulePriceGrid { grid-template-columns: 1fr; }
   .founderStats { gap: 28px; flex-wrap: wrap; }
   .faqItem { padding: 28px 24px; border-right: none; }
+  .notForYouGrid { grid-template-columns: 1fr; gap: 48px; }
+  .dreamStats { gap: 36px; flex-wrap: wrap; }
 }

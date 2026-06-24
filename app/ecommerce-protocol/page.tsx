@@ -54,9 +54,9 @@ export default function EcommerceProtocol() {
         <div className={styles.container}>
           <span className={styles.tag}>Leng Media Ecommerce Protocol</span>
           <h1 className={styles.heroTitle}>
-            Save 119 hours.<br />
-            Launch your brand within<br />
-            <span className={styles.accent}>two months.</span>
+            Most people spend 6 months<br />
+            figuring out what we&apos;ll tell<br />
+            <span className={styles.accent}>you in week one.</span>
           </h1>
           <div className={styles.vslWrap}>
             <div className={styles.vslGlow} />
@@ -82,6 +82,31 @@ export default function EcommerceProtocol() {
         </div>
       </section>
 
+      {/* ── DREAM OUTCOME ── */}
+      <section className={styles.dreamSection}>
+        <div className={styles.container}>
+          <span className={styles.sectionLabel}>// Picture This</span>
+          <h2 className={styles.dreamTitle}>Eight weeks from now.</h2>
+          <p className={styles.dreamText}>Your store is live. You wake up to a notification you have never seen before. Someone you have never met, in a city you have never been to, just bought something you sell.</p>
+          <p className={styles.dreamText}>That is the moment everything changes. Not because of the money alone. Because you now know something most people never figure out. You know how to build a revenue stream that does not need you to clock in. You understand how business actually works. And you know you can do it again.</p>
+          <p className={styles.dreamText}>More time. More options. The freedom to say no to things that do not serve you. The 9-to-5 stays or goes on your terms. Not your employer&apos;s.</p>
+          <div className={styles.dreamStats}>
+            <div className={styles.dreamStat}>
+              <span className={styles.dreamStatNum}>8</span>
+              <span className={styles.dreamStatLabel}>weeks to launch</span>
+            </div>
+            <div className={styles.dreamStat}>
+              <span className={styles.dreamStatNum}>7</span>
+              <span className={styles.dreamStatLabel}>days to first sale</span>
+            </div>
+            <div className={styles.dreamStat}>
+              <span className={styles.dreamStatNum}>100%</span>
+              <span className={styles.dreamStatLabel}>refund if not</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── THE FILTER ── */}
       <section className={styles.filterSection}>
         <div className={styles.container}>
@@ -91,21 +116,21 @@ export default function EcommerceProtocol() {
           </div>
           <div className={styles.filterGrid}>
             <div className={styles.filterCard}>
-              <span className={styles.filterLabel}>Option A: The Hard Way</span>
+              <span className={styles.filterLabel}>Option A: Figure it out yourself</span>
               <ul className={styles.painList}>
-                <li><span className={styles.xMark}>✕</span> Watch 50 hours of YouTube</li>
-                <li><span className={styles.xMark}>✕</span> Test 4 products, 1 supplier, ship from the US</li>
-                <li><span className={styles.xMark}>✕</span> Lose $2,000 on bad ads</li>
-                <li><span className={styles.xMark}>✕</span> Give up</li>
+                <li><span className={styles.xMark}>✕</span> Spend 6 months watching YouTube and reading Reddit threads</li>
+                <li><span className={styles.xMark}>✕</span> Pick the wrong product, find the wrong supplier, build the wrong store</li>
+                <li><span className={styles.xMark}>✕</span> Burn $2,000 on ads before you understand what you are doing</li>
+                <li><span className={styles.xMark}>✕</span> Quit. Tell yourself ecommerce does not work.</li>
               </ul>
             </div>
             <div className={`${styles.filterCard} ${styles.filterCardHighlight}`}>
-              <span className={styles.filterLabel}>Option B: The LM Ecom Protocol</span>
+              <span className={styles.filterLabel}>Option B: The Leng Media Ecommerce Protocol</span>
               <ul className={styles.painList}>
-                <li><span className={styles.checkMark}>✓</span> Get our exact agency playbook</li>
-                <li><span className={styles.checkMark}>✓</span> We tell you exactly what to do, step by step</li>
-                <li><span className={styles.checkMark}>✓</span> Copy our proven ad structures</li>
-                <li><span className={styles.checkMark}>✓</span> Launch in 2 months</li>
+                <li><span className={styles.checkMark}>✓</span> Get the exact supplier list, ad templates, and store setup we use for agency clients today</li>
+                <li><span className={styles.checkMark}>✓</span> 1-on-1 calls where we tell you exactly what to do and when</li>
+                <li><span className={styles.checkMark}>✓</span> We personally review your store before you spend a penny on ads</li>
+                <li><span className={styles.checkMark}>✓</span> First sale within 7 days of launch or your money back</li>
               </ul>
             </div>
           </div>
@@ -152,6 +177,40 @@ export default function EcommerceProtocol() {
         </div>
       </section>
 
+      {/* ── NOT FOR YOU ── */}
+      <section className={styles.notForYou}>
+        <div className={styles.container}>
+          <div className={styles.notForYouGrid}>
+            <div className={styles.notCol}>
+              <span className={styles.sectionLabel}>// Not for you if</span>
+              <ul className={styles.notList}>
+                {[
+                  'You want results without putting in the work',
+                  'You cannot commit 8 hours a week for 2 months',
+                  'You have no interest in building something real',
+                  'You are looking for someone to do it all for you',
+                ].map(item => (
+                  <li key={item}><span className={styles.xMark}>✕</span>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.forCol}>
+              <span className={styles.sectionLabel}>// Built for you if</span>
+              <ul className={styles.forList}>
+                {[
+                  'You have a product idea but no idea where to start',
+                  'You work full time and need a system, not more research',
+                  'You are serious about building income outside your job',
+                  'You want someone to tell you exactly what to do and when',
+                ].map(item => (
+                  <li key={item}><span className={styles.checkMark}>✓</span>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── MODULES ── */}
       <section className={styles.modules}>
         <div className={styles.container}>
@@ -186,9 +245,9 @@ export default function EcommerceProtocol() {
           <h2 className={styles.sectionTitle}>Results in the Field</h2>
           <div className={styles.reviewGrid}>
             {[
-              { initials: 'JM', name: 'James M.', stat: 'Time to Launch: 3 Days', quote: "I didn't want a course. I wanted a shortcut. I launched the store on Tuesday, first sale Thursday." },
-              { initials: 'SK', name: 'Sarah K.', stat: 'Supplier: Secured', quote: "The supplier list alone is worth the price. I wasted weeks talking to factories. These guys replied in 2 hours." },
-              { initials: 'DR', name: 'David R.', stat: 'ROI: Positive', quote: "My agency charges clients $5k to set up what is in Module 3. It's literally the agency SOP document." },
+              { initials: 'JM', name: 'James M.', stat: 'First sale: 2 days after launch', quote: "I didn't want a course. I wanted a shortcut. I launched the store on Tuesday, first sale Thursday." },
+              { initials: 'SK', name: 'Sarah K.', stat: 'Supplier responded: 2 hours', quote: "The supplier list alone is worth the price. I wasted weeks talking to factories. These guys replied in 2 hours." },
+              { initials: 'DR', name: 'David R.', stat: 'Module 3 alone worth $5,000+', quote: "My agency charges clients $5k to set up what is in Module 3. It's literally the agency SOP document." },
             ].map(r => (
               <div key={r.initials} className={styles.reviewCard}>
                 <div className={styles.reviewHeader}>
@@ -215,7 +274,7 @@ export default function EcommerceProtocol() {
       <section className={styles.mentorship}>
         <div className={styles.container}>
           <span className={styles.sectionLabel}>// AGENCY DIRECT ACCESS</span>
-          <h2 className={styles.sectionTitle}>We won&apos;t let you get stuck.</h2>
+          <h2 className={styles.sectionTitle}>We won&apos;t let you launch until we personally say your store is ready.</h2>
           <p className={styles.mentorSub}>Most courses give you videos and disappear. Not us. Included in the protocol is 2 months of direct mentorship.</p>
           <div className={styles.mentorCard}>
             <div className={styles.mentorFeatures}>
@@ -272,33 +331,13 @@ export default function EcommerceProtocol() {
         </div>
       </section>
 
-      {/* ── AI SYSTEMS ── */}
-      <section className={styles.aiSection}>
-        <div className={styles.container}>
-          <div className={styles.aiGrid}>
-            <div>
-              <span className={styles.sectionLabel}>// THE COMMUNITY</span>
-              <h2 className={styles.sectionTitle}>Already have a brand? Scale it with AI.</h2>
-              <p className={styles.aiDesc}>Join a private community of founders and creators scaling their ecommerce brands using AI. Strategy breakdowns, ad teardowns, weekly accountability, and direct access to the Leng Media team. All in one place.</p>
-              <a href="https://www.skool.com/ai-for-ecommerce-8645" target="_blank" rel="noopener noreferrer" className={styles.btnMain}>Join the Community →</a>
-            </div>
-            <div className={styles.aiFrame}>
-              <div className={styles.aiFrameInner}>
-                <span className={styles.playIcon}>▶</span>
-                <span className={styles.vslLabel}>Community Preview</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── GUARANTEE ── */}
       <section className={styles.guarantee} id="guarantee">
         <div className={styles.container}>
           <div className={styles.guaranteeBox}>
             <span className={styles.sectionLabel}>// THE GREEN LIGHT GUARANTEE</span>
             <h2 className={styles.guaranteeTitle}>
-              We guarantee your first sale. Or you pay nothing.
+              Your first ecommerce sale. Guaranteed. Or we give you your money back.
             </h2>
             <p className={styles.guaranteeDetail}>
               <strong>How it works:</strong> You cannot launch until we give you the &ldquo;Green Light.&rdquo; Submit your store. We review it personally. If it&apos;s not ready, we tell you exactly what to fix. Once you launch, if you don&apos;t get a sale within 7 days, you get a 100% refund, no questions asked.
@@ -338,6 +377,7 @@ export default function EcommerceProtocol() {
       <section className={styles.pricing} id="pricing">
         <div className={styles.container}>
           <span className={styles.sectionLabel}>// GET STARTED</span>
+          <p className={styles.pricingHook}>The exact playbook we charge $3,000 a month to execute. Yours for $1,299.</p>
           <h2 className={styles.sectionTitle}>The Protocol</h2>
           <div className={styles.spotsBar}>
             <span className={styles.spotsDot} />
@@ -411,6 +451,26 @@ export default function EcommerceProtocol() {
           </div>
           <div className={styles.midCta} style={{marginTop: 64}}>
             <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── COMMUNITY (bonus — after FAQ) ── */}
+      <section className={styles.aiSection}>
+        <div className={styles.container}>
+          <div className={styles.aiGrid}>
+            <div>
+              <span className={styles.sectionLabel}>// BONUS: THE COMMUNITY</span>
+              <h2 className={styles.sectionTitle}>Already have a brand? Scale it with AI.</h2>
+              <p className={styles.aiDesc}>Join a private community of founders and creators scaling their ecommerce brands using AI. Strategy breakdowns, ad teardowns, weekly accountability, and direct access to the Leng Media team. All in one place.</p>
+              <a href="https://www.skool.com/ai-for-ecommerce-8645" target="_blank" rel="noopener noreferrer" className={styles.btnMain}>Join the Community →</a>
+            </div>
+            <div className={styles.aiFrame}>
+              <div className={styles.aiFrameInner}>
+                <span className={styles.playIcon}>▶</span>
+                <span className={styles.vslLabel}>Community Preview</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
