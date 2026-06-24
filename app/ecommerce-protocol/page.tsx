@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: 'What if I work full time? How much time does this take?',
-    a: 'Most students put in 8–12 hours per week and launch within 8 weeks. The system is designed to eliminate wasted time. No rabbit holes, no guessing. You get a checklist; you follow it.',
+    a: 'Most students put in 8 to 12 hours a week and launch within 8 weeks. The system is built to cut out wasted time. Every step has a clear deliverable. You always know exactly what to do next.',
   },
   {
     q: 'I tried something like this before and it didn\'t work.',
@@ -96,7 +96,7 @@ export default function EcommerceProtocol() {
             </div>
           </div>
           <p className={styles.heroSub}>
-            Install a new ecommerce revenue stream. No theory. Just the manual.<br />
+            Everything from supplier to first sale, in one place.<br />
             First sale within 7 days of launch. <strong>Or we refund you 100%.</strong>
           </p>
           <div className={styles.heroActions}>
@@ -112,7 +112,7 @@ export default function EcommerceProtocol() {
           <span className={styles.sectionLabel}>// Picture This</span>
           <h2 className={styles.dreamTitle}>Eight weeks from now.</h2>
           <p className={styles.dreamText}>Your store is live. You wake up to a notification you have never seen before. Someone you have never met, in a city you have never been to, just bought something you sell.</p>
-          <p className={styles.dreamText}>That is the moment everything changes. Not because of the money alone. Because you now know something most people never figure out. You know how to build a revenue stream that does not need you to clock in. You understand how business actually works. And you know you can do it again.</p>
+          <p className={styles.dreamText}>That is the moment everything changes. The money is part of it. But what you now know is something most people never figure out. You know how to build a revenue stream that does not need you to clock in. You understand how business actually works. And you can do it again.</p>
           <p className={styles.dreamText}>More time. More options. The freedom to say no to things that do not serve you. The 9-to-5 stays or goes on your terms. Not your employer&apos;s.</p>
           <div className={styles.dreamStats}>
             <div className={styles.dreamStat}>
@@ -163,8 +163,7 @@ export default function EcommerceProtocol() {
             <div className={styles.solutionCard}>
               <span className={styles.checkBig}>✓</span>
               <h3>We&apos;ve already figured all of this out.</h3>
-              <p>Every answer above is inside the Protocol. Not theory. The exact supplier list we use. The exact ad structure we run for clients. The exact Shopify setup that converts. You just follow the steps.</p>
-              <p className={styles.solutionDetail}>Think of it as a GPS. You don&apos;t need to know how roads work. You just need to know where you want to go.</p>
+              <p>Every answer above is inside the Protocol. The exact supplier list we use. The exact ad structure we run for clients today. The exact Shopify setup that converts. You follow the steps.</p>
               <span className={styles.roiBadge}>Save 100+ Hours</span>
             </div>
           </div>
@@ -296,7 +295,7 @@ export default function EcommerceProtocol() {
           </div>
           <span className={styles.sectionLabel}>// AGENCY DIRECT ACCESS</span>
           <h2 className={styles.sectionTitle}>We won&apos;t let you launch until we personally say your store is ready.</h2>
-          <p className={styles.mentorSub}>Other courses give you videos and disappear. You get us, live, on a call, for every single module.</p>
+          <p className={styles.mentorSub}>Most courses hand you a login and wish you luck. Every module in the Protocol is delivered live, 1-on-1, built around your product and your market.</p>
           <div className={styles.mentorCard}>
             <div className={styles.mentorFeatures}>
               {[
@@ -311,7 +310,6 @@ export default function EcommerceProtocol() {
                 </div>
               ))}
             </div>
-            <p className={styles.swipeHint}>swipe to see more →</p>
           </div>
           {/* CTA #2 */}
           <div className={styles.midCta}>
@@ -439,23 +437,22 @@ export default function EcommerceProtocol() {
 
             {/* Left — what's inside */}
             <div className={styles.priceLeft}>
-              <h3 className={styles.priceFullTitle}>Everything you need.<br />Nothing you don&apos;t.</h3>
+              <h3 className={styles.priceFullTitle}>Eight modules.<br />One outcome.</h3>
               <p className={styles.priceFullSub}>Eight modules, each delivered live 1-on-1 and recorded. Four accountability calls. A personal store review before you spend a penny on ads. The exact systems we use with agency clients, now yours.</p>
               <div className={styles.modulePriceGrid}>
                 {[
-                  { tag: '01 // Research', title: 'Choosing the Right Product', desc: 'Our checklist for finding products with real demand before you spend a penny.' },
-                  { tag: '02 // Sourcing', title: 'Finding & Negotiating with Suppliers', desc: 'Vetted supplier list plus the scripts we use to negotiate price and MOQ.' },
-                  { tag: '03 // Build', title: 'Website Creation & CRO', desc: 'The exact Shopify setup and app stack that converts.' },
-                  { tag: '04 // Logistics', title: '3PL & Fulfilment', desc: 'Automate shipping from day one. Never pack a box.' },
-                  { tag: '05 // Content', title: 'Organic Content & SEO', desc: 'Build long-term traffic without paying for every click.' },
-                  { tag: '06 // Traffic', title: 'Paid Ads: Meta & Google', desc: 'Agency ad structures. Plug in your creative and scale.' },
-                  { tag: '07 // Retention', title: 'Email Marketing', desc: 'Pre-built flows for abandoned cart, welcome, and post-purchase.' },
-                  { tag: '08 // Finance', title: 'Banking & Taxes', desc: 'Business setup, VAT, and keeping everything above board.' },
+                  { tag: '01 // Research', title: 'Choosing the Right Product' },
+                  { tag: '02 // Sourcing', title: 'Finding & Negotiating with Suppliers' },
+                  { tag: '03 // Build', title: 'Website Creation & CRO' },
+                  { tag: '04 // Logistics', title: '3PL & Fulfilment' },
+                  { tag: '05 // Content', title: 'Organic Content & SEO' },
+                  { tag: '06 // Traffic', title: 'Paid Ads: Meta & Google' },
+                  { tag: '07 // Retention', title: 'Email Marketing' },
+                  { tag: '08 // Finance', title: 'Banking & Taxes' },
                 ].map(m => (
                   <div key={m.tag} className={styles.priceMini}>
                     <span className={styles.priceMiniTag}>{m.tag}</span>
                     <strong>{m.title}</strong>
-                    <p>{m.desc}</p>
                   </div>
                 ))}
               </div>

@@ -499,21 +499,21 @@
 
 .mentorFeat {
   background: var(--grey-2);
-  padding: 24px;
+  padding: 20px;
   border-left: 2px solid var(--neon);
 }
 
 .mentorFeat strong {
   display: block;
   font-family: var(--font-inter), sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   color: var(--white);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .mentorFeat p {
   font-family: var(--font-inter), sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   color: var(--grey-4);
   line-height: 1.6;
 }
@@ -706,7 +706,7 @@
 }
 
 .priceMini {
-  padding: 20px 22px;
+  padding: 14px 16px;
   background: var(--off-black);
   border: 1px solid rgba(255,255,255,0.06);
 }
@@ -723,10 +723,10 @@
 
 .priceMini strong {
   font-family: var(--font-inter), sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   color: var(--white);
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 
 .priceMini p {
@@ -1460,7 +1460,7 @@
 
 .dreamText {
   font-family: var(--font-inter), sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.88rem;
   color: var(--grey-4);
   line-height: 1.75;
   max-width: 680px;
@@ -1608,7 +1608,6 @@
   .filterGrid,
   .trapGrid,
   .reviewGrid,
-  .mentorFeatures,
   .aiGrid,
   .pricingGrid,
   .stepsGrid,
@@ -1635,26 +1634,9 @@
     scroll-snap-align: start;
   }
 
-  /* Mentorship — horizontal carousel */
-  .mentorCard { padding: 28px 20px; }
-  .mentorFeatures {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 12px;
-    margin: 0 -20px;
-    padding: 0 20px 4px;
-    grid-template-columns: unset;
-  }
-  .mentorFeatures::-webkit-scrollbar { display: none; }
-  .mentorFeat {
-    flex-shrink: 0;
-    width: 80vw;
-    max-width: 320px;
-    scroll-snap-align: start;
-  }
+  /* Mentorship — stays 2x2 on mobile, just tighter padding */
+  .mentorCard { padding: 24px 16px; }
+  .mentorFeatures { gap: 10px; }
   .guaranteeBox { padding: 36px 24px; }
   .priceCardFull { grid-template-columns: 1fr; }
   .priceLeft { padding: 36px 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
