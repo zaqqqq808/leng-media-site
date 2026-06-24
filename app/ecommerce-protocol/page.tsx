@@ -123,36 +123,6 @@ export default function EcommerceProtocol() {
         </div>
       </section>
 
-      {/* ── THE FILTER ── */}
-      <section className={styles.filterSection}>
-        <div className={styles.container}>
-          <div className={styles.filterHeader}>
-            <span className={styles.sectionLabel}>// THE DECISION</span>
-            <h2 className={styles.filterHeading}>You have 2 choices.</h2>
-          </div>
-          <div className={styles.filterGrid}>
-            <div className={styles.filterCard}>
-              <span className={styles.filterLabel}>Option A: Figure it out yourself</span>
-              <ul className={styles.painList}>
-                <li><span className={styles.xMark}>✕</span> Spend 6 months watching YouTube and reading Reddit threads</li>
-                <li><span className={styles.xMark}>✕</span> Pick the wrong product, find the wrong supplier, build the wrong store</li>
-                <li><span className={styles.xMark}>✕</span> Burn $2,000 on ads before you understand what you are doing</li>
-                <li><span className={styles.xMark}>✕</span> Quit. Tell yourself ecommerce does not work.</li>
-              </ul>
-            </div>
-            <div className={`${styles.filterCard} ${styles.filterCardHighlight}`}>
-              <span className={styles.filterLabel}>Option B: The Leng Media Ecommerce Protocol</span>
-              <ul className={styles.painList}>
-                <li><span className={styles.checkMark}>✓</span> Get the exact supplier list, ad templates, and store setup we use for agency clients today</li>
-                <li><span className={styles.checkMark}>✓</span> 1-on-1 calls where we tell you exactly what to do and when</li>
-                <li><span className={styles.checkMark}>✓</span> We personally review your store before you spend a penny on ads</li>
-                <li><span className={styles.checkMark}>✓</span> First sale within 7 days of launch or your money back</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── TIME TRAP ── */}
       <section className={styles.timeTrap}>
         <div className={styles.container}>
@@ -385,6 +355,36 @@ export default function EcommerceProtocol() {
             <p className={styles.guaranteeCta}>You literally cannot fail.</p>
             {/* CTA #3 */}
             <Link href="#pricing" className={`${styles.btnMain} ${styles.guaranteeBtn}`}>Start The Protocol →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── THE FILTER ── */}
+      <section className={styles.filterSection}>
+        <div className={styles.container}>
+          <div className={styles.filterHeader}>
+            <span className={styles.sectionLabel}>// THE DECISION</span>
+            <h2 className={styles.filterHeading}>You have 2 choices.</h2>
+          </div>
+          <div className={styles.filterGrid}>
+            <div className={styles.filterCard}>
+              <span className={styles.filterLabel}>Option A: Figure it out yourself</span>
+              <ul className={styles.painList}>
+                <li><span className={styles.xMark}>✕</span> Spend 6 months watching YouTube and reading Reddit threads</li>
+                <li><span className={styles.xMark}>✕</span> Pick the wrong product, find the wrong supplier, build the wrong store</li>
+                <li><span className={styles.xMark}>✕</span> Burn $2,000 on ads before you understand what you are doing</li>
+                <li><span className={styles.xMark}>✕</span> Quit. Tell yourself ecommerce does not work.</li>
+              </ul>
+            </div>
+            <div className={`${styles.filterCard} ${styles.filterCardHighlight}`}>
+              <span className={styles.filterLabel}>Option B: The Leng Media Ecommerce Protocol</span>
+              <ul className={styles.painList}>
+                <li><span className={styles.checkMark}>✓</span> Get the exact supplier list, ad templates, and store setup we use for agency clients today</li>
+                <li><span className={styles.checkMark}>✓</span> 1-on-1 calls where we tell you exactly what to do and when</li>
+                <li><span className={styles.checkMark}>✓</span> We personally review your store before you spend a penny on ads</li>
+                <li><span className={styles.checkMark}>✓</span> First sale within 7 days of launch or your money back</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
