@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styles from './page.module.css'
+import FaqAccordion from './FaqAccordion'
 
 export const metadata = {
   title: 'The Ecommerce Protocol – Leng Media',
@@ -520,14 +521,7 @@ export default function EcommerceProtocol() {
         <div className={styles.container}>
           <span className={styles.sectionLabel}>// COMMON QUESTIONS</span>
           <h2 className={styles.sectionTitle}>Everything you&apos;re wondering.</h2>
-          <div className={styles.faqGrid}>
-            {FAQS.map(f => (
-              <div key={f.q} className={styles.faqItem}>
-                <h3 className={styles.faqQ}>{f.q}</h3>
-                <p className={styles.faqA}>{f.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion faqs={FAQS} />
           <div className={styles.midCta} style={{marginTop: 64}}>
             <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
           </div>
