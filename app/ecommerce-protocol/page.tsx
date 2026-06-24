@@ -9,19 +9,19 @@ export const metadata = {
 const FAQS = [
   {
     q: 'Is this just another dropshipping course?',
-    a: 'No. Most dropshipping courses teach you how to find trending products on TikTok and run Facebook ads. We teach you how to build a real brand — vetted suppliers, proper 3PL fulfilment, and paid traffic structures from an actual agency. The difference is whether you want a one-month experiment or a sellable business.',
+    a: 'No. Most dropshipping courses teach you how to find trending products on TikTok and run Facebook ads. We teach you how to build a real brand: vetted suppliers, proper 3PL fulfilment, and paid traffic structures from an actual agency. The difference is whether you want a one-month experiment or a sellable business.',
   },
   {
     q: 'I have no idea where to start. Is this right for me?',
-    a: 'Yes — that\'s exactly who this is for. You don\'t need a business background, a supplier, or a Shopify account. Module 01 starts from zero. We walk you through every decision.',
+    a: 'Yes, that\'s exactly who this is for. You don\'t need a business background, a supplier, or a Shopify account. Module 01 starts from zero. We walk you through every decision.',
   },
   {
     q: 'What if I work full time? How much time does this take?',
-    a: 'Most students put in 8–12 hours per week and launch within 8 weeks. The system is designed to eliminate wasted time — no rabbit holes, no guessing. You get a checklist; you follow it.',
+    a: 'Most students put in 8–12 hours per week and launch within 8 weeks. The system is designed to eliminate wasted time. No rabbit holes, no guessing. You get a checklist; you follow it.',
   },
   {
     q: 'I tried something like this before and it didn\'t work.',
-    a: 'The #1 reason people fail at ecommerce is that they waste months on the wrong things — bad products, bad suppliers, bad ad setups. The Protocol removes all of that. We\'ve tested the dead ends so you don\'t have to. And if you still don\'t get a sale within 7 days of launch, you get your money back.',
+    a: 'The #1 reason people fail at ecommerce is that they waste months on the wrong things: bad products, bad suppliers, bad ad setups. The Protocol removes all of that. We\'ve tested the dead ends so you don\'t have to. And if you still don\'t get a sale within 7 days of launch, you get your money back.',
   },
   {
     q: 'What happens if I get stuck?',
@@ -29,7 +29,7 @@ const FAQS = [
   },
   {
     q: 'How is this different from hiring an agency?',
-    a: 'An agency charges $3,000–$10,000/month to manage what we\'re handing you. We\'re giving you the actual playbook — the supplier list, the Shopify setup, the ad templates, the email flows. You own it permanently. No monthly fees, no dependency.',
+    a: 'An agency charges $3,000–$10,000/month to manage what we\'re handing you. We\'re giving you the actual playbook: the supplier list, the Shopify setup, the ad templates, the email flows. You own it permanently. No monthly fees, no dependency.',
   },
   {
     q: 'I\'ve just spent $1,299 on this. I don\'t have money left for ads.',
@@ -41,7 +41,7 @@ const FAQS = [
   },
   {
     q: 'What is the refund policy?',
-    a: 'If you don\'t get a sale within 7 days of your launch date, we refund 100% — no questions. The condition: you cannot launch until we\'ve reviewed your store and given you the Green Light. This protects you from launching before you\'re ready.',
+    a: 'If you don\'t get a sale within 7 days of your launch date, we refund 100%, no questions. The condition: you cannot launch until we\'ve reviewed your store and given you the Green Light. This protects you from launching before you\'re ready.',
   },
 ]
 
@@ -73,7 +73,7 @@ export default function EcommerceProtocol() {
           </div>
           <p className={styles.heroSub}>
             Install a new ecommerce revenue stream. No theory. Just the manual.<br />
-            First sale within 7 days of launch — <strong>or we refund you 100%.</strong>
+            First sale within 7 days of launch. <strong>Or we refund you 100%.</strong>
           </p>
           <div className={styles.heroActions}>
             <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
@@ -165,7 +165,7 @@ export default function EcommerceProtocol() {
               { num: '04', tag: 'LOGISTICS', title: '3PL & Fulfilment', desc: 'Automate shipping from day one. Never pack a box. Set it up once, run it forever.', value: '$399' },
               { num: '05', tag: 'CONTENT', title: 'Organic Content & SEO', desc: 'Build long-term traffic without paying for every click. Content frameworks that compound.', value: '$399' },
               { num: '06', tag: 'TRAFFIC', title: 'Paid Ads: Meta & Google', desc: 'Our agency ad structures. Plug in your creative, set the budget, and scale what works.', value: '$399' },
-              { num: '07', tag: 'RETENTION', title: 'Email Marketing', desc: 'Abandoned cart flows, welcome sequences, and post-purchase emails — pre-built and ready to install.', value: '$399' },
+              { num: '07', tag: 'RETENTION', title: 'Email Marketing', desc: 'Abandoned cart flows, welcome sequences, and post-purchase emails. All pre-built and ready to install.', value: '$399' },
               { num: '08', tag: 'FINANCE', title: 'Banking & Taxes', desc: 'How to set up your business account, handle VAT, and keep HMRC off your back from day one.', value: '$399' },
             ].map(m => (
               <div key={m.num} className={styles.moduleCard}>
@@ -279,7 +279,7 @@ export default function EcommerceProtocol() {
             <div>
               <span className={styles.sectionLabel}>// THE COMMUNITY</span>
               <h2 className={styles.sectionTitle}>Already have a brand? Scale it with AI.</h2>
-              <p className={styles.aiDesc}>Join a private community of founders and creators scaling their ecommerce brands using AI. Strategy breakdowns, ad teardowns, weekly accountability, and direct access to the Leng Media team — all in one place.</p>
+              <p className={styles.aiDesc}>Join a private community of founders and creators scaling their ecommerce brands using AI. Strategy breakdowns, ad teardowns, weekly accountability, and direct access to the Leng Media team. All in one place.</p>
               <a href="https://www.skool.com/ai-for-ecommerce-8645" target="_blank" rel="noopener noreferrer" className={styles.btnMain}>Join the Community →</a>
             </div>
             <div className={styles.aiFrame}>
@@ -298,10 +298,10 @@ export default function EcommerceProtocol() {
           <div className={styles.guaranteeBox}>
             <span className={styles.sectionLabel}>// THE GREEN LIGHT GUARANTEE</span>
             <h2 className={styles.guaranteeTitle}>
-              We guarantee your first sale — or you pay nothing.
+              We guarantee your first sale. Or you pay nothing.
             </h2>
             <p className={styles.guaranteeDetail}>
-              <strong>How it works:</strong> You cannot launch until we give you the &ldquo;Green Light.&rdquo; Submit your store. We review it personally. If it&apos;s not ready, we tell you exactly what to fix. Once you launch, if you don&apos;t get a sale within 7 days — 100% refund, no questions asked.
+              <strong>How it works:</strong> You cannot launch until we give you the &ldquo;Green Light.&rdquo; Submit your store. We review it personally. If it&apos;s not ready, we tell you exactly what to fix. Once you launch, if you don&apos;t get a sale within 7 days, you get a 100% refund, no questions asked.
             </p>
             <p className={styles.guaranteeCta}>You literally cannot fail.</p>
             {/* CTA #3 */}
@@ -317,12 +317,12 @@ export default function EcommerceProtocol() {
           <h2 className={styles.sectionTitle}>Here&apos;s exactly what to expect.</h2>
           <div className={styles.stepsGrid}>
             {[
-              { num: '01', title: 'You enrol and book your Kickoff Call', desc: 'The moment you purchase, you get a link to book your first 1-on-1 call. Pick a slot that works for you — usually within 48 hours.' },
-              { num: '02', title: 'We map out your entire launch plan', desc: 'On the Kickoff Call we walk through your idea, your budget, and your timeline. You leave with a personalised action plan — not a login link and a good luck.' },
+              { num: '01', title: 'You enrol and book your Kickoff Call', desc: 'The moment you purchase, you get a link to book your first 1-on-1 call. Pick a slot that works for you, usually within 48 hours.' },
+              { num: '02', title: 'We map out your entire launch plan', desc: 'On the Kickoff Call we walk through your idea, your budget, and your timeline. You leave with a personalised action plan. Not a login link and a good luck.' },
               { num: '03', title: 'You work through the modules', desc: 'Eight modules, each ending with a clear deliverable and checklist. Nothing vague. You always know what to do next.' },
               { num: '04', title: 'Bi-weekly check-in calls', desc: 'Every two weeks we get back on a call. We review progress, unblock anything in the way, and tell you exactly what to do next.' },
               { num: '05', title: 'Green Light store review', desc: 'Before you spend a penny on ads, we personally review your store. You don\'t launch until we say you\'re ready.' },
-              { num: '06', title: 'You launch — and make your first sale', desc: 'With the Green Light given, you go live. First sale within 7 days — or we refund you 100%, no questions asked.' },
+              { num: '06', title: 'You launch and make your first sale', desc: 'With the Green Light given, you go live. First sale within 7 days. If not, we refund you 100%, no questions asked.' },
             ].map(s => (
               <div key={s.num} className={styles.stepCard}>
                 <span className={styles.stepNum}>{s.num}</span>
@@ -341,14 +341,14 @@ export default function EcommerceProtocol() {
           <h2 className={styles.sectionTitle}>The Protocol</h2>
           <div className={styles.spotsBar}>
             <span className={styles.spotsDot} />
-            Only 8 spots remaining this month — mentorship is 1-on-1 and capacity is limited.
+            Only 8 spots remaining this month. Mentorship is 1-on-1 and capacity is limited.
           </div>
           <div className={styles.priceCardFull}>
 
             {/* Left — what's inside */}
             <div className={styles.priceLeft}>
               <h3 className={styles.priceFullTitle}>Everything you need.<br />Nothing you don&apos;t.</h3>
-              <p className={styles.priceFullSub}>Eight modules. Four mentorship calls. A personal store review before you spend a penny on ads. The exact systems we use with agency clients — handed to you in a box.</p>
+              <p className={styles.priceFullSub}>Eight modules. Four mentorship calls. A personal store review before you spend a penny on ads. The exact systems we use with agency clients, handed to you in a box.</p>
               <div className={styles.modulePriceGrid}>
                 {[
                   { tag: '01 // Research', title: 'Choosing the Right Product', desc: 'Our checklist for finding products with real demand before you spend a penny.' },
@@ -387,7 +387,7 @@ export default function EcommerceProtocol() {
                   <li>First-sale guarantee or full refund</li>
                 </ul>
                 <a href="https://buy.stripe.com/6oUcMZ6vGeRhcRn6zcbjW00" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Start The Protocol →</a>
-                <p className={styles.guaranteeNote}>First sale within 7 days of launch — or 100% refund. No questions.</p>
+                <p className={styles.guaranteeNote}>First sale within 7 days of launch. Or 100% refund, no questions.</p>
               </div>
             </div>
 
