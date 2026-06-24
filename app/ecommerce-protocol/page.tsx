@@ -105,7 +105,7 @@ export default function EcommerceProtocol() {
                 <li><span className={styles.checkMark}>✓</span> Get our exact agency playbook</li>
                 <li><span className={styles.checkMark}>✓</span> We tell you exactly what to do, step by step</li>
                 <li><span className={styles.checkMark}>✓</span> Copy our proven ad structures</li>
-                <li><span className={styles.checkMark}>✓</span> Launch in 2 months, guaranteed</li>
+                <li><span className={styles.checkMark}>✓</span> Launch in 2 months</li>
               </ul>
             </div>
           </div>
@@ -117,21 +117,22 @@ export default function EcommerceProtocol() {
         <div className={styles.container}>
           <span className={styles.sectionLabel}>// THE PROBLEM</span>
           <h2 className={styles.sectionTitle}>
-            You are a Creative.<br />Stop playing Logistics Manager.
+            Ecommerce isn&apos;t hard.<br />Figuring it out alone is.
           </h2>
-          <p className={styles.trapSub}>You are a decision maker. You don&apos;t need to research all the bullshit.</p>
+          <p className={styles.trapSub}>There are about 20 things you need to know before you make your first sale. Most people spend 6 months finding that out the hard way.</p>
           <div className={styles.trapGrid}>
             <div className={styles.trapPains}>
+              <p className={styles.trapListLabel}>Things people waste months figuring out on their own:</p>
               <ul className={styles.dontList}>
                 {[
-                  'Best suppliers for your niche',
-                  'How to negotiate with them',
-                  'How to build a website',
-                  'Which tools to use',
-                  'How to optimise Shopify',
-                  'How to run Meta Ads or TikTok',
-                  'How to apply for business finance',
-                  'How to structure the business',
+                  'Which product will actually sell',
+                  'Where to find a supplier who won\'t ghost you',
+                  'How to negotiate so you don\'t overpay',
+                  'How to build a store that converts',
+                  'How to set up fulfilment without touching boxes',
+                  'How to run ads without burning your budget',
+                  'Which emails to send and when',
+                  'How to register the business and handle tax',
                 ].map(item => (
                   <li key={item}>
                     <span className={styles.xMark}>✕</span>
@@ -142,8 +143,9 @@ export default function EcommerceProtocol() {
             </div>
             <div className={styles.solutionCard}>
               <span className={styles.checkBig}>✓</span>
-              <h3>We did the boring part.</h3>
-              <p>We spent 5 years vetting suppliers so you can just pick one. We built the ad templates so you can just plug in art. We wrote the policies so you can just copy-paste.</p>
+              <h3>We&apos;ve already figured all of this out.</h3>
+              <p>Every answer above is inside the Protocol. Not theory. The exact supplier list we use. The exact ad structure we run for clients. The exact Shopify setup that converts. You just follow the steps.</p>
+              <p className={styles.solutionDetail}>Think of it as a GPS. You don&apos;t need to know how roads work. You just need to know where you want to go.</p>
               <span className={styles.roiBadge}>Save 100+ Hours</span>
             </div>
           </div>
@@ -157,12 +159,14 @@ export default function EcommerceProtocol() {
           <h2 className={styles.sectionTitle}>The System Architecture</h2>
           <div className={styles.bentoGrid}>
             {[
-              { num: '01', tag: 'RESEARCH', title: 'Winning Product Algo', desc: "Don't guess. Copy our checklist for finding products that sell before you even buy inventory.", value: '$399' },
-              { num: '02', tag: 'SOURCING', title: 'Supplier Black Book', desc: 'Skip the scams. Access our rolodex of vetted suppliers who ship fast and reply within hours.', value: '$399' },
-              { num: '03', tag: 'BUILD', title: '4-Hour Shopify Setup', desc: 'The exact theme settings and apps we use. Click, install, done.', value: '$399' },
-              { num: '04', tag: 'LOGISTICS', title: '3PL & Automation', desc: 'Automate the shipping. Never touch a box. Set it up once, run it forever.', value: '$399' },
-              { num: '05', tag: 'TRAFFIC', title: 'Meta Ads Copy-Paste', desc: 'Our agency ad structures. Just plug in your creative and spend.', value: '$399' },
-              { num: '06', tag: 'SCALE', title: 'CRO & Email Printer', desc: 'The abandoned cart emails that recover 15% of sales automatically.', value: '$399' },
+              { num: '01', tag: 'RESEARCH', title: 'Choosing the Right Product', desc: "Don't guess. Our checklist finds products with real demand before you spend a penny on inventory.", value: '$399' },
+              { num: '02', tag: 'SOURCING', title: 'Finding & Negotiating with Suppliers', desc: 'Our vetted supplier list, plus the exact scripts we use to negotiate price, MOQ, and lead times.', value: '$399' },
+              { num: '03', tag: 'BUILD', title: 'Website Creation & CRO', desc: 'The exact Shopify setup, theme config, and app stack that turns visitors into buyers.', value: '$399' },
+              { num: '04', tag: 'LOGISTICS', title: '3PL & Fulfilment', desc: 'Automate shipping from day one. Never pack a box. Set it up once, run it forever.', value: '$399' },
+              { num: '05', tag: 'CONTENT', title: 'Organic Content & SEO', desc: 'Build long-term traffic without paying for every click. Content frameworks that compound.', value: '$399' },
+              { num: '06', tag: 'TRAFFIC', title: 'Paid Ads: Meta & Google', desc: 'Our agency ad structures. Plug in your creative, set the budget, and scale what works.', value: '$399' },
+              { num: '07', tag: 'RETENTION', title: 'Email Marketing', desc: 'Abandoned cart flows, welcome sequences, and post-purchase emails — pre-built and ready to install.', value: '$399' },
+              { num: '08', tag: 'FINANCE', title: 'Banking & Taxes', desc: 'How to set up your business account, handle VAT, and keep HMRC off your back from day one.', value: '$399' },
             ].map(m => (
               <div key={m.num} className={styles.moduleCard}>
                 <span className={styles.moduleNum}>{m.num} // {m.tag}</span>
@@ -239,32 +243,31 @@ export default function EcommerceProtocol() {
       {/* ── FOUNDER ── */}
       <section className={styles.founder}>
         <div className={styles.container}>
-          <div className={styles.founderGrid}>
-            <div className={styles.founderPhoto}>
-              <div className={styles.founderPhotoPlaceholder}>
-                <span>ZL</span>
-              </div>
+          <span className={styles.sectionLabel}>// WHO YOU&apos;RE LEARNING FROM</span>
+          <h2 className={styles.founderTitle}>Leng Media</h2>
+          <p className={styles.founderIntro}>We&apos;re a digital agency that has spent the last 5 years launching and scaling ecommerce brands. We&apos;ve managed millions in ad spend, built brands from zero to 6 and 7 figures, and sourced products from factories across Asia and Europe.</p>
+          <p className={styles.founderIntro}>The Protocol is not a course we made to sell. It&apos;s the exact SOP we hand to every new client. The supplier list is our list. The ad templates are live in our agency accounts today. We&apos;re giving you the document we charge $3,000/month to execute.</p>
+          <div className={styles.founderStats}>
+            <div className={styles.founderStat}>
+              <strong>5+</strong>
+              <span>Years in ecommerce</span>
             </div>
-            <div className={styles.founderText}>
-              <span className={styles.sectionLabel}>// WHO YOU&apos;RE LEARNING FROM</span>
-              <h2 className={styles.founderTitle}>Zaq — Founder, Leng Media</h2>
-              <p>I&apos;ve spent the last 5 years running paid media for ecommerce brands, managing millions in ad spend across Meta, Google, and TikTok. I&apos;ve built and scaled brands from zero to 6 and 7 figures, sourced from factories in Asia, set up 3PL operations, and trained teams to do it all without me.</p>
-              <p>The Protocol is not a course I made to sell. It&apos;s the SOP I hand to every new client. The supplier list is my list. The ad templates are the ones we run at the agency today. I&apos;m giving you the exact document I charge $3,000/month to execute.</p>
-              <div className={styles.founderStats}>
-                <div className={styles.founderStat}>
-                  <strong>5+</strong>
-                  <span>Years in ecommerce</span>
-                </div>
-                <div className={styles.founderStat}>
-                  <strong>$M+</strong>
-                  <span>Ad spend managed</span>
-                </div>
-                <div className={styles.founderStat}>
-                  <strong>50+</strong>
-                  <span>Brands scaled</span>
-                </div>
-              </div>
+            <div className={styles.founderStat}>
+              <strong>$M+</strong>
+              <span>Ad spend managed</span>
             </div>
+            <div className={styles.founderStat}>
+              <strong>50+</strong>
+              <span>Brands scaled</span>
+            </div>
+          </div>
+          <p className={styles.logosLabel}>Brands we&apos;ve launched and grown:</p>
+          <div className={styles.logosGrid}>
+            {[1,2,3,4,5,6].map(i => (
+              <div key={i} className={styles.logoPlaceholder}>
+                <span>Brand {i}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -324,12 +327,14 @@ export default function EcommerceProtocol() {
               <p className={styles.priceFullSub}>Six modules. Four mentorship calls. A personal store review before you spend a penny on ads. The exact systems we use with agency clients — handed to you in a box.</p>
               <div className={styles.modulePriceGrid}>
                 {[
-                  { tag: '01 // Research', title: 'Winning Product Algo', desc: 'Our exact checklist for finding products that sell before you spend a penny.' },
-                  { tag: '02 // Sourcing', title: 'Supplier Black Book', desc: 'Vetted suppliers. Fast shipping. Zero scams.' },
-                  { tag: '03 // Build', title: '4-Hour Shopify Setup', desc: 'Exact theme settings and apps. Click, install, done.' },
-                  { tag: '04 // Logistics', title: '3PL & Automation', desc: 'Automate fulfilment. Never touch a box.' },
-                  { tag: '05 // Traffic', title: 'Meta Ads Copy-Paste', desc: 'Our agency ad structures. Plug in your creative and spend.' },
-                  { tag: '06 // Scale', title: 'CRO & Email Printer', desc: 'Abandoned cart flows that recover 15% of lost sales.' },
+                  { tag: '01 // Research', title: 'Choosing the Right Product', desc: 'Our checklist for finding products with real demand before you spend a penny.' },
+                  { tag: '02 // Sourcing', title: 'Finding & Negotiating with Suppliers', desc: 'Vetted supplier list plus the scripts we use to negotiate price and MOQ.' },
+                  { tag: '03 // Build', title: 'Website Creation & CRO', desc: 'The exact Shopify setup and app stack that converts.' },
+                  { tag: '04 // Logistics', title: '3PL & Fulfilment', desc: 'Automate shipping from day one. Never pack a box.' },
+                  { tag: '05 // Content', title: 'Organic Content & SEO', desc: 'Build long-term traffic without paying for every click.' },
+                  { tag: '06 // Traffic', title: 'Paid Ads: Meta & Google', desc: 'Agency ad structures. Plug in your creative and scale.' },
+                  { tag: '07 // Retention', title: 'Email Marketing', desc: 'Pre-built flows for abandoned cart, welcome, and post-purchase.' },
+                  { tag: '08 // Finance', title: 'Banking & Taxes', desc: 'Business setup, VAT, and keeping everything above board.' },
                 ].map(m => (
                   <div key={m.tag} className={styles.priceMini}>
                     <span className={styles.priceMiniTag}>{m.tag}</span>

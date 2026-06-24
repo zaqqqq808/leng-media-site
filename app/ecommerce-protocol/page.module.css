@@ -247,8 +247,8 @@
 
 .trapGrid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
   align-items: start;
 }
 
@@ -336,7 +336,7 @@
 
 .bentoGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
@@ -1048,6 +1048,69 @@
   text-transform: uppercase;
 }
 
+/* ── LOGOS GRID ── */
+.logosLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--grey-4);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  margin-top: 56px;
+}
+
+.logosGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.logoPlaceholder {
+  aspect-ratio: 2 / 1;
+  background: var(--grey-1);
+  border: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoPlaceholder span {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--grey-3);
+  text-transform: uppercase;
+}
+
+/* ── FOUNDER (revamped) ── */
+.founderIntro {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  color: var(--grey-4);
+  line-height: 1.75;
+  margin-bottom: 18px;
+  max-width: 720px;
+}
+
+/* ── TRAP LIST LABEL ── */
+.trapListLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--grey-4);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.solutionDetail {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.88rem;
+  color: var(--grey-3);
+  line-height: 1.65;
+  margin-top: 14px;
+  font-style: italic;
+}
+
 /* ── INSTALLMENT ── */
 .installmentRow {
   display: flex;
@@ -1126,16 +1189,14 @@
   .container { padding: 0 20px; }
   .filterGrid,
   .trapGrid,
-  .bentoGrid,
   .reviewGrid,
   .mentorFeatures,
   .aiGrid,
   .pricingGrid,
-  .founderGrid,
   .faqGrid { grid-template-columns: 1fr; }
   .solutionCard { position: static; }
-  .founderPhoto { position: static; }
   .bentoGrid { grid-template-columns: repeat(2, 1fr); }
+  .logosGrid { grid-template-columns: repeat(3, 1fr); }
   .guaranteeBox { padding: 36px 24px; }
   .priceCardFull { grid-template-columns: 1fr; }
   .priceLeft { padding: 36px 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
