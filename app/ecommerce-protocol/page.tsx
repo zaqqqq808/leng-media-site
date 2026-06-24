@@ -45,6 +45,22 @@ const FAQS = [
   },
 ]
 
+const VIDEO_TESTIMONIALS = [
+  { initials: 'JM', name: 'James M.', stat: 'First sale: 2 days after launch', snippet: 'I launched Tuesday. First sale Thursday.' },
+  { initials: 'SK', name: 'Sarah K.', stat: 'Supplier responded: 2 hours', snippet: 'The supplier list alone is worth the price.' },
+  { initials: 'DR', name: 'David R.', stat: 'Module 3 alone worth $5,000+', snippet: 'Literally the agency SOP document.' },
+  { initials: 'MT', name: 'Marcus T.', stat: 'Week 1 ROAS: 3.2x', snippet: 'Ad template got me 3.2x ROAS in week one.' },
+  { initials: 'PS', name: 'Priya S.', stat: 'Store live: 7 weeks', snippet: '2 years of procrastinating. 7 weeks to launch.' },
+  { initials: 'TW', name: 'Tom W.', stat: '$340 revenue while offline', snippet: 'Three sales yesterday without touching anything.' },
+]
+
+const TEXT_TESTIMONIALS = [
+  { initials: 'JM', name: 'James M.', stat: 'First sale: 2 days after launch', quote: "I didn't want a course. I wanted a shortcut. I launched the store on Tuesday, first sale Thursday." },
+  { initials: 'SK', name: 'Sarah K.', stat: 'Supplier responded: 2 hours', quote: "The supplier list alone is worth the price. I wasted weeks talking to factories. These guys replied in 2 hours." },
+  { initials: 'DR', name: 'David R.', stat: 'Module 3 alone worth $5,000+', quote: "My agency charges clients $5k to set up what is in Module 3. It's literally the agency SOP document." },
+  { initials: 'MT', name: 'Marcus T.', stat: 'Week 1 ROAS: 3.2x', quote: "I almost paid $8k for an agency to run my ads. Glad I found this first. The ad template in Module 6 got me a 3.2x ROAS in week one." },
+]
+
 export default function EcommerceProtocol() {
   return (
     <div className={styles.page}>
@@ -241,27 +257,49 @@ export default function EcommerceProtocol() {
       {/* ── REVIEWS ── */}
       <section className={styles.reviews}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>// SYSTEM DEPLOYMENTS</span>
-          <h2 className={styles.sectionTitle}>Results in the Field</h2>
-          <div className={styles.reviewGrid}>
-            {[
-              { initials: 'JM', name: 'James M.', stat: 'First sale: 2 days after launch', quote: "I didn't want a course. I wanted a shortcut. I launched the store on Tuesday, first sale Thursday." },
-              { initials: 'SK', name: 'Sarah K.', stat: 'Supplier responded: 2 hours', quote: "The supplier list alone is worth the price. I wasted weeks talking to factories. These guys replied in 2 hours." },
-              { initials: 'DR', name: 'David R.', stat: 'Module 3 alone worth $5,000+', quote: "My agency charges clients $5k to set up what is in Module 3. It's literally the agency SOP document." },
-            ].map(r => (
-              <div key={r.initials} className={styles.reviewCard}>
-                <div className={styles.reviewHeader}>
-                  <div className={styles.avatar}>{r.initials}</div>
-                  <div>
-                    <div className={styles.reviewName}>{r.name}</div>
-                    <div className={styles.verified}>✓ VERIFIED OWNER</div>
+          <span className={styles.sectionLabel}>// Results in the Field</span>
+          <h2 className={styles.sectionTitle}>People who did it.</h2>
+        </div>
+
+        {/* Horizontal video carousel — full bleed */}
+        <div className={styles.videoCarouselTrack}>
+          <div className={styles.videoCarousel}>
+            {VIDEO_TESTIMONIALS.map((v, i) => (
+              <div key={v.initials} className={styles.videoCard} data-index={i}>
+                <div className={styles.videoInner}>
+                  <div className={styles.videoAvatarBg}>{v.initials}</div>
+                  <div className={styles.videoPlayBtn}>▶</div>
+                  <div className={styles.videoGradient}>
+                    <div className={styles.videoStatChip}>{v.stat}</div>
+                    <p className={styles.videoSnippet}>&ldquo;{v.snippet}&rdquo;</p>
+                    <div className={styles.videoPersonName}>{v.name}</div>
                   </div>
                 </div>
-                <p className={styles.reviewText}>&ldquo;{r.quote}&rdquo;</p>
-                <div className={styles.reviewStat}>{r.stat}</div>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Text testimonials grid */}
+        <div className={styles.container}>
+          <div className={styles.textTestiGrid}>
+            {TEXT_TESTIMONIALS.map(t => (
+              <div key={t.initials} className={styles.textTestiCard}>
+                <p className={styles.textTestiQuote}>&ldquo;{t.quote}&rdquo;</p>
+                <div className={styles.textTestiFooter}>
+                  <div className={styles.textTestiMeta}>
+                    <div className={styles.textTestiAvatar}>{t.initials}</div>
+                    <div>
+                      <div className={styles.textTestiName}>{t.name}</div>
+                      <div className={styles.verified}>✓ VERIFIED OWNER</div>
+                    </div>
+                  </div>
+                  <div className={styles.textTestiStat}>{t.stat}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* CTA #1 */}
           <div className={styles.midCta}>
             <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
