@@ -43,6 +43,14 @@ const FAQS = [
     q: 'What is the refund policy?',
     a: 'If you don\'t get a sale within 7 days of your launch date, we refund 100%, no questions. The condition: you cannot launch until we\'ve reviewed your store and given you the Green Light. This protects you from launching before you\'re ready.',
   },
+  {
+    q: 'Can\'t I just learn all of this from YouTube?',
+    a: 'In theory, yes. In practice, YouTube content is outdated the moment it is posted. Ad platforms update. Supplier landscapes shift. Shopify changes its checkout. What worked 18 months ago can actively hurt you today. More importantly, YouTube cannot tell you whether your specific product idea is viable, which supplier is right for your margins, or why your particular ad account is not converting. That is exactly what the 1-on-1 calls do. You are not watching a generic tutorial. You are getting a live session built around your business, recorded for you to keep and refer back to.',
+  },
+  {
+    q: 'Does this work outside the UK?',
+    a: 'Yes. The supplier network, ad structures, email frameworks, and fulfilment setup are not UK-specific and work globally. Module 8 covers both UK (VAT, HMRC) and international business registration. If you are based outside the UK, flag it on your Kickoff Call and we will tailor the relevant sections to your country.',
+  },
 ]
 
 const VIDEO_TESTIMONIALS = [
@@ -282,16 +290,20 @@ export default function EcommerceProtocol() {
       {/* ── MENTORSHIP ── */}
       <section className={styles.mentorship}>
         <div className={styles.container}>
+          <div className={styles.launchWindow}>
+            <span className={styles.launchWindowTag}>// LAUNCH WINDOW</span>
+            <p className={styles.launchWindowText}>Because the Protocol is new, there are no pre-recorded videos. Every module is delivered to you live, 1-on-1, and recorded so you keep it forever. This is private mentorship at a course price. It will not always be available this way.</p>
+          </div>
           <span className={styles.sectionLabel}>// AGENCY DIRECT ACCESS</span>
           <h2 className={styles.sectionTitle}>We won&apos;t let you launch until we personally say your store is ready.</h2>
-          <p className={styles.mentorSub}>Most courses give you videos and disappear. Not us. Included in the protocol is 2 months of direct mentorship.</p>
+          <p className={styles.mentorSub}>Other courses give you videos and disappear. You get us, live, on a call, for every single module.</p>
           <div className={styles.mentorCard}>
             <div className={styles.mentorFeatures}>
               {[
-                { title: '4 Bi-Weekly Calls', desc: 'Every two weeks we hold you accountable, review your progress, and unblock whatever\'s in the way.' },
-                { title: '1-on-1 Access', desc: 'Private calls. Not a group webinar. Not a Zoom with 200 people.' },
-                { title: 'Agency Audit', desc: '"Share your screen. Let me see your ad account. Okay, click there. Fixed."' },
-                { title: 'Green Light Review', desc: 'We personally review your store before you spend a single dollar on ads. You don\'t launch until we say you\'re ready.' },
+                { title: 'Live Module Delivery', desc: 'Each of the 8 modules is delivered to you in a private 1-on-1 call, tailored to your product, your store, and your budget. Every session is recorded and yours to keep.' },
+                { title: '4 Accountability Calls', desc: 'Every two weeks we review your progress, hold you accountable, and unblock whatever is in the way.' },
+                { title: 'Agency Audit', desc: '"Share your screen. Let me see your ad account. Okay, click there. Fixed." That is what a real agency call looks like.' },
+                { title: 'Green Light Review', desc: 'We personally review your store before you spend a single dollar on ads. You do not launch until we say you are ready.' },
               ].map(f => (
                 <div key={f.title} className={styles.mentorFeat}>
                   <strong>{f.title}</strong>
@@ -428,7 +440,7 @@ export default function EcommerceProtocol() {
             {/* Left — what's inside */}
             <div className={styles.priceLeft}>
               <h3 className={styles.priceFullTitle}>Everything you need.<br />Nothing you don&apos;t.</h3>
-              <p className={styles.priceFullSub}>Eight modules. Four mentorship calls. A personal store review before you spend a penny on ads. The exact systems we use with agency clients, handed to you in a box.</p>
+              <p className={styles.priceFullSub}>Eight modules, each delivered live 1-on-1 and recorded. Four accountability calls. A personal store review before you spend a penny on ads. The exact systems we use with agency clients, now yours.</p>
               <div className={styles.modulePriceGrid}>
                 {[
                   { tag: '01 // Research', title: 'Choosing the Right Product', desc: 'Our checklist for finding products with real demand before you spend a penny.' },
@@ -458,8 +470,8 @@ export default function EcommerceProtocol() {
                   <span className={styles.currentPrice}>$1,299</span>
                 </div>
                 <ul className={styles.checklist}>
-                  <li>All 8 modules (The Launchpad)</li>
-                  <li>4 bi-weekly mentorship calls</li>
+                  <li>8 live 1-on-1 module delivery calls (recorded)</li>
+                  <li>4 bi-weekly accountability calls</li>
                   <li>Supplier black book access</li>
                   <li>Agency ad templates included</li>
                   <li>Email flow library</li>
