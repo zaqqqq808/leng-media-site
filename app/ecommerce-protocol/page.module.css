@@ -1566,6 +1566,11 @@
   margin-bottom: 12px;
 }
 
+/* ── SWIPE HINT (mobile only) ── */
+.swipeHint {
+  display: none;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
@@ -1578,8 +1583,47 @@
   .stepsGrid,
   .faqGrid { grid-template-columns: 1fr; }
   .solutionCard { position: static; }
-  .bentoGrid { grid-template-columns: repeat(2, 1fr); }
   .logosGrid { grid-template-columns: repeat(3, 1fr); }
+
+  /* Modules — horizontal carousel */
+  .bentoGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px;
+    margin: 0 -20px;
+    padding: 0 20px 4px;
+  }
+  .bentoGrid::-webkit-scrollbar { display: none; }
+  .moduleCard {
+    flex-shrink: 0;
+    width: 78vw;
+    max-width: 300px;
+    scroll-snap-align: start;
+  }
+
+  /* Mentorship — horizontal carousel */
+  .mentorCard { padding: 28px 20px; }
+  .mentorFeatures {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px;
+    margin: 0 -20px;
+    padding: 0 20px 4px;
+    grid-template-columns: unset;
+  }
+  .mentorFeatures::-webkit-scrollbar { display: none; }
+  .mentorFeat {
+    flex-shrink: 0;
+    width: 80vw;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
   .guaranteeBox { padding: 36px 24px; }
   .priceCardFull { grid-template-columns: 1fr; }
   .priceLeft { padding: 36px 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
@@ -1588,6 +1632,16 @@
   .founderStats { gap: 28px; flex-wrap: wrap; }
   .faqItem { padding: 28px 24px; border-right: none; }
   .notForYouGrid { grid-template-columns: 1fr; gap: 48px; }
+  .swipeHint {
+    display: block;
+    font-family: var(--font-mono), monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--grey-3);
+    text-transform: uppercase;
+    margin-top: 14px;
+    text-align: right;
+  }
   .dreamStats { gap: 36px; flex-wrap: wrap; }
   .textTestiGrid { grid-template-columns: 1fr; }
   .videoCarouselTrack { padding-left: 20px; }

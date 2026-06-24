@@ -190,6 +190,7 @@ export default function EcommerceProtocol() {
               <span className={styles.roiBadge}>Save 100+ Hours</span>
             </div>
           </div>
+          <p className={styles.swipeHint}>swipe to explore →</p>
         </div>
       </section>
 
@@ -328,6 +329,7 @@ export default function EcommerceProtocol() {
                 </div>
               ))}
             </div>
+            <p className={styles.swipeHint}>swipe to see more →</p>
           </div>
           {/* CTA #2 */}
           <div className={styles.midCta}>
