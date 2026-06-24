@@ -310,6 +310,30 @@ export default function EcommerceProtocol() {
         </div>
       </section>
 
+      {/* ── WHAT HAPPENS NEXT ── */}
+      <section className={styles.nextSteps}>
+        <div className={styles.container}>
+          <span className={styles.sectionLabel}>// WHAT HAPPENS NEXT</span>
+          <h2 className={styles.sectionTitle}>Here&apos;s exactly what to expect.</h2>
+          <div className={styles.stepsGrid}>
+            {[
+              { num: '01', title: 'You enrol and book your Kickoff Call', desc: 'The moment you purchase, you get a link to book your first 1-on-1 call. Pick a slot that works for you — usually within 48 hours.' },
+              { num: '02', title: 'We map out your entire launch plan', desc: 'On the Kickoff Call we walk through your idea, your budget, and your timeline. You leave with a personalised action plan — not a login link and a good luck.' },
+              { num: '03', title: 'You work through the modules', desc: 'Eight modules, each ending with a clear deliverable and checklist. Nothing vague. You always know what to do next.' },
+              { num: '04', title: 'Bi-weekly check-in calls', desc: 'Every two weeks we get back on a call. We review progress, unblock anything in the way, and tell you exactly what to do next.' },
+              { num: '05', title: 'Green Light store review', desc: 'Before you spend a penny on ads, we personally review your store. You don\'t launch until we say you\'re ready.' },
+              { num: '06', title: 'You launch — and make your first sale', desc: 'With the Green Light given, you go live. First sale within 7 days — or we refund you 100%, no questions asked.' },
+            ].map(s => (
+              <div key={s.num} className={styles.stepCard}>
+                <span className={styles.stepNum}>{s.num}</span>
+                <h3 className={styles.stepTitle}>{s.title}</h3>
+                <p className={styles.stepDesc}>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── PRICING ── */}
       <section className={styles.pricing} id="pricing">
         <div className={styles.container}>
@@ -324,7 +348,7 @@ export default function EcommerceProtocol() {
             {/* Left — what's inside */}
             <div className={styles.priceLeft}>
               <h3 className={styles.priceFullTitle}>Everything you need.<br />Nothing you don&apos;t.</h3>
-              <p className={styles.priceFullSub}>Six modules. Four mentorship calls. A personal store review before you spend a penny on ads. The exact systems we use with agency clients — handed to you in a box.</p>
+              <p className={styles.priceFullSub}>Eight modules. Four mentorship calls. A personal store review before you spend a penny on ads. The exact systems we use with agency clients — handed to you in a box.</p>
               <div className={styles.modulePriceGrid}>
                 {[
                   { tag: '01 // Research', title: 'Choosing the Right Product', desc: 'Our checklist for finding products with real demand before you spend a penny.' },
@@ -354,7 +378,7 @@ export default function EcommerceProtocol() {
                   <span className={styles.currentPrice}>$1,299</span>
                 </div>
                 <ul className={styles.checklist}>
-                  <li>All 6 modules (The Launchpad)</li>
+                  <li>All 8 modules (The Launchpad)</li>
                   <li>4 bi-weekly mentorship calls</li>
                   <li>Supplier black book access</li>
                   <li>Agency ad templates included</li>

@@ -559,6 +559,53 @@
   gap: 14px;
 }
 
+/* ── WHAT HAPPENS NEXT ── */
+.nextSteps {
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.stepCard {
+  background: var(--black);
+  padding: 40px 36px;
+  position: relative;
+}
+
+.stepNum {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--neon);
+  margin-bottom: 20px;
+}
+
+.stepTitle {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+
+.stepDesc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.88rem;
+  color: var(--grey-4);
+  line-height: 1.65;
+  margin: 0;
+}
+
 /* ── GUARANTEE ── */
 .guarantee {
   padding: 80px 0;
@@ -1193,6 +1240,7 @@
   .mentorFeatures,
   .aiGrid,
   .pricingGrid,
+  .stepsGrid,
   .faqGrid { grid-template-columns: 1fr; }
   .solutionCard { position: static; }
   .bentoGrid { grid-template-columns: repeat(2, 1fr); }
