@@ -104,6 +104,9 @@ export default function EcommerceProtocol() {
             <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
             <span className={styles.spotsHero}>⚡ Only 8 spots remaining this month</span>
           </div>
+          <p className={styles.heroPriceNote}>
+            Introductory price: <span className={styles.heroPriceOld}>$2,499</span> $1,299
+          </p>
         </div>
       </section>
 
@@ -292,7 +295,7 @@ export default function EcommerceProtocol() {
         <div className={styles.container}>
           <div className={styles.launchWindow}>
             <span className={styles.launchWindowTag}>// LAUNCH WINDOW</span>
-            <p className={styles.launchWindowText}>Because the Protocol is new, there are no pre-recorded videos. Every module is delivered to you live, 1-on-1, and recorded so you keep it forever. This is private mentorship at a course price. It will not always be available this way.</p>
+            <p className={styles.launchWindowText}>Because the Protocol is new, there are no pre-recorded videos. Every module is delivered to you live, 1-on-1, and recorded so you keep it forever. This is private mentorship at a course price. When this window closes and modules move to recorded delivery, the price increases to $2,499. Right now, during the launch window, it is $1,299.</p>
           </div>
           <span className={styles.sectionLabel}>// AGENCY DIRECT ACCESS</span>
           <h2 className={styles.sectionTitle}>We won&apos;t let you launch until we personally say your store is ready.</h2>
@@ -494,8 +497,12 @@ export default function EcommerceProtocol() {
               <div className={styles.priceRightInner}>
                 <span className={styles.totalValue}>Total Value: $2,394</span>
                 <div className={styles.priceBig}>
-                  <span className={styles.priceLabel}>Your investment today</span>
-                  <span className={styles.currentPrice}>$1,299</span>
+                  <span className={styles.priceLabel}>Introductory launch price</span>
+                  <div className={styles.priceRow}>
+                    <span className={styles.oldPrice}>$2,499</span>
+                    <span className={styles.currentPrice}>$1,299</span>
+                  </div>
+                  <p className={styles.priceNote}>Price increases when live 1-on-1 delivery ends.</p>
                 </div>
                 <ul className={styles.checklist}>
                   <li>8 live 1-on-1 module delivery calls (recorded)</li>
