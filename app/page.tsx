@@ -15,13 +15,13 @@ export const metadata = {
 }
 
 const SERVICES = [
-  { num:'01', slug:'direct-response',  name:'Direct Response',           desc:'Meta Ads & creative strategy that converts and scales.' },
-  { num:'02', slug:'ai-solutions',     name:'AI Solutions',              desc:'Custom chatbots & workflow automation to supercharge your operations.' },
-  { num:'03', slug:'seo',              name:'Ecommerce SEO',             desc:'Technical SEO & intent-driven scaling for ambitious brands.' },
-  { num:'04', slug:'lead-generation',  name:'Lead Generation',           desc:'High-quality B2B & B2C prospecting that fills your pipeline.' },
-  { num:'05', slug:'cmo-as-a-service', name:'CMO as a Service',          desc:'Executive-level marketing leadership, without the executive price tag.' },
-  { num:'06', slug:'website-builds',   name:'Website Building',          desc:'High converting, performance first websites built to grow your brand online.' },
-  { num:'07', slug:'agency-assist',    name:'Agency Assistance',         desc:'White label fulfilment support for agencies that need a trusted partner.', gold: true, full: true },
+  { num:'01', slug:'direct-response',       name:'Direct Response',       desc:'Meta Ads & creative strategy that converts and scales.' },
+  { num:'02', slug:'chatgpt-ads-agency',    name:'ChatGPT Ads Agency',    desc:'Run ads inside ChatGPT and use AI to build creatives that convert.', href:'/chatgpt-ads-agency' },
+  { num:'03', slug:'ai-solutions',          name:'AI Solutions',          desc:'Custom chatbots & workflow automation to supercharge your operations.' },
+  { num:'04', slug:'seo',                   name:'Ecommerce SEO',         desc:'Technical SEO & intent-driven scaling for ambitious brands.' },
+  { num:'05', slug:'lead-generation',       name:'Lead Generation',       desc:'High-quality B2B & B2C prospecting that fills your pipeline.' },
+  { num:'06', slug:'website-builds',        name:'Website Building',      desc:'High converting, performance first websites built to grow your brand online.' },
+  { num:'07', slug:'agency-assist',         name:'Agency Assistance',     desc:'White label fulfilment support for agencies that need a trusted partner.', gold: true, full: true },
 ]
 
 const CLIENTS = [
@@ -97,7 +97,7 @@ export default function Home() {
         <div className={styles.servicesGrid}>
           {SERVICES.map((s, i) => (
             <ScrollReveal key={s.slug} delay={((i % 3) + 1) as 1|2|3} className={s.full ? styles.scFull : ''}>
-              <Link href={`/services/${s.slug}`} data-num={s.num} className={`${styles.serviceCard}${s.gold ? ' '+styles.scGold : ''}`}>
+              <Link href={s.href ?? `/services/${s.slug}`} data-num={s.num} className={`${styles.serviceCard}${s.gold ? ' '+styles.scGold : ''}`}>
                 <span className={styles.scNum}>{s.num}</span>
                 <span className={styles.scName}>{s.name}</span>
                 <p className={styles.scDesc}>{s.desc}</p>
