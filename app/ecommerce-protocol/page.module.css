@@ -1684,7 +1684,7 @@
   .priceLeft { padding: 36px 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .priceRight { padding: 36px 24px; }
   .modulePriceGrid { grid-template-columns: 1fr; }
-  .founderStats { gap: 28px; flex-wrap: wrap; }
+  .founderStats { gap: 16px; flex-wrap: nowrap; }
   .faqItem { padding: 28px 24px; border-right: none; }
   .notForYouGrid { grid-template-columns: 1fr; gap: 48px; }
   .swipeHint {
@@ -1697,7 +1697,7 @@
     margin-top: 14px;
     text-align: right;
   }
-  .dreamStats { gap: 36px; flex-wrap: wrap; }
+  .dreamStats { gap: 24px; flex-wrap: nowrap; }
   .textTestiGrid { grid-template-columns: 1fr; }
   .videoCarouselTrack { padding-left: 20px; }
   .textTestiCard { padding: 28px 20px; }
