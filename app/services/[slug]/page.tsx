@@ -561,7 +561,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <h1 className={styles.title}>{s.name}</h1>
           <p className={styles.tagline}>{s.tagline}</p>
           <div className={styles.heroCtas}>
-            <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className={styles.heroCtaBtn}>Get Your Quote →</a>
+            <a href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" target="_blank" rel="noopener noreferrer" className={styles.heroCtaBtn}>Get Your Quote →</a>
             <span className={styles.heroScarcity}>
               <span className={styles.scarcityDot} />
               Taking 2 new projects this month
@@ -692,7 +692,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   </div>
                   <div className={styles.portfolioInlineCta}>
                     <span className={styles.portfolioInlineCtaText}>Want something like this?</span>
-                    <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className={styles.portfolioInlineCtaLink}>Book a call →</a>
+                    <a href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" target="_blank" rel="noopener noreferrer" className={styles.portfolioInlineCtaLink}>Book a call →</a>
                   </div>
                 </div>
                 <div className={styles.portfolioScreenshots}>
@@ -854,7 +854,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <>
               <h2 className="section-title">Ready to <em>get noticed?</em></h2>
               <p className={styles.ctaSub}>Book a 20-minute call. We will scope your project and send a quote within 24 hours.</p>
-              <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</a>
+              <a href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</a>
             </>
           ) : (
             <>
