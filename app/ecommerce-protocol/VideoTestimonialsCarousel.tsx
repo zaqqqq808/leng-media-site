@@ -33,7 +33,11 @@ function VideoCard({ v, index }: { v: VideoTestimonial; index: number }) {
         />
         {!playing && (
           <>
-            <div className={styles.videoPlayBtn} onClick={handlePlay} />
+            <div className={styles.videoPlayBtn} onClick={handlePlay}>
+              <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L13 8L1 15V1Z" fill="currentColor" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+              </svg>
+            </div>
             <div className={styles.videoGradient}>
               <div className={styles.videoStatChip}>{v.stat}</div>
               <p className={styles.videoSnippet}>&ldquo;{v.snippet}&rdquo;</p>
