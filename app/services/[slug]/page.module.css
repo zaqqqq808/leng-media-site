@@ -418,24 +418,22 @@
 }
 .portfolioDesktop, .portfolioMobile { display: flex; flex-direction: column; gap: 10px; }
 .portfolioMobile { width: 100%; max-width: 210px; }
-.portfolioDesktopImg {
+.portfolioDesktopImgWrap {
   width: 100%;
+  aspect-ratio: 16/10;
+  position: relative;
   border-radius: 6px;
   border: 1px solid var(--line);
-  display: block;
-  aspect-ratio: 16/10;
-  object-fit: cover;
-  object-position: top;
+  overflow: hidden;
   background: var(--bg-alt);
 }
-.portfolioMobileImg {
+.portfolioMobileImgWrap {
   width: 100%;
+  aspect-ratio: 9/16;
+  position: relative;
   border-radius: 12px;
   border: 1px solid var(--line);
-  display: block;
-  aspect-ratio: 9/16;
-  object-fit: cover;
-  object-position: top;
+  overflow: hidden;
   background: var(--bg-alt);
   box-shadow: 0 12px 32px rgba(0,0,0,0.35);
 }

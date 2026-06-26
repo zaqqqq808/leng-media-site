@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import ScrollReveal from '@/components/ScrollReveal'
 import Ticker from '@/components/Ticker'
 import BeforeAfterSlider from '@/components/BeforeAfterSlider'
@@ -697,12 +698,16 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <div className={styles.portfolioScreenshots}>
                   {project.desktopImg && (
                     <div className={styles.portfolioDesktop}>
-                      <img src={project.desktopImg} alt={`${project.name} desktop`} className={styles.portfolioDesktopImg} />
+                      <div className={styles.portfolioDesktopImgWrap}>
+                        <Image src={project.desktopImg} alt={`${project.name} desktop`} fill sizes="(max-width:900px) 100vw, 50vw" style={{objectFit:'cover',objectPosition:'top'}} />
+                      </div>
                       <span className={styles.portfolioImgLabel}>// Desktop</span>
                     </div>
                   )}
                   <div className={styles.portfolioMobile}>
-                    <img src={project.mobileImg} alt={`${project.name} mobile`} className={styles.portfolioMobileImg} />
+                    <div className={styles.portfolioMobileImgWrap}>
+                      <Image src={project.mobileImg} alt={`${project.name} mobile`} fill sizes="210px" style={{objectFit:'cover',objectPosition:'top'}} />
+                    </div>
                     <span className={styles.portfolioImgLabel}>// Mobile</span>
                   </div>
                 </div>
