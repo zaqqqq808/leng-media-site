@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import styles from './page.module.css'
 import FaqAccordion from './FaqAccordion'
+import VideoTestimonialsCarousel from './VideoTestimonialsCarousel'
 
 export const metadata = {
   title: 'The Ecommerce Protocol – Leng Media',
@@ -55,12 +56,10 @@ const FAQS = [
 ]
 
 const VIDEO_TESTIMONIALS = [
-  { initials: 'JM', name: 'James M.', stat: 'First sale: 2 days after launch', snippet: 'I launched Tuesday. First sale Thursday.' },
-  { initials: 'SK', name: 'Sarah K.', stat: 'Supplier responded: 2 hours', snippet: 'The supplier list alone is worth the price.' },
-  { initials: 'DR', name: 'David R.', stat: 'Module 3 alone worth $5,000+', snippet: 'Literally the agency SOP document.' },
-  { initials: 'MT', name: 'Marcus T.', stat: 'Week 1 ROAS: 3.2x', snippet: 'Ad template got me 3.2x ROAS in week one.' },
-  { initials: 'PS', name: 'Priya S.', stat: 'Store live: 7 weeks', snippet: '2 years of procrastinating. 7 weeks to launch.' },
-  { initials: 'TW', name: 'Tom W.', stat: '$340 revenue while offline', snippet: 'Three sales yesterday without touching anything.' },
+  { src: '/testimonial-1.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
+  { src: '/testimonial-2.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
+  { src: '/testimonial-3.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
+  { src: '/testimonial-4.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
 ]
 
 const TEXT_TESTIMONIALS = [
@@ -244,23 +243,7 @@ export default function EcommerceProtocol() {
         </div>
 
         {/* Horizontal video carousel — full bleed */}
-        <div className={styles.videoCarouselTrack}>
-          <div className={styles.videoCarousel}>
-            {VIDEO_TESTIMONIALS.map((v, i) => (
-              <div key={v.initials} className={styles.videoCard} data-index={i}>
-                <div className={styles.videoInner}>
-                  <div className={styles.videoAvatarBg}>{v.initials}</div>
-                  <div className={styles.videoPlayBtn}>▶</div>
-                  <div className={styles.videoGradient}>
-                    <div className={styles.videoStatChip}>{v.stat}</div>
-                    <p className={styles.videoSnippet}>&ldquo;{v.snippet}&rdquo;</p>
-                    <div className={styles.videoPersonName}>{v.name}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <VideoTestimonialsCarousel items={VIDEO_TESTIMONIALS} />
 
         {/* Text testimonials grid */}
         <div className={styles.container}>
