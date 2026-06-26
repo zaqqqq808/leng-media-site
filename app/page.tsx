@@ -5,6 +5,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Typewriter from '@/components/Typewriter'
 import ClientLogo from '@/components/ClientLogo'
 import Link from 'next/link'
+import TestimonialsSection from '@/components/TestimonialsSection'
 
 export const metadata = {
   title: 'Leng Media – Performance Marketing & AI Agency for Ecommerce Brands',
@@ -118,10 +119,13 @@ export default function Home() {
         ))}
       </div>
 
+      {/* ── TESTIMONIALS ── */}
+      <TestimonialsSection />
+
       {/* ── RESOURCES ── */}
       <section className={styles.resources} id="resources">
         <ScrollReveal className={styles.resourcesLeft}>
-          <span className="section-label">// 03 — Resources</span>
+          <span className="section-label">// 04 — Resources</span>
           <h2 className="section-title">Free growth<br />tools.</h2>
           <p className={styles.resourcesSub}>Strategies &amp; templates used by our top-performing clients. No gatekeeping — this is just us showing how we think.</p>
           <Link href="/free-tools" className="btn-primary" style={{marginTop:36,display:'inline-block'}}>Access All Tools</Link>
@@ -139,7 +143,7 @@ export default function Home() {
       {/* ── CTA ── */}
       <section className={`${styles.cta} theme-dark`} id="contact">
         <ScrollReveal>
-          <span className="section-label">// 04 — Get in touch</span>
+          <span className="section-label">// 05 — Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s build something remarkable together</p>
           <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
