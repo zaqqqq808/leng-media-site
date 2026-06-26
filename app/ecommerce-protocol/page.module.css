@@ -1703,6 +1703,22 @@
   .textTestiCard { padding: 28px 20px; }
   .textTestiStat { white-space: normal; }
 
+  /* Centre headings on mobile */
+  .sectionLabel,
+  .sectionTitle,
+  .heroTitle,
+  .heroSub,
+  .dreamTitle,
+  .dreamText,
+  .founderTitle,
+  .founderIntro,
+  .guaranteeTitle,
+  .filterHeading,
+  .trapSub,
+  .mentorSub,
+  .pricingHook,
+  .launchWindowTag { text-align: center; }
+
   /* Tighten vertical section padding on mobile */
   .timeTrap,
   .dreamSection,
