@@ -174,7 +174,7 @@ const SERVICES: Record<string, {
     num: '04',
     name: 'Lead Generation',
     tagline: 'The London lead generation agency that only gets paid when you do.',
-    metaDescription: "Zero monthly retainer. London's performance based lead generation agency — you fund the ad spend, we deliver strategy, creatives and results. Revenue share or fixed CPA model.",
+    metaDescription: "Zero monthly retainer. London's performance based lead generation agency. You fund the ad spend, we deliver strategy, creatives and results. Revenue share or fixed CPA model.",
     description: [
       'This service is built for high ticket businesses. Trading and investment coaches, online course creators, business consultants, property educators, financial advisors. If your product or service sells for £2,000 or more and you need a consistent pipeline of qualified prospects, this is designed for you.',
       'The model is straightforward. You fund the ad spend directly. We build the creatives, write the copy, set up the landing pages and manage the campaigns. No monthly retainer. We agree a revenue share or fixed cost per acquisition and we only earn when you do. If we do not perform, we do not eat.',
@@ -222,35 +222,35 @@ const SERVICES: Record<string, {
   'website-builds': {
     num: '07',
     name: 'Website Building',
-    tagline: 'A website your competitors will notice. Custom-built in weeks, from $2,000.',
+    tagline: 'A website your customers will remember.',
     metaDescription: 'Custom performance first websites for ecommerce and service brands. Built in Next.js with scroll animations, CRM integration, full backend and SEO baked in from day one.',
     description: [
-      'We build performance-first websites for ecommerce and service brands, starting with your commercial goals and built entirely from scratch. What you are experiencing on this page — the scroll animations, the transitions, the visual weight — is exactly what we bring to your brand. While your competitors run Squarespace templates and ThemeForest themes, you will have a fully custom build that loads faster, ranks higher, and gets noticed.',
-      'Every site includes CRM integration, backend architecture, and a front end where SEO and Core Web Vitals are baked into every decision, not bolted on at the end. We price projects from $2,000 and deliver in 4–6 weeks. Book a call and we will scope your project and send a quote within 48 hours.',
+      'We build performance-first websites from scratch, starting with your commercial goals. What you see on this page is what we build for you. While your competitors run Squarespace templates, you get a fully custom site that loads faster, ranks higher and gets noticed.',
+      'Every site includes CRM integration, backend architecture, and SEO baked in from day one. Projects from $2,000, delivered in days. Book a call and we will send a quote within 48 hours.',
     ],
     outcomes: [
-      'Fully custom build — no templates, no page builders, no Squarespace',
+      'Fully custom build: no templates, no page builders, no Squarespace',
       'Scroll animations and transitions that make your brand impossible to forget',
       'CRM integration, contact forms and backend architecture included',
       'SEO-ready and Core Web Vitals optimised from day one',
       'Mobile-first, fully responsive across all devices',
-      'Delivered in 4–6 weeks from discovery call to launch',
+      'Delivered within days',
     ],
     related: ['direct-response','seo'],
     process: {
       steps: [
         { num: '01', title: 'Discovery Call', body: 'We scope your project, understand your goals and agree on deliverables. You receive a fixed quote within 48 hours.', time: 'Day 1' },
-        { num: '02', title: 'Design', body: 'Full design in Figma. You review and approve before a single line of code is written.', time: 'Week 1–2' },
-        { num: '03', title: 'Build', body: 'Custom development in Next.js with regular updates, a staging environment and zero surprises.', time: 'Week 2–5' },
-        { num: '04', title: 'Launch', body: 'Final review, your green light, then we go live. 30 days of post-launch support included.', time: 'Week 6' },
+        { num: '02', title: 'Design', body: 'Full design in Figma. You review and approve before a single line of code is written.', time: 'Days 2–10' },
+        { num: '03', title: 'Build', body: 'Custom development in Next.js with regular updates, a staging environment and zero surprises.', time: 'Days 10–30' },
+        { num: '04', title: 'Launch', body: 'Final review, your green light, then we go live. 30 days of post-launch support included.', time: 'Day 30+' },
       ],
     },
     websiteFaq: [
-      { q: 'How long does a build take?', a: '4–6 weeks from discovery call to launch. We run discovery, design and build in tight sequence with regular check-ins so nothing stalls.' },
+      { q: 'How long does a build take?', a: 'It depends on scope. We run discovery, design and build in tight sequence with regular check-ins so nothing stalls. Most projects complete in days, not months.' },
       { q: 'What is included in the price?', a: 'Discovery, full custom design in Figma, development, CRM or form integration, SEO setup, mobile optimisation, and 30 days of post-launch support.' },
       { q: 'Can I update the site myself after launch?', a: 'Yes. We can integrate a headless CMS so you can edit content without touching code. We also offer a post-launch retainer if you would prefer we manage updates.' },
       { q: 'What do I need to provide?', a: 'Brand assets (logo, colours, fonts), copy for the main pages, and any photography. We can advise on copy and help source imagery if needed.' },
-      { q: 'What platform is it built on?', a: 'Next.js — the same stack powering this site. Fast, SEO-friendly, and scales without hitting the platform limits that Shopify and WordPress regularly hit.' },
+      { q: 'What platform is it built on?', a: 'Next.js, the same stack powering this site. Fast, SEO-friendly, and scales without hitting the platform limits that Shopify and WordPress regularly hit.' },
       { q: 'How is this different from Squarespace or Wix?', a: 'No shared templates. No platform constraints. No monthly subscription to a builder. You own the code outright. The performance, SEO and visual quality are in a completely different league.' },
     ],
     portfolio: {
@@ -716,7 +716,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className={styles.processSection}>
           <ScrollReveal style={{ marginBottom: 48 }}>
             <span className="section-label">// How it works</span>
-            <h2 className={styles.processHeading}>From call to launch in 6 weeks.</h2>
+            <h2 className={styles.processHeading}>From call to launch in days.</h2>
           </ScrollReveal>
           <div className={styles.processGrid}>
             {s.process.steps.map((step) => (
