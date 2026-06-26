@@ -805,8 +805,28 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <h2 className={styles.proofHeadline}>{s.proof.funnelTagline}</h2>
             </ScrollReveal>
             <ScrollReveal delay={1}>
-              <div className={styles.funnelScrollWrap}>
+              <div className={styles.funnelDesktop}>
                 <FunnelDiagram />
+              </div>
+              <div className={styles.funnelMobile}>
+                <div className={styles.funnelMobileCols}>
+                  <div className={styles.funnelMobileGroup}>
+                    <p className={styles.funnelMobileGroupLabel}>// Digital</p>
+                    {['META','GOOGLE ADS','TIKTOK','LINKEDIN','DISPLAY'].map(c => (
+                      <span key={c} className={styles.funnelMobileChip}>{c}</span>
+                    ))}
+                  </div>
+                  <div className={styles.funnelMobileGroup}>
+                    <p className={styles.funnelMobileGroupLabel}>// Traditional</p>
+                    {['DAYTIME TV','PRESS ADS','DIRECT MAIL'].map(c => (
+                      <span key={c} className={`${styles.funnelMobileChip} ${styles.funnelMobileChipMuted}`}>{c}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className={styles.funnelMobileArrow}>↓</div>
+                <div className={styles.funnelMobileStrategy}>SMART STRATEGY</div>
+                <div className={styles.funnelMobileArrow}>↓</div>
+                <div className={styles.funnelMobileResult}>ROI &amp; PROFIT</div>
               </div>
             </ScrollReveal>
           </section>
