@@ -518,9 +518,9 @@
 
 .mentorFeat p {
   font-family: var(--font-inter), sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   color: var(--grey-4);
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 /* ── AI SECTION ── */

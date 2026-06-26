@@ -228,10 +228,10 @@ export default function EcommerceProtocol() {
           <div className={styles.mentorCard}>
             <div className={styles.mentorFeatures}>
               {[
-                { title: 'Live Module Delivery', desc: 'Each of the 8 modules is delivered to you in a private 1-on-1 call, tailored to your product, your store, and your budget. Every session is recorded and yours to keep.' },
-                { title: '4 Accountability Calls', desc: 'Every two weeks we review your progress, hold you accountable, and unblock whatever is in the way.' },
-                { title: 'Agency Audit', desc: '"Share your screen. Let me see your ad account. Okay, click there. Fixed." That is what a real agency call looks like.' },
-                { title: 'Green Light Review', desc: 'We personally review your store before you spend a single dollar on ads. You do not launch until we say you are ready.' },
+                { title: 'Live Module Delivery', desc: '8 modules, each delivered 1-on-1 and recorded. Tailored to your product, your store, your budget.' },
+                { title: '4 Accountability Calls', desc: 'Bi-weekly check-ins. We review progress, unblock problems and tell you exactly what to do next.' },
+                { title: 'Agency Audit', desc: 'Direct screen-share access to the Leng Media team. Real fixes, not generic advice.' },
+                { title: 'Green Light Review', desc: 'We personally sign off your store before you spend a penny on ads. You do not launch without it.' },
               ].map(f => (
                 <div key={f.title} className={styles.mentorFeat}>
                   <strong>{f.title}</strong>
