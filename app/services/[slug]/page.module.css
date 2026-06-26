@@ -686,8 +686,10 @@
   }
   .bodyLeft, .bodyRight { flex: none; width: 100%; }
   .bodyText { font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
-  .proofFunnel { padding: 52px 24px 44px; }
-  .proofHeadline { font-size: clamp(22px, 7vw, 32px); margin-bottom: 40px; }
+  .proofFunnel { padding: 52px 0 44px; }
+  .proofHeadline { font-size: clamp(22px, 7vw, 32px); margin-bottom: 32px; padding: 0 24px; }
+  .funnelScrollWrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 0 12px; }
+  .funnelScrollWrap svg { min-width: 640px; }
   .proofStats { padding: 48px 24px; }
   .proofGrid { grid-template-columns: repeat(2, 1fr); }
   .proofStat { padding: 28px 20px; }

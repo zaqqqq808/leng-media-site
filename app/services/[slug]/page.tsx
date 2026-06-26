@@ -108,14 +108,15 @@ const SERVICES: Record<string, {
   },
   'direct-response': {
     num: '02',
-    name: 'Direct Response',
-    tagline: 'Ads that generate positive ROAS.',
-    metaDescription: 'Performance marketing agency managing Meta, TikTok and Google Ads for ecommerce brands. We fix the funnel first, then drive consistent positive ROAS across every channel.',
+    name: 'AI Ad Agency for Ecommerce Brands',
+    tagline: 'AI-powered ad campaigns across Meta, TikTok, Google and ChatGPT. Platform agnostic. Results obsessed.',
+    metaDescription: 'Leng Media is an AI ad agency for ecommerce and DTC brands. We use ChatGPT and AI to build ad creatives, copy and campaigns across Meta, TikTok, Google and ChatGPT ads. Consistent positive ROAS across every channel.',
     description: [
       'We fix the funnel first. Most agencies will happily take your money and drive traffic to a site that converts at 0.3%. We refuse to do that. Before a penny is spent on ads, we audit and improve your user experience by moving key purchase drivers above the fold, implementing reviews, FAQs and clear guarantees, and simplifying the path to purchase.',
-      "We don't identify as a \"Facebook Agency\" or a \"PPC Agency.\" We identify as a Revenue Agency. We go where your customers are: Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it's DTC, Ecom or Lead Generation, we'll have the answer.",
+      'We use ChatGPT and AI throughout the entire ad process: researching audiences, writing copy variations, building creative briefs, and stress-testing angles before a penny is spent. This means faster iteration, smarter creative, and less wasted budget. We also run ads on ChatGPT itself via Microsoft Advertising, putting your brand in front of buyers who are actively searching with AI.',
+      "We don't identify as a Facebook Agency or a PPC Agency. We identify as a Revenue Agency. We go where your customers are: Meta, TikTok, Google, ChatGPT, or wherever the data points. We fit the platform to the strategy, not the other way around.",
     ],
-    outcomes: ['Pre campaign landing page audit & CRO','Meta, TikTok & Google Ads management','Creative strategy & production briefs','Rapid A/B testing to find winners fast','Monthly performance reporting'],
+    outcomes: ['Pre campaign landing page audit & CRO','Meta, TikTok, Google and ChatGPT Ads management','AI-powered creative strategy and copy using ChatGPT','Rapid A/B testing to find winners fast','Monthly performance reporting tied to revenue'],
     related: ['ai-solutions','lead-generation'],
     proof: {
       funnelTagline: 'Platform Agnostic. Result Obsessed.',
@@ -804,7 +805,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <h2 className={styles.proofHeadline}>{s.proof.funnelTagline}</h2>
             </ScrollReveal>
             <ScrollReveal delay={1}>
-              <FunnelDiagram />
+              <div className={styles.funnelScrollWrap}>
+                <FunnelDiagram />
+              </div>
             </ScrollReveal>
           </section>
           <section className={styles.proofStats}>
