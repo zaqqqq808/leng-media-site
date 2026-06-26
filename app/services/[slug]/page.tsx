@@ -262,7 +262,7 @@ const SERVICES: Record<string, {
           urlLabel: 'whichpodcast.com',
           challenge: 'Client wanted to create the Netflix of podcasts, a rich discovery platform with a familiar content grid feel and the ability for creators to upload their own shows.',
           solution: 'We built a Netflix inspired UI and introduced AI powered natural language search, letting users find podcasts by mood, topic, guest, or feeling rather than just keyword.',
-          desktopImg: '/portfolio-whichpodcast-desktop.jpg',
+          desktopImg: '/portfolio-whichpodcast-desktop.png',
           mobileImg: '/portfolio-whichpodcast-mobile.jpg',
         },
         {
@@ -271,7 +271,7 @@ const SERVICES: Record<string, {
           urlLabel: 'aylaproperty.com',
           challenge: 'Client needed a lead generating site that projected authority in the Bali property market without the distraction of a browseable listing tool.',
           solution: 'We removed the property search entirely and built a high converting landing page with a custom scroll animation of a villa being constructed, giving prospective buyers a tangible sense of the development quality.',
-          desktopImg: '/portfolio-ayla-desktop.jpg',
+          desktopImg: '/portfolio-aylaproperty-desktop.png',
           mobileImg: '/portfolio-ayla-mobile.jpg',
         },
         {
@@ -280,7 +280,7 @@ const SERVICES: Record<string, {
           urlLabel: 'lengmedia.com',
           challenge: 'Our own site needed a major upgrade. Something modern and unmistakably distinct from the generic agency template.',
           solution: 'Built from scratch in Next.js with a custom canvas animation, dark design system, and Core Web Vitals optimisation. Ready to run paid traffic from day one.',
-          desktopImg: '/portfolio-lengmedia-desktop.jpg',
+          desktopImg: '/portfolio-lengmedia-desktop.png',
           mobileImg: '/portfolio-lengmedia-mobile.jpg',
         },
       ],
