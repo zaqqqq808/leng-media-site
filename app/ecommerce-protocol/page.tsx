@@ -174,39 +174,6 @@ export default function EcommerceProtocol() {
         </div>
       </section>
 
-      {/* ── NOT FOR YOU ── */}
-      <section className={styles.notForYou}>
-        <div className={styles.container}>
-          <div className={styles.notForYouGrid}>
-            <div className={styles.notCol}>
-              <span className={styles.sectionLabel}>// Not for you if</span>
-              <ul className={styles.notList}>
-                {[
-                  'You want results without putting in the work',
-                  'You cannot commit 8 hours a week for 2 months',
-                  'You have no interest in building something real',
-                  'You are looking for someone to do it all for you',
-                ].map(item => (
-                  <li key={item}><span className={styles.xMark}>✕</span>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.forCol}>
-              <span className={styles.sectionLabel}>// Built for you if</span>
-              <ul className={styles.forList}>
-                {[
-                  'You have a product idea but no idea where to start',
-                  'You work full time and need a system, not more research',
-                  'You are serious about building income outside your job',
-                  'You want someone to tell you exactly what to do and when',
-                ].map(item => (
-                  <li key={item}><span className={styles.checkMark}>✓</span>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── MODULES ── */}
       <section className={styles.modules}>
