@@ -62,12 +62,6 @@ const VIDEO_TESTIMONIALS = [
   { src: '/testimonial-4.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
 ]
 
-const TEXT_TESTIMONIALS = [
-  { initials: 'JM', name: 'James M.', stat: 'First sale: 2 days after launch', quote: "I didn't want a course. I wanted a shortcut. I launched the store on Tuesday, first sale Thursday." },
-  { initials: 'SK', name: 'Sarah K.', stat: 'Supplier responded: 2 hours', quote: "The supplier list alone is worth the price. I wasted weeks talking to factories. These guys replied in 2 hours." },
-  { initials: 'DR', name: 'David R.', stat: 'Module 3 alone worth $5,000+', quote: "My agency charges clients $5k to set up what is in Module 3. It's literally the agency SOP document." },
-  { initials: 'MT', name: 'Marcus T.', stat: 'Week 1 ROAS: 3.2x', quote: "I almost paid $8k for an agency to run my ads. Glad I found this first. The ad template in Module 6 got me a 3.2x ROAS in week one." },
-]
 
 export default function EcommerceProtocol() {
   return (
@@ -212,27 +206,8 @@ export default function EcommerceProtocol() {
         {/* Horizontal video carousel — full bleed */}
         <VideoTestimonialsCarousel items={VIDEO_TESTIMONIALS} />
 
-        {/* Text testimonials grid */}
+        {/* CTA #1 */}
         <div className={styles.container}>
-          <div className={styles.textTestiGrid}>
-            {TEXT_TESTIMONIALS.map(t => (
-              <div key={t.initials} className={styles.textTestiCard}>
-                <p className={styles.textTestiQuote}>&ldquo;{t.quote}&rdquo;</p>
-                <div className={styles.textTestiFooter}>
-                  <div className={styles.textTestiMeta}>
-                    <div className={styles.textTestiAvatar}>{t.initials}</div>
-                    <div>
-                      <div className={styles.textTestiName}>{t.name}</div>
-                      <div className={styles.verified}>✓ VERIFIED OWNER</div>
-                    </div>
-                  </div>
-                  <div className={styles.textTestiStat}>{t.stat}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA #1 */}
           <div className={styles.midCta}>
             <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
             <span className={styles.spotsInline}>⚡ Only 8 spots remaining this month</span>
