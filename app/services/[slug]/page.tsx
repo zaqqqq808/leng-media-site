@@ -50,6 +50,10 @@ const SERVICES: Record<string, {
       mobileImg: string
     }[]
   }
+  process?: {
+    steps: { num: string; title: string; body: string; time: string }[]
+  }
+  websiteFaq?: { q: string; a: string }[]
   seoPillars?: {
     pillars: {
       num: string
@@ -218,13 +222,37 @@ const SERVICES: Record<string, {
   'website-builds': {
     num: '07',
     name: 'Website Building',
-    tagline: 'Custom websites built around your commercial goals. Not a template in sight.',
+    tagline: 'A website your competitors will notice. Custom-built in weeks, from $2,000.',
     metaDescription: 'Custom performance first websites for ecommerce and service brands. Built in Next.js with scroll animations, CRM integration, full backend and SEO baked in from day one.',
     description: [
-      'We build performance first websites for ecommerce and service brands, starting with your commercial goals and built entirely from scratch. What you are experiencing on this page, the scroll animations, the transitions, the visual weight, is exactly what we bring to your product and brand. Every site is fully custom from the ground up, with CRM integration, backend architecture and a front end where SEO and CRO are baked into every decision, not bolted on at the end.',
+      'We build performance-first websites for ecommerce and service brands, starting with your commercial goals and built entirely from scratch. What you are experiencing on this page — the scroll animations, the transitions, the visual weight — is exactly what we bring to your brand. While your competitors run Squarespace templates and ThemeForest themes, you will have a fully custom build that loads faster, ranks higher, and gets noticed.',
+      'Every site includes CRM integration, backend architecture, and a front end where SEO and Core Web Vitals are baked into every decision, not bolted on at the end. We price projects from $2,000 and deliver in 4–6 weeks. Book a call and we will scope your project and send a quote within 48 hours.',
     ],
-    outcomes: [],
+    outcomes: [
+      'Fully custom build — no templates, no page builders, no Squarespace',
+      'Scroll animations and transitions that make your brand impossible to forget',
+      'CRM integration, contact forms and backend architecture included',
+      'SEO-ready and Core Web Vitals optimised from day one',
+      'Mobile-first, fully responsive across all devices',
+      'Delivered in 4–6 weeks from discovery call to launch',
+    ],
     related: ['direct-response','seo'],
+    process: {
+      steps: [
+        { num: '01', title: 'Discovery Call', body: 'We scope your project, understand your goals and agree on deliverables. You receive a fixed quote within 48 hours.', time: 'Day 1' },
+        { num: '02', title: 'Design', body: 'Full design in Figma. You review and approve before a single line of code is written.', time: 'Week 1–2' },
+        { num: '03', title: 'Build', body: 'Custom development in Next.js with regular updates, a staging environment and zero surprises.', time: 'Week 2–5' },
+        { num: '04', title: 'Launch', body: 'Final review, your green light, then we go live. 30 days of post-launch support included.', time: 'Week 6' },
+      ],
+    },
+    websiteFaq: [
+      { q: 'How long does a build take?', a: '4–6 weeks from discovery call to launch. We run discovery, design and build in tight sequence with regular check-ins so nothing stalls.' },
+      { q: 'What is included in the price?', a: 'Discovery, full custom design in Figma, development, CRM or form integration, SEO setup, mobile optimisation, and 30 days of post-launch support.' },
+      { q: 'Can I update the site myself after launch?', a: 'Yes. We can integrate a headless CMS so you can edit content without touching code. We also offer a post-launch retainer if you would prefer we manage updates.' },
+      { q: 'What do I need to provide?', a: 'Brand assets (logo, colours, fonts), copy for the main pages, and any photography. We can advise on copy and help source imagery if needed.' },
+      { q: 'What platform is it built on?', a: 'Next.js — the same stack powering this site. Fast, SEO-friendly, and scales without hitting the platform limits that Shopify and WordPress regularly hit.' },
+      { q: 'How is this different from Squarespace or Wix?', a: 'No shared templates. No platform constraints. No monthly subscription to a builder. You own the code outright. The performance, SEO and visual quality are in a completely different league.' },
+    ],
     portfolio: {
       projects: [
         {
@@ -530,6 +558,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <p className={styles.num}>{s.num} / 07</p>
           <h1 className={styles.title}>{s.name}</h1>
           <p className={styles.tagline}>{s.tagline}</p>
+          <div className={styles.heroCtas}>
+            <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className={styles.heroCtaBtn}>Get Your Quote →</a>
+            <span className={styles.heroScarcity}>
+              <span className={styles.scarcityDot} />
+              Taking 2 new projects this month
+            </span>
+          </div>
         </VideoScrollHeroWrapper>
       ) : (
         <section className={styles.hero}>
@@ -653,8 +688,18 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                       <p className={styles.portfolioBlockText}>{project.solution}</p>
                     </div>
                   </div>
+                  <div className={styles.portfolioInlineCta}>
+                    <span className={styles.portfolioInlineCtaText}>Want something like this?</span>
+                    <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className={styles.portfolioInlineCtaLink}>Book a call →</a>
+                  </div>
                 </div>
                 <div className={styles.portfolioScreenshots}>
+                  {project.desktopImg && (
+                    <div className={styles.portfolioDesktop}>
+                      <img src={project.desktopImg} alt={`${project.name} desktop`} className={styles.portfolioDesktopImg} />
+                      <span className={styles.portfolioImgLabel}>// Desktop</span>
+                    </div>
+                  )}
                   <div className={styles.portfolioMobile}>
                     <img src={project.mobileImg} alt={`${project.name} mobile`} className={styles.portfolioMobileImg} />
                     <span className={styles.portfolioImgLabel}>// Mobile</span>
@@ -663,6 +708,26 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
             </ScrollReveal>
           ))}
+        </section>
+      )}
+
+      {/* PROCESS — how it works */}
+      {s.process && (
+        <section className={styles.processSection}>
+          <ScrollReveal style={{ marginBottom: 48 }}>
+            <span className="section-label">// How it works</span>
+            <h2 className={styles.processHeading}>From call to launch in 6 weeks.</h2>
+          </ScrollReveal>
+          <div className={styles.processGrid}>
+            {s.process.steps.map((step) => (
+              <div key={step.num} className={styles.processStep}>
+                <span className={styles.processNum}>// {step.num}</span>
+                <h3 className={styles.processTitle}>{step.title}</h3>
+                <p className={styles.processBody}>{step.body}</p>
+                <span className={styles.processTime}>{step.time}</span>
+              </div>
+            ))}
+          </div>
         </section>
       )}
 
@@ -764,13 +829,41 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </>
       )}
 
+      {/* WEBSITE FAQ */}
+      {s.websiteFaq && (
+        <section className={styles.websiteFaq}>
+          <ScrollReveal style={{ marginBottom: 48 }}>
+            <span className="section-label">// Common questions</span>
+            <h2 className={styles.websiteFaqHeading}>What you need to know before booking.</h2>
+          </ScrollReveal>
+          <div className={styles.websiteFaqGrid}>
+            {s.websiteFaq.map((item, i) => (
+              <div key={i} className={styles.websiteFaqItem}>
+                <p className={styles.websiteFaqQ}>{item.q}</p>
+                <p className={styles.websiteFaqA}>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
       <section className={`${styles.cta} theme-dark`}>
         <ScrollReveal>
           <span className="section-label">// Get in touch</span>
-          <h2 className="section-title">Want to <em>chat?</em></h2>
-          <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
-          <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
+          {slug === 'website-builds' ? (
+            <>
+              <h2 className="section-title">Ready to <em>get noticed?</em></h2>
+              <p className={styles.ctaSub}>Book a 20-minute call. We will scope your project and send a quote within 48 hours.</p>
+              <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</a>
+            </>
+          ) : (
+            <>
+              <h2 className="section-title">Want to <em>chat?</em></h2>
+              <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
+              <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
+            </>
+          )}
         </ScrollReveal>
       </section>
 
