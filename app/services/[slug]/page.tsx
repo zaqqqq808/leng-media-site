@@ -4,6 +4,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Ticker from '@/components/Ticker'
 import BeforeAfterSlider from '@/components/BeforeAfterSlider'
 import VideoScrollHeroWrapper from '@/components/VideoScrollHeroWrapper'
+import WebsiteFaqAccordion from '@/components/WebsiteFaqAccordion'
 import styles from './page.module.css'
 
 const SERVICES: Record<string, {
@@ -222,16 +223,16 @@ const SERVICES: Record<string, {
   'website-builds': {
     num: '07',
     name: 'Website Building',
-    tagline: 'A website your customers will remember.',
+    tagline: 'A website your customers will remember from just $2,000.',
     metaDescription: 'Custom performance first websites for ecommerce and service brands. Built in Next.js with scroll animations, CRM integration, full backend and SEO baked in from day one.',
     description: [
       'We build performance-first websites from scratch, starting with your commercial goals. What you see on this page is what we build for you. While your competitors run Squarespace templates, you get a fully custom site that loads faster, ranks higher and gets noticed.',
-      'Every site includes CRM integration, backend architecture, and SEO baked in from day one. Projects from $2,000, delivered in days. Book a call and we will send a quote within 48 hours.',
+      'Every site is SEO-ready and Core Web Vitals optimised from day one. CRM integration and backend architecture are available as add-ons. Projects from $2,000, delivered in days. Book a call and we will send a quote within 24 hours.',
     ],
     outcomes: [
       'Fully custom build: no templates, no page builders, no Squarespace',
       'Scroll animations and transitions that make your brand impossible to forget',
-      'CRM integration, contact forms and backend architecture included',
+      'CRM integration and backend architecture available as add-ons',
       'SEO-ready and Core Web Vitals optimised from day one',
       'Mobile-first, fully responsive across all devices',
       'Delivered within days',
@@ -239,7 +240,7 @@ const SERVICES: Record<string, {
     related: ['direct-response','seo'],
     process: {
       steps: [
-        { num: '01', title: 'Discovery Call', body: 'We scope your project, understand your goals and agree on deliverables. You receive a fixed quote within 48 hours.', time: 'Day 1' },
+        { num: '01', title: 'Discovery Call', body: 'We scope your project, understand your goals and agree on deliverables. You receive a fixed quote within 24 hours.', time: 'Day 1' },
         { num: '02', title: 'Design', body: 'Full design in Figma. You review and approve before a single line of code is written.', time: 'Days 2–10' },
         { num: '03', title: 'Build', body: 'Custom development in Next.js with regular updates, a staging environment and zero surprises.', time: 'Days 10–30' },
         { num: '04', title: 'Launch', body: 'Final review, your green light, then we go live. 30 days of post-launch support included.', time: 'Day 30+' },
@@ -247,7 +248,7 @@ const SERVICES: Record<string, {
     },
     websiteFaq: [
       { q: 'How long does a build take?', a: 'It depends on scope. We run discovery, design and build in tight sequence with regular check-ins so nothing stalls. Most projects complete in days, not months.' },
-      { q: 'What is included in the price?', a: 'Discovery, full custom design in Figma, development, CRM or form integration, SEO setup, mobile optimisation, and 30 days of post-launch support.' },
+      { q: 'What is included in the price?', a: 'Discovery, custom design in Figma, development, SEO setup, mobile optimisation, and 30 days of post-launch support. CRM and backend integrations are available as add-ons, quoted separately based on your needs.' },
       { q: 'Can I update the site myself after launch?', a: 'Yes. We can integrate a headless CMS so you can edit content without touching code. We also offer a post-launch retainer if you would prefer we manage updates.' },
       { q: 'What do I need to provide?', a: 'Brand assets (logo, colours, fonts), copy for the main pages, and any photography. We can advise on copy and help source imagery if needed.' },
       { q: 'What platform is it built on?', a: 'Next.js, the same stack powering this site. Fast, SEO-friendly, and scales without hitting the platform limits that Shopify and WordPress regularly hit.' },
@@ -832,18 +833,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       {/* WEBSITE FAQ */}
       {s.websiteFaq && (
         <section className={styles.websiteFaq}>
-          <ScrollReveal style={{ marginBottom: 48 }}>
+          <ScrollReveal>
             <span className="section-label">// Common questions</span>
             <h2 className={styles.websiteFaqHeading}>What you need to know before booking.</h2>
           </ScrollReveal>
-          <div className={styles.websiteFaqGrid}>
-            {s.websiteFaq.map((item, i) => (
-              <div key={i} className={styles.websiteFaqItem}>
-                <p className={styles.websiteFaqQ}>{item.q}</p>
-                <p className={styles.websiteFaqA}>{item.a}</p>
-              </div>
-            ))}
-          </div>
+          <WebsiteFaqAccordion items={s.websiteFaq} />
         </section>
       )}
 
@@ -854,7 +848,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           {slug === 'website-builds' ? (
             <>
               <h2 className="section-title">Ready to <em>get noticed?</em></h2>
-              <p className={styles.ctaSub}>Book a 20-minute call. We will scope your project and send a quote within 48 hours.</p>
+              <p className={styles.ctaSub}>Book a 20-minute call. We will scope your project and send a quote within 24 hours.</p>
               <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</a>
             </>
           ) : (
