@@ -518,26 +518,6 @@ export default function EcommerceProtocol() {
         </div>
       </section>
 
-      {/* ── COMMUNITY (bonus — after FAQ) ── */}
-      <section className={styles.aiSection}>
-        <div className={styles.container}>
-          <div className={styles.aiGrid}>
-            <div>
-              <span className={styles.sectionLabel}>// BONUS: THE COMMUNITY</span>
-              <h2 className={styles.sectionTitle}>Already have a brand? Scale it with AI.</h2>
-              <p className={styles.aiDesc}>Join a private community of founders and creators scaling their ecommerce brands using AI. Strategy breakdowns, ad teardowns, weekly accountability, and direct access to the Leng Media team. All in one place.</p>
-              <a href="https://www.skool.com/ai-for-ecommerce-8645" target="_blank" rel="noopener noreferrer" className={styles.btnMain}>Join the Community →</a>
-            </div>
-            <div className={styles.aiFrame}>
-              <div className={styles.aiFrameInner}>
-                <span className={styles.playIcon}>▶</span>
-                <span className={styles.vslLabel}>Community Preview</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
   )
 }
