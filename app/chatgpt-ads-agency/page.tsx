@@ -7,11 +7,11 @@ import styles from './page.module.css'
 
 export const metadata: Metadata = {
   title: 'ChatGPT Ads Agency – Leng Media',
-  description: 'Leng Media is a ChatGPT ads agency for ecommerce and DTC brands. We run ads inside ChatGPT via Microsoft Advertising and use AI to build smarter creatives across Meta, TikTok and Google.',
+  description: 'Leng Media is a ChatGPT ads agency for ecommerce and DTC brands. We run ads inside ChatGPT via OpenAI and use AI to build smarter creatives across Meta, TikTok and Google.',
   alternates: { canonical: 'https://www.lengmedia.com/chatgpt-ads-agency' },
   openGraph: {
     title: 'ChatGPT Ads Agency – Leng Media',
-    description: 'Leng Media is a ChatGPT ads agency for ecommerce and DTC brands. We run ads inside ChatGPT via Microsoft Advertising and use AI to build smarter creatives across Meta, TikTok and Google.',
+    description: 'Leng Media is a ChatGPT ads agency for ecommerce and DTC brands. We run ads inside ChatGPT via OpenAI and use AI to build smarter creatives across Meta, TikTok and Google.',
     url: 'https://www.lengmedia.com/chatgpt-ads-agency',
     siteName: 'Leng Media',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'ChatGPT Ads Agency – Leng Media' }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ChatGPT Ads Agency – Leng Media',
-    description: 'Leng Media is a ChatGPT ads agency for ecommerce and DTC brands. We run ads inside ChatGPT via Microsoft Advertising and use AI to build smarter creatives across Meta, TikTok and Google.',
+    description: 'Leng Media is a ChatGPT ads agency for ecommerce and DTC brands. We run ads inside ChatGPT via OpenAI and use AI to build smarter creatives across Meta, TikTok and Google.',
     images: ['/og-image.jpg'],
   },
 }
@@ -33,36 +33,64 @@ const STATS = [
 ]
 
 const DELIVERABLES = [
-  'ChatGPT ads via Microsoft Advertising — your brand inside AI search results',
+  'ChatGPT ads via OpenAI: your brand inside AI search results',
   'Meta, TikTok and Google Ads managed alongside your ChatGPT campaigns',
   'AI-powered creative briefs and copy using ChatGPT and Claude',
   'Landing page audit and CRO before a penny is spent on traffic',
-  'Rapid A/B testing to find winning angles fast',
+  'Full-funnel targeting: top, mid and bottom of funnel campaigns built separately',
+  'A/B testing across copy, creative and audiences to find winning angles fast',
   'Monthly reporting tied to revenue, not vanity metrics',
   'Audience research and intent mapping using AI tools',
-  'Creative production briefs ready for your in-house team or our network',
+]
+
+const FUNNEL_STAGES = [
+  {
+    num: '01',
+    stage: 'Top of Funnel',
+    title: 'Awareness',
+    copy: 'Broad, curiosity-driven prompts. People discovering they have a problem. We target informational search terms and position your brand as the answer before they know they need you.',
+    terms: ['best way to [solve X]', 'how to [achieve Y]', 'what is [your category]'],
+  },
+  {
+    num: '02',
+    stage: 'Mid Funnel',
+    title: 'Consideration',
+    copy: 'Comparison and evaluation queries. Buyers actively weighing their options. We run creatives that highlight your differentiators and build trust against competitor alternatives.',
+    terms: ['[product] vs [alternative]', 'best [product] for [use case]', '[brand] reviews'],
+  },
+  {
+    num: '03',
+    stage: 'Bottom of Funnel',
+    title: 'Purchase Intent',
+    copy: 'High intent, ready to buy. We bid on specific product and service terms, competitor brand names, and transactional queries where a strong offer converts immediately.',
+    terms: ['buy [product] online', '[competitor] alternative', '[product] price'],
+  },
 ]
 
 const FAQ = [
   {
     q: 'What are ChatGPT ads?',
-    a: 'ChatGPT now shows sponsored results when users search for products and services. These ads run through Microsoft Advertising and appear to millions of people who are actively searching with AI. It is one of the newest and least competitive paid channels available right now.',
+    a: 'ChatGPT now shows sponsored results when users search for products and services. These ads are run through OpenAI directly and appear to millions of people who are actively searching with AI. It is one of the newest and least competitive paid channels available right now.',
   },
   {
     q: 'How do you run ads on ChatGPT?',
-    a: 'ChatGPT ads are set up and managed through Microsoft Advertising, the same platform used for Bing Ads. We build the campaigns, write the copy, set up conversion tracking and optimise performance just as we would on Meta or Google.',
+    a: 'ChatGPT ads are set up and managed through OpenAI\'s advertising platform. We build the campaigns, write the copy, set up conversion tracking and optimise performance just as we would on Meta or Google.',
   },
   {
     q: 'Is this different from Google or Meta ads?',
-    a: 'Yes. The audience is different — people using ChatGPT to search tend to be higher intent and more research-led. The ad format is also different. We treat it as a separate channel with its own creative strategy, not a copy-paste from your existing campaigns.',
+    a: 'Yes. The audience is different. People using ChatGPT to search tend to be higher intent and more research-led. The ad format is also different. We treat it as a separate channel with its own creative strategy, not a copy-paste from your existing campaigns.',
   },
   {
     q: 'What does AI-powered mean for our ad campaigns?',
-    a: 'We use ChatGPT and AI tools throughout the process: audience research, copy variations, creative brief generation, angle testing and performance analysis. This means faster iteration and more creative angles tested per budget than a traditional agency.',
+    a: 'We use ChatGPT and AI tools throughout the process: audience research, copy variations, creative brief generation, A/B testing strategy and performance analysis. This means faster iteration and more creative angles tested per budget than a traditional agency.',
+  },
+  {
+    q: 'What is full-funnel targeting?',
+    a: 'We build separate campaigns for each stage of the buying journey. Top of funnel captures people who are discovering they have a problem. Mid funnel targets people comparing their options. Bottom of funnel goes after people who are ready to buy. Each stage has different messaging, creative and keywords.',
   },
   {
     q: 'Do we need to be running ads already?',
-    a: 'No. We work with brands starting from scratch and with brands that already have active campaigns. Either way, we run a funnel and landing page audit before anything goes live.',
+    a: 'No. We work with brands starting from scratch and with brands that already have active campaigns. Either way, we run a full landing page and funnel audit before anything goes live.',
   },
   {
     q: 'How quickly can we get started?',
@@ -80,7 +108,7 @@ export default function ChatGPTAdsAgencyPage() {
             '@context': 'https://schema.org',
             '@type': 'Service',
             name: 'ChatGPT Ads Agency',
-            description: 'ChatGPT and AI-powered ad campaigns for ecommerce and DTC brands. Ads inside ChatGPT via Microsoft Advertising plus Meta, TikTok and Google managed with AI.',
+            description: 'ChatGPT and AI-powered ad campaigns for ecommerce and DTC brands. Ads inside ChatGPT via OpenAI plus Meta, TikTok and Google managed with AI.',
             url: 'https://www.lengmedia.com/chatgpt-ads-agency',
             provider: {
               '@type': 'Organization',
@@ -108,7 +136,6 @@ export default function ChatGPTAdsAgencyPage() {
           </h1>
           <p className={styles.heroSub}>
             Your competitors are bidding on Google. Your customers are searching on ChatGPT.
-            We put your brand in front of them — and use AI to build the creatives that convert.
           </p>
           <div className={styles.heroCtas}>
             <a
@@ -117,9 +144,16 @@ export default function ChatGPTAdsAgencyPage() {
               rel="noopener noreferrer"
               className={styles.heroBtn}
             >
-              Book a Free Strategy Call →
+              Book a Free Strategy Call
             </a>
             <span className={styles.heroNote}>Response within 24 hours</span>
+          </div>
+          <div className={styles.heroProof}>
+            <span className={styles.heroProofItem}>3.59× average ROAS</span>
+            <span className={styles.heroProofDivider}>·</span>
+            <span className={styles.heroProofItem}>Real client data</span>
+            <span className={styles.heroProofDivider}>·</span>
+            <span className={styles.heroProofItem}>May–Jun 2025</span>
           </div>
         </div>
       </section>
@@ -139,12 +173,12 @@ export default function ChatGPTAdsAgencyPage() {
               <h3 className={styles.explainerCardTitle}>Ads ON ChatGPT</h3>
               <p className={styles.explainerCardBody}>
                 ChatGPT now shows sponsored results when users search for products and services.
-                These ads run through Microsoft Advertising and reach millions of people who are
+                These ads run through OpenAI directly and reach millions of people who are
                 actively using AI to find what they want to buy. It is one of the newest, least
                 saturated paid channels available. Most brands have not found it yet.
                 Your brand can be there first.
               </p>
-              <span className={styles.explainerCardTag}>Via Microsoft Advertising</span>
+              <span className={styles.explainerCardTag}>Via OpenAI Ads Platform</span>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={2}>
@@ -153,14 +187,57 @@ export default function ChatGPTAdsAgencyPage() {
               <h3 className={styles.explainerCardTitle}>Ads built WITH AI</h3>
               <p className={styles.explainerCardBody}>
                 We use ChatGPT and AI tools throughout your entire campaign: audience research,
-                copy variations, creative briefs, angle testing and performance analysis.
+                copy variations, creative briefs, A/B testing strategy and performance analysis.
                 This means more ideas tested per pound of budget, faster iteration, and
-                creative that is informed by data rather than gut feel. The result is campaigns
-                that find winning angles faster than a traditional agency ever could.
+                creative informed by data rather than gut feel. We find winning angles faster
+                than a traditional agency ever could.
               </p>
               <span className={styles.explainerCardTag}>Meta · TikTok · Google · ChatGPT</span>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* MID-PAGE CTA STRIP */}
+      <div className={styles.midCta}>
+        <p className={styles.midCtaText}>Ready to run ChatGPT ads for your brand?</p>
+        <a
+          href="https://calendly.com/zaq-lengmedia/leng-media-intro-call"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.midCtaBtn}
+        >
+          Book a Call
+        </a>
+      </div>
+
+      {/* FUNNEL STAGES */}
+      <section className={styles.funnelSection}>
+        <ScrollReveal>
+          <span className="section-label">// Full-funnel strategy</span>
+          <h2 className={styles.funnelHeading}>We target every stage of the buying journey.</h2>
+          <p className={styles.funnelIntro}>
+            Most agencies run one campaign and hope for the best. We build separate campaigns for each
+            stage of the funnel with different messaging, creatives and search terms matched to where
+            the buyer is in their decision. Then we A/B test within each stage to find what converts.
+          </p>
+        </ScrollReveal>
+        <div className={styles.funnelGrid}>
+          {FUNNEL_STAGES.map((stage, i) => (
+            <ScrollReveal key={stage.num} delay={(i + 1) as 1 | 2 | 3}>
+              <div className={styles.funnelStage}>
+                <span className={styles.funnelStageNum}>// {stage.num}</span>
+                <p className={styles.funnelStageLabel}>{stage.stage}</p>
+                <h3 className={styles.funnelStageTitle}>{stage.title}</h3>
+                <p className={styles.funnelStageCopy}>{stage.copy}</p>
+                <div className={styles.funnelStageTerms}>
+                  {stage.terms.map(t => (
+                    <span key={t} className={styles.funnelStageTerm}>{t}</span>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
@@ -169,11 +246,11 @@ export default function ChatGPTAdsAgencyPage() {
         <div className={styles.whyNowLeft}>
           <ScrollReveal>
             <span className="section-label">// The opportunity</span>
-            <h2 className={styles.whyNowHeading}>ChatGPT has 500 million weekly users. Most brands are not advertising there yet.</h2>
+            <h2 className={styles.whyNowHeading}>500 million weekly users. Most brands are not advertising there yet.</h2>
             <p className={styles.whyNowBody}>
               When Google launched, the brands that advertised early paid pennies per click and built
-              audiences before the channel became expensive. ChatGPT ads are at that same early stage right now.
-              The auction is less competitive, the audience is high intent, and the cost per acquisition
+              audiences before the channel became expensive. ChatGPT ads are at that same early stage.
+              The competition is low, the audience is high intent, and the cost per acquisition
               is a fraction of what it will be in two years.
             </p>
             <p className={styles.whyNowBody}>
@@ -187,19 +264,19 @@ export default function ChatGPTAdsAgencyPage() {
             <div className={styles.statGrid}>
               <div className={styles.statBox}>
                 <span className={styles.statValue}>500M</span>
-                <span className={styles.statLabel}>ChatGPT weekly users</span>
+                <span className={styles.statLabel}>Weekly ChatGPT users</span>
               </div>
               <div className={styles.statBox}>
                 <span className={styles.statValue}>2025</span>
-                <span className={styles.statLabel}>Ads launched in ChatGPT</span>
+                <span className={styles.statLabel}>Year ads launched on ChatGPT</span>
               </div>
               <div className={styles.statBox}>
-                <span className={styles.statValue}>Low</span>
-                <span className={styles.statLabel}>Current auction competition</span>
+                <span className={styles.statValue}>3×</span>
+                <span className={styles.statLabel}>Higher intent vs social ads</span>
               </div>
               <div className={styles.statBox}>
-                <span className={styles.statValue}>High</span>
-                <span className={styles.statLabel}>Buyer intent of AI searchers</span>
+                <span className={styles.statValue}>Early</span>
+                <span className={styles.statLabel}>Stage of auction competition</span>
               </div>
             </div>
           </ScrollReveal>
@@ -265,8 +342,9 @@ export default function ChatGPTAdsAgencyPage() {
             className="btn-primary"
             style={{ fontSize: 12, padding: '18px 52px' }}
           >
-            Book a Free Strategy Call →
+            Book a Free Strategy Call
           </a>
+          <p className={styles.ctaRisk}>No lock-in contracts. Response within 24 hours.</p>
         </ScrollReveal>
       </section>
 
