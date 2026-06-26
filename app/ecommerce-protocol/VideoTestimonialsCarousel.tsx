@@ -33,7 +33,7 @@ function VideoCard({ v, index }: { v: VideoTestimonial; index: number }) {
         />
         {!playing && (
           <>
-            <div className={styles.videoPlayBtn} onClick={handlePlay}>▶</div>
+            <div className={styles.videoPlayBtn} onClick={handlePlay} />
             <div className={styles.videoGradient}>
               <div className={styles.videoStatChip}>{v.stat}</div>
               <p className={styles.videoSnippet}>&ldquo;{v.snippet}&rdquo;</p>
