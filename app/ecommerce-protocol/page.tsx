@@ -103,31 +103,6 @@ export default function EcommerceProtocol() {
         </div>
       </section>
 
-      {/* ── DREAM OUTCOME ── */}
-      <section className={styles.dreamSection}>
-        <div className={styles.container}>
-          <span className={styles.sectionLabel}>// Picture This</span>
-          <h2 className={styles.dreamTitle}>Eight weeks from now.</h2>
-          <p className={styles.dreamText}>Your store is live. You wake up to a notification you have never seen before. Someone you have never met, in a city you have never been to, just bought something you sell.</p>
-          <p className={styles.dreamText}>That is the moment everything changes. The money is part of it. But what you now know is something most people never figure out. You know how to build a revenue stream that does not need you to clock in. You understand how business actually works. And you can do it again.</p>
-          <p className={styles.dreamText}>More time. More options. The freedom to say no to things that do not serve you. The 9-to-5 stays or goes on your terms. Not your employer&apos;s.</p>
-          <div className={styles.dreamStats}>
-            <div className={styles.dreamStat}>
-              <span className={styles.dreamStatNum}>8</span>
-              <span className={styles.dreamStatLabel}>weeks to launch</span>
-            </div>
-            <div className={styles.dreamStat}>
-              <span className={styles.dreamStatNum}>7</span>
-              <span className={styles.dreamStatLabel}>days to first sale</span>
-            </div>
-            <div className={styles.dreamStat}>
-              <span className={styles.dreamStatNum}>100%</span>
-              <span className={styles.dreamStatLabel}>refund if not</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── TIME TRAP ── */}
       <section className={styles.timeTrap}>
         <div className={styles.container}>
@@ -165,6 +140,31 @@ export default function EcommerceProtocol() {
             </div>
           </div>
           <p className={styles.swipeHint}>swipe to explore →</p>
+        </div>
+      </section>
+
+      {/* ── DREAM OUTCOME ── */}
+      <section className={styles.dreamSection}>
+        <div className={styles.container}>
+          <span className={styles.sectionLabel}>// Picture This</span>
+          <h2 className={styles.dreamTitle}>Eight weeks from now.</h2>
+          <p className={styles.dreamText}>Your store is live. You wake up to a notification you have never seen before. Someone you have never met, in a city you have never been to, just bought something you sell.</p>
+          <p className={styles.dreamText}>That is the moment everything changes. The money is part of it. But what you now know is something most people never figure out. You know how to build a revenue stream that does not need you to clock in. You understand how business actually works. And you can do it again.</p>
+          <p className={styles.dreamText}>More time. More options. The freedom to say no to things that do not serve you. The 9-to-5 stays or goes on your terms. Not your employer&apos;s.</p>
+          <div className={styles.dreamStats}>
+            <div className={styles.dreamStat}>
+              <span className={styles.dreamStatNum}>8</span>
+              <span className={styles.dreamStatLabel}>weeks to launch</span>
+            </div>
+            <div className={styles.dreamStat}>
+              <span className={styles.dreamStatNum}>7</span>
+              <span className={styles.dreamStatLabel}>days to first sale</span>
+            </div>
+            <div className={styles.dreamStat}>
+              <span className={styles.dreamStatNum}>100%</span>
+              <span className={styles.dreamStatLabel}>refund if not</span>
+            </div>
+          </div>
         </div>
       </section>
 

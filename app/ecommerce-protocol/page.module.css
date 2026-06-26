@@ -1702,4 +1702,17 @@
   .videoCarouselTrack { padding-left: 20px; }
   .textTestiCard { padding: 28px 20px; }
   .textTestiStat { white-space: normal; }
+
+  /* Tighten vertical section padding on mobile */
+  .timeTrap,
+  .dreamSection,
+  .modules,
+  .reviews,
+  .mentorship,
+  .founder,
+  .nextSteps,
+  .faq { padding-top: 56px; padding-bottom: 56px; }
+  .filterSection,
+  .guarantee { padding-top: 48px; padding-bottom: 48px; }
+  .pricing { padding-top: 56px; padding-bottom: 72px; }
 }
