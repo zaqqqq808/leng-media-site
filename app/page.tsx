@@ -97,7 +97,7 @@ export default function Home() {
         </ScrollReveal>
         <div className={styles.servicesGrid}>
           {SERVICES.map((s, i) => (
-            <ScrollReveal key={s.slug} delay={((i % 3) + 1) as 1|2|3} className={s.full ? styles.scFull : ''}>
+            <ScrollReveal key={s.slug} delay={((i % 3) + 1) as 1|2|3}>
               <Link href={s.href ?? `/services/${s.slug}`} data-num={s.num} className={`${styles.serviceCard}${s.gold ? ' '+styles.scGold : ''}`}>
                 <span className={styles.scNum}>{s.num}</span>
                 <span className={styles.scName}>{s.name}</span>
