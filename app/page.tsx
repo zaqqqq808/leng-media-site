@@ -96,9 +96,21 @@ export default function Home() {
           <h2 className="section-title">Our services.</h2>
         </ScrollReveal>
         <div className={styles.servicesGrid}>
-          {SERVICES.map((s, i) => (
+          {SERVICES.filter(s => !s.gold).map((s, i) => (
             <ScrollReveal key={s.slug} delay={((i % 3) + 1) as 1|2|3}>
-              <Link href={s.href ?? `/services/${s.slug}`} data-num={s.num} className={`${styles.serviceCard}${s.gold ? ' '+styles.scGold : ''}`}>
+              <Link href={s.href ?? `/services/${s.slug}`} data-num={s.num} className={styles.serviceCard}>
+                <span className={styles.scNum}>{s.num}</span>
+                <span className={styles.scName}>{s.name}</span>
+                <p className={styles.scDesc}>{s.desc}</p>
+                <span className={styles.scArrow}>↗</span>
+              </Link>
+            </ScrollReveal>
+          ))}
+        </div>
+        <div className={styles.servicesGoldRow}>
+          {SERVICES.filter(s => s.gold).map((s, i) => (
+            <ScrollReveal key={s.slug} delay={(i + 1) as 1|2|3}>
+              <Link href={s.href ?? `/services/${s.slug}`} data-num={s.num} className={`${styles.serviceCard} ${styles.scGold}`}>
                 <span className={styles.scNum}>{s.num}</span>
                 <span className={styles.scName}>{s.name}</span>
                 <p className={styles.scDesc}>{s.desc}</p>
