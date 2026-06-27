@@ -34,7 +34,7 @@ const FAQS = [
     a: 'An agency charges $3,000–$10,000/month to manage what we\'re handing you. We\'re giving you the actual playbook: the supplier list, the Shopify setup, the ad templates, the email flows. You own it permanently. No monthly fees, no dependency.',
   },
   {
-    q: 'I\'ve just spent $1,299 on this. I don\'t have money left for ads.',
+    q: 'I\'ve just spent $1,499 on this. I don\'t have money left for ads.',
     a: 'This comes up a lot, and it\'s worth being direct: if you have zero budget left after buying, wait. The Protocol will still be here. What you don\'t want is to launch with no ad spend and conclude it doesn\'t work. When you\'re ready, $500–$1,000 is enough to run a proper first test. Module 05 shows you exactly how to structure it so none of it is wasted.',
   },
   {
@@ -98,7 +98,7 @@ export default function EcommerceProtocol() {
             <span className={styles.spotsHero}>⚡ Only 8 spots remaining this month</span>
           </div>
           <p className={styles.heroPriceNote}>
-            Introductory price: <span className={styles.heroPriceOld}>$2,499</span> $1,299
+            Introductory price: <span className={styles.heroPriceOld}>$3,000</span> $1,499
           </p>
         </div>
       </section>
@@ -220,7 +220,7 @@ export default function EcommerceProtocol() {
         <div className={styles.container}>
           <div className={styles.launchWindow}>
             <span className={styles.launchWindowTag}>// LAUNCH WINDOW</span>
-            <p className={styles.launchWindowText}>Because the Protocol is new, there are no pre-recorded videos. Every module is delivered to you live, 1-on-1, and recorded so you keep it forever. This is private mentorship at a course price. When this window closes and modules move to recorded delivery, the price increases to $2,499. Right now, during the launch window, it is $1,299.</p>
+            <p className={styles.launchWindowText}>Because the Protocol is new, there are no pre-recorded videos. Every module is delivered to you live, 1-on-1, and recorded so you keep it forever. This is private mentorship at a course price. When this window closes and modules move to recorded delivery, the price increases to $3,000. Right now, during the launch window, it is $1,499.</p>
           </div>
           <span className={styles.sectionLabel}>// AGENCY DIRECT ACCESS</span>
           <h2 className={styles.sectionTitle}>We won&apos;t let you launch until we personally say your store is ready.</h2>
@@ -386,7 +386,7 @@ export default function EcommerceProtocol() {
       <section className={styles.pricing} id="pricing">
         <div className={styles.container}>
           <span className={styles.sectionLabel}>// GET STARTED</span>
-          <p className={styles.pricingHook}>The exact playbook we charge $3,000 a month to execute. Yours for $1,299.</p>
+          <p className={styles.pricingHook}>The exact playbook we charge $3,000 a month to execute. Yours for $1,499.</p>
           <h2 className={styles.sectionTitle}>The Protocol</h2>
           <div className={styles.spotsBar}>
             <span className={styles.spotsDot} />
@@ -424,8 +424,8 @@ export default function EcommerceProtocol() {
                 <div className={styles.priceBig}>
                   <span className={styles.priceLabel}>Introductory launch price</span>
                   <div className={styles.priceRow}>
-                    <span className={styles.oldPrice}>$2,499</span>
-                    <span className={styles.currentPrice}>$1,299</span>
+                    <span className={styles.oldPrice}>$3,000</span>
+                    <span className={styles.currentPrice}>$1,499</span>
                   </div>
                   <p className={styles.priceNote}>Price increases when live 1-on-1 delivery ends.</p>
                 </div>
@@ -438,7 +438,7 @@ export default function EcommerceProtocol() {
                   <li>Green light store review before launch</li>
                   <li>First-sale guarantee or full refund</li>
                 </ul>
-                <a href="https://buy.stripe.com/aFadR36vG7oPaJfg9MbjW01" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Start The Protocol →</a>
+                <a href="https://buy.stripe.com/14AdR37zKbF53gNaPsbjW02" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Start The Protocol →</a>
                 <p className={styles.guaranteeNote}>After purchase you will be taken straight to our booking page to schedule your Kickoff Call.</p>
                 <p className={styles.guaranteeNote}>First sale within 7 days of launch. Or 100% refund, no questions.</p>
               </div>
