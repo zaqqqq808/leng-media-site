@@ -125,6 +125,42 @@
   flex-shrink: 0;
 }
 
+.pickRow {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  background: rgba(212,255,0,0.04);
+  border: 1px solid rgba(212,255,0,0.18);
+  border-radius: 3px;
+}
+
+.pickLabel {
+  font-family: var(--font-mono),monospace;
+  font-size: 7px;
+  letter-spacing: 2.5px;
+  color: var(--neon);
+  text-transform: uppercase;
+}
+
+.pickTool {
+  font-family: var(--font-inter),sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.updated {
+  display: block;
+  font-family: var(--font-mono),monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: var(--grey-3);
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
 .ctaRow {
   max-width: 1100px;
   margin: 52px auto 0;

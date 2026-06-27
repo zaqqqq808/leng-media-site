@@ -9,34 +9,37 @@ export const metadata: Metadata = {
 
 const SECTIONS = [
   {
-    tag: 'Research',
-    title: 'Product & Market Research',
-    points: ['AI-powered trend spotting', 'Competitor analysis prompts', 'Demand validation frameworks'],
+    tag: '01 — Content Creation',
+    title: 'Images, Video & Audio',
+    pick: 'ChatGPT Image 2 + VEO 3.1',
+    points: [
+      'Image generation for ads, PDPs and lifestyle visuals',
+      'Video generation for product ads and UGC-style clips',
+      'Text-to-audio narration and voice-over',
+    ],
+    updated: 'May 2026',
   },
   {
-    tag: 'Copy',
-    title: 'Ad & Product Copy',
-    points: ['High-converting product descriptions', 'Meta ad hooks that stop the scroll', 'Email subject line generators'],
+    tag: '02 — Creative Copy',
+    title: 'Ads, Email & Product Pages',
+    pick: 'Claude Opus / Fable',
+    points: [
+      'Ad copy, email sequences and product descriptions',
+      'Brand voice matching and long-form content',
+      'AI-polished output that passes detectors',
+    ],
+    updated: 'May 2026',
   },
   {
-    tag: 'Design',
-    title: 'Creative Workflows',
-    points: ['Image generation for ads and listings', 'Brand asset creation at scale', 'A/B visual testing with AI'],
-  },
-  {
-    tag: 'Support',
-    title: 'Customer Support',
-    points: ['Automated reply templates', 'Returns & dispute handling', 'Review response scripts'],
-  },
-  {
-    tag: 'Ops',
-    title: 'Operations & Automation',
-    points: ['Supplier communication scripts', 'Inventory forecasting prompts', 'SOP generation with AI'],
-  },
-  {
-    tag: 'Ads',
-    title: 'Paid Traffic',
-    points: ['Meta Ads prompt frameworks', 'TikTok script templates', 'Budget pacing decision trees'],
+    tag: '03 — CRO',
+    title: 'Conversion & Lead Generation',
+    pick: 'Buildmyagent.io + Make.com',
+    points: [
+      'AI chatbots that capture and qualify leads 24/7',
+      'Automatic CRM and spreadsheet population',
+      'Calendar booking without human involvement',
+    ],
+    updated: 'May 2026',
   },
 ]
 
@@ -62,19 +65,24 @@ export default function AICheatSheet() {
       <section className={styles.preview}>
         <div className={styles.previewHeader}>
           <span className={styles.previewLabel}>// WHAT&apos;S INSIDE</span>
-          <h2 className={styles.previewTitle}>6 categories. Hundreds of prompts.</h2>
-          <p className={styles.previewSub}>Built from 5 years of running ecommerce brands and agencies. Updated as the tools improve.</p>
+          <h2 className={styles.previewTitle}>3 categories. Always updated.</h2>
+          <p className={styles.previewSub}>We name the single best AI tool for each job. When something better comes out, we change it. Open the full sheet for the complete breakdown and pro tips.</p>
         </div>
         <div className={styles.sectionsGrid}>
           {SECTIONS.map(s => (
             <div key={s.tag} className={styles.sectionCard}>
               <span className={styles.sectionTag}>{s.tag}</span>
               <h3 className={styles.sectionTitle}>{s.title}</h3>
+              <div className={styles.pickRow}>
+                <span className={styles.pickLabel}>Current pick</span>
+                <span className={styles.pickTool}>{s.pick}</span>
+              </div>
               <ul className={styles.sectionPoints}>
                 {s.points.map(p => (
                   <li key={p}><span className={styles.dot}>—</span>{p}</li>
                 ))}
               </ul>
+              <span className={styles.updated}>Updated {s.updated}</span>
             </div>
           ))}
         </div>
