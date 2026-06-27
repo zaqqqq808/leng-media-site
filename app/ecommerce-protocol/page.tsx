@@ -60,6 +60,7 @@ const VIDEO_TESTIMONIALS = [
   { src: '/testimonial-2.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
   { src: '/testimonial-3.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
   { src: '/testimonial-4.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
+  { src: '/testimonial-5.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
 ]
 
 
