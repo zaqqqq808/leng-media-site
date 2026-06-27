@@ -24,6 +24,7 @@ function VideoCard({ v, index }: { v: VideoTestimonial; index: number }) {
         <video
           ref={ref}
           src={v.src}
+          poster={v.src.replace('.mp4', '-poster.jpg')}
           preload="none"
           playsInline
           controls={playing}
