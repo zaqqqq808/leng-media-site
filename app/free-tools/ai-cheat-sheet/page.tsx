@@ -11,35 +11,28 @@ const SECTIONS = [
   {
     tag: '01 — Content Creation',
     title: 'Images, Video & Audio',
-    pick: 'ChatGPT Image 2 + VEO 3.1',
     points: [
-      'Image generation for ads, PDPs and lifestyle visuals',
-      'Video generation for product ads and UGC-style clips',
-      'Text-to-audio narration and voice-over',
+      'The best image generator for ads and product visuals',
+      'The best video tool for UGC-style and product clips',
+      'The best audio tool for narration and voice-over',
     ],
-    updated: 'May 2026',
   },
   {
     tag: '02 — Creative Copy',
     title: 'Ads, Email & Product Pages',
-    pick: 'Claude Opus / Fable',
     points: [
-      'Ad copy, email sequences and product descriptions',
-      'Brand voice matching and long-form content',
-      'AI-polished output that passes detectors',
+      'The best AI for long and short-form brand copy',
+      'The best tool for matching your existing voice and tone',
+      'The best way to polish AI output so it reads like a human wrote it',
     ],
-    updated: 'May 2026',
   },
   {
     tag: '03 — CRO',
     title: 'Conversion & Lead Generation',
-    pick: 'Buildmyagent.io + Make.com',
     points: [
-      'AI chatbots that capture and qualify leads 24/7',
-      'Automatic CRM and spreadsheet population',
-      'Calendar booking without human involvement',
+      'The best AI chatbot for capturing and qualifying leads around the clock',
+      'The best automation tool to route leads into your CRM and calendar',
     ],
-    updated: 'May 2026',
   },
 ]
 
@@ -73,16 +66,12 @@ export default function AICheatSheet() {
             <div key={s.tag} className={styles.sectionCard}>
               <span className={styles.sectionTag}>{s.tag}</span>
               <h3 className={styles.sectionTitle}>{s.title}</h3>
-              <div className={styles.pickRow}>
-                <span className={styles.pickLabel}>Current pick</span>
-                <span className={styles.pickTool}>{s.pick}</span>
-              </div>
               <ul className={styles.sectionPoints}>
                 {s.points.map(p => (
                   <li key={p}><span className={styles.dot}>—</span>{p}</li>
                 ))}
               </ul>
-              <span className={styles.updated}>Updated {s.updated}</span>
+              <span className={styles.notionLink}>Current recommendations in the doc ↗</span>
             </div>
           ))}
         </div>
