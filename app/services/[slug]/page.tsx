@@ -11,6 +11,7 @@ import styles from './page.module.css'
 const SERVICES: Record<string, {
   num: string
   name: string
+  metaTitle?: string
   tagline: string
   metaDescription: string
   description: React.ReactNode[]
@@ -69,8 +70,9 @@ const SERVICES: Record<string, {
   'ai-solutions': {
     num: '01',
     name: 'AI Automation Agency for Ecommerce Brands',
-    tagline: 'Custom ecommerce AI chatbots for lead generation, AI agents for business workflow automation, and product image revamping for DTC and ecommerce brands in the USA and UK.',
-    metaDescription: 'Leng Media is an AI automation agency for ecommerce and DTC brands. We build custom AI chatbots for lead generation, AI agents for business process automation, and provide product image revamping. Serving clients in the USA and UK.',
+    metaTitle: 'AI Chatbot Agency for Ecommerce | AI Automation & Agents',
+    tagline: 'Leng Media is an AI chatbot agency for ecommerce and DTC brands. Custom AI chatbots for lead generation, AI agents for workflow automation, and product image revamping.',
+    metaDescription: 'Leng Media is an AI chatbot agency for ecommerce and DTC brands in the USA and UK. We build custom AI chatbots for lead generation, AI agents for business process automation, and product image revamping.',
     description: [
       <>We have listed our core AI services below, but with the pace at which AI is evolving, new capabilities are emerging constantly. We stay at the forefront, testing and applying the latest tools with ecommerce and DTC brands always in mind. This is why we keep a regularly updated <Link href="/free-tools" style={{color:'var(--neon)',textDecoration:'underline'}}>AI for Ecommerce Cheat Sheet</Link> so you can stay current too.</>,
       'Our AI chatbots generate and qualify leads around the clock. They capture contact details, record data directly into Google Sheets or your CRM, and book meetings and appointments into your calendar without any human involvement. For ecommerce brands this means your pipeline keeps moving even while you sleep.',
@@ -109,8 +111,9 @@ const SERVICES: Record<string, {
   'direct-response': {
     num: '02',
     name: 'Direct Response',
-    tagline: 'Ads that generate positive ROAS.',
-    metaDescription: 'Performance marketing agency managing Meta, TikTok and Google Ads for ecommerce brands. We fix the funnel first, then drive consistent positive ROAS across every channel.',
+    metaTitle: 'Ecommerce Ads Agency | Direct Response Advertising',
+    tagline: 'The ecommerce ads agency that fixes your funnel first, then drives consistent positive ROAS across Meta, TikTok and Google.',
+    metaDescription: 'Leng Media is an ecommerce ads agency managing Meta, TikTok and Google Ads for DTC brands. We fix the funnel first, then drive consistent positive ROAS across every channel.',
     description: [
       'We fix the funnel first. Most agencies will happily take your money and drive traffic to a site that converts at 0.3%. We refuse to do that. Before a penny is spent on ads, we audit and improve your user experience by moving key purchase drivers above the fold, implementing reviews, FAQs and clear guarantees, and simplifying the path to purchase.',
       "We don't identify as a \"Facebook Agency\" or a \"PPC Agency.\" We identify as a Revenue Agency. We go where your customers are: Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it's DTC, Ecom or Lead Generation, we'll have the answer.",
@@ -132,8 +135,9 @@ const SERVICES: Record<string, {
   'seo': {
     num: '03',
     name: 'Ecommerce SEO',
-    tagline: 'The ecommerce SEO agency for DTC and ecommerce brands in the USA and UK. We rank you for transactional keywords, grow organic revenue, and get your brand cited by AI.',
-    metaDescription: 'Leng Media is an ecommerce SEO agency for Shopify, DTC and ecommerce brands in the USA and UK. We cover technical SEO, collection page optimisation, Shopify SEO, link building and AI citation strategy.',
+    metaTitle: 'Shopify SEO Agency | Ecommerce SEO Services',
+    tagline: 'The Shopify SEO agency for DTC and ecommerce brands in the USA and UK. We rank you for transactional keywords, grow organic revenue, and get your brand cited by AI.',
+    metaDescription: 'Leng Media is a Shopify SEO agency for DTC and ecommerce brands in the USA and UK. We cover technical SEO, collection page optimisation, Shopify SEO, link building and AI citation strategy.',
     description: [
       'Ecommerce SEO is not the same as regular SEO. For a Shopify store or DTC brand, the pages that drive revenue are your collection pages and product pages. Informational blog content sits at the top of the funnel, and in 2026 AI has already taken that territory. We focus entirely on transactional keywords where people are ready to buy. That is where rankings convert directly into revenue.',
       'We cover the full stack: technical SEO, collection and product page optimisation, and link building that actually moves domain authority. We research and identify relevant contacts in your industry, create genuinely linkable assets worth pointing to, and build authority through editorial outreach and digital PR. The result is a site that earns trust over time and compounds in organic traffic.',
@@ -175,8 +179,9 @@ const SERVICES: Record<string, {
   'lead-generation': {
     num: '04',
     name: 'Lead Generation',
-    tagline: 'The London lead generation agency that only gets paid when you do.',
-    metaDescription: "Zero monthly retainer. London's performance based lead generation agency. You fund the ad spend, we deliver strategy, creatives and results. Revenue share or fixed CPA model.",
+    metaTitle: 'Lead Gen Agency | Performance-Based Lead Generation',
+    tagline: 'The lead gen agency that only gets paid when you do. Zero monthly retainer, revenue share or fixed CPA.',
+    metaDescription: 'Leng Media is a lead gen agency for high ticket businesses. Zero monthly retainer. You fund the ad spend, we build the creatives and manage the campaigns. Revenue share or fixed CPA model.',
     description: [
       'This service is built for high ticket businesses. Trading and investment coaches, online course creators, business consultants, property educators, financial advisors. If your product or service sells for £2,000 or more and you need a consistent pipeline of qualified prospects, this is designed for you.',
       'The model is straightforward. You fund the ad spend directly. We build the creatives, write the copy, set up the landing pages and manage the campaigns. No monthly retainer. We agree a revenue share or fixed cost per acquisition and we only earn when you do. If we do not perform, we do not eat.',
@@ -188,8 +193,9 @@ const SERVICES: Record<string, {
   'fractional-cmo': {
     num: '05',
     name: 'Fractional CMO',
-    tagline: 'The fractional CMO agency for ecommerce and DTC brands.',
-    metaDescription: 'Leng Media is a fractional CMO agency for ecommerce and DTC brands in the USA and UK. Outsourced CMO services covering strategy, media buying, team management and execution. From £15,000/month.',
+    metaTitle: 'Fractional CMO Services for Ecommerce & DTC Brands',
+    tagline: 'Fractional CMO services for ecommerce and DTC brands in the USA and UK. Senior marketing leadership without the full-time salary.',
+    metaDescription: 'Leng Media provides fractional CMO services for ecommerce and DTC brands in the USA and UK. Outsourced CMO covering strategy, media buying, team management and full execution. From £15,000/month.',
     description: [
       'Most brands find us at the same point. Revenue is growing, marketing is working at some level, but there is no one senior enough to own it. The founder is still signing off on creative. The junior team has no north star. A full time CMO at £200k feels premature. That is the gap a fractional CMO fills, and it is what we do.',
       'We have helped many brands scale through fractional CMO, with clients regularly exceeding their growth targets. We are now applying those same skills internally and launching our own brands. We are transparent about the progress and results, so you can see exactly what we are capable of before committing to anything.',
@@ -224,8 +230,9 @@ const SERVICES: Record<string, {
   'website-builds': {
     num: '07',
     name: 'Website Building',
-    tagline: 'A website your customers will remember from just $2,000.',
-    metaDescription: 'Custom performance first websites for ecommerce and service brands. Built in Next.js with scroll animations, CRM integration, full backend and SEO baked in from day one.',
+    metaTitle: 'Scroll Animation Website Design Agency | Custom Web Builds',
+    tagline: 'Scroll animation websites built in Next.js from just $2,000. Custom performance-first builds your customers will never forget.',
+    metaDescription: 'Leng Media builds scroll animation websites and custom performance-first sites for ecommerce and service brands. Built in Next.js with CRM integration, SEO baked in from day one.',
     description: [
       'We build performance-first websites from scratch, starting with your commercial goals. What you see on this page is what we build for you. While your competitors run Squarespace templates, you get a fully custom site that loads faster, ranks higher and gets noticed.',
       'Every site is SEO-ready and Core Web Vitals optimised from day one. CRM integration and backend architecture are available as add-ons. Projects from $2,000, delivered in days. Book a call and we will send a quote within 24 hours.',
@@ -501,21 +508,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const s = SERVICES[slug]
   if (!s) return {}
   const url = `https://www.lengmedia.com/services/${slug}`
+  const pageTitle = `${s.metaTitle ?? s.name} – Leng Media`
   return {
-    title: `${s.name} – Leng Media`,
+    title: pageTitle,
     description: s.metaDescription,
     alternates: { canonical: url },
     openGraph: {
-      title: `${s.name} – Leng Media`,
+      title: pageTitle,
       description: s.metaDescription,
       url,
       siteName: 'Leng Media',
-      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: `${s.name} – Leng Media` }],
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: pageTitle }],
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${s.name} – Leng Media`,
+      title: pageTitle,
       description: s.metaDescription,
       images: ['/og-image.jpg'],
     },
