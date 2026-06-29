@@ -592,6 +592,51 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       <Ticker />
 
+      {/* WHO THIS IS FOR — website-builds only */}
+      {slug === 'website-builds' && (
+        <section className={styles.whoSection}>
+          <div className={styles.whoInner}>
+            <ScrollReveal>
+              <span className="section-label">// Is this for you?</span>
+              <h2 className={styles.whoHeading}>Does your current site<br /><em>embarrass you?</em></h2>
+            </ScrollReveal>
+            <div className={styles.whoRows}>
+              <ScrollReveal delay={1}>
+                <div className={styles.whoRow}>
+                  <span className={styles.whoRowNum}>01</span>
+                  <div>
+                    <p className={styles.whoRowTitle}>The service business or agency</p>
+                    <p className={styles.whoRowBody}>You&apos;re on Squarespace, Wix or WordPress. It looks fine. But fine isn&apos;t winning you clients, and somewhere you already know that.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={2}>
+                <div className={styles.whoRow}>
+                  <span className={styles.whoRowNum}>02</span>
+                  <div>
+                    <p className={styles.whoRowTitle}>The DTC founder or personal brand</p>
+                    <p className={styles.whoRowBody}>You&apos;ve built something real. Your site doesn&apos;t show it. A template will never communicate what you&apos;ve actually earned.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={3}>
+                <div className={styles.whoRow}>
+                  <span className={styles.whoRowNum}>03</span>
+                  <div>
+                    <p className={styles.whoRowTitle}>The startup or SaaS</p>
+                    <p className={styles.whoRowBody}>Your product is ambitious. Your marketing site isn&apos;t. That gap is the first thing investors and customers notice — and the easiest one to fix.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+            <div className={styles.whoFooter}>
+              <span className={styles.whoFooterText}>If any of these land — you need an upgrade.</span>
+              <PixelScheduleLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</PixelScheduleLink>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* BODY */}
       <section className={styles.body}>
         <div className={styles.bodyLeft}>

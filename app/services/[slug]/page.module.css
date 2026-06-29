@@ -48,6 +48,74 @@
   line-height: 1.6; max-width: 520px;
 }
 
+/* WHO THIS IS FOR */
+.whoSection {
+  padding: 80px 52px;
+  background: var(--black);
+  border-bottom: 1px solid var(--line);
+}
+.whoInner { max-width: 1100px; margin: 0 auto; }
+.whoHeading {
+  font-family: var(--font-serif), serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 56px;
+}
+.whoHeading em { color: var(--neon); font-style: italic; }
+.whoRows { border-top: 1px solid var(--line); }
+.whoRow {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 40px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.whoRowNum {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--neon);
+  text-transform: uppercase;
+  padding-top: 3px;
+}
+.whoRowTitle {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.whoRowBody {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  color: var(--grey-5);
+  line-height: 1.65;
+}
+.whoFooter {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.whoFooterText {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--grey-4);
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .whoSection { padding: 52px 24px; }
+  .whoRow { grid-template-columns: 1fr; gap: 8px; }
+  .whoRowNum { margin-bottom: 4px; }
+}
+
 /* BODY */
 .body {
   display: flex; gap: 80px; padding: 72px 52px;
