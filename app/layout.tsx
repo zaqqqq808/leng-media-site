@@ -100,6 +100,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Chatbot Widget */}
+        <Script
+          src="https://buildmyagent.io/widget/6a41ddf400831705339e941e/widget-professional.js?widgetId=6a41ddf400831705339e941e"
+          strategy="lazyOnload"
+        />
         <Nav />
         <main>{children}</main>
         <Footer />
