@@ -102,7 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         {/* Chatbot Widget */}
         <Script
-          src="https://buildmyagent.io/widget/6a41ddf400831705339e941e/widget-professional.js?widgetId=6a41ddf400831705339e941e"
+          src="https://buildmyagent.io/widget/6a41f5ebe8b03c0dc4b130f7/widget-professional.js?widgetId=6a41f5ebe8b03c0dc4b130f7"
           strategy="lazyOnload"
         />
         <Nav />
