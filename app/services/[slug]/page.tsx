@@ -604,33 +604,24 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <ScrollReveal delay={1}>
                 <div className={styles.whoRow}>
                   <span className={styles.whoRowNum}>01</span>
-                  <div>
-                    <p className={styles.whoRowTitle}>The service business or agency</p>
-                    <p className={styles.whoRowBody}>You&apos;re on Squarespace, Wix or WordPress. It looks fine. But fine isn&apos;t winning you clients, and somewhere you already know that.</p>
-                  </div>
+                  <p className={styles.whoRowTitle}>Service business or agency</p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={2}>
                 <div className={styles.whoRow}>
                   <span className={styles.whoRowNum}>02</span>
-                  <div>
-                    <p className={styles.whoRowTitle}>The DTC founder or personal brand</p>
-                    <p className={styles.whoRowBody}>You&apos;ve built something real. Your site doesn&apos;t show it. A template will never communicate what you&apos;ve actually earned.</p>
-                  </div>
+                  <p className={styles.whoRowTitle}>DTC founder or personal brand</p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={3}>
                 <div className={styles.whoRow}>
                   <span className={styles.whoRowNum}>03</span>
-                  <div>
-                    <p className={styles.whoRowTitle}>The startup or SaaS</p>
-                    <p className={styles.whoRowBody}>Your product is ambitious. Your marketing site isn&apos;t. That gap is the first thing investors and customers notice — and the easiest one to fix.</p>
-                  </div>
+                  <p className={styles.whoRowTitle}>Startup, SaaS or tech product</p>
                 </div>
               </ScrollReveal>
             </div>
             <div className={styles.whoFooter}>
-              <span className={styles.whoFooterText}>If any of these land — you need an upgrade.</span>
+              <span className={styles.whoFooterText}>If you have a product or service, work in tech, SaaS, or want to tell a founder story — scroll animations work exceptionally for all of it.</span>
               <PixelScheduleLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</PixelScheduleLink>
             </div>
           </div>

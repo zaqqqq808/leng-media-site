@@ -104,11 +104,11 @@
   flex-wrap: wrap;
 }
 .whoFooterText {
-  font-family: var(--font-mono), monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--grey-4);
-  text-transform: uppercase;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  color: var(--grey-5);
+  line-height: 1.6;
+  max-width: 560px;
 }
 @media (max-width: 768px) {
   .whoSection { padding: 52px 24px; }
