@@ -56,12 +56,12 @@ const FAQS = [
 ]
 
 const VIDEO_TESTIMONIALS = [
-  { src: '/testimonial-1.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
-  { src: '/testimonial-2.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
-  { src: '/testimonial-7.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
-  { src: '/testimonial-4.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
-  { src: '/testimonial-5.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
-  { src: '/testimonial-6.mp4', name: 'Client Name', stat: 'Result here', snippet: 'Quote from client goes here.' },
+  { src: '/testimonial-1.mp4', name: '', stat: 'Greg H', snippet: 'Really easy to follow' },
+  { src: '/testimonial-2.mp4', name: '', stat: 'Carlos T', snippet: 'My videos started going viral' },
+  { src: '/testimonial-7.mp4', name: '', stat: 'Joy B', snippet: 'I highly recommend Leng Media' },
+  { src: '/testimonial-4.mp4', name: '', stat: 'Hiba K', snippet: 'I got a sale on the first day' },
+  { src: '/testimonial-5.mp4', name: '', stat: 'Chris M', snippet: 'The team were phenomenal' },
+  { src: '/testimonial-6.mp4', name: '', stat: 'Sebastien G', snippet: 'These guys actually care about you' },
 ]
 
 
