@@ -604,25 +604,24 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <ScrollReveal delay={1}>
                 <div className={styles.whoRow}>
                   <span className={styles.whoRowNum}>01</span>
-                  <p className={styles.whoRowTitle}>Service business or agency</p>
+                  <p className={styles.whoRowTitle}>Running a Squarespace or Wix site you&apos;re embarrassed to send to clients</p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={2}>
                 <div className={styles.whoRow}>
                   <span className={styles.whoRowNum}>02</span>
-                  <p className={styles.whoRowTitle}>DTC founder or personal brand</p>
+                  <p className={styles.whoRowTitle}>A founder or personal brand that has outgrown its template</p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={3}>
                 <div className={styles.whoRow}>
                   <span className={styles.whoRowNum}>03</span>
-                  <p className={styles.whoRowTitle}>Startup, SaaS or tech product</p>
+                  <p className={styles.whoRowTitle}>A startup or SaaS whose marketing site does not match the product</p>
                 </div>
               </ScrollReveal>
             </div>
             <div className={styles.whoFooter}>
-              <span className={styles.whoFooterText}>If you have a product or service, work in tech, SaaS, or want to tell a founder story — scroll animations work exceptionally for all of it.</span>
-              <PixelScheduleLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</PixelScheduleLink>
+              <a href="#portfolio" className={styles.heroCtaBtn}>See the Work →</a>
             </div>
           </div>
         </section>
@@ -711,7 +710,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
 {/* PORTFOLIO — website showcase */}
       {s.portfolio && (
-        <section className={styles.portfolio}>
+        <section id="portfolio" className={styles.portfolio}>
           <ScrollReveal style={{ marginBottom: 56 }}>
             <span className="section-label">// Our work</span>
             <h2 className={styles.portfolioTitle}>Sites we&apos;ve built.</h2>
