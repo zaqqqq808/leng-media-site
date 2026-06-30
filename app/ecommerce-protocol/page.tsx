@@ -61,7 +61,7 @@ const VIDEO_TESTIMONIALS = [
   { src: '/testimonial-7.mp4', name: '', stat: 'Joy B', snippet: 'I highly recommend Leng Media' },
   { src: '/testimonial-4.mp4', name: '', stat: 'Hiba K', snippet: 'I got a sale on the first day' },
   { src: '/testimonial-5.mp4', name: '', stat: 'Chris M', snippet: 'The team were phenomenal' },
-  { src: '/testimonial-6.mp4', name: '', stat: 'Sebastien G', snippet: 'These guys actually care about you' },
+  { src: '/testimonial-8.mp4', name: '', stat: 'Sebastien G', snippet: 'These guys actually care about you' },
 ]
 
 
