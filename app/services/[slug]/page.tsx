@@ -8,6 +8,7 @@ import VideoScrollHeroWrapper from '@/components/VideoScrollHeroWrapper'
 import WebsiteFaqAccordion from '@/components/WebsiteFaqAccordion'
 import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import ClientLogo from '@/components/ClientLogo'
+import WhatsAppLink from '@/components/WhatsAppLink'
 import StickyMobileCta from '@/components/StickyMobileCta'
 import styles from './page.module.css'
 
@@ -821,7 +822,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className={styles.midCta}>
           <ScrollReveal>
             <p className={styles.midCtaText}>Book a 20-minute call. Fixed quote within 24 hours. No obligation.</p>
-            <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
+            <div className={styles.midCtaBtns}>
+              <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
+              <WhatsAppLink href="https://wa.me/447928668478?text=Hi%2C%20I%27m%20interested%20in%20a%20website%20build" className={styles.waBtn}>WhatsApp Us</WhatsAppLink>
+            </div>
           </ScrollReveal>
         </section>
       )}
