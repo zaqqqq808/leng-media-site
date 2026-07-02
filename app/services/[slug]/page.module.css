@@ -107,9 +107,12 @@
   max-width: 560px;
 }
 @media (max-width: 768px) {
-  .whoSection { padding: 52px 24px; }
-  .whoRow { grid-template-columns: 1fr; gap: 8px; }
-  .whoRowNum { margin-bottom: 4px; }
+  .whoSection { padding: 36px 24px; }
+  .whoHeading { font-size: 1.7rem; margin-bottom: 20px; }
+  .whoRow { display: flex; align-items: baseline; gap: 14px; padding: 16px 0; }
+  .whoRowNum { flex-shrink: 0; }
+  .whoRowTitle { font-size: 14px; margin-bottom: 0; }
+  .whoFooter { margin-top: 24px; }
 }
 
 /* BODY */
