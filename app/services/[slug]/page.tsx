@@ -7,6 +7,7 @@ import BeforeAfterSlider from '@/components/BeforeAfterSlider'
 import VideoScrollHeroWrapper from '@/components/VideoScrollHeroWrapper'
 import WebsiteFaqAccordion from '@/components/WebsiteFaqAccordion'
 import CalendlyPopupLink from '@/components/CalendlyPopupLink'
+import ClientLogo from '@/components/ClientLogo'
 import StickyMobileCta from '@/components/StickyMobileCta'
 import styles from './page.module.css'
 
@@ -299,6 +300,19 @@ const SERVICES: Record<string, {
     },
   },
 }
+
+// Same client list as the homepage trusted-by grid
+const CLIENTS = [
+  { name: "Barry's Bootcamp",              domain: 'barrysbootcamp.com' },
+  { name: 'National Geographic Traveller', domain: 'natgeo.com' },
+  { name: 'Ninety Percent',               domain: 'ninetypercent.com' },
+  { name: 'Horizon Group',                domain: 'horizongroup.co.uk' },
+  { name: 'Haier',                        domain: 'haier.com' },
+  { name: 'Skin + Me',                    domain: 'skinandme.com' },
+  { name: 'Fox',                          domain: 'fox.com' },
+  { name: 'WhichPodcast',                 domain: 'whichpodcast.com' },
+  { name: 'Chesneys',                     domain: 'chesneys.co.uk' },
+]
 
 function FunnelDiagram() {
   const digital = ['META', 'GOOGLE ADS', 'TIKTOK', 'LINKEDIN', 'DISPLAY']
@@ -760,6 +774,24 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 </ScrollReveal>
               ))}
             </ul>
+          </ScrollReveal>
+        </section>
+      )}
+
+      {/* TRUSTED BY — website-builds only */}
+      {slug === 'website-builds' && (
+        <section className={styles.clientsSection}>
+          <ScrollReveal style={{ marginBottom: 36 }}>
+            <span className="section-label">// Trusted by</span>
+          </ScrollReveal>
+          <ScrollReveal delay={2}>
+            <div className={styles.clientGrid}>
+              {CLIENTS.map(c => (
+                <div key={c.name} className={styles.clientLogo}>
+                  <ClientLogo name={c.name} domain={c.domain} />
+                </div>
+              ))}
+            </div>
           </ScrollReveal>
         </section>
       )}
