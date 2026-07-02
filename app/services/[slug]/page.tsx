@@ -603,26 +603,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <ScrollReveal>
               <h2 className={styles.whoHeading}>If you charge for quality, your website needs to prove it<br /><em>before a customer decides to buy.</em></h2>
             </ScrollReveal>
-            <div className={styles.whoRows}>
-              <ScrollReveal delay={1}>
-                <div className={styles.whoRow}>
-                  <span className={styles.whoRowNum}>01</span>
-                  <p className={styles.whoRowTitle}>Running a Squarespace or Wix site you&apos;re embarrassed to send to clients</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={2}>
-                <div className={styles.whoRow}>
-                  <span className={styles.whoRowNum}>02</span>
-                  <p className={styles.whoRowTitle}>A founder or personal brand that has outgrown its template</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={3}>
-                <div className={styles.whoRow}>
-                  <span className={styles.whoRowNum}>03</span>
-                  <p className={styles.whoRowTitle}>A startup or SaaS whose marketing site does not match the product</p>
-                </div>
-              </ScrollReveal>
-            </div>
             <div className={styles.whoFooter}>
               <a href="#portfolio" className={styles.heroCtaBtn}>See the Work →</a>
             </div>
