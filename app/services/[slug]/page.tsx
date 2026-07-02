@@ -584,7 +584,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <VideoScrollHeroWrapper>
           <Link href="/#services" className={styles.back}>← All Services</Link>
           <p className={styles.num}>{s.num} / 07</p>
-          <h1 className={styles.title}>{s.name}</h1>
+          <h1 className={styles.title}>Websites your customers will remember</h1>
           <p className={styles.tagline}>{s.tagline}</p>
           <div className={styles.heroCtas}>
             <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
