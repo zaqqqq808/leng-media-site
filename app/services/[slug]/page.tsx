@@ -599,7 +599,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className={styles.whoSection}>
           <div className={styles.whoInner}>
             <ScrollReveal>
-              <span className="section-label">// Is this for you?</span>
               <h2 className={styles.whoHeading}>Does your current site<br /><em>embarrass you?</em></h2>
             </ScrollReveal>
             <div className={styles.whoRows}>
@@ -630,22 +629,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* BODY */}
-      {slug === 'website-builds' ? (
-        <section className={styles.bodyFull}>
-          <ScrollReveal>
-            <span className="section-label">// Deliverables</span>
-            <ul className={styles.outcomes}>
-              {s.outcomes.map((o, i) => (
-                <ScrollReveal key={o} delay={(Math.min(i % 3 + 1, 3)) as 1|2|3}>
-                  <li className={styles.outcome}>
-                    <span className={styles.outcomeDot}>◆</span>{o}
-                  </li>
-                </ScrollReveal>
-              ))}
-            </ul>
-          </ScrollReveal>
-        </section>
-      ) : (
+      {slug !== 'website-builds' ? (
         <section className={styles.body}>
           <div className={styles.bodyLeft}>
             <ScrollReveal>
@@ -777,6 +761,24 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
             </ScrollReveal>
           ))}
+        </section>
+      )}
+
+      {/* DELIVERABLES — website-builds only, shown after portfolio */}
+      {slug === 'website-builds' && (
+        <section className={styles.bodyFull}>
+          <ScrollReveal>
+            <span className="section-label">// Deliverables</span>
+            <ul className={styles.outcomes}>
+              {s.outcomes.map((o, i) => (
+                <ScrollReveal key={o} delay={(Math.min(i % 3 + 1, 3)) as 1|2|3}>
+                  <li className={styles.outcome}>
+                    <span className={styles.outcomeDot}>◆</span>{o}
+                  </li>
+                </ScrollReveal>
+              ))}
+            </ul>
+          </ScrollReveal>
         </section>
       )}
 
