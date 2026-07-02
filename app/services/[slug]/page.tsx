@@ -239,12 +239,14 @@ const SERVICES: Record<string, {
       'Every site is SEO-ready and Core Web Vitals optimised from day one. CRM integration and backend architecture are available as add-ons. Projects from $2,000, delivered in days. Book a call and we will send a quote within 24 hours.',
     ],
     outcomes: [
+      'Built in Next.js from $2,000 — the same stack powering this site',
+      'We start with your commercial goals, not what looks nice',
       'Fully custom build: no templates, no page builders, no Squarespace',
       'Scroll animations and transitions that make your brand impossible to forget',
-      'CRM integration and backend architecture available as add-ons',
       'SEO-ready and Core Web Vitals optimised from day one',
+      'CRM integration and backend architecture available as add-ons',
       'Mobile-first, fully responsive across all devices',
-      'Delivered within days',
+      'Fixed quote within 24 hours of your call',
     ],
     related: ['direct-response','seo'],
     process: {
@@ -628,32 +630,49 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* BODY */}
-      <section className={styles.body}>
-        <div className={styles.bodyLeft}>
+      {slug === 'website-builds' ? (
+        <section className={styles.bodyFull}>
           <ScrollReveal>
-            <span className="section-label">// Overview</span>
-          </ScrollReveal>
-          {s.description.map((p, i) => (
-            <ScrollReveal key={i} delay={(Math.min(i+1,4)) as 1|2|3|4}>
-              <p className={styles.bodyText}>{p}</p>
-            </ScrollReveal>
-          ))}
-        </div>
-        {s.outcomes.length > 0 && (
-          <div className={styles.bodyRight}>
-            <ScrollReveal delay={2}>
-              <span className="section-label">// Deliverables</span>
-              <ul className={styles.outcomes}>
-                {s.outcomes.map(o => (
-                  <li key={o} className={styles.outcome}>
+            <span className="section-label">// Deliverables</span>
+            <ul className={styles.outcomes}>
+              {s.outcomes.map((o, i) => (
+                <ScrollReveal key={o} delay={(Math.min(i % 3 + 1, 3)) as 1|2|3}>
+                  <li className={styles.outcome}>
                     <span className={styles.outcomeDot}>◆</span>{o}
                   </li>
-                ))}
-              </ul>
+                </ScrollReveal>
+              ))}
+            </ul>
+          </ScrollReveal>
+        </section>
+      ) : (
+        <section className={styles.body}>
+          <div className={styles.bodyLeft}>
+            <ScrollReveal>
+              <span className="section-label">// Overview</span>
             </ScrollReveal>
+            {s.description.map((p, i) => (
+              <ScrollReveal key={i} delay={(Math.min(i+1,4)) as 1|2|3|4}>
+                <p className={styles.bodyText}>{p}</p>
+              </ScrollReveal>
+            ))}
           </div>
-        )}
-      </section>
+          {s.outcomes.length > 0 && (
+            <div className={styles.bodyRight}>
+              <ScrollReveal delay={2}>
+                <span className="section-label">// Deliverables</span>
+                <ul className={styles.outcomes}>
+                  {s.outcomes.map(o => (
+                    <li key={o} className={styles.outcome}>
+                      <span className={styles.outcomeDot}>◆</span>{o}
+                    </li>
+                  ))}
+                </ul>
+              </ScrollReveal>
+            </div>
+          )}
+        </section>
+      )}
 
       {/* SHOWCASE — interactive examples */}
       {s.showcase && (

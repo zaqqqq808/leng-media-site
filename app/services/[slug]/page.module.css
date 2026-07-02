@@ -118,6 +118,12 @@
   background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
+.bodyFull {
+  padding: 72px 52px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  max-width: 900px;
+}
 .bodyLeft { flex: 1.2; }
 .bodyRight { flex: 0.8; }
 .bodyText {
