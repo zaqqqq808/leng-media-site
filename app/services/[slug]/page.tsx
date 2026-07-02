@@ -629,7 +629,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* BODY */}
-      {slug !== 'website-builds' ? (
+      {slug !== 'website-builds' && (
         <section className={styles.body}>
           <div className={styles.bodyLeft}>
             <ScrollReveal>
