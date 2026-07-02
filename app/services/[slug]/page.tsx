@@ -6,7 +6,8 @@ import Ticker from '@/components/Ticker'
 import BeforeAfterSlider from '@/components/BeforeAfterSlider'
 import VideoScrollHeroWrapper from '@/components/VideoScrollHeroWrapper'
 import WebsiteFaqAccordion from '@/components/WebsiteFaqAccordion'
-import PixelScheduleLink from '@/components/PixelScheduleLink'
+import CalendlyPopupLink from '@/components/CalendlyPopupLink'
+import StickyMobileCta from '@/components/StickyMobileCta'
 import styles from './page.module.css'
 
 const SERVICES: Record<string, {
@@ -572,12 +573,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <h1 className={styles.title}>{s.name}</h1>
           <p className={styles.tagline}>{s.tagline}</p>
           <div className={styles.heroCtas}>
-            <PixelScheduleLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</PixelScheduleLink>
+            <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
             <span className={styles.heroScarcity}>
               <span className={styles.scarcityDot} />
               Taking 2 new projects this month
             </span>
           </div>
+          <p className={styles.heroTrust}>Trusted by Nat Geo Traveller, Skin+Me and leading DTC brands</p>
         </VideoScrollHeroWrapper>
       ) : (
         <section className={styles.hero}>
@@ -599,7 +601,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className={styles.whoSection}>
           <div className={styles.whoInner}>
             <ScrollReveal>
-              <h2 className={styles.whoHeading}>Does your current site<br /><em>embarrass you?</em></h2>
+              <h2 className={styles.whoHeading}>If you charge for quality, your website needs to prove it<br /><em>before a customer decides to buy.</em></h2>
             </ScrollReveal>
             <div className={styles.whoRows}>
               <ScrollReveal delay={1}>
@@ -739,7 +741,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   </div>
                   <div className={styles.portfolioInlineCta}>
                     <span className={styles.portfolioInlineCtaText}>Want something like this?</span>
-                    <PixelScheduleLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.portfolioInlineCtaLink}>Book a call →</PixelScheduleLink>
+                    <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.portfolioInlineCtaLink}>Book a call →</CalendlyPopupLink>
                   </div>
                 </div>
                 <div className={styles.portfolioScreenshots}>
@@ -799,6 +801,16 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
             ))}
           </div>
+        </section>
+      )}
+
+      {/* MID-PAGE CTA — website-builds only */}
+      {slug === 'website-builds' && (
+        <section className={styles.midCta}>
+          <ScrollReveal>
+            <p className={styles.midCtaText}>Book a 20-minute call. Fixed quote within 24 hours. No obligation.</p>
+            <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
+          </ScrollReveal>
         </section>
       )}
 
@@ -941,7 +953,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <>
               <h2 className="section-title">Ready to <em>get noticed?</em></h2>
               <p className={styles.ctaSub}>Book a 20-minute call. We will scope your project and send a quote within 24 hours.</p>
-              <PixelScheduleLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</PixelScheduleLink>
+              <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</CalendlyPopupLink>
             </>
           ) : (
             <>
@@ -975,6 +987,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             })}
           </div>
         </section>
+      )}
+
+      {/* STICKY MOBILE CTA — website-builds only */}
+      {slug === 'website-builds' && (
+        <StickyMobileCta href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" />
       )}
     </>
   )

@@ -7,7 +7,9 @@ declare global {
 
 export default function ThankYouClient() {
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.fbq) {
+    // Popup-embed bookings are tracked by CalendlyPopupLink's event listener;
+    // only fire here on a full-page visit (direct Calendly link redirect).
+    if (typeof window !== 'undefined' && window.fbq && window.self === window.top) {
       window.fbq('track', 'Schedule')
     }
   }, [])

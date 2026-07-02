@@ -1,0 +1,39 @@
+.bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  display: none;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  transform: translateY(110%);
+  transition: transform 0.3s ease;
+}
+
+.visible {
+  transform: none;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  background: #d4ff00;
+  color: #000;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .bar {
+    display: block;
+  }
+}
