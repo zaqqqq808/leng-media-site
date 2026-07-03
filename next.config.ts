@@ -43,6 +43,8 @@ const nextConfig: NextConfig = {
       { source: '/dashboard/module-6-scale/', destination: '/protocol-dashboard', permanent: true },
 
       // ── Old WordPress generic pages ──
+      { source: '/home-2', destination: '/', permanent: true },
+      { source: '/home-2/', destination: '/', permanent: true },
       { source: '/the-ecom-protocol', destination: '/ecommerce-protocol', permanent: true },
       { source: '/the-ecom-protocol/', destination: '/ecommerce-protocol', permanent: true },
       { source: '/products/ai-for-ecom-tutorials-bundle-offer', destination: '/free-tools', permanent: true },
