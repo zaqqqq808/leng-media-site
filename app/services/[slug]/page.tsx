@@ -589,12 +589,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <p className={styles.tagline}>{s.tagline}</p>
           <div className={styles.heroCtas}>
             <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
-            <span className={styles.heroScarcity}>
-              <span className={styles.scarcityDot} />
-              Taking 2 new projects this month
-            </span>
           </div>
-          <p className={styles.heroTrust}>Trusted by Nat Geo Traveller, Skin+Me and leading DTC brands</p>
         </VideoScrollHeroWrapper>
       ) : (
         <section className={styles.hero}>
