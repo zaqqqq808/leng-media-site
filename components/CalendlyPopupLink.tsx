@@ -52,6 +52,8 @@ export default function CalendlyPopupLink({ href, className, style, children }: 
 
   async function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault()
+    // Mid-funnel signal: CTA click. Confirmed bookings fire Schedule separately.
+    window.fbq?.('track', 'Lead')
     await loadCalendlyAssets()
     if (window.Calendly) {
       window.Calendly.initPopupWidget({ url: href })
