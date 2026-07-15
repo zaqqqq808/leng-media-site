@@ -61,6 +61,15 @@ const SERVICES: Record<string, {
     steps: { num: string; title: string; body: string; time: string }[]
   }
   websiteFaq?: { q: string; a: string }[]
+  offer?: {
+    heading: string
+    what: string
+    time: string
+    risk: string
+    qualifier?: string
+    ctaLabel: string
+    ctaHref: string
+  }
   seoPillars?: {
     pillars: {
       num: string
@@ -92,6 +101,14 @@ const SERVICES: Record<string, {
       'Full chat transcripts and conversation summaries handed off to your sales team',
       'AI strategy audit and roadmap tailored to your specific ecommerce operation',
     ],
+    offer: {
+      heading: 'See your chatbot working before you spend anything.',
+      what: 'A working demo chatbot trained on your business — watch it answer your customers’ real questions on a live preview link.',
+      time: 'Built and in your inbox within 5 days.',
+      risk: 'Free to see. You only pay if you want it on your site.',
+      ctaLabel: 'Get Your Demo Bot →',
+      ctaHref: '/business-enquiry',
+    },
     related: ['direct-response','fractional-cmo'],
     showcase: {
       imageRevamp: {
@@ -123,6 +140,15 @@ const SERVICES: Record<string, {
       "We don't identify as a \"Facebook Agency\" or a \"PPC Agency.\" We identify as a Revenue Agency. We go where your customers are: Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it's DTC, Ecom or Lead Generation, we'll have the answer.",
     ],
     outcomes: ['Pre campaign landing page audit & CRO','Meta, TikTok & Google Ads management','Creative strategy & production briefs','Rapid A/B testing to find winners fast','Monthly performance reporting'],
+    offer: {
+      heading: 'We’ll tear down your ad account before you pay us a penny.',
+      what: 'A recorded video teardown of your ad account and funnel: what’s wasting spend, what’s capping ROAS, and exactly what we’d fix first.',
+      time: 'Delivered within 48 hours.',
+      risk: 'Free. No call required. Keep the video and fix it yourself if you’d rather.',
+      qualifier: 'For brands actively running paid traffic.',
+      ctaLabel: 'Get Your Free Teardown →',
+      ctaHref: '/business-enquiry',
+    },
     related: ['ai-solutions','lead-generation'],
     proof: {
       funnelTagline: 'Platform Agnostic. Result Obsessed.',
@@ -154,6 +180,15 @@ const SERVICES: Record<string, {
       'Generative Engine Optimisation (GEO): get cited by ChatGPT and Perplexity',
       'Monthly reporting tied to organic revenue, not just keyword rankings',
     ],
+    offer: {
+      heading: 'Your store’s 10 biggest SEO leaks, on video, free.',
+      what: 'A personal video teardown of your store: the technical issues, content gaps and quick wins costing you organic revenue.',
+      time: 'Delivered within 72 hours.',
+      risk: 'Free. No call required. The findings are yours either way.',
+      qualifier: 'For Shopify and ecommerce stores.',
+      ctaLabel: 'Get Your Free Teardown →',
+      ctaHref: '/business-enquiry',
+    },
     related: ['direct-response','ai-solutions'],
     seoPillars: {
       pillars: [
@@ -192,6 +227,15 @@ const SERVICES: Record<string, {
       'High ticket businesses are the perfect fit for this model because the numbers work. One closed deal can be worth thousands. We build funnels designed to attract serious prospects and filter out the wrong ones, so your sales team spends time on conversations that are likely to convert. We are not chasing volume. We want qualified leads that your closers can close.',
     ],
     outcomes: ['Zero monthly retainer, performance based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy and landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
+    offer: {
+      heading: 'Zero retainer. We only get paid when you do.',
+      what: 'We build the creatives, write the copy and manage the campaigns. You pay per qualified lead or a revenue share — your choice.',
+      time: 'Campaigns live within 2 weeks.',
+      risk: 'No monthly fees. If the leads don’t come, we don’t get paid.',
+      qualifier: 'High-ticket products and services only. You fund the ad spend.',
+      ctaLabel: 'Apply to Partner With Us →',
+      ctaHref: 'https://calendly.com/zaq-lengmedia/leng-media-intro-call',
+    },
     related: ['direct-response','fractional-cmo'],
   },
   'fractional-cmo': {
@@ -217,6 +261,15 @@ const SERVICES: Record<string, {
       'CRO, funnel optimisation and landing page strategy',
       'Weekly performance reviews and ongoing strategic pivots',
     ],
+    offer: {
+      heading: 'A 90-day growth roadmap. Yours to keep, either way.',
+      what: 'A 60-minute strategy session with a senior marketer, followed by a written 90-day roadmap: channels, budget split, and priorities for your brand.',
+      time: 'Roadmap delivered within a week of the call.',
+      risk: 'If you don’t hire us, keep the roadmap and run it yourself.',
+      qualifier: 'For brands doing $50k+/month.',
+      ctaLabel: 'Book Your Strategy Session →',
+      ctaHref: 'https://calendly.com/zaq-lengmedia/leng-media-intro-call',
+    },
     related: ['ai-solutions','agency-assist'],
   },
   'agency-assist': {
@@ -229,6 +282,15 @@ const SERVICES: Record<string, {
       'We do the work. You get the credit. You receive weekly white label reports and analysis while maintaining 100% control of the client relationship. We can also execute campaigns and train your junior staff to take them over.',
     ],
     outcomes: ['Overflow execution: never turn down a client again','White label AI, CRO & Paid Media fulfilment','Training & handoffs to your in house team','Weekly white label reports & analysis','Full NDA: you maintain 100% client ownership'],
+    offer: {
+      heading: 'Send us one brief. The first task is on us.',
+      what: 'Pick a real task — ad creative, a landing page section, an SEO audit — and we deliver it white-label, under NDA.',
+      time: 'First deliverable back within a week.',
+      risk: 'Free. Judge the quality before your clients ever see our work.',
+      qualifier: 'For agencies with active client accounts.',
+      ctaLabel: 'Send Us a Brief →',
+      ctaHref: '/business-enquiry',
+    },
     related: ['direct-response','seo'],
   },
   'website-builds': {
@@ -251,6 +313,15 @@ const SERVICES: Record<string, {
       'Mobile-first, fully responsive across all devices',
       'Fixed quote within 24 hours of your call',
     ],
+    offer: {
+      heading: 'We’ll rebuild your homepage before you pay a penny.',
+      what: 'Send us your website link. We rebuild your homepage with scroll animation — your brand, your content — and send you a video of it working.',
+      time: 'Preview in your inbox within 5 days.',
+      risk: 'Love it? We finish the site in days. Don’t? You pay nothing and keep the ideas.',
+      qualifier: '3 free previews per month.',
+      ctaLabel: 'Claim a Free Preview →',
+      ctaHref: '/business-enquiry',
+    },
     related: ['direct-response','seo'],
     process: {
       steps: [
@@ -953,6 +1024,46 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <h2 className={styles.websiteFaqHeading}>What you need to know before booking.</h2>
           </ScrollReveal>
           <WebsiteFaqAccordion items={s.websiteFaq} />
+        </section>
+      )}
+
+      {/* OFFER */}
+      {s.offer && (
+        <section className={styles.offerSection}>
+          <div className={styles.offerInner}>
+            <ScrollReveal>
+              <span className="section-label">// The Offer</span>
+              <h2 className={styles.offerHeading}>{s.offer.heading}</h2>
+            </ScrollReveal>
+            <div className={styles.offerGrid}>
+              <ScrollReveal delay={1}>
+                <div className={styles.offerCell}>
+                  <span className={styles.offerCellLabel}>// What you get</span>
+                  <p className={styles.offerCellText}>{s.offer.what}</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={2}>
+                <div className={styles.offerCell}>
+                  <span className={styles.offerCellLabel}>// Timeframe</span>
+                  <p className={styles.offerCellText}>{s.offer.time}</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={3}>
+                <div className={styles.offerCell}>
+                  <span className={styles.offerCellLabel}>// The risk</span>
+                  <p className={styles.offerCellText}>{s.offer.risk}</p>
+                </div>
+              </ScrollReveal>
+            </div>
+            <div className={styles.offerFooter}>
+              {s.offer.ctaHref.includes('calendly.com') ? (
+                <CalendlyPopupLink href={s.offer.ctaHref} className={styles.heroCtaBtn}>{s.offer.ctaLabel}</CalendlyPopupLink>
+              ) : (
+                <Link href={s.offer.ctaHref} className={styles.heroCtaBtn}>{s.offer.ctaLabel}</Link>
+              )}
+              {s.offer.qualifier && <span className={styles.offerQualifier}>{s.offer.qualifier}</span>}
+            </div>
+          </div>
         </section>
       )}
 
