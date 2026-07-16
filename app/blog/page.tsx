@@ -20,6 +20,22 @@ export const metadata: Metadata = {
 
 export const POSTS = [
   {
+    slug: 'how-to-start-an-ecommerce-business',
+    title: 'How to Start an Ecommerce Business in 2026 (The 8 Step System)',
+    description: 'The exact 8 step system for starting an ecommerce business in 2026: product research, suppliers, store build, fulfilment, traffic, email and the legal bits.',
+    date: '16 July 2026',
+    readTime: '11 min',
+    category: 'Ecommerce',
+  },
+  {
+    slug: 'how-to-start-dropshipping',
+    title: 'How to Start Dropshipping in 2026 (An Honest Guide)',
+    description: 'The standard dropshipping playbook, the real margins nobody shows you, and what we would build instead in 2026.',
+    date: '16 July 2026',
+    readTime: '9 min',
+    category: 'Ecommerce',
+  },
+  {
     slug: 'best-ai-chatbot-for-ecommerce',
     title: 'Best AI Chatbot for Ecommerce in 2026',
     description: 'Tidio, Gorgias, ManyChat or a custom build? We compare the leading ecommerce AI chatbot platforms and explain which is right for your store.',

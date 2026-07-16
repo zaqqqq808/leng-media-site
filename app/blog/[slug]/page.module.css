@@ -136,6 +136,15 @@
   margin: 0 0 20px;
 }
 
+.inlineLink {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(212,255,0,0.4);
+  transition: text-decoration-color 0.2s;
+}
+.inlineLink:hover { text-decoration-color: var(--accent-ink); }
+
 .list {
   list-style: none;
   padding: 0;
