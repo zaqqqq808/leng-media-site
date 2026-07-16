@@ -4,8 +4,36 @@ import FaqAccordion from './FaqAccordion'
 import VideoTestimonialsCarousel from './VideoTestimonialsCarousel'
 
 export const metadata = {
-  title: 'The Ecommerce Protocol – Leng Media',
-  description: 'Stop guessing and start selling. The Leng Media Ecommerce Protocol is a step by step system for launching and scaling your ecommerce brand within two months.',
+  title: 'The Ecommerce Protocol: Ecommerce Course & 1-on-1 Mentorship',
+  description: 'The ecommerce course with live 1-on-1 mentorship and coaching. Learn how to start an ecommerce business, from supplier to first sale within 7 days of launch — or your money back.',
+  openGraph: {
+    title: 'The Ecommerce Protocol: Ecommerce Course & 1-on-1 Mentorship',
+    description: 'The ecommerce course with live 1-on-1 mentorship and coaching. From supplier to first sale within 7 days of launch — or your money back.',
+  },
+}
+
+const courseJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'The Ecommerce Protocol',
+  description: 'An ecommerce course with live 1-on-1 mentorship. Eight modules covering product research, supplier sourcing, Shopify store build, 3PL fulfilment, organic content, paid ads, email marketing, and business finance — with a first-sale-in-7-days guarantee.',
+  provider: {
+    '@type': 'Organization',
+    name: 'Leng Media',
+    url: 'https://www.lengmedia.com',
+  },
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    courseMode: 'Online',
+    courseWorkload: 'PT10H',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '1499',
+    priceCurrency: 'USD',
+    url: 'https://www.lengmedia.com/ecommerce-protocol',
+    availability: 'https://schema.org/InStock',
+  },
 }
 
 const FAQS = [
@@ -68,6 +96,10 @@ const VIDEO_TESTIMONIALS = [
 export default function EcommerceProtocol() {
   return (
     <div className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
+      />
 
       {/* ── HERO ── */}
       <section className={styles.hero}>
