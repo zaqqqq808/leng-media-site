@@ -351,6 +351,7 @@ const SERVICES: Record<string, {
       galleryUrl: 'https://scroll-animation-mockups.vercel.app',
       items: [
         { name: 'PRIMA — Fine Jewellery', tag: 'Editorial · Scroll reveal', url: 'https://scroll-animation-mockups.vercel.app/09-prima.html' },
+        { name: 'CHRYSANT — Crystal Lotus', tag: 'Real 3D model · Auto-rotating', url: 'https://scroll-animation-mockups.vercel.app/10-chrysant.html' },
         { name: 'AURA — 3D Robot', tag: 'Real-time 3D · Cursor-tracking', url: 'https://scroll-animation-mockups.vercel.app/05-spline.html' },
         { name: 'Emperor Vodka', tag: 'AI pour video · Scroll-scrub', url: 'https://scroll-animation-mockups.vercel.app/04-alcohol-brand.html' },
         { name: 'LUMA Dental', tag: 'Interactive canvas mascot', url: 'https://scroll-animation-mockups.vercel.app/08-dental.html' },
