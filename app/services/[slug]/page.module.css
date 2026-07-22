@@ -1008,3 +1008,102 @@
   .websiteFaqItem { border-right: none; }
   .websiteFaqItem:last-child { border-bottom: none; }
 }
+
+/* ── EXAMPLES — interactive concept showcase ── */
+.examples {
+  padding: 90px 52px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+.examplesHead { max-width: 720px; margin-bottom: 48px; }
+.examplesTitle {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  font-size: clamp(28px, 3.5vw, 48px);
+  color: var(--ink);
+  letter-spacing: -0.5px;
+  margin: 16px 0 18px;
+}
+.examplesIntro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--accent-ink);
+  max-width: 620px;
+}
+.examplesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.exCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 34px 30px 46px;
+  background: var(--bg);
+  text-decoration: none;
+  overflow: hidden;
+  transition: background .25s;
+}
+.exCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--neon);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+.exCard:hover { background: var(--bg-alt, rgba(255,255,255,0.02)); }
+.exCard:hover::before { transform: scaleX(1); }
+.exNum {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--accent-ink);
+}
+.exName {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+.exTag {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--accent-ink);
+  text-transform: uppercase;
+}
+.exArrow {
+  position: absolute;
+  right: 26px;
+  bottom: 20px;
+  font-size: 18px;
+  color: var(--accent-ink);
+  transition: color .2s, transform .2s;
+}
+.exCard:hover .exArrow { color: var(--neon); transform: translate(3px,-3px); }
+.examplesCta {
+  display: inline-block;
+  margin-top: 40px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--neon);
+  padding-bottom: 4px;
+  transition: opacity .2s;
+}
+.examplesCta:hover { opacity: 0.7; }
+@media (max-width: 900px) {
+  .examples { padding: 60px 24px; }
+  .examplesGrid { grid-template-columns: 1fr; }
+}

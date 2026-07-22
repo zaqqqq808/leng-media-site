@@ -57,6 +57,12 @@ const SERVICES: Record<string, {
       mobileImg: string
     }[]
   }
+  examples?: {
+    heading: string
+    intro: string
+    galleryUrl: string
+    items: { name: string; tag: string; url: string }[]
+  }
   process?: {
     steps: { num: string; title: string; body: string; time: string }[]
   }
@@ -297,14 +303,14 @@ const SERVICES: Record<string, {
     num: '07',
     name: 'Website Building',
     metaTitle: 'Scroll Animation Website Design Agency | Custom Web Builds',
-    tagline: 'Scroll animation websites built in Next.js from just $2,000. Custom performance-first builds your customers will never forget.',
+    tagline: 'Scroll animation websites built in Next.js from just $500. Custom performance-first builds your customers will never forget.',
     metaDescription: 'Leng Media builds scroll animation websites and custom performance-first sites for ecommerce and service brands. Built in Next.js with CRM integration, SEO baked in from day one.',
     description: [
       'We build performance-first websites from scratch, starting with your commercial goals. What you see on this page is what we build for you. While your competitors run Squarespace templates, you get a fully custom site that loads faster, ranks higher and gets noticed.',
-      'Every site is SEO-ready and Core Web Vitals optimised from day one. CRM integration and backend architecture are available as add-ons. Projects from $2,000, delivered in days. Book a call and we will send a quote within 24 hours.',
+      'Every site is SEO-ready and Core Web Vitals optimised from day one. CRM integration and backend architecture are available as add-ons. Projects from $500, delivered in days. Book a call and we will send a quote within 24 hours.',
     ],
     outcomes: [
-      'Built in Next.js from $2,000 — the same stack powering this site',
+      'Built in Next.js from $500 — the same stack powering this site',
       'We start with your commercial goals, not what looks nice',
       'Fully custom build: no templates, no page builders, no Squarespace',
       'Scroll animations and transitions that make your brand impossible to forget',
@@ -339,6 +345,19 @@ const SERVICES: Record<string, {
       { q: 'What platform is it built on?', a: 'Next.js, the same stack powering this site. Fast, SEO-friendly, and scales without hitting the platform limits that Shopify and WordPress regularly hit.' },
       { q: 'How is this different from Squarespace or Wix?', a: 'No shared templates. No platform constraints. No monthly subscription to a builder. You own the code outright. The performance, SEO and visual quality are in a completely different league.' },
     ],
+    examples: {
+      heading: 'Examples of what we can do.',
+      intro: 'Interactive concepts we’ve built to show what’s possible — scroll-scrubbed video, real-time 3D, cinematic reveals. All live, all in the browser. Move your cursor, scroll, and play.',
+      galleryUrl: 'https://scroll-animation-mockups.vercel.app',
+      items: [
+        { name: 'PRIMA — Fine Jewellery', tag: 'Editorial · Scroll reveal', url: 'https://scroll-animation-mockups.vercel.app/09-prima.html' },
+        { name: 'AURA — 3D Robot', tag: 'Real-time 3D · Cursor-tracking', url: 'https://scroll-animation-mockups.vercel.app/05-spline.html' },
+        { name: 'Emperor Vodka', tag: 'AI pour video · Scroll-scrub', url: 'https://scroll-animation-mockups.vercel.app/04-alcohol-brand.html' },
+        { name: 'LUMA Dental', tag: 'Interactive canvas mascot', url: 'https://scroll-animation-mockups.vercel.app/08-dental.html' },
+        { name: '3D Product Configurator', tag: 'Spin · Recolour · 3D commerce', url: 'https://scroll-animation-mockups.vercel.app/06-3d-product.html' },
+        { name: 'Scroll · Pause · Play', tag: 'Cinematic scroll journey', url: 'https://scroll-animation-mockups.vercel.app/07-scroll-pause.html' },
+      ],
+    },
     portfolio: {
       projects: [
         {
@@ -688,6 +707,34 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <a href="#portfolio" className={styles.heroCtaBtn}>See the Work →</a>
             </div>
           </div>
+        </section>
+      )}
+
+      {/* EXAMPLES — interactive concept showcase */}
+      {s.examples && (
+        <section className={styles.examples}>
+          <ScrollReveal className={styles.examplesHead}>
+            <span className="section-label">// Examples of what we can do</span>
+            <h2 className={styles.examplesTitle}>{s.examples.heading}</h2>
+            <p className={styles.examplesIntro}>{s.examples.intro}</p>
+          </ScrollReveal>
+          <div className={styles.examplesGrid}>
+            {s.examples.items.map((ex, i) => (
+              <ScrollReveal key={ex.name} delay={((i % 3) + 1) as 1|2|3}>
+                <a href={ex.url} target="_blank" rel="noopener noreferrer" className={styles.exCard}>
+                  <span className={styles.exNum}>{String(i + 1).padStart(2, '0')}</span>
+                  <span className={styles.exName}>{ex.name}</span>
+                  <span className={styles.exTag}>{ex.tag}</span>
+                  <span className={styles.exArrow}>↗</span>
+                </a>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal>
+            <a href={s.examples.galleryUrl} target="_blank" rel="noopener noreferrer" className={styles.examplesCta}>
+              View the full gallery →
+            </a>
+          </ScrollReveal>
         </section>
       )}
 
