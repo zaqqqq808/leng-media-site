@@ -137,7 +137,7 @@ const SERVICES: Record<string, {
   },
   'direct-response': {
     num: '02',
-    name: 'Direct Response',
+    name: 'Ecommerce Ads Agency',
     metaTitle: 'Ecommerce Ads Agency | Direct Response Advertising',
     tagline: 'The ecommerce ads agency that fixes your funnel first, then drives consistent positive ROAS across Meta, TikTok and Google.',
     metaDescription: 'Leng Media is an ecommerce ads agency managing Meta, TikTok and Google Ads for DTC brands. We fix the funnel first, then drive consistent positive ROAS across every channel.',
@@ -155,7 +155,7 @@ const SERVICES: Record<string, {
       ctaLabel: 'Get Your Free Teardown →',
       ctaHref: '/business-enquiry',
     },
-    related: ['ai-solutions','lead-generation'],
+    related: ['seo','lead-generation'],
     proof: {
       funnelTagline: 'Platform Agnostic. Result Obsessed.',
       statsLabel: '// Real Results · May–Jun 2025',
@@ -170,10 +170,10 @@ const SERVICES: Record<string, {
   },
   'seo': {
     num: '03',
-    name: 'Ecommerce SEO',
+    name: 'Shopify SEO Agency for Ecommerce Brands',
     metaTitle: 'Shopify SEO Agency | Ecommerce SEO Services',
-    tagline: 'The Shopify SEO agency for DTC and ecommerce brands in the USA and UK. We rank you for transactional keywords, grow organic revenue, and get your brand cited by AI.',
-    metaDescription: 'Leng Media is a Shopify SEO agency for DTC and ecommerce brands in the USA and UK. We cover technical SEO, collection page optimisation, Shopify SEO, link building and AI citation strategy.',
+    tagline: 'The Shopify SEO agency for DTC and ecommerce brands in the USA and UK. Based in London. We rank you for transactional keywords, grow organic revenue, and get your brand cited by AI.',
+    metaDescription: 'Leng Media is a Shopify SEO agency based in London, serving DTC and ecommerce brands in the USA and UK. Technical SEO, collection page optimisation, link building and AI citation strategy.',
     description: [
       'Ecommerce SEO is not the same as regular SEO. For a Shopify store or DTC brand, the pages that drive revenue are your collection pages and product pages. Informational blog content sits at the top of the funnel, and in 2026 AI has already taken that territory. We focus entirely on transactional keywords where people are ready to buy. That is where rankings convert directly into revenue.',
       'We cover the full stack: technical SEO, collection and product page optimisation, and link building that actually moves domain authority. We research and identify relevant contacts in your industry, create genuinely linkable assets worth pointing to, and build authority through editorial outreach and digital PR. The result is a site that earns trust over time and compounds in organic traffic.',
@@ -195,7 +195,7 @@ const SERVICES: Record<string, {
       ctaLabel: 'Get Your Free Teardown →',
       ctaHref: '/business-enquiry',
     },
-    related: ['direct-response','ai-solutions'],
+    related: ['direct-response','fractional-cmo'],
     seoPillars: {
       pillars: [
         {
@@ -246,7 +246,7 @@ const SERVICES: Record<string, {
   },
   'fractional-cmo': {
     num: '05',
-    name: 'Fractional CMO',
+    name: 'Fractional CMO for Ecommerce Brands',
     metaTitle: 'Fractional CMO Services for Ecommerce & DTC Brands',
     tagline: 'Fractional CMO services for ecommerce and DTC brands in the USA and UK. Senior marketing leadership without the full-time salary.',
     metaDescription: 'Leng Media provides fractional CMO services for ecommerce and DTC brands in the USA and UK. Outsourced CMO covering strategy, media buying, team management and full execution. From £15,000/month.',
@@ -276,7 +276,7 @@ const SERVICES: Record<string, {
       ctaLabel: 'Book Your Strategy Session →',
       ctaHref: 'https://calendly.com/zaq-lengmedia/leng-media-intro-call',
     },
-    related: ['ai-solutions','agency-assist'],
+    related: ['direct-response','seo'],
   },
   'agency-assist': {
     num: '06',
@@ -1127,7 +1127,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           ) : (
             <>
               <h2 className="section-title">Want to <em>chat?</em></h2>
-              <p className={styles.ctaSub}>Let&apos;s talk about what {s.name.toLowerCase()} can do for your brand</p>
+              <p className={styles.ctaSub}>Book a call. We&apos;ll look at where you are and tell you honestly if we can help.</p>
               <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
             </>
           )}
