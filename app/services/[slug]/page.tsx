@@ -109,7 +109,7 @@ const SERVICES: Record<string, {
     ],
     offer: {
       heading: 'See your chatbot working before you spend anything.',
-      what: 'A working demo chatbot trained on your business — watch it answer your customers’ real questions on a live preview link.',
+      what: 'A working demo chatbot trained on your business. Watch it answer your customers’ real questions on a live preview link.',
       time: 'Built and in your inbox within 5 days.',
       risk: 'Free to see. You only pay if you want it on your site.',
       ctaLabel: 'Get Your Demo Bot →',
@@ -235,7 +235,7 @@ const SERVICES: Record<string, {
     outcomes: ['Zero monthly retainer, performance based only','You fund the ad spend directly (Google, Meta, LinkedIn)','We build creatives, copy and landing pages at no charge','Revenue share or fixed CPA model','You own all data and the client relationship'],
     offer: {
       heading: 'Zero retainer. We only get paid when you do.',
-      what: 'We build the creatives, write the copy and manage the campaigns. You pay per qualified lead or a revenue share — your choice.',
+      what: 'We build the creatives, write the copy and manage the campaigns. You pay per qualified lead or a revenue share, whichever you prefer.',
       time: 'Campaigns live within 2 weeks.',
       risk: 'No monthly fees. If the leads don’t come, we don’t get paid.',
       qualifier: 'High-ticket products and services only. You fund the ad spend.',
@@ -290,7 +290,7 @@ const SERVICES: Record<string, {
     outcomes: ['Overflow execution: never turn down a client again','White label AI, CRO & Paid Media fulfilment','Training & handoffs to your in house team','Weekly white label reports & analysis','Full NDA: you maintain 100% client ownership'],
     offer: {
       heading: 'Send us one brief. The first task is on us.',
-      what: 'Pick a real task — ad creative, a landing page section, an SEO audit — and we deliver it white-label, under NDA.',
+      what: 'Pick a real task (ad creative, a landing page section, an SEO audit) and we deliver it white-label, under NDA.',
       time: 'First deliverable back within a week.',
       risk: 'Free. Judge the quality before your clients ever see our work.',
       qualifier: 'For agencies with active client accounts.',
@@ -310,7 +310,7 @@ const SERVICES: Record<string, {
       'Every site is SEO-ready and Core Web Vitals optimised from day one. CRM integration and backend architecture are available as add-ons. Projects from $500, delivered in days. Book a call and we will send a quote within 24 hours.',
     ],
     outcomes: [
-      'Built in Next.js from $500 — the same stack powering this site',
+      'Built in Next.js from $500, the same stack powering this site',
       'We start with your commercial goals, not what looks nice',
       'Fully custom build: no templates, no page builders, no Squarespace',
       'Scroll animations and transitions that make your brand impossible to forget',
@@ -321,7 +321,7 @@ const SERVICES: Record<string, {
     ],
     offer: {
       heading: 'We’ll rebuild your homepage before you pay a penny.',
-      what: 'Send us your website link. We rebuild your homepage with scroll animation — your brand, your content — and send you a video of it working.',
+      what: 'Send us your website link. We rebuild your homepage with scroll animation, using your brand and your content, and send you a video of it working.',
       time: 'Preview in your inbox within 5 days.',
       risk: 'Love it? We finish the site in days. Don’t? You pay nothing and keep the ideas.',
       qualifier: '3 free previews per month.',
@@ -347,12 +347,12 @@ const SERVICES: Record<string, {
     ],
     examples: {
       heading: 'Examples of what we can do.',
-      intro: 'Interactive concepts we’ve built to show what’s possible — scroll-scrubbed video, real-time 3D, cinematic reveals. All live, all in the browser. Move your cursor, scroll, and play.',
+      intro: 'Interactive concepts we’ve built to show what’s possible: scroll-scrubbed video, real-time 3D, cinematic reveals. All live, all in the browser. Move your cursor, scroll, and play.',
       galleryUrl: 'https://scroll-animation-mockups.vercel.app',
       items: [
-        { name: 'PRIMA — Fine Jewellery', tag: 'Editorial · Scroll reveal', url: 'https://scroll-animation-mockups.vercel.app/09-prima.html' },
-        { name: 'CHRYSANT — Crystal Lotus', tag: 'Real 3D model · Auto-rotating', url: 'https://scroll-animation-mockups.vercel.app/10-chrysant.html' },
-        { name: 'AURA — 3D Robot', tag: 'Real-time 3D · Cursor-tracking', url: 'https://scroll-animation-mockups.vercel.app/05-spline.html' },
+        { name: 'PRIMA: Fine Jewellery', tag: 'Editorial · Scroll reveal', url: 'https://scroll-animation-mockups.vercel.app/09-prima.html' },
+        { name: 'CHRYSANT: Crystal Lotus', tag: 'Real 3D model · Auto-rotating', url: 'https://scroll-animation-mockups.vercel.app/10-chrysant.html' },
+        { name: 'AURA: 3D Robot', tag: 'Real-time 3D · Cursor-tracking', url: 'https://scroll-animation-mockups.vercel.app/05-spline.html' },
         { name: 'Emperor Vodka', tag: 'AI pour video · Scroll-scrub', url: 'https://scroll-animation-mockups.vercel.app/04-alcohol-brand.html' },
         { name: 'LUMA Dental', tag: 'Interactive canvas mascot', url: 'https://scroll-animation-mockups.vercel.app/08-dental.html' },
         { name: '3D Product Configurator', tag: 'Spin · Recolour · 3D commerce', url: 'https://scroll-animation-mockups.vercel.app/06-3d-product.html' },
@@ -416,7 +416,7 @@ function FunnelDiagram() {
   const tx = [215, 272, 332, 390, 448, 505, 563, 622]
 
   return (
-    <svg viewBox="0 0 870 315" style={{width:'100%',maxWidth:870,display:'block',margin:'0 auto'}} aria-label="Platform agnostic funnel — digital and traditional channels">
+    <svg viewBox="0 0 870 315" style={{width:'100%',maxWidth:870,display:'block',margin:'0 auto'}} aria-label="Platform agnostic funnel: digital and traditional channels">
       {/* Group annotations */}
       <text x="262" y="13" textAnchor="middle" fontFamily="'Courier New',monospace" fontSize="8" fill="rgba(212,255,0,0.6)" letterSpacing="2">// DIGITAL</text>
       <text x="683" y="13" textAnchor="middle" fontFamily="'Courier New',monospace" fontSize="8" fill="rgba(255,255,255,0.32)" letterSpacing="2">// TRADITIONAL</text>
@@ -1057,7 +1057,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <ScrollReveal style={{marginTop:2}}>
                 <div className={styles.proofImageWrap}>
                   <span className={styles.proofImageLabel}>// Campaign Screenshot · May–Jun 2025</span>
-                  <img src={s.proof.proofImage} alt="Meta Ads Manager — May–Jun 2025 campaign results" className={styles.proofImage} />
+                  <img src={s.proof.proofImage} alt="Meta Ads Manager: May to Jun 2025 campaign results" className={styles.proofImage} />
                   <p className={styles.proofImageCaption}>A snapshot of one of our clients&apos; campaigns.<br />If you&apos;d like to know how we can help you just <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className={styles.proofImageLink}>book a call</a>.</p>
                 </div>
               </ScrollReveal>
