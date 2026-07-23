@@ -357,6 +357,8 @@ const SERVICES: Record<string, {
         { name: 'LUMA Dental', tag: 'Interactive canvas mascot', url: 'https://scroll-animation-mockups.vercel.app/08-dental.html' },
         { name: '3D Product Configurator', tag: 'Spin · Recolour · 3D commerce', url: 'https://scroll-animation-mockups.vercel.app/06-3d-product.html' },
         { name: 'Scroll · Pause · Play', tag: 'Cinematic scroll journey', url: 'https://scroll-animation-mockups.vercel.app/07-scroll-pause.html' },
+        { name: 'Spin Class Studio', tag: '4K video scrub · Apple-style', url: 'https://scroll-animation-mockups.vercel.app/05-spin-class.html' },
+        { name: 'Crypto Site', tag: 'Live ticker · Animated chart', url: 'https://scroll-animation-mockups.vercel.app/02-crypto.html' },
       ],
     },
     portfolio: {
