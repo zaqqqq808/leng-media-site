@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import ScrollReveal from '@/components/ScrollReveal'
 import ContactForm from '@/components/ContactForm'
 import styles from './page.module.css'
@@ -52,7 +53,9 @@ export default function BusinessEnquiry() {
             <h2 className={styles.optionTitle}>Send a message</h2>
             <p className={styles.optionDesc}>Prefer to write? Leave us a message and we&apos;ll get back to you within 72 hours.</p>
           </div>
-          <ContactForm />
+          <Suspense fallback={null}>
+            <ContactForm />
+          </Suspense>
         </ScrollReveal>
       </section>
     </>

@@ -408,6 +408,21 @@ const CLIENTS = [
   { name: 'Chesneys',                     domain: 'chesneys.co.uk' },
 ]
 
+// Tags a Calendly link with the service that led to the booking, so the
+// leng-media-intro-call event (shared by several services) can still be
+// told apart in the leads sheet.
+function withCalendlyService(href: string, service: string) {
+  if (!href.includes('calendly.com')) return href
+  const sep = href.includes('?') ? '&' : '?'
+  return `${href}${sep}utm_campaign=${encodeURIComponent(service)}`
+}
+
+// Tags a /business-enquiry link with the service so the form pre-selects it.
+function withFormService(href: string, service: string) {
+  if (!href.startsWith('/business-enquiry')) return href
+  return `${href}?service=${encodeURIComponent(service)}`
+}
+
 function FunnelDiagram() {
   const digital = ['META', 'GOOGLE ADS', 'TIKTOK', 'LINKEDIN', 'DISPLAY']
   const traditional = ['DAYTIME TV', 'PRESS ADS', 'DIRECT MAIL']
@@ -681,7 +696,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <h1 className={styles.title}>Websites your customers will remember</h1>
           <p className={styles.tagline}>{s.tagline}</p>
           <div className={styles.heroCtas}>
-            <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
+            <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
           </div>
         </VideoScrollHeroWrapper>
       ) : (
@@ -852,7 +867,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   </div>
                   <div className={styles.portfolioInlineCta}>
                     <span className={styles.portfolioInlineCtaText}>Want something like this?</span>
-                    <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.portfolioInlineCtaLink}>Book a call →</CalendlyPopupLink>
+                    <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className={styles.portfolioInlineCtaLink}>Book a call →</CalendlyPopupLink>
                   </div>
                 </div>
                 <div className={styles.portfolioScreenshots}>
@@ -939,7 +954,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <ScrollReveal>
             <p className={styles.midCtaText}>Book a 20-minute call. Fixed quote within 24 hours. No obligation.</p>
             <div className={styles.midCtaBtns}>
-              <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
+              <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
               <WhatsAppLink href="https://wa.me/447928668478?text=Hi%2C%20I%27m%20interested%20in%20a%20website%20build" className={styles.waBtn}>WhatsApp Us</WhatsAppLink>
             </div>
           </ScrollReveal>
@@ -1058,7 +1073,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <div className={styles.proofImageWrap}>
                   <span className={styles.proofImageLabel}>// Campaign Screenshot · May–Jun 2025</span>
                   <img src={s.proof.proofImage} alt="Meta Ads Manager: May to Jun 2025 campaign results" className={styles.proofImage} />
-                  <p className={styles.proofImageCaption}>A snapshot of one of our clients&apos; campaigns.<br />If you&apos;d like to know how we can help you just <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className={styles.proofImageLink}>book a call</a>.</p>
+                  <p className={styles.proofImageCaption}>A snapshot of one of our clients&apos; campaigns.<br />If you&apos;d like to know how we can help you just <a href={withCalendlyService('https://calendly.com/zaq-lengmedia/leng-media-intro-call', s.name)} target="_blank" rel="noopener noreferrer" className={styles.proofImageLink}>book a call</a>.</p>
                 </div>
               </ScrollReveal>
             )}
@@ -1107,9 +1122,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </div>
             <div className={styles.offerFooter}>
               {s.offer.ctaHref.includes('calendly.com') ? (
-                <CalendlyPopupLink href={s.offer.ctaHref} className={styles.heroCtaBtn}>{s.offer.ctaLabel}</CalendlyPopupLink>
+                <CalendlyPopupLink href={withCalendlyService(s.offer.ctaHref, s.name)} className={styles.heroCtaBtn}>{s.offer.ctaLabel}</CalendlyPopupLink>
               ) : (
-                <Link href={s.offer.ctaHref} className={styles.heroCtaBtn}>{s.offer.ctaLabel}</Link>
+                <Link href={withFormService(s.offer.ctaHref, s.name)} className={styles.heroCtaBtn}>{s.offer.ctaLabel}</Link>
               )}
               {s.offer.qualifier && <span className={styles.offerQualifier}>{s.offer.qualifier}</span>}
             </div>
@@ -1125,13 +1140,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <>
               <h2 className="section-title">Ready to <em>get noticed?</em></h2>
               <p className={styles.ctaSub}>Book a 20-minute call. We will scope your project and send a quote within 24 hours.</p>
-              <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</CalendlyPopupLink>
+              <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</CalendlyPopupLink>
             </>
           ) : (
             <>
               <h2 className="section-title">Want to <em>chat?</em></h2>
               <p className={styles.ctaSub}>Book a call. We&apos;ll look at where you are and tell you honestly if we can help.</p>
-              <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
+              <a href={withCalendlyService('https://calendly.com/zaq-lengmedia/leng-media-intro-call', s.name)} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
             </>
           )}
         </ScrollReveal>
@@ -1163,7 +1178,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       {/* STICKY MOBILE CTA — website-builds only */}
       {slug === 'website-builds' && (
-        <StickyMobileCta href="https://calendly.com/zaq-lengmedia/website-build-discovery-call" />
+        <StickyMobileCta href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} />
       )}
     </>
   )

@@ -1,12 +1,27 @@
 'use client'
 
 import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import styles from '@/app/business-enquiry/page.module.css'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
+const SERVICES = [
+  'General enquiry',
+  'AI Solutions',
+  'Direct Response',
+  'Shopify SEO',
+  'Lead Generation',
+  'Fractional CMO',
+  'Agency Assistance',
+  'Website Building',
+]
+
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>('idle')
+  const searchParams = useSearchParams()
+  const preselected = searchParams.get('service')
+  const defaultService = preselected && SERVICES.includes(preselected) ? preselected : 'General enquiry'
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -16,6 +31,7 @@ export default function ContactForm() {
     const data = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      service: (form.elements.namedItem('service') as HTMLSelectElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
     }
 
@@ -46,6 +62,14 @@ export default function ContactForm() {
       <div className={styles.field}>
         <label className={styles.label}>Email</label>
         <input className={styles.input} type="email" name="email" placeholder="your@email.com" required disabled={status === 'sending'} />
+      </div>
+      <div className={styles.field}>
+        <label className={styles.label}>What are you interested in?</label>
+        <select className={styles.input} name="service" defaultValue={defaultService} required disabled={status === 'sending'}>
+          {SERVICES.map(s => (
+            <option key={s} value={s}>{s}</option>
+          ))}
+        </select>
       </div>
       <div className={styles.field}>
         <label className={styles.label}>Message</label>
