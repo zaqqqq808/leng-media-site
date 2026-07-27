@@ -714,20 +714,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       <Ticker />
 
-      {/* WHO THIS IS FOR — website-builds only */}
-      {slug === 'website-builds' && (
-        <section className={styles.whoSection}>
-          <div className={styles.whoInner}>
-            <ScrollReveal>
-              <h2 className={styles.whoHeading}>If you charge for quality, your website needs to prove it<br /><em>before a customer decides to buy.</em></h2>
-            </ScrollReveal>
-            <div className={styles.whoFooter}>
-              <a href="#portfolio" className={styles.heroCtaBtn}>See the Work →</a>
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* EXAMPLES — interactive concept showcase */}
       {s.examples && (
         <section className={styles.examples}>
