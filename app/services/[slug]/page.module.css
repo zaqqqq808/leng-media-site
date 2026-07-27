@@ -1080,15 +1080,6 @@
   color: var(--accent-ink);
   text-transform: uppercase;
 }
-.exArrow {
-  position: absolute;
-  right: 26px;
-  bottom: 20px;
-  font-size: 18px;
-  color: var(--accent-ink);
-  transition: color .2s, transform .2s;
-}
-.exCard:hover .exArrow { color: var(--neon); transform: translate(3px,-3px); }
 .examplesCta {
   display: inline-block;
   margin-top: 40px;

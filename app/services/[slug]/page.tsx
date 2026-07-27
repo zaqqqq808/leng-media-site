@@ -729,7 +729,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   <span className={styles.exNum}>{String(i + 1).padStart(2, '0')}</span>
                   <span className={styles.exName}>{ex.name}</span>
                   <span className={styles.exTag}>{ex.tag}</span>
-                  <span className={styles.exArrow}>↗</span>
                 </a>
               </ScrollReveal>
             ))}
