@@ -1,9 +1,10 @@
 'use client'
 import { useEffect, useState } from 'react'
 import CalendlyPopupLink from './CalendlyPopupLink'
+import WhatsAppLink from './WhatsAppLink'
 import styles from './StickyMobileCta.module.css'
 
-export default function StickyMobileCta({ href }: { href: string }) {
+export default function StickyMobileCta({ href, whatsappHref }: { href: string; whatsappHref?: string }) {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -18,6 +19,11 @@ export default function StickyMobileCta({ href }: { href: string }) {
       <CalendlyPopupLink href={href} className={styles.btn}>
         Get Your Quote →
       </CalendlyPopupLink>
+      {whatsappHref && (
+        <WhatsAppLink href={whatsappHref} className={styles.waBtn}>
+          WhatsApp
+        </WhatsAppLink>
+      )}
     </div>
   )
 }

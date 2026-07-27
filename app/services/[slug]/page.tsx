@@ -1164,7 +1164,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       {/* STICKY MOBILE CTA — website-builds only */}
       {slug === 'website-builds' && (
-        <StickyMobileCta href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} />
+        <StickyMobileCta
+          href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')}
+          whatsappHref="https://wa.me/447928668478?text=Hi%2C%20I%27m%20interested%20in%20a%20website%20build"
+        />
       )}
     </>
   )

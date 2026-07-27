@@ -5,6 +5,7 @@
   right: 0;
   z-index: 900;
   display: none;
+  gap: 8px;
   padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
   background: rgba(10, 10, 10, 0.92);
   backdrop-filter: blur(12px);
@@ -19,6 +20,7 @@
 }
 
 .btn {
+  flex: 1;
   display: block;
   text-align: center;
   background: #d4ff00;
@@ -32,8 +34,27 @@
   padding: 16px;
 }
 
+.waBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  background: transparent;
+  color: #25d366;
+  border: 1px solid rgba(37, 211, 102, 0.5);
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px;
+}
+
 @media (max-width: 768px) {
   .bar {
-    display: block;
+    display: flex;
   }
 }
