@@ -1059,7 +1059,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <div className={styles.proofImageWrap}>
                   <span className={styles.proofImageLabel}>// Campaign Screenshot · May–Jun 2025</span>
                   <img src={s.proof.proofImage} alt="Meta Ads Manager: May to Jun 2025 campaign results" className={styles.proofImage} />
-                  <p className={styles.proofImageCaption}>A snapshot of one of our clients&apos; campaigns.<br />If you&apos;d like to know how we can help you just <a href={withCalendlyService('https://calendly.com/zaq-lengmedia/leng-media-intro-call', s.name)} target="_blank" rel="noopener noreferrer" className={styles.proofImageLink}>book a call</a>.</p>
+                  <p className={styles.proofImageCaption}>A snapshot of one of our clients&apos; campaigns.<br />If you&apos;d like to know how we can help you just <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/leng-media-intro-call', s.name)} className={styles.proofImageLink}>book a call</CalendlyPopupLink>.</p>
                 </div>
               </ScrollReveal>
             )}
@@ -1132,7 +1132,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <>
               <h2 className="section-title">Want to <em>chat?</em></h2>
               <p className={styles.ctaSub}>Book a call. We&apos;ll look at where you are and tell you honestly if we can help.</p>
-              <a href={withCalendlyService('https://calendly.com/zaq-lengmedia/leng-media-intro-call', s.name)} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
+              <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/leng-media-intro-call', s.name)} className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</CalendlyPopupLink>
             </>
           )}
         </ScrollReveal>

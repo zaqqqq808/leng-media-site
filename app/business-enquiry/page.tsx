@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import ScrollReveal from '@/components/ScrollReveal'
 import ContactForm from '@/components/ContactForm'
+import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import styles from './page.module.css'
 import type { Metadata } from 'next'
 
@@ -32,15 +33,13 @@ export default function BusinessEnquiry() {
             <p className={styles.optionDesc}>Choose a time that works for you. A focused 30-minute conversation about your goals and how we can help.</p>
           </div>
           <div className={styles.calendarSide}>
-            <a
+            <CalendlyPopupLink
               href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="btn-primary"
               style={{ fontSize: 12, padding: '16px 40px', display: 'inline-block' }}
             >
               Book a Call →
-            </a>
+            </CalendlyPopupLink>
           </div>
         </ScrollReveal>
 

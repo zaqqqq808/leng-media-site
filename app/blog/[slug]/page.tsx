@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import Ticker from '@/components/Ticker'
+import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import styles from './page.module.css'
 
 type Block =
@@ -507,7 +508,7 @@ function renderBlock(block: Block, i: number) {
           {block.href.startsWith('/') ? (
             <Link href={block.href} className="btn-primary" style={btnStyle}>{block.cta}</Link>
           ) : (
-            <a href={block.href} target="_blank" rel="noopener noreferrer" className="btn-primary" style={btnStyle}>{block.cta}</a>
+            <CalendlyPopupLink href={block.href} className="btn-primary" style={btnStyle}>{block.cta}</CalendlyPopupLink>
           )}
         </div>
       )
@@ -594,7 +595,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <span className="section-label">// Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s talk about what we can build for your brand</p>
-          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: 12, padding: '18px 52px' }}>Book a Call</a>
+          <CalendlyPopupLink href={CALENDLY} className="btn-primary" style={{ fontSize: 12, padding: '18px 52px' }}>Book a Call</CalendlyPopupLink>
         </ScrollReveal>
       </section>
     </>

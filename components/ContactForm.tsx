@@ -4,6 +4,10 @@ import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import styles from '@/app/business-enquiry/page.module.css'
 
+declare global {
+  interface Window { fbq?: (...args: unknown[]) => void }
+}
+
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
 const SERVICES = [
@@ -43,6 +47,8 @@ export default function ContactForm() {
       })
 
       if (res.ok) {
+        // A submitted enquiry is a real lead, so report it to Meta.
+        window.fbq?.('track', 'Lead', { content_name: data.service })
         setStatus('success')
         form.reset()
       } else {

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import Ticker from '@/components/Ticker'
+import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import styles from './page.module.css'
 import type { Metadata } from 'next'
 
@@ -96,7 +97,7 @@ export default function Blog() {
         <ScrollReveal>
           <span className="section-label">// Want results, not just reading?</span>
           <h2 className="section-title">Let&apos;s work<br />together.</h2>
-          <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ marginTop: 40, display: 'inline-block' }}>Book a Call</a>
+          <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/leng-media-intro-call?utm_campaign=Blog" className="btn-primary" style={{ marginTop: 40, display: 'inline-block' }}>Book a Call</CalendlyPopupLink>
         </ScrollReveal>
       </section>
     </>

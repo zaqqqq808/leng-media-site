@@ -3,6 +3,7 @@ import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import Ticker from '@/components/Ticker'
 import WebsiteFaqAccordion from '@/components/WebsiteFaqAccordion'
+import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -155,14 +156,12 @@ export default function ChatGPTAdsAgencyPage() {
             Your competitors are bidding on Google. Your customers are searching on ChatGPT.
           </p>
           <div className={styles.heroCtas}>
-            <a
-              href="https://calendly.com/zaq-lengmedia/leng-media-intro-call"
-              target="_blank"
-              rel="noopener noreferrer"
+            <CalendlyPopupLink
+              href="https://calendly.com/zaq-lengmedia/leng-media-intro-call?utm_campaign=ChatGPT+Ads+Agency"
               className={styles.heroBtn}
             >
               Book a Free Strategy Call
-            </a>
+            </CalendlyPopupLink>
             <span className={styles.heroNote}>Response within 24 hours</span>
           </div>
           <div className={styles.heroProof}>
@@ -218,14 +217,12 @@ export default function ChatGPTAdsAgencyPage() {
       {/* MID-PAGE CTA STRIP */}
       <div className={styles.midCta}>
         <p className={styles.midCtaText}>Ready to run ChatGPT ads for your brand?</p>
-        <a
-          href="https://calendly.com/zaq-lengmedia/leng-media-intro-call"
-          target="_blank"
-          rel="noopener noreferrer"
+        <CalendlyPopupLink
+          href="https://calendly.com/zaq-lengmedia/leng-media-intro-call?utm_campaign=ChatGPT+Ads+Agency"
           className={styles.midCtaBtn}
         >
           Book a Call
-        </a>
+        </CalendlyPopupLink>
       </div>
 
       {/* FUNNEL STAGES */}
@@ -352,15 +349,13 @@ export default function ChatGPTAdsAgencyPage() {
           <span className="section-label">// Get started</span>
           <h2 className="section-title">Be first on <em>ChatGPT.</em></h2>
           <p className={styles.ctaSub}>Book a free strategy call. We will map out exactly what a ChatGPT ad campaign looks like for your brand.</p>
-          <a
-            href="https://calendly.com/zaq-lengmedia/leng-media-intro-call"
-            target="_blank"
-            rel="noopener noreferrer"
+          <CalendlyPopupLink
+            href="https://calendly.com/zaq-lengmedia/leng-media-intro-call?utm_campaign=ChatGPT+Ads+Agency"
             className="btn-primary"
             style={{ fontSize: 12, padding: '18px 52px' }}
           >
             Book a Free Strategy Call
-          </a>
+          </CalendlyPopupLink>
           <p className={styles.ctaRisk}>No lock-in contracts. Response within 24 hours.</p>
         </ScrollReveal>
       </section>

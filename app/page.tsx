@@ -4,6 +4,7 @@ import Ticker from '@/components/Ticker'
 import ScrollReveal from '@/components/ScrollReveal'
 import Typewriter from '@/components/Typewriter'
 import ClientLogo from '@/components/ClientLogo'
+import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import Link from 'next/link'
 
 export const metadata = {
@@ -62,7 +63,7 @@ export default function Home() {
           <Typewriter />
           <p className={styles.heroTagline}>Performance marketing for ambitious brands. Human strategy, modern tools.</p>
           <div className={styles.heroCtas}>
-            <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary">Let&apos;s Talk</a>
+            <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/leng-media-intro-call?utm_campaign=Homepage+Hero" className="btn-primary">Let&apos;s Talk</CalendlyPopupLink>
             <Link href="#services" className="btn-ghost">Explore services <span>→</span></Link>
           </div>
         </div>
@@ -155,7 +156,7 @@ export default function Home() {
           <span className="section-label">// 04 — Get in touch</span>
           <h2 className="section-title">Want to <em>chat?</em></h2>
           <p className={styles.ctaSub}>Let&apos;s build something remarkable together</p>
-          <a href="https://calendly.com/zaq-lengmedia/leng-media-intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</a>
+          <CalendlyPopupLink href="https://calendly.com/zaq-lengmedia/leng-media-intro-call?utm_campaign=Homepage+Footer" className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</CalendlyPopupLink>
         </ScrollReveal>
       </section>
     </>
