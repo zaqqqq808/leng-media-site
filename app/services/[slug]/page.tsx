@@ -303,14 +303,14 @@ const SERVICES: Record<string, {
     num: '07',
     name: 'Website Building',
     metaTitle: 'Scroll Animation Website Design Agency | Custom Web Builds',
-    tagline: 'Scroll animation websites built in Next.js from just $500. Custom performance-first builds your customers will never forget.',
+    tagline: 'Scroll animation websites built in Next.js from just $2,000. Custom performance-first builds your customers will never forget.',
     metaDescription: 'Leng Media builds scroll animation websites and custom performance-first sites for ecommerce and service brands. Built in Next.js with CRM integration, SEO baked in from day one.',
     description: [
       'We build performance-first websites from scratch, starting with your commercial goals. What you see on this page is what we build for you. While your competitors run Squarespace templates, you get a fully custom site that loads faster, ranks higher and gets noticed.',
-      'Every site is SEO-ready and Core Web Vitals optimised from day one. CRM integration and backend architecture are available as add-ons. Projects from $500, delivered in days. Book a call and we will send a quote within 24 hours.',
+      'Every site is SEO-ready and Core Web Vitals optimised from day one. CRM integration and backend architecture are available as add-ons. Projects from $2,000, delivered in days. Book a call and we will send a quote within 24 hours.',
     ],
     outcomes: [
-      'Built in Next.js from $500, the same stack powering this site',
+      'Built in Next.js from $2,000, the same stack powering this site',
       'We start with your commercial goals, not what looks nice',
       'Fully custom build: no templates, no page builders, no Squarespace',
       'Scroll animations and transitions that make your brand impossible to forget',
