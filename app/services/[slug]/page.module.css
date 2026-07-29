@@ -650,6 +650,24 @@
   box-shadow: 0 0 28px rgba(212,255,0,0.45);
   transform: translateY(-1px);
 }
+.heroCtaBtnGhost {
+  display: inline-block;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 31px;
+  transition: border-color .2s, background .2s;
+}
+.heroCtaBtnGhost:hover {
+  border-color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.06);
+}
 .heroScarcity {
   display: inline-flex;
   align-items: center;

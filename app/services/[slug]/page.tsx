@@ -9,6 +9,7 @@ import WebsiteFaqAccordion from '@/components/WebsiteFaqAccordion'
 import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import ClientLogo from '@/components/ClientLogo'
 import WhatsAppLink from '@/components/WhatsAppLink'
+import ScrollToLink from '@/components/ScrollToLink'
 import StickyMobileCta from '@/components/StickyMobileCta'
 import styles from './page.module.css'
 
@@ -698,6 +699,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <p className={styles.tagline}>{s.tagline}</p>
           <div className={styles.heroCtas}>
             <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
+            <ScrollToLink targetId="examples" className={styles.heroCtaBtnGhost}>See Our Work</ScrollToLink>
           </div>
         </VideoScrollHeroWrapper>
       ) : (
@@ -717,7 +719,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       {/* EXAMPLES — interactive concept showcase */}
       {s.examples && (
-        <section className={styles.examples}>
+        <section id="examples" className={styles.examples}>
           <ScrollReveal className={styles.examplesHead}>
             <span className="section-label">// Examples of what we can do</span>
             <h2 className={styles.examplesTitle}>{s.examples.heading}</h2>

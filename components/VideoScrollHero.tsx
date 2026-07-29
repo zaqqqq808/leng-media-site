@@ -104,6 +104,7 @@ export default function VideoScrollHero({ children }: { children: React.ReactNod
         <div className={styles.vignette} />
         <div className={styles.overlay}>{children}</div>
         <div className={styles.scrollHint} aria-hidden>
+          <span className={styles.scrollHintText}>Scroll</span>
           <span className={styles.scrollHintArrow}>↓</span>
         </div>
       </div>
