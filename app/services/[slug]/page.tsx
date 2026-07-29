@@ -351,10 +351,10 @@ const SERVICES: Record<string, {
       intro: 'Interactive concepts we’ve built to show what’s possible: scroll-scrubbed video, real-time 3D, cinematic reveals. All live, all in the browser. Move your cursor, scroll, and play.',
       galleryUrl: 'https://scroll-animation-mockups.vercel.app',
       items: [
+        { name: 'EMPEROR: Spirits & Drinks', tag: 'AI pour video · Scroll-scrub', url: 'https://scroll-animation-mockups.vercel.app/04-alcohol-brand.html' },
+        { name: 'AURA: Robotics & Tech', tag: 'Real-time 3D · Cursor-tracking', url: 'https://scroll-animation-mockups.vercel.app/05-spline.html' },
         { name: 'PRIMA: Fine Jewellery', tag: 'Editorial · Scroll reveal', url: 'https://scroll-animation-mockups.vercel.app/09-prima.html' },
         { name: 'CHRYSANT: Home & Décor', tag: 'Real 3D model · Auto-rotating', url: 'https://scroll-animation-mockups.vercel.app/10-chrysant.html' },
-        { name: 'AURA: Robotics & Tech', tag: 'Real-time 3D · Cursor-tracking', url: 'https://scroll-animation-mockups.vercel.app/05-spline.html' },
-        { name: 'EMPEROR: Spirits & Drinks', tag: 'AI pour video · Scroll-scrub', url: 'https://scroll-animation-mockups.vercel.app/04-alcohol-brand.html' },
         { name: 'LUMA: Dental & Healthcare', tag: 'Interactive canvas mascot', url: 'https://scroll-animation-mockups.vercel.app/08-dental.html' },
         { name: 'SONIC: Product & Ecommerce', tag: 'Spin · Recolour · 3D commerce', url: 'https://scroll-animation-mockups.vercel.app/06-3d-product.html' },
         { name: 'AXIS: Brand & Agency', tag: 'Cinematic scroll journey', url: 'https://scroll-animation-mockups.vercel.app/07-scroll-pause.html' },
