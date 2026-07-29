@@ -357,7 +357,6 @@ const SERVICES: Record<string, {
         { name: 'PRIMA: Fine Jewellery', tag: 'Editorial · Scroll reveal', url: 'https://scroll-animation-mockups.vercel.app/09-prima.html' },
         { name: 'CHRYSANT: Home & Décor', tag: 'Real 3D model · Auto-rotating', url: 'https://scroll-animation-mockups.vercel.app/10-chrysant.html' },
         { name: 'LUMA: Dental & Healthcare', tag: 'Interactive canvas mascot', url: 'https://scroll-animation-mockups.vercel.app/08-dental.html' },
-        { name: 'SONIC: Product & Ecommerce', tag: 'Spin · Recolour · 3D commerce', url: 'https://scroll-animation-mockups.vercel.app/06-3d-product.html' },
         { name: 'AXIS: Brand & Agency', tag: 'Cinematic scroll journey', url: 'https://scroll-animation-mockups.vercel.app/07-scroll-pause.html' },
         { name: 'IGNITE: Fitness & Wellness', tag: '4K video scrub · Apple-style', url: 'https://scroll-animation-mockups.vercel.app/05-spin-class.html' },
         { name: 'VAULT: Crypto & Fintech', tag: 'Live ticker · Animated chart', url: 'https://scroll-animation-mockups.vercel.app/02-crypto.html' },
