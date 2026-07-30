@@ -1,6 +1,7 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 import { appendLeadRow } from '@/lib/googleSheets'
+import { sendMetaConversionEvent } from '@/lib/metaConversions'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -49,6 +50,18 @@ export async function POST(req: Request) {
       await appendLeadRow({ name, email, service: serviceLabel, message, source: 'Website form' })
     } catch (sheetError) {
       console.error('Google Sheets log failed (email was still sent):', sheetError)
+    }
+
+    // Server-side backup for the client-side fbq('Lead') call in
+    // ContactForm, which is unreliable in Instagram's in-app browser.
+    try {
+      await sendMetaConversionEvent({
+        eventName: 'Lead',
+        email,
+        eventSourceUrl: 'https://www.lengmedia.com/business-enquiry',
+      })
+    } catch (capiError) {
+      console.error('Failed to send Meta conversion event:', capiError)
     }
 
     return NextResponse.json({ success: true })

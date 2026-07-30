@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createHmac, timingSafeEqual } from 'crypto'
 import { appendLeadRow } from '@/lib/googleSheets'
+import { sendMetaConversionEvent } from '@/lib/metaConversions'
 
 // Verifies Calendly's HMAC-SHA256 webhook signature.
 // Header format: "t=<timestamp>,v1=<signature>"
@@ -51,6 +52,19 @@ export async function POST(req: Request) {
     })
   } catch (error) {
     console.error('Failed to log Calendly booking to sheet:', error)
+  }
+
+  // Server-side Schedule event: reports the booking to Meta directly,
+  // independent of whatever browser (including Instagram's in-app
+  // browser, where the client-side pixel is unreliable) the visitor used.
+  try {
+    await sendMetaConversionEvent({
+      eventName: 'Schedule',
+      email: payload?.email,
+      eventSourceUrl: 'https://www.lengmedia.com/services/website-builds',
+    })
+  } catch (error) {
+    console.error('Failed to send Meta conversion event:', error)
   }
 
   return NextResponse.json({ received: true })
