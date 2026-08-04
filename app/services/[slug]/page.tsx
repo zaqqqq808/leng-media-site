@@ -354,7 +354,7 @@ const SERVICES: Record<string, {
       items: [
         { name: 'EMPEROR: Spirits & Drinks', tag: 'AI pour video · Scroll-scrub', url: 'https://scroll-animation-mockups.vercel.app/04-alcohol-brand.html' },
         { name: 'AURA: Robotics & Tech', tag: 'Real-time 3D · Cursor-tracking', url: 'https://scroll-animation-mockups.vercel.app/05-spline.html' },
-        { name: 'PRIMA: Fine Jewellery', tag: 'Editorial · Scroll reveal', url: 'https://scroll-animation-mockups.vercel.app/09-prima.html' },
+        { name: 'SILVIA: Fine Silver', tag: 'Pinned hero · Layered parallax', url: 'https://scroll-animation-mockups.vercel.app/11-silvia.html' },
         { name: 'CHRYSANT: Home & Décor', tag: 'Real 3D model · Auto-rotating', url: 'https://scroll-animation-mockups.vercel.app/10-chrysant.html' },
         { name: 'LUMA: Dental & Healthcare', tag: 'Interactive canvas mascot', url: 'https://scroll-animation-mockups.vercel.app/08-dental.html' },
         { name: 'AXIS: Brand & Agency', tag: 'Cinematic scroll journey', url: 'https://scroll-animation-mockups.vercel.app/07-scroll-pause.html' },
