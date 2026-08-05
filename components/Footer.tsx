@@ -8,6 +8,7 @@ export default function Footer() {
         Leng. <span className={styles.logoSub}>MEDIA</span>
       </Link>
       <span className={styles.copy}>© {new Date().getFullYear()} Leng Media. All rights reserved.</span>
+      <Link href="/privacy" className={styles.privacyLink}>Privacy Policy</Link>
     </footer>
   )
 }

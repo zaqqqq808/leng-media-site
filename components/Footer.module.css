@@ -27,6 +27,16 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+.privacyLink {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  color: var(--grey-4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.privacyLink:hover { color: var(--neon); }
 
 @media (max-width: 900px) {
   .footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
