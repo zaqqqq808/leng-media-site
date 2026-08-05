@@ -39,6 +39,8 @@ export async function POST(req: Request) {
 
   const payload = body.payload
   const service = payload?.tracking?.utm_campaign || 'Unknown (direct Calendly link)'
+  // Only present if the invitee opted into SMS reminders when booking.
+  const phone = payload?.text_reminder_number || ''
 
   try {
     await appendLeadRow({
@@ -49,6 +51,9 @@ export async function POST(req: Request) {
         .map((qa: { question: string; answer: string }) => `${qa.question}: ${qa.answer}`)
         .join(' | ') || 'Calendly booking, no additional answers',
       source: 'Calendly booking',
+      phone,
+      // Left unset: the Apps Script sheet-watcher sends the WhatsApp
+      // follow-up for this row if a phone number is present.
     })
   } catch (error) {
     console.error('Failed to log Calendly booking to sheet:', error)

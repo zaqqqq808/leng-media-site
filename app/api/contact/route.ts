@@ -2,12 +2,13 @@ import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 import { appendLeadRow } from '@/lib/googleSheets'
 import { sendMetaConversionEvent } from '@/lib/metaConversions'
+import { normalisePhone } from '@/lib/whatsapp'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message, service } = await req.json()
+    const { name, email, phone, message, service } = await req.json()
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -47,7 +48,13 @@ export async function POST(req: Request) {
     })
 
     try {
-      await appendLeadRow({ name, email, service: serviceLabel, message, source: 'Website form' })
+      const normalisedPhone = phone ? normalisePhone(phone) : null
+      await appendLeadRow({
+        name, email, service: serviceLabel, message, source: 'Website form',
+        phone: normalisedPhone || '',
+        // Left unset: the Apps Script sheet-watcher sends the WhatsApp
+        // follow-up for this row if a phone number is present.
+      })
     } catch (sheetError) {
       console.error('Google Sheets log failed (email was still sent):', sheetError)
     }

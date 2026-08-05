@@ -92,7 +92,11 @@ async function processLead(leadgenId: string, formId?: string) {
       email: email || 'Unknown',
       service,
       source: `Meta lead form${formId ? ` (${formId})` : ''}`,
-      message: `Phone: ${rawPhone || 'none'} | ${whatsappStatus}`,
+      message: 'Meta Instant Form submission',
+      phone: phone || rawPhone || '',
+      // Already sent (or attempted) above, so the sheet-watcher script
+      // skips this row instead of messaging the lead a second time.
+      whatsappStatus,
     })
   } catch (err) {
     console.error('Sheet log failed:', err)

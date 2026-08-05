@@ -31,6 +31,7 @@ export default function ContactForm() {
     const data = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
       service: (form.elements.namedItem('service') as HTMLSelectElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
     }
@@ -65,6 +66,10 @@ export default function ContactForm() {
       <div className={styles.field}>
         <label className={styles.label}>Email</label>
         <input className={styles.input} type="email" name="email" placeholder="your@email.com" required disabled={status === 'sending'} />
+      </div>
+      <div className={styles.field}>
+        <label className={styles.label}>Phone <span style={{ opacity: 0.5, fontWeight: 400 }}>(optional, for WhatsApp)</span></label>
+        <input className={styles.input} type="tel" name="phone" placeholder="+44 7928 668478" disabled={status === 'sending'} />
       </div>
       <div className={styles.field}>
         <label className={styles.label}>What are you interested in?</label>
