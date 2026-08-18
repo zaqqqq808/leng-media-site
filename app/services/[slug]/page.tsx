@@ -353,13 +353,14 @@ const SERVICES: Record<string, {
       galleryUrl: 'https://scroll-animation-mockups.vercel.app',
       items: [
         { name: 'EMPEROR: Spirits & Drinks', tag: 'AI pour video · Scroll-scrub', url: 'https://scroll-animation-mockups.vercel.app/04-alcohol-brand.html' },
-        { name: 'AURA: Robotics & Tech', tag: 'Real-time 3D · Cursor-tracking', url: 'https://scroll-animation-mockups.vercel.app/05-spline.html' },
+        { name: 'MATRIX: Petroleum & Energy', tag: 'Cinematic reveal · Gold accents', url: 'https://scroll-animation-mockups.vercel.app/matrix-home.html' },
         { name: 'SILVIA: Fine Silver', tag: 'Pinned hero · Layered parallax', url: 'https://scroll-animation-mockups.vercel.app/11-silvia.html' },
         { name: 'CHRYSANT: Home & Décor', tag: 'Real 3D model · Auto-rotating', url: 'https://scroll-animation-mockups.vercel.app/10-chrysant.html' },
-        { name: 'LUMA: Dental & Healthcare', tag: 'Interactive canvas mascot', url: 'https://scroll-animation-mockups.vercel.app/08-dental.html' },
+        { name: 'IDEAL FEET: Health & Wellness', tag: 'Conversion-first · Scroll sequence', url: 'https://scroll-animation-mockups.vercel.app/idealfeet-home-b.html' },
         { name: 'AXIS: Brand & Agency', tag: 'Cinematic scroll journey', url: 'https://scroll-animation-mockups.vercel.app/07-scroll-pause.html' },
-        { name: 'IGNITE: Fitness & Wellness', tag: '4K video scrub · Apple-style', url: 'https://scroll-animation-mockups.vercel.app/05-spin-class.html' },
+        { name: 'PHG: Home Sauna & Recovery', tag: 'Ecommerce product page', url: 'https://scroll-animation-mockups.vercel.app/phg-product.html' },
         { name: 'VAULT: Crypto & Fintech', tag: 'Live ticker · Animated chart', url: 'https://scroll-animation-mockups.vercel.app/02-crypto.html' },
+        { name: 'COCOCHOCO: Hair & Beauty', tag: 'Editorial · Countdown offer', url: 'https://scroll-animation-mockups.vercel.app/cocochoco-home.html' },
       ],
     },
     portfolio: {
