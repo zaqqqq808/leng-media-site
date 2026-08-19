@@ -628,100 +628,6 @@ function TrafficChart() {
   )
 }
 
-function SearchPerformanceChart() {
-  const W = 860, H = 300, PL = 46, PR = 46, PT = 40, PB = 40
-  const cW = W - PL - PR, cH = H - PT - PB
-
-  // 14 weeks, 5/16 → 8/14 — Google Search Console: clicks + impressions
-  // compounding as SEO takes hold. Noisy week-to-week, up and to the right.
-  const data = [
-    { w: '5/16', clicks: 2,   impr: 90 },
-    { w: '5/23', clicks: 4,   impr: 180 },
-    { w: '5/30', clicks: 3,   impr: 260 },
-    { w: '6/6',  clicks: 9,   impr: 520 },
-    { w: '6/13', clicks: 15,  impr: 900 },
-    { w: '6/20', clicks: 21,  impr: 1350 },
-    { w: '6/27', clicks: 29,  impr: 1850 },
-    { w: '7/4',  clicks: 40,  impr: 2500 },
-    { w: '7/11', clicks: 53,  impr: 3300 },
-    { w: '7/18', clicks: 68,  impr: 4250 },
-    { w: '7/25', clicks: 87,  impr: 5150 },
-    { w: '8/1',  clicks: 104, impr: 6050 },
-    { w: '8/8',  clicks: 121, impr: 6900 },
-    { w: '8/14', clicks: 142, impr: 7650 },
-  ]
-
-  const maxClicks = 160
-  const maxImpr = 10000
-  const n = data.length
-
-  const x = (i: number) => PL + (i / (n - 1)) * cW
-  const yClicks = (v: number) => PT + cH - (v / maxClicks) * cH
-  const yImpr = (v: number) => PT + cH - (v / maxImpr) * cH
-
-  const clicksLine = data.map((d, i) => `${i === 0 ? 'M' : 'L'} ${x(i)} ${yClicks(d.clicks)}`).join(' ')
-  const imprLine = data.map((d, i) => `${i === 0 ? 'M' : 'L'} ${x(i)} ${yImpr(d.impr)}`).join(' ')
-  const clicksArea = `${clicksLine} L ${x(n - 1)} ${PT + cH} L ${x(0)} ${PT + cH} Z`
-
-  const clicksTicks = [0, 40, 80, 120, 160]
-  const imprTicks = [0, 2500, 5000, 7500, 10000]
-
-  return (
-    <svg viewBox={`0 0 ${W} ${H}`} style={{width:'100%',maxWidth:W,display:'block',margin:'0 auto'}} aria-label="Search Console clicks and impressions growing over 3 months">
-      <defs>
-        <linearGradient id="clicksAreaGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#d4ff00" stopOpacity="0.22" />
-          <stop offset="100%" stopColor="#d4ff00" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-
-      <rect x={PL} y={PT} width={cW} height={cH} fill="rgba(255,255,255,0.015)" rx="2" />
-
-      {/* Grid + left axis (clicks) */}
-      {clicksTicks.map(t => {
-        const y = yClicks(t)
-        return (
-          <g key={`c${t}`}>
-            <line x1={PL} y1={y} x2={W - PR} y2={y} stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
-            <text x={PL - 8} y={y + 3} textAnchor="end" fontFamily="'Courier New',monospace" fontSize="8.5" fill="rgba(212,255,0,0.55)">{t}</text>
-          </g>
-        )
-      })}
-      {/* Right axis (impressions) */}
-      {imprTicks.map(t => {
-        const y = yImpr(t)
-        return (
-          <text key={`i${t}`} x={W - PR + 8} y={y + 3} textAnchor="start" fontFamily="'Courier New',monospace" fontSize="8.5" fill="rgba(255,255,255,0.28)">
-            {t === 0 ? '0' : `${t / 1000}k`}
-          </text>
-        )
-      })}
-
-      <path d={clicksArea} fill="url(#clicksAreaGrad)" />
-      <path d={imprLine} fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
-      <path d={clicksLine} fill="none" stroke="#d4ff00" strokeWidth="1.8" />
-
-      {/* X-axis week labels — every other one to avoid crowding */}
-      {data.map((d, i) => i % 2 === 0 ? (
-        <text key={i} x={x(i)} y={PT + cH + 20} textAnchor="middle" fontFamily="'Courier New',monospace" fontSize="8" fill="rgba(255,255,255,0.28)">{d.w}</text>
-      ) : null)}
-
-      {/* Legend */}
-      <g>
-        <circle cx={PL + 4} cy={PT - 18} r="3" fill="#d4ff00" />
-        <text x={PL + 12} y={PT - 15} fontFamily="'Courier New',monospace" fontSize="8.5" letterSpacing="1" fill="rgba(212,255,0,0.85)">CLICKS</text>
-        <circle cx={PL + 78} cy={PT - 18} r="3" fill="rgba(255,255,255,0.5)" />
-        <text x={PL + 86} y={PT - 15} fontFamily="'Courier New',monospace" fontSize="8.5" letterSpacing="1" fill="rgba(255,255,255,0.5)">IMPRESSIONS</text>
-      </g>
-
-      {/* Footer note */}
-      <text x={W - PR} y={H - 4} textAnchor="end" fontFamily="'Courier New',monospace" fontSize="7" fill="rgba(255,255,255,0.15)" letterSpacing="1.5">
-        // GOOGLE SEARCH CONSOLE · 3 MONTHS
-      </text>
-    </svg>
-  )
-}
-
 export async function generateStaticParams() {
   return Object.keys(SERVICES).map(slug => ({ slug }))
 }
@@ -1039,7 +945,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </div>
           </ScrollReveal>
           <ScrollReveal delay={2}>
-            <SearchPerformanceChart />
+            <div className={styles.performanceImageWrap}>
+              <span className={styles.performanceImageLabel}>// Google Search Console · 3 months</span>
+              <img src="/gsc-search-performance.png" alt="Google Search Console: clicks and impressions climbing over 3 months" className={styles.performanceImage} />
+            </div>
           </ScrollReveal>
           <ScrollReveal delay={2}>
             <div className={styles.performanceImageWrap}>
