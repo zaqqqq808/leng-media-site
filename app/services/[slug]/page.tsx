@@ -956,6 +956,19 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <img src="/gsc-wordpress-switch.png" alt="Google Search Console clicks and impressions climbing after switching from WordPress to a custom build" className={styles.performanceImage} />
             </div>
           </ScrollReveal>
+          <ScrollReveal>
+            <div className={styles.performanceSubBlock}>
+              <span className="section-label">// Conversion rate</span>
+              <h2 className={styles.seoHeading}>Conversion rate on the rise.</h2>
+              <p className={styles.performanceCopy}>We keep improving after launch. Every week we split test and study heat maps to see which landing page performs better, then roll the winner out at scale.</p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={1}>
+            <div className={styles.performanceImageWrap}>
+              <span className={styles.performanceImageLabel}>// Conversion rate · Jan – Aug 2026</span>
+              <img src="/conversion-rate-growth.png" alt="Conversion rate climbing steadily from 0.2% in January to 1.4% by August after weekly split testing and CRO work" className={styles.performanceImage} />
+            </div>
+          </ScrollReveal>
         </section>
       )}
 

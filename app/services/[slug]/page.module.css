@@ -416,6 +416,14 @@
 @media (max-width: 768px) {
   .performanceImageWrap { padding: 16px 16px 20px; }
 }
+.performanceSubBlock {
+  margin-top: 88px;
+  padding-top: 56px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+@media (max-width: 768px) {
+  .performanceSubBlock { margin-top: 56px; padding-top: 40px; }
+}
 
 .seoPillarsGrid {
   display: grid;
