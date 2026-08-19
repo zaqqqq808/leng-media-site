@@ -3,7 +3,9 @@
 import { useEffect, useRef } from 'react'
 import styles from './VideoScrollHero.module.css'
 
-const FRAME_COUNT = 91
+// Frames 81-91 are cut: the AI-generated source flickers there (laces pop
+// on and off the shoe), so the scrub ends on the stable exploded view.
+const FRAME_COUNT = 80
 const framePath = (i: number) =>
   `/hero-frames/frame-${String(i + 1).padStart(3, '0')}.webp`
 

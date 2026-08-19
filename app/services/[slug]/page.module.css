@@ -340,6 +340,35 @@
 }
 .seoChart .seoCopy { color: var(--grey-5); }
 
+/* STATEMENT — website-builds only, big-type positioning line */
+.statementSection {
+  padding: 100px 52px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.statementLine {
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  font-size: clamp(24px, 3.6vw, 44px);
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  max-width: 900px;
+}
+.statementLine + .statementLine {
+  margin-top: 20px;
+}
+.statementLine em {
+  font-style: italic;
+  color: var(--ink-2);
+}
+.statementAccent {
+  color: var(--accent-ink);
+}
+@media (max-width: 768px) {
+  .statementSection { padding: 64px 24px; }
+}
+
 /* PERFORMANCE SECTION — website-builds only, SEO + CRO results chart */
 .performanceSection {
   padding: 96px 52px 100px;

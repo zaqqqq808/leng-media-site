@@ -305,7 +305,7 @@ const SERVICES: Record<string, {
     num: '07',
     name: 'Ecommerce Web Design Agency',
     metaTitle: 'Ecommerce Web Design Agency | Custom Shopify & Next.js Builds',
-    tagline: 'Scroll animation websites built in Next.js from just $2,000. Custom performance-first builds your customers will never forget.',
+    tagline: 'Custom ecommerce web design in Next.js from $2,000. Fast, mobile-first and built to convert.',
     metaDescription: 'Leng Media is an ecommerce web design agency building custom performance-first sites for Shopify, DTC and service brands in the USA and UK. Scroll animation, Next.js, CRM integration and SEO from day one.',
     description: [
       'We build performance-first websites from scratch, starting with your commercial goals. What you see on this page is what we build for you. While your competitors run Squarespace templates, you get a fully custom site that loads faster, ranks higher and gets noticed.',
@@ -313,13 +313,11 @@ const SERVICES: Record<string, {
     ],
     outcomes: [
       'Built in Next.js from $2,000, the same stack powering this site',
-      'We start with your commercial goals, not what looks nice',
       'Fully custom build: no templates, no page builders, no Squarespace',
-      'Scroll animations and transitions that make your brand impossible to forget',
+      'Scroll animations that make your brand impossible to forget',
       'SEO-ready and Core Web Vitals optimised from day one',
-      'CRM integration and backend architecture available as add-ons',
       'Mobile-first, fully responsive across all devices',
-      'Fixed quote within 24 hours of your call',
+      'CRM integration and backend architecture available as add-ons',
     ],
     offer: {
       heading: 'We’ll rebuild your homepage before you pay a penny.',
@@ -333,10 +331,10 @@ const SERVICES: Record<string, {
     related: ['direct-response','seo'],
     process: {
       steps: [
-        { num: '01', title: 'Discovery Call', body: 'We scope your project, understand your goals and agree on deliverables. You receive a fixed quote within 24 hours.', time: 'Day 1' },
-        { num: '02', title: 'Design', body: 'Full design in Figma. You review and approve before a single line of code is written.', time: 'Days 2–10' },
-        { num: '03', title: 'Build', body: 'Custom development in Next.js with regular updates, a staging environment and zero surprises.', time: 'Days 10–30' },
-        { num: '04', title: 'Launch', body: 'Final review, your green light, then we go live. 30 days of post-launch support included.', time: 'Day 30+' },
+        { num: '01', title: 'Discovery Call', body: 'A 20-minute call to scope your project. Fixed quote within 24 hours.', time: 'Day 1' },
+        { num: '02', title: 'Design', body: 'Full design in Figma. You approve before we write a line of code.', time: 'Days 2–10' },
+        { num: '03', title: 'Build', body: 'Custom Next.js build with regular updates and a staging environment.', time: 'Days 10–30' },
+        { num: '04', title: 'Launch', body: 'You give the green light, we go live. 30 days of support included.', time: 'Day 30+' },
       ],
     },
     websiteFaq: [
@@ -349,7 +347,7 @@ const SERVICES: Record<string, {
     ],
     examples: {
       heading: 'Examples of what we can do.',
-      intro: 'Interactive concepts we’ve built to show what’s possible: scroll-scrubbed video, real-time 3D, cinematic reveals. All live, all in the browser. Move your cursor, scroll, and play.',
+      intro: 'Real concepts, live in your browser. Scroll, click and play.',
       galleryUrl: 'https://scroll-animation-mockups.vercel.app',
       items: [
         { name: 'EMPEROR: Spirits & Drinks', tag: 'AI pour video · Scroll-scrub', url: 'https://scroll-animation-mockups.vercel.app/04-alcohol-brand.html' },
@@ -695,7 +693,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <VideoScrollHeroWrapper>
           <Link href="/#services" className={styles.back}>← All Services</Link>
           <p className={styles.num}>{s.num} / 07</p>
-          <h1 className={styles.title}>Ecommerce Web Design Agency</h1>
+          <h1 className={styles.title}>Websites worth staring at.</h1>
           <p className={styles.tagline}>{s.tagline}</p>
           <div className={styles.heroCtas}>
             <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
@@ -717,29 +715,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       <Ticker />
 
-      {/* EXAMPLES — interactive concept showcase */}
-      {s.examples && (
-        <section id="examples" className={styles.examples}>
-          <ScrollReveal className={styles.examplesHead}>
-            <span className="section-label">// Examples of what we can do</span>
-            <h2 className={styles.examplesTitle}>{s.examples.heading}</h2>
-            <p className={styles.examplesIntro}>{s.examples.intro}</p>
-          </ScrollReveal>
-          <div className={styles.examplesGrid}>
-            {s.examples.items.map((ex, i) => (
-              <ScrollReveal key={ex.name} delay={((i % 3) + 1) as 1|2|3}>
-                <a href={ex.url} target="_blank" rel="noopener noreferrer" className={styles.exCard}>
-                  <span className={styles.exNum}>{String(i + 1).padStart(2, '0')}</span>
-                  <span className={styles.exName}>{ex.name}</span>
-                  <span className={styles.exTag}>{ex.tag}</span>
-                </a>
-              </ScrollReveal>
-            ))}
-          </div>
+      {/* STATEMENT — website-builds only */}
+      {slug === 'website-builds' && (
+        <section className={styles.statementSection}>
           <ScrollReveal>
-            <a href={s.examples.galleryUrl} target="_blank" rel="noopener noreferrer" className={styles.examplesCta}>
-              View the full gallery →
-            </a>
+            <p className={styles.statementLine}>Some people need a <em>fancy animation</em>. Others don&apos;t.</p>
+            <p className={styles.statementLine}>But what everyone needs is a mobile-first, optimised site that <span className={styles.statementAccent}>converts</span>.</p>
           </ScrollReveal>
         </section>
       )}
@@ -796,6 +777,33 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <span className={styles.performanceImageLabel}>// Conversion rate · Jan – Aug 2026</span>
               <img src="/conversion-rate-growth.png" alt="Conversion rate climbing steadily from 0.2% in January to 1.4% by August after weekly split testing and CRO work" className={styles.performanceImage} />
             </div>
+          </ScrollReveal>
+        </section>
+      )}
+
+      {/* EXAMPLES — interactive concept showcase */}
+      {s.examples && (
+        <section id="examples" className={styles.examples}>
+          <ScrollReveal className={styles.examplesHead}>
+            <span className="section-label">// Examples of what we can do</span>
+            <h2 className={styles.examplesTitle}>{s.examples.heading}</h2>
+            <p className={styles.examplesIntro}>{s.examples.intro}</p>
+          </ScrollReveal>
+          <div className={styles.examplesGrid}>
+            {s.examples.items.map((ex, i) => (
+              <ScrollReveal key={ex.name} delay={((i % 3) + 1) as 1|2|3}>
+                <a href={ex.url} target="_blank" rel="noopener noreferrer" className={styles.exCard}>
+                  <span className={styles.exNum}>{String(i + 1).padStart(2, '0')}</span>
+                  <span className={styles.exName}>{ex.name}</span>
+                  <span className={styles.exTag}>{ex.tag}</span>
+                </a>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal>
+            <a href={s.examples.galleryUrl} target="_blank" rel="noopener noreferrer" className={styles.examplesCta}>
+              View the full gallery →
+            </a>
           </ScrollReveal>
         </section>
       )}
@@ -883,7 +891,43 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
-{/* PORTFOLIO — website showcase */}
+      {/* DELIVERABLES — website-builds only */}
+      {slug === 'website-builds' && (
+        <section className={styles.bodyFull}>
+          <ScrollReveal>
+            <span className="section-label">// Deliverables</span>
+            <ul className={styles.outcomes}>
+              {s.outcomes.map((o, i) => (
+                <ScrollReveal key={o} delay={(Math.min(i % 3 + 1, 3)) as 1|2|3}>
+                  <li className={styles.outcome}>
+                    <span className={styles.outcomeDot}>◆</span>{o}
+                  </li>
+                </ScrollReveal>
+              ))}
+            </ul>
+          </ScrollReveal>
+        </section>
+      )}
+
+      {/* TRUSTED BY — website-builds only */}
+      {slug === 'website-builds' && (
+        <section className={styles.clientsSection}>
+          <ScrollReveal style={{ marginBottom: 36 }}>
+            <span className="section-label">// Trusted by</span>
+          </ScrollReveal>
+          <ScrollReveal delay={2}>
+            <div className={styles.clientGrid}>
+              {CLIENTS.map(c => (
+                <div key={c.name} className={styles.clientLogo}>
+                  <ClientLogo name={c.name} domain={c.domain} />
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </section>
+      )}
+
+      {/* PORTFOLIO — website showcase */}
       {s.portfolio && (
         <section id="portfolio" className={styles.portfolio}>
           <ScrollReveal style={{ marginBottom: 56 }}>
@@ -933,42 +977,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
             </ScrollReveal>
           ))}
-        </section>
-      )}
-
-      {/* DELIVERABLES — website-builds only, shown after portfolio */}
-      {slug === 'website-builds' && (
-        <section className={styles.bodyFull}>
-          <ScrollReveal>
-            <span className="section-label">// Deliverables</span>
-            <ul className={styles.outcomes}>
-              {s.outcomes.map((o, i) => (
-                <ScrollReveal key={o} delay={(Math.min(i % 3 + 1, 3)) as 1|2|3}>
-                  <li className={styles.outcome}>
-                    <span className={styles.outcomeDot}>◆</span>{o}
-                  </li>
-                </ScrollReveal>
-              ))}
-            </ul>
-          </ScrollReveal>
-        </section>
-      )}
-
-      {/* TRUSTED BY — website-builds only */}
-      {slug === 'website-builds' && (
-        <section className={styles.clientsSection}>
-          <ScrollReveal style={{ marginBottom: 36 }}>
-            <span className="section-label">// Trusted by</span>
-          </ScrollReveal>
-          <ScrollReveal delay={2}>
-            <div className={styles.clientGrid}>
-              {CLIENTS.map(c => (
-                <div key={c.name} className={styles.clientLogo}>
-                  <ClientLogo name={c.name} domain={c.domain} />
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
         </section>
       )}
 
