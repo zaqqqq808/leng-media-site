@@ -731,29 +731,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <ScrollReveal>
             <span className="section-label">// Real results</span>
             <h2 className={styles.seoHeading}>A site that performs.</h2>
-            <p className={styles.performanceCopy}>Our sites perform in two ways. We rank them fast on Google with high-level SEO, then turn that traffic into sales with high-level CRO. You&apos;re not just buying a website. You&apos;re buying a mobile-first, high-performance growth engine.</p>
+            <p className={styles.performanceCopy}>Below is a client&apos;s Search Console after we rebuilt their site: 6.28K clicks and 448K impressions in three months. And because we split test and read heat maps every week, their conversion rate climbed from 0.2% to 1.1% and is still rising.</p>
           </ScrollReveal>
           <ScrollReveal delay={1}>
-            <div className={styles.performanceStats}>
-              <div className={styles.performanceStat}>
-                <span className={styles.performanceValue}>6.28K</span>
-                <span className={styles.performanceStatLabel}>Total clicks</span>
-              </div>
-              <div className={styles.performanceStat}>
-                <span className={styles.performanceValue}>448K</span>
-                <span className={styles.performanceStatLabel}>Total impressions</span>
-              </div>
-              <div className={styles.performanceStat}>
-                <span className={styles.performanceValue}>1.4%</span>
-                <span className={styles.performanceStatLabel}>Average CTR</span>
-              </div>
-              <div className={styles.performanceStat}>
-                <span className={styles.performanceValue}>12.6</span>
-                <span className={styles.performanceStatLabel}>Average position</span>
-              </div>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={2}>
             <div className={styles.performanceImageWrap}>
               <span className={styles.performanceImageLabel}>// Google Search Console · 3 months</span>
               <img src="/gsc-search-performance.png" alt="Google Search Console: clicks and impressions climbing over 3 months" className={styles.performanceImage} />
@@ -765,17 +745,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <img src="/gsc-wordpress-switch.png" alt="Google Search Console clicks and impressions climbing after switching from WordPress to a custom build" className={styles.performanceImage} />
             </div>
           </ScrollReveal>
-          <ScrollReveal>
-            <div className={styles.performanceSubBlock}>
-              <span className="section-label">// Conversion rate</span>
-              <h2 className={styles.seoHeading}>Conversion rate on the rise.</h2>
-              <p className={styles.performanceCopy}>We keep improving after launch. Every week we split test and study heat maps to see which landing page performs better, then roll the winner out at scale.</p>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={1}>
+          <ScrollReveal delay={2}>
             <div className={styles.performanceImageWrap}>
               <span className={styles.performanceImageLabel}>// Conversion rate · Jan – Aug 2026</span>
-              <img src="/conversion-rate-growth.png" alt="Conversion rate climbing steadily from 0.2% in January to 1.4% by August after weekly split testing and CRO work" className={styles.performanceImage} />
+              <img src="/conversion-rate-growth.png" alt="Conversion rate climbing steadily from 0.2% in January to 1.1% by August after weekly split testing and CRO work" className={styles.performanceImage} />
             </div>
           </ScrollReveal>
         </section>
