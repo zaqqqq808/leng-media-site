@@ -731,23 +731,26 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <ScrollReveal>
             <span className="section-label">// Real results</span>
             <h2 className={styles.seoHeading}>A site that performs.</h2>
-            <p className={styles.performanceCopy}>Below is a client&apos;s Search Console after we rebuilt their site: 6.28K clicks and 448K impressions in three months. And because we split test and read heat maps every week, their conversion rate climbed from 0.2% to 1.1% and is still rising.</p>
+            <p className={styles.performanceCopy}>Real screenshots from a real client, Ayla Property, before and after we rebuilt their site.</p>
           </ScrollReveal>
           <ScrollReveal delay={1}>
             <div className={styles.performanceImageWrap}>
               <span className={styles.performanceImageLabel}>// Google Search Console · 3 months</span>
+              <p className={styles.performanceImageCaption}>Three months after launch: 6.28K clicks and 448K impressions, still climbing week over week.</p>
               <img src="/gsc-search-performance.png" alt="Google Search Console: clicks and impressions climbing over 3 months" className={styles.performanceImage} />
             </div>
           </ScrollReveal>
           <ScrollReveal delay={2}>
             <div className={styles.performanceImageWrap}>
               <span className={styles.performanceImageLabel}>// Google Search Console · 6 months</span>
+              <p className={styles.performanceImageCaption}>We were already running Ayla Property&apos;s SEO on their old WordPress site. When we rebuilt it as a custom Next.js build in May, clicks and impressions jumped anyway — the platform itself was the bottleneck, not the strategy.</p>
               <img src="/gsc-wordpress-switch.png" alt="Google Search Console clicks and impressions climbing after switching from WordPress to a custom build" className={styles.performanceImage} />
             </div>
           </ScrollReveal>
           <ScrollReveal delay={2}>
             <div className={styles.performanceImageWrap}>
               <span className={styles.performanceImageLabel}>// Conversion rate · Jan – Aug 2026</span>
+              <p className={styles.performanceImageCaption}>Same site, same period. Weekly split testing and heat map reviews pushed conversion rate from 0.2% to 1.1% and rising.</p>
               <img src="/conversion-rate-growth.png" alt="Conversion rate climbing steadily from 0.2% in January to 1.1% by August after weekly split testing and CRO work" className={styles.performanceImage} />
             </div>
           </ScrollReveal>
