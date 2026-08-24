@@ -15,6 +15,7 @@ type Block =
 interface Post {
   slug: string
   title: string
+  metaTitle?: string
   description: string
   date: string
   dateISO: string
@@ -266,6 +267,7 @@ const POSTS: Record<string, Post> = {
   'how-to-start-an-ecommerce-business': {
     slug: 'how-to-start-an-ecommerce-business',
     title: 'How to Start an Ecommerce Business in 2026 (The 8 Step System)',
+    metaTitle: 'How to Start an Ecommerce Business in 2026',
     description: 'The exact 8 step system for starting an ecommerce business in 2026: product research, suppliers, store build, fulfilment, traffic, email and the legal bits.',
     date: '16 July 2026',
     dateISO: '2026-07-16',
@@ -461,12 +463,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = POSTS[slug]
   if (!post) return {}
   const url = `https://www.lengmedia.com/blog/${slug}`
+  const title = post.metaTitle ?? post.title
   return {
-    title: `${post.title} – Leng Media`,
+    title: `${title} – Leng Media`,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
-      title: `${post.title} – Leng Media`,
+      title: `${title} – Leng Media`,
       description: post.description,
       url,
       siteName: 'Leng Media',
@@ -475,7 +478,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${post.title} – Leng Media`,
+      title: `${title} – Leng Media`,
       description: post.description,
       images: ['/og-image.jpg'],
     },

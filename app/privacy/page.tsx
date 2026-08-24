@@ -4,7 +4,7 @@ import styles from './page.module.css'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy – Leng Media',
-  description: 'How Leng Media collects, uses and protects your data.',
+  description: 'How Leng Media collects, uses, stores and protects the personal data of visitors, leads and clients across our website and services.',
   robots: { index: true, follow: true },
 }
 

@@ -26,10 +26,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.lengmedia.com'),
   title: 'Leng Media – Performance Marketing Agency for Ecommerce Brands',
-  description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue driven growth strategy. London based agency trusted by Nat Geo Traveller, Skin+Me and leading DTC brands.',
+  description: 'London performance marketing agency scaling DTC brands through paid ads, AI solutions and SEO — trusted by Nat Geo Traveller and Skin+Me.',
   openGraph: {
     title: 'Leng Media – Performance Marketing Agency for Ecommerce Brands',
-    description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue driven growth strategy. London based agency trusted by Nat Geo Traveller, Skin+Me and leading DTC brands.',
+    description: 'London performance marketing agency scaling DTC brands through paid ads, AI solutions and SEO — trusted by Nat Geo Traveller and Skin+Me.',
     url: 'https://www.lengmedia.com',
     siteName: 'Leng Media',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Leng Media – Performance Marketing Agency for Ecommerce Brands' }],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Leng Media – Performance Marketing Agency for Ecommerce Brands',
-    description: 'We scale ecommerce brands through performance marketing, AI solutions and revenue driven growth strategy.',
+    description: 'London performance marketing agency scaling DTC brands through paid ads, AI solutions and SEO — trusted by Nat Geo Traveller and Skin+Me.',
     images: ['/og-image.jpg'],
   },
 }

@@ -92,7 +92,7 @@ const SERVICES: Record<string, {
     name: 'AI Chatbot Development Services',
     metaTitle: 'AI Chatbot Development Services | AI Automation Agency',
     tagline: 'AI chatbot development services for ecommerce and DTC brands. Custom AI chatbots for lead generation, AI agents for workflow automation, and product image revamping.',
-    metaDescription: 'Leng Media is an AI chatbot development company serving ecommerce and DTC brands in the USA and UK. Custom AI chatbot development services, AI agents for business process automation, and product image revamping.',
+    metaDescription: 'Leng Media builds AI chatbots and AI agents for ecommerce and DTC brands in the USA and UK, plus AI product image revamping.',
     description: [
       <>We have listed our core AI services below, but with the pace at which AI is evolving, new capabilities are emerging constantly. We stay at the forefront, testing and applying the latest tools with ecommerce and DTC brands always in mind. This is why we keep a regularly updated <Link href="/free-tools" style={{color:'var(--neon)',textDecoration:'underline'}}>AI for Ecommerce Cheat Sheet</Link> so you can stay current too.</>,
       'Our AI chatbots generate and qualify leads around the clock. They capture contact details, record data directly into Google Sheets or your CRM, and book meetings and appointments into your calendar without any human involvement. For ecommerce brands this means your pipeline keeps moving even while you sleep.',
@@ -125,12 +125,12 @@ const SERVICES: Record<string, {
         copy: 'We take your existing product photography and transform it into high converting campaign imagery using AI. Studio-quality visuals at a fraction of the cost. No photographer, no studio hire, no waiting weeks for a reshoot. We process your entire catalogue and deliver assets ready for ads, social media, and your website. Drag the slider to see the difference.',
       },
       chatbot: {
-        image: '/ai-chatbot-leads.png',
+        image: '/ai-chatbot-leads.webp',
         heading: 'AI Chatbot for Lead Generation',
         copy: 'Our AI chatbots qualify visitors, capture contact details, and book meetings straight into your calendar around the clock. Every lead is automatically logged to a Google Sheet or your CRM, so your sales team has full context before the first call. One closed deal per year covers the entire cost of the software. For ecommerce brands, the chatbot also handles FAQs, order queries, and post-purchase support without a single human touch.',
       },
       agents: {
-        image: '/ai-automation-make.png',
+        image: '/ai-automation-make.webp',
         heading: 'AI Agents for Business Automation',
         copy: 'AI agents are software that thinks and acts on your behalf. They monitor inboxes, process orders, update spreadsheets, respond to customer queries, generate reports, and escalate exceptions to a human only when necessary. For a growing ecommerce or D2C brand, this is the difference between hiring three additional team members or not. We map your existing workflows, identify the highest-value bottlenecks, and install AI agents that run in the background and save you hours every single day.',
       },
@@ -141,7 +141,7 @@ const SERVICES: Record<string, {
     name: 'Ecommerce PPC Agency',
     metaTitle: 'Ecommerce PPC Agency | Ecommerce Marketing Agency',
     tagline: 'The ecommerce PPC agency that fixes your funnel first, then drives consistent positive ROAS across Meta, TikTok and Google.',
-    metaDescription: 'Leng Media is an ecommerce PPC agency managing Google Ads, Meta and TikTok for Shopify and DTC brands in the USA and UK. We fix the funnel first, then drive consistent positive ROAS across every channel.',
+    metaDescription: 'Leng Media is an ecommerce PPC agency managing Google Ads, Meta and TikTok for Shopify and DTC brands in the USA and UK.',
     description: [
       'We fix the funnel first. Most agencies will happily take your money and drive traffic to a site that converts at 0.3%. We refuse to do that. Before a penny is spent on ads, we audit and improve your user experience by moving key purchase drivers above the fold, implementing reviews, FAQs and clear guarantees, and simplifying the path to purchase.',
       "We don't identify as a \"Facebook Agency\" or a \"PPC Agency.\" We identify as a Revenue Agency. We go where your customers are: Meta, TikTok, Google, or wherever the data points. We fit the platform to the strategy, not the other way around. Whether it's DTC, Ecom or Lead Generation, we'll have the answer.",
@@ -174,7 +174,7 @@ const SERVICES: Record<string, {
     name: 'Ecommerce SEO Agency',
     metaTitle: 'Ecommerce SEO Agency | Shopify SEO Services',
     tagline: 'The ecommerce SEO agency for Shopify and DTC brands in the USA and UK. Based in London. We rank you for transactional keywords, grow organic revenue, and get your brand cited by AI.',
-    metaDescription: 'Leng Media is an ecommerce SEO agency based in London, serving Shopify and DTC brands in the USA and UK. Shopify SEO services covering technical SEO, collection page optimisation, link building and AI citation strategy.',
+    metaDescription: 'Leng Media is an ecommerce SEO agency in London, serving Shopify and DTC brands in the USA and UK with technical SEO and link building.',
     description: [
       'Ecommerce SEO is not the same as regular SEO. For a Shopify store or DTC brand, the pages that drive revenue are your collection pages and product pages. Informational blog content sits at the top of the funnel, and in 2026 AI has already taken that territory. We focus entirely on transactional keywords where people are ready to buy. That is where rankings convert directly into revenue.',
       'We cover the full stack: technical SEO, collection and product page optimisation, and link building that actually moves domain authority. We research and identify relevant contacts in your industry, create genuinely linkable assets worth pointing to, and build authority through editorial outreach and digital PR. The result is a site that earns trust over time and compounds in organic traffic.',
@@ -227,7 +227,7 @@ const SERVICES: Record<string, {
     name: 'Lead Generation Agency',
     metaTitle: 'Lead Generation Agency | Performance Based Lead Gen',
     tagline: 'The lead generation agency that only gets paid when you do. Zero monthly retainer, revenue share or fixed CPA.',
-    metaDescription: 'Leng Media is a performance based lead generation agency for high ticket businesses in the USA and UK. Zero monthly retainer. You fund the ad spend, we build the creatives and manage the campaigns.',
+    metaDescription: 'Leng Media is a performance based lead generation agency for high ticket businesses. Zero retainer — you fund the ad spend.',
     description: [
       'This service is built for high ticket businesses. Trading and investment coaches, online course creators, business consultants, property educators, financial advisors. If your product or service sells for £2,000 or more and you need a consistent pipeline of qualified prospects, this is designed for you.',
       'The model is straightforward. You fund the ad spend directly. We build the creatives, write the copy, set up the landing pages and manage the campaigns. No monthly retainer. We agree a revenue share or fixed cost per acquisition and we only earn when you do. If we do not perform, we do not eat.',
@@ -250,7 +250,7 @@ const SERVICES: Record<string, {
     name: 'Fractional CMO Services',
     metaTitle: 'Fractional CMO Services for Ecommerce & DTC Brands',
     tagline: 'Fractional CMO services for ecommerce and DTC brands in the USA and UK. Senior marketing leadership without the full-time salary.',
-    metaDescription: 'Leng Media provides fractional CMO services for ecommerce and DTC brands in the USA and UK. An outsourced fractional CMO covering strategy, media buying, team management and full execution. From £15,000/month.',
+    metaDescription: 'Leng Media provides fractional CMO services for ecommerce and DTC brands in the USA and UK. From £15,000/month.',
     description: [
       'Most brands find us at the same point. Revenue is growing, marketing is working at some level, but there is no one senior enough to own it. The founder is still signing off on creative. The junior team has no north star. A full time CMO at £200k feels premature. That is the gap a fractional CMO fills, and it is what we do.',
       'We have helped many brands scale through fractional CMO, with clients regularly exceeding their growth targets. We are now applying those same skills internally and launching our own brands. We are transparent about the progress and results, so you can see exactly what we are capable of before committing to anything.',
@@ -284,7 +284,7 @@ const SERVICES: Record<string, {
     name: 'White Label Marketing Agency',
     metaTitle: 'White Label Marketing Agency | Agency Fulfilment',
     tagline: 'Scale your agency without increasing your headcount.',
-    metaDescription: 'Leng Media is a white label marketing agency for agencies that need a trusted execution partner. AI, paid media and CRO delivered under your brand with full NDA and weekly reports.',
+    metaDescription: 'Leng Media is a white label marketing agency for agencies that need a trusted execution partner, delivered under your brand.',
     description: [
       'Leng Media acts as your silent execution partner. When your internal resources are stretched or you land a client requiring specialised skills you don\'t have in house, we step in and integrate seamlessly to deliver white label excellence, so you never have to turn down a contract again.',
       'We do the work. You get the credit. You receive weekly white label reports and analysis while maintaining 100% control of the client relationship. We can also execute campaigns and train your junior staff to take them over.',
@@ -304,9 +304,9 @@ const SERVICES: Record<string, {
   'website-builds': {
     num: '07',
     name: 'Ecommerce Web Design Agency',
-    metaTitle: 'Ecommerce Web Design Agency | Custom Shopify & Next.js Builds',
+    metaTitle: 'Ecommerce Web Design Agency',
     tagline: 'Custom ecommerce web design in Next.js from $2,000. Fast, mobile-first and built to convert.',
-    metaDescription: 'Leng Media is an ecommerce web design agency building custom performance-first sites for Shopify, DTC and service brands in the USA and UK. Scroll animation, Next.js, CRM integration and SEO from day one.',
+    metaDescription: 'Leng Media builds custom performance-first ecommerce sites for Shopify and DTC brands. Scroll animation, Next.js, SEO from day one.',
     description: [
       'We build performance-first websites from scratch, starting with your commercial goals. What you see on this page is what we build for you. While your competitors run Squarespace templates, you get a fully custom site that loads faster, ranks higher and gets noticed.',
       'Every site is SEO-ready and Core Web Vitals optimised from day one. CRM integration and backend architecture are available as add-ons. Projects from $2,000, delivered in days. Book a call and we will send a quote within 24 hours.',

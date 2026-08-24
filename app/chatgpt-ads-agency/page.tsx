@@ -8,11 +8,11 @@ import styles from './page.module.css'
 
 export const metadata: Metadata = {
   title: 'ChatGPT Ads Agency | AI Ads Agency – Leng Media',
-  description: 'Leng Media is a ChatGPT ads agency and AI ads agency for ecommerce and DTC brands. We run ads inside ChatGPT via OpenAI and use AI to build smarter creatives across Meta, TikTok and Google.',
+  description: 'Leng Media is a ChatGPT ads agency for ecommerce and DTC brands, running ads inside ChatGPT via OpenAI and across Meta, TikTok and Google.',
   alternates: { canonical: 'https://www.lengmedia.com/chatgpt-ads-agency' },
   openGraph: {
     title: 'ChatGPT Ads Agency | AI Ads Agency – Leng Media',
-    description: 'Leng Media is a ChatGPT ads agency and AI ads agency for ecommerce and DTC brands. We run ads inside ChatGPT via OpenAI and use AI to build smarter creatives across Meta, TikTok and Google.',
+    description: 'Leng Media is a ChatGPT ads agency for ecommerce and DTC brands, running ads inside ChatGPT via OpenAI and across Meta, TikTok and Google.',
     url: 'https://www.lengmedia.com/chatgpt-ads-agency',
     siteName: 'Leng Media',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'ChatGPT Ads Agency – Leng Media' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ChatGPT Ads Agency | AI Ads Agency – Leng Media',
-    description: 'Leng Media is a ChatGPT ads agency and AI ads agency for ecommerce and DTC brands. We run ads inside ChatGPT via OpenAI and use AI to build smarter creatives across Meta, TikTok and Google.',
+    description: 'Leng Media is a ChatGPT ads agency for ecommerce and DTC brands, running ads inside ChatGPT via OpenAI and across Meta, TikTok and Google.',
     images: ['/og-image.jpg'],
   },
 }

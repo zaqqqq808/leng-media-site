@@ -4,7 +4,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'PPC AI Skills for Claude – Leng Media',
-  description: 'Free Claude AI skills for PPC and paid media professionals. Install these skills into Claude Code to automate keyword research, ad copy, bid management and more.',
+  description: 'Free Claude AI skills for PPC and paid media professionals to automate keyword research, ad copy and bid management.',
+  alternates: { canonical: 'https://www.lengmedia.com/free-tools/ppc-ai-skills' },
 }
 
 const SKILLS = [

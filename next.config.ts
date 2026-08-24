@@ -27,6 +27,7 @@ const nextConfig: NextConfig = {
       { source: '/agency-assist', destination: '/services/agency-assist', permanent: true },
       { source: '/agency-assist/', destination: '/services/agency-assist', permanent: true },
       { source: '/ai-dashboard', destination: '/services/ai-solutions', permanent: true },
+      { source: '/ai-cheat-sheet', destination: '/free-tools/ai-cheat-sheet', permanent: true },
 
       // ── Old WordPress dashboard module pages → ecommerce protocol ──
       { source: '/dashboard/module-1-research', destination: '/ecommerce-protocol', permanent: true },

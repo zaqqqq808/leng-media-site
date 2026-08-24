@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'Leng Media – Performance Marketing & AI Agency for Ecommerce Brands',
-  description: 'London performance marketing agency. We scale DTC brands through paid ads, AI solutions and SEO — trusted by Nat Geo Traveller, Skin+Me and leading ecommerce brands.',
+  description: 'London performance marketing agency scaling DTC brands through paid ads, AI solutions and SEO — trusted by Nat Geo Traveller and Skin+Me.',
   alternates: {
     canonical: 'https://www.lengmedia.com',
   },

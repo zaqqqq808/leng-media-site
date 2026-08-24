@@ -5,10 +5,15 @@ import VideoTestimonialsCarousel from './VideoTestimonialsCarousel'
 
 export const metadata = {
   title: 'The Ecommerce Protocol: Ecommerce Course & 1-on-1 Mentorship',
-  description: 'The ecommerce course with live 1-on-1 mentorship and coaching. Learn how to start an ecommerce business, from supplier to first sale within 7 days of launch — or your money back.',
+  description: 'The ecommerce course with live 1-on-1 mentorship. Learn to start an ecommerce business, first sale in 7 days — or your money back.',
+  alternates: { canonical: 'https://www.lengmedia.com/ecommerce-protocol' },
   openGraph: {
     title: 'The Ecommerce Protocol: Ecommerce Course & 1-on-1 Mentorship',
     description: 'The ecommerce course with live 1-on-1 mentorship and coaching. From supplier to first sale within 7 days of launch — or your money back.',
+    url: 'https://www.lengmedia.com/ecommerce-protocol',
+    siteName: 'Leng Media',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'The Ecommerce Protocol – Leng Media' }],
+    type: 'website',
   },
 }
 
