@@ -387,7 +387,8 @@
   .performanceSection { padding: 60px 24px 72px; }
 }
 .performanceImageWrap {
-  margin-top: 40px;
+  margin: 40px auto 0;
+  max-width: 720px;
   padding: 24px 24px 28px;
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.08);
@@ -409,7 +410,7 @@
   border-radius: 3px;
 }
 @media (max-width: 768px) {
-  .performanceImageWrap { padding: 16px 16px 20px; }
+  .performanceImageWrap { max-width: 100%; padding: 16px 16px 20px; }
 }
 .seoPillarsGrid {
   display: grid;
