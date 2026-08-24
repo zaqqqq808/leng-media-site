@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void
+    gtag?: (...args: unknown[]) => void
     Calendly?: { initPopupWidget: (opts: { url: string }) => void }
   }
 }
@@ -34,6 +35,7 @@ function ensureScheduleListener() {
   window.addEventListener('message', e => {
     if (e.origin === 'https://calendly.com' && e.data?.event === 'calendly.event_scheduled') {
       window.fbq?.('track', 'Schedule')
+      window.gtag?.('event', 'generate_lead', { method: 'calendly' })
     }
   })
 }

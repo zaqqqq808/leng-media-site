@@ -4,6 +4,10 @@ import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import styles from '@/app/business-enquiry/page.module.css'
 
+declare global {
+  interface Window { gtag?: (...args: unknown[]) => void }
+}
+
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
 const SERVICES = [
@@ -44,9 +48,10 @@ export default function ContactForm() {
       })
 
       if (res.ok) {
-        // Lead is reported server-side (see /api/contact) instead of here,
-        // so it isn't double-counted and still fires from Instagram's
-        // in-app browser where client-side pixel calls are unreliable.
+        // Meta Lead is reported server-side (see /api/contact) so it isn't
+        // double-counted and still fires from Instagram's in-app browser.
+        // GA4 has no server-side hook here, so we fire it client-side.
+        window.gtag?.('event', 'generate_lead', { service: data.service })
         setStatus('success')
         form.reset()
       } else {
