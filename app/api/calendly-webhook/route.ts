@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { createHmac, timingSafeEqual } from 'crypto'
 import { appendLeadRow } from '@/lib/googleSheets'
 import { sendMetaConversionEvent } from '@/lib/metaConversions'
+import { sendGa4Event, fallbackClientId } from '@/lib/ga4'
 
 // Verifies Calendly's HMAC-SHA256 webhook signature.
 // Header format: "t=<timestamp>,v1=<signature>"
@@ -70,6 +71,27 @@ export async function POST(req: Request) {
     })
   } catch (error) {
     console.error('Failed to send Meta conversion event:', error)
+  }
+
+  // Server-side GA4 conversion. The client-side gtag call only sees bookings
+  // made in the popup embedded on our own page, so direct calendly.com links
+  // (WhatsApp, Instagram bio, email) never reached GA4 at all. utm_content
+  // carries the real GA client_id when the visit started on the site.
+  try {
+    const gaClientId = payload?.tracking?.utm_content
+    const gaSessionId = payload?.tracking?.utm_term
+    await sendGa4Event({
+      name: 'generate_lead',
+      clientId: gaClientId || fallbackClientId(payload?.email || 'anonymous'),
+      sessionId: gaSessionId,
+      params: {
+        method: 'calendly',
+        service,
+        booking_origin: gaClientId ? 'site' : 'direct_calendly_link',
+      },
+    })
+  } catch (error) {
+    console.error('Failed to send GA4 conversion event:', error)
   }
 
   return NextResponse.json({ received: true })

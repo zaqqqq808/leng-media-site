@@ -26,6 +26,28 @@ function loadCalendlyAssets(): Promise<void> {
   return assetsPromise
 }
 
+// GA4 identifies a visitor by client_id (in the _ga cookie, "GA1.1.<id>.<ts>")
+// and their visit by session_id (in the per-property _ga_<id> cookie,
+// "GS1.1.<session_id>.<n>..."). We forward both to Calendly as utm_content
+// and utm_term so the webhook can report the booking against this same
+// visitor and session — without them GA4 files the conversion as a brand
+// new "(direct)" user rather than crediting the channel that sent them.
+function gaIdsFromCookie(): { clientId: string | null; sessionId: string | null } {
+  const client = document.cookie.match(/(?:^|;\s*)_ga=GA\d\.\d\.(\d+\.\d+)/)
+  // Two formats in the wild: GS1 stores "GS1.1.<id>." and the current GS2
+  // stores "GS2.1.s<id>$" — hence the optional "s".
+  const session = document.cookie.match(/(?:^|;\s*)_ga_[A-Z0-9]+=GS\d\.\d\.s?(\d+)/)
+  return { clientId: client?.[1] ?? null, sessionId: session?.[1] ?? null }
+}
+
+function withGaIds(href: string): string {
+  const { clientId, sessionId } = gaIdsFromCookie()
+  if (!clientId) return href
+  const params = new URLSearchParams({ utm_content: clientId })
+  if (sessionId) params.set('utm_term', sessionId)
+  return `${href}${href.includes('?') ? '&' : '?'}${params.toString()}`
+}
+
 // One listener per page regardless of how many buttons are mounted,
 // so a single booking never fires more than one Schedule event.
 let listenerAdded = false
@@ -34,8 +56,10 @@ function ensureScheduleListener() {
   listenerAdded = true
   window.addEventListener('message', e => {
     if (e.origin === 'https://calendly.com' && e.data?.event === 'calendly.event_scheduled') {
+      // GA4 is reported from the Calendly webhook instead of here: it catches
+      // every booking (including direct calendly.com links) and GA4 has no
+      // event-id dedup, so firing in both places would double-count.
       window.fbq?.('track', 'Schedule')
-      window.gtag?.('event', 'generate_lead', { method: 'calendly' })
     }
   })
 }
@@ -57,10 +81,13 @@ export default function CalendlyPopupLink({ href, className, style, children }: 
     // Mid-funnel signal: CTA click. Confirmed bookings fire Schedule separately.
     window.fbq?.('track', 'Lead')
     await loadCalendlyAssets()
+    const url = withGaIds(href)
     if (window.Calendly) {
-      window.Calendly.initPopupWidget({ url: href })
+      window.Calendly.initPopupWidget({ url })
     } else {
-      window.open(href, '_blank', 'noopener,noreferrer')
+      // Booking completes in a separate tab, so no postMessage comes back
+      // here — the webhook is what reports this one.
+      window.open(url, '_blank', 'noopener,noreferrer')
     }
   }
 
