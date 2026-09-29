@@ -1,9 +1,5 @@
 'use client'
 
-declare global {
-  interface Window { fbq?: (...args: unknown[]) => void }
-}
-
 interface Props {
   href: string
   className?: string

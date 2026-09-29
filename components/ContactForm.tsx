@@ -4,10 +4,6 @@ import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import styles from '@/app/business-enquiry/page.module.css'
 
-declare global {
-  interface Window { gtag?: (...args: unknown[]) => void }
-}
-
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
 const SERVICES = [

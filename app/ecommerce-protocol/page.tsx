@@ -2,6 +2,8 @@ import Link from 'next/link'
 import styles from './page.module.css'
 import FaqAccordion from './FaqAccordion'
 import VideoTestimonialsCarousel from './VideoTestimonialsCarousel'
+import JsonLd from '@/components/JsonLd'
+import { breadcrumbJsonLd, faqJsonLd } from '@/lib/seo'
 
 export const metadata = {
   title: 'The Ecommerce Protocol: Ecommerce Course & 1-on-1 Mentorship',
@@ -101,10 +103,11 @@ const VIDEO_TESTIMONIALS = [
 export default function EcommerceProtocol() {
   return (
     <div className={styles.page}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
-      />
+      <JsonLd data={[
+        courseJsonLd,
+        faqJsonLd(FAQS),
+        breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'The Ecommerce Protocol', path: '/ecommerce-protocol' }]),
+      ]} />
 
       {/* ── HERO ── */}
       <section className={styles.hero}>
@@ -496,6 +499,19 @@ export default function EcommerceProtocol() {
           <div className={styles.midCta} style={{marginTop: 64}}>
             <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
           </div>
+        </div>
+      </section>
+
+      {/* ── FREE GUIDES ── */}
+      <section className={styles.guides}>
+        <div className={styles.container}>
+          <span className={styles.sectionLabel}>// NOT READY YET? START HERE</span>
+          <ul className={styles.guideList}>
+            <li><Link href="/blog/how-to-start-an-ecommerce-business" className={styles.guideLink}>How to start an ecommerce business in 2026 →</Link></li>
+            <li><Link href="/blog/how-to-start-dropshipping" className={styles.guideLink}>How to start dropshipping: an honest guide →</Link></li>
+            <li><Link href="/free-tools/ai-cheat-sheet" className={styles.guideLink}>Free AI for Ecommerce Cheat Sheet →</Link></li>
+            <li><Link href="/ai-course" className={styles.guideLink}>AI for Ecommerce Course →</Link></li>
+          </ul>
         </div>
       </section>
 

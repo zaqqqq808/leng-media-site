@@ -8,10 +8,17 @@ export default clerkMiddleware(async (auth, req) => {
   }
 })
 
+// Only the routes that use Clerk run through this middleware. Marketing
+// pages are static HTML and skip it, so they're served straight from the
+// CDN without an extra hop on every request.
 export const config = {
   matcher: [
-    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-    '/(api|trpc)(.*)',
+    '/members/:path*',
+    '/login/:path*',
+    '/sign-in/:path*',
+    '/sign-up/:path*',
+    '/join/:path*',
+    '/api/grant-access/:path*',
     '/__clerk/:path*',
   ],
 }

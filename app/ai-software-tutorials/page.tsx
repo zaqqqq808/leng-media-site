@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import styles from '../ecommerce-protocol/page.module.css'
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'AI for Ecom: Cheat Sheet Tutorials – Leng Media',
   description: 'Video walkthroughs for every AI tool in the Leng Media cheat sheet. Applied to ecommerce — not generic content creator fluff. See the software in action.',
-  alternates: { canonical: 'https://www.lengmedia.com/ai-software-tutorials' },
-}
+  path: '/ai-software-tutorials',
+})
 
 const VIDEOS = [
   {

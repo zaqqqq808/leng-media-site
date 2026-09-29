@@ -4,6 +4,7 @@ import Ticker from '@/components/Ticker'
 import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import styles from './page.module.css'
 import type { Metadata } from 'next'
+import { POSTS_BY_DATE } from '@/lib/blog-posts'
 
 export const metadata: Metadata = {
   title: 'Blog – Leng Media | AI & Ecommerce Growth',
@@ -18,41 +19,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
 }
-
-export const POSTS = [
-  {
-    slug: 'how-to-start-an-ecommerce-business',
-    title: 'How to Start an Ecommerce Business in 2026 (The 8 Step System)',
-    description: 'The exact 8 step system for starting an ecommerce business in 2026: product research, suppliers, store build, fulfilment, traffic, email and the legal bits.',
-    date: '16 July 2026',
-    readTime: '11 min',
-    category: 'Ecommerce',
-  },
-  {
-    slug: 'how-to-start-dropshipping',
-    title: 'How to Start Dropshipping in 2026 (An Honest Guide)',
-    description: 'The standard dropshipping playbook, the real margins nobody shows you, and what we would build instead in 2026.',
-    date: '16 July 2026',
-    readTime: '9 min',
-    category: 'Ecommerce',
-  },
-  {
-    slug: 'best-ai-chatbot-for-ecommerce',
-    title: 'Best AI Chatbot for Ecommerce in 2026',
-    description: 'Tidio, Gorgias, ManyChat or a custom build? We compare the leading ecommerce AI chatbot platforms and explain which is right for your store.',
-    date: '29 May 2026',
-    readTime: '9 min',
-    category: 'AI',
-  },
-  {
-    slug: 'what-is-an-ai-automation-agency',
-    title: 'What Is an AI Automation Agency?',
-    description: 'What an AI automation agency actually does, who needs one, and how to choose the right one for your ecommerce or DTC brand.',
-    date: '29 May 2026',
-    readTime: '7 min',
-    category: 'AI',
-  },
-]
 
 export default function Blog() {
   return (
@@ -74,7 +40,7 @@ export default function Blog() {
           <span className="section-label">// Latest articles</span>
         </ScrollReveal>
         <div className={styles.postList}>
-          {POSTS.map((post, i) => (
+          {POSTS_BY_DATE.map((post, i) => (
             <ScrollReveal key={post.slug} delay={(Math.min(i + 1, 4)) as 1 | 2 | 3 | 4}>
               <Link href={`/blog/${post.slug}`} className={styles.postRow}>
                 <div className={styles.postMeta}>

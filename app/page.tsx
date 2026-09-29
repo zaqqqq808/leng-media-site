@@ -6,14 +6,13 @@ import Typewriter from '@/components/Typewriter'
 import ClientLogo from '@/components/ClientLogo'
 import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import Link from 'next/link'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'Leng Media – Performance Marketing & AI Agency for Ecommerce Brands',
   description: 'London performance marketing agency scaling DTC brands through paid ads, AI solutions and SEO — trusted by Nat Geo Traveller and Skin+Me.',
-  alternates: {
-    canonical: 'https://www.lengmedia.com',
-  },
-}
+  path: '/',
+})
 
 const SERVICES = [
   { num:'01', slug:'direct-response',    name:'Direct Response',    desc:'Meta Ads & creative strategy that converts and scales.' },

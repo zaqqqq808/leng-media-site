@@ -1,14 +1,6 @@
 'use client'
 import { useEffect } from 'react'
 
-declare global {
-  interface Window {
-    fbq?: (...args: unknown[]) => void
-    gtag?: (...args: unknown[]) => void
-    Calendly?: { initPopupWidget: (opts: { url: string }) => void }
-  }
-}
-
 let assetsPromise: Promise<void> | null = null
 function loadCalendlyAssets(): Promise<void> {
   if (assetsPromise) return assetsPromise

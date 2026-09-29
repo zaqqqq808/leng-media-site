@@ -4,7 +4,6 @@ import { appendLeadRow } from '@/lib/googleSheets'
 import { sendMetaConversionEvent } from '@/lib/metaConversions'
 import { normalisePhone } from '@/lib/whatsapp'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: Request) {
   try {
@@ -15,6 +14,9 @@ export async function POST(req: Request) {
     }
 
     const serviceLabel = service || 'General enquiry'
+    // Created per request, not at import: a missing key then fails this one
+    // request instead of crashing every build that imports the route.
+    const resend = new Resend(process.env.RESEND_API_KEY)
 
     await resend.emails.send({
       from: 'Leng Media Contact Form <noreply@lengmedia.com>',

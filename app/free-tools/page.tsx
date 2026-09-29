@@ -2,12 +2,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Ticker from '@/components/Ticker'
 import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import styles from './page.module.css'
-import type { Metadata } from 'next'
+import { pageMetadata, breadcrumbJsonLd } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Free Growth Tools – Leng Media',
   description: 'Free ecommerce growth tools, ad spec cheat sheets and AI guides used by our top performing clients. No email required — download and apply immediately.',
-}
+  path: '/free-tools',
+})
 
 const TOOLS = [
   {
@@ -52,6 +54,7 @@ const TOOLS = [
 export default function FreeTools() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Free Tools', path: '/free-tools' }])} />
       <section className={styles.hero}>
         <div className={styles.heroGrid} />
         <div className={styles.heroScanlines} />

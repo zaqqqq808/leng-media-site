@@ -24,3 +24,8 @@ npm-debug.log*
 homepage-preview.html
 portfolio-lengmedia-desktop.jpg
 portfolio-lengmedia-mobile.jpg
+.env*
+
+# typescript / next generated (rewritten on every build; churns every commit)
+*.tsbuildinfo
+next-env.d.ts

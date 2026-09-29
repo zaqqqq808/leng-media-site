@@ -26,41 +26,9 @@
   background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.7) 100%);
   pointer-events: none; z-index: 1;
 }
-.dataTags { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
-.dataTag {
-  position: absolute;
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  color: rgba(212,255,0,0.35);
-  letter-spacing: 1.5px;
-  white-space: nowrap;
-}
-.dataTag::before { content: '[ '; }
-.dataTag::after  { content: ' ]'; }
-.dt1 { top: 18%; right: 52%; animation: dtFloat 8s ease-in-out infinite; }
-.dt2 { bottom: 28%; right: 48%; animation: dtFloat 11s ease-in-out infinite reverse; }
-.dt3 { top: 70%; right: 10%; animation: dtFloat 9s ease-in-out infinite 2s; }
-.dt4 { top: 20%; right: 8%; animation: dtFloat 7s ease-in-out infinite 1s; }
 @keyframes dtFloat { 0%,100%{transform:translateY(0);opacity:.35} 50%{transform:translateY(-8px);opacity:.6} }
-
 .heroContent { flex: 0 0 auto; width: min(52%, 620px); position: relative; z-index: 10; }
-
-.heroSys {
-  font-family: var(--font-mono), monospace;
-  font-size: 10px; color: var(--grey-4); letter-spacing: 2px;
-  margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
-  opacity: 0; animation: fadeUp 0.7s 0.1s ease forwards;
-}
-.accent { color: var(--neon); }
-.progressWrap { display: inline-flex; align-items: center; gap: 6px; }
-.progressBar { width: 72px; height: 3px; background: var(--grey-3); overflow: hidden; }
-.progressFill {
-  height: 100%; width: 0%; background: var(--neon);
-  animation: progressLoad 2s 0.8s ease forwards; box-shadow: 0 0 8px var(--neon);
-}
 @keyframes progressLoad { from{width:0%} to{width:82%} }
-.progressPct { font-size: 8px; color: var(--neon); }
-
 .heroLine1 {
   display: block; font-family: var(--font-serif), serif; font-style: normal; font-weight: 300;
   font-size: clamp(90px, 11.5vw, 148px); line-height: 0.88; color: var(--white); letter-spacing: -3px;
@@ -103,7 +71,6 @@
 }
 @-webkit-keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
 @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
-
 .blobWrap {
   flex: 1;
   position: relative;
@@ -112,7 +79,6 @@
   pointer-events: none;
   margin: -130px -52px -80px 0;
 }
-
 .heroFade {
   position: absolute;
   bottom: 0;
@@ -123,7 +89,6 @@
   pointer-events: none;
   z-index: 4;
 }
-
 /* ── SERVICES ── */
 .services { padding: 110px 52px; background: var(--bg); border-top: 1px solid var(--line); }
 .servicesHeader { text-align: center; margin-bottom: 64px; }
@@ -153,7 +118,6 @@
 }
 .serviceCard:hover { background: #2e2e2e; }
 .serviceCard:hover::after { transform: scaleX(1); }
-.scFull { grid-column: 1 / -1; }
 .scGold { background: #2b2716; }
 .scGold:hover { background: #332d18; }
 .scGold::after { background: #FFB700; }
@@ -167,7 +131,6 @@
 .scArrow { position: absolute; bottom: 22px; right: 24px; font-family: var(--font-mono),monospace; font-size: 14px; color: rgba(255,255,255,0.22); transition: color .3s,transform .3s; }
 .serviceCard:hover .scArrow { color: var(--neon); transform: translate(3px,-3px); }
 .scGold:hover .scArrow { color: #FFB700; }
-
 /* ── STATS ── */
 .stats { display: grid; grid-template-columns: repeat(4,1fr); background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .stat { padding: 46px 26px; text-align: center; border-right: 1px solid var(--line-soft); }
@@ -175,7 +138,6 @@
 .statNum { font-family: var(--font-inter),sans-serif; font-weight: 700; font-size: clamp(34px,3.8vw,51px); color: var(--ink); line-height: 1; }
 .statNum em { font-style: normal; color: var(--accent-ink); }
 .statLabel { font-family: var(--font-mono),monospace; font-size: 7px; letter-spacing: 1.5px; color: var(--ink-3); text-transform: uppercase; margin-top: 6px; display: block; }
-
 /* ── CLIENTS ── */
 .clients { padding: 110px 52px; background: var(--bg); text-align: center; }
 .clientGrid {
@@ -198,7 +160,6 @@
 .clientLogo:hover :global(img),
 .clientLogo:hover :global(svg) { opacity: 0.85; }
 .clientLogo:hover :global(span) { color: rgba(255,255,255,0.85); }
-
 /* ── RESOURCES ── */
 .resources { padding: 110px 52px; background: var(--bg); border-top: 1px solid var(--line); text-align: center; }
 .resourcesLeft { margin-bottom: 52px; }
@@ -211,7 +172,6 @@
 .badgeFree { color: var(--accent-ink); border: 1px solid var(--accent-ink-soft); }
 .badgeSoon { color: var(--ink-3); border: 1px solid var(--line); }
 .badgePaid { color: #FFB700; border: 1px solid rgba(255,183,0,0.35); }
-
 /* ── CONTACT CTA ── */
 .cta { padding: 140px 52px; background: var(--off-black); text-align: center; border-top: 1px solid rgba(255,255,255,0.12); position: relative; overflow: hidden; }
 .cta::before {
@@ -222,13 +182,11 @@
   white-space: nowrap; pointer-events: none; letter-spacing: -4px; line-height: 1;
 }
 .ctaSub { font-family: var(--font-mono),monospace; font-size: 10px; letter-spacing: 3px; color: var(--grey-5); text-transform: uppercase; margin: 16px 0 52px; }
-
 /* ── RESPONSIVE ── */
 @media (max-width: 1100px) {
   .servicesGrid { grid-template-columns: repeat(2,1fr); }
   .servicesGoldRow { grid-template-columns: repeat(2,1fr); }
 }
-
 @media (max-width: 900px) {
   .hero { padding: 96px 24px 64px; flex-direction: column; min-height: 100svh; align-items: flex-start; }
   .heroContent { width: 100%; max-width: 100%; }
@@ -238,7 +196,12 @@
   .heroTagline { margin-top: 20px; }
   .heroCtas { gap: 14px; margin-top: 40px; flex-wrap: wrap; }
   /* iPhone/Safari fix: disable fade-in animations entirely on mobile */
-  .heroLine1, .heroLine2, .heroDivider, .heroPrompt, .heroTagline, .heroCtas {
+  .heroLine1,
+.heroLine2,
+.heroDivider,
+.heroPrompt,
+.heroTagline,
+.heroCtas {
     opacity: 1;
     -webkit-animation: none;
     animation: none;
@@ -267,9 +230,9 @@
   .clientGrid { grid-template-columns: repeat(2,1fr); background: var(--line-soft); gap: 1px; }
   .clientLogo { padding: 32px 20px; min-height: 120px; border: none; background: var(--surface); }
   .clientLogo:nth-child(3n),
-  .clientLogo:nth-child(2n),
-  .clientLogo:nth-last-child(-n+3),
-  .clientLogo:nth-last-child(-n+2) { border: none; }
+.clientLogo:nth-child(2n),
+.clientLogo:nth-last-child(-n+3),
+.clientLogo:nth-last-child(-n+2) { border: none; }
   .clientLogo[data-domain="skinandme.com"] { display: none; }
   .clientLogo[data-domain="fox.com"] { order: -1; }
   .resources { padding: 64px 24px; }

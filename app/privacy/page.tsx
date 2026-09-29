@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import styles from './page.module.css'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Privacy Policy – Leng Media',
   description: 'How Leng Media collects, uses, stores and protects the personal data of visitors, leads and clients across our website and services.',
-  robots: { index: true, follow: true },
-}
+  path: '/privacy',
+})
 
 export default function PrivacyPolicy() {
   return (

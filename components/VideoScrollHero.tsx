@@ -71,19 +71,36 @@ export default function VideoScrollHero({ children }: { children: React.ReactNod
     }
 
     const onScroll = () => {
+      loadRest()
       cancelAnimationFrame(rafRef.current)
       rafRef.current = requestAnimationFrame(update)
     }
 
-    // Load frame 0 first for instant paint, then the rest in order
     const load = (i: number) => {
       const img = new Image()
       img.src = framePath(i)
       img.onload = () => { if (i === pendingFrame || currentFrame === -1) render() }
       images[i] = img
+      return img
     }
-    load(0)
-    for (let i = 1; i < FRAME_COUNT; i++) load(i)
+
+    // Frame 0 is already on screen via the server-rendered poster. The other
+    // 79 frames (~3 MB) wait until the page is idle, or until the visitor
+    // starts scrolling, so they don't compete with the rest of the page load.
+    let restStarted = false
+    let idleHandle: number | undefined
+    const loadRest = () => {
+      if (restStarted) return
+      restStarted = true
+      for (let i = 1; i < FRAME_COUNT; i++) load(i)
+    }
+    load(0).onload = () => {
+      render()
+      // Safari has no requestIdleCallback; fall back to a short timeout there.
+      idleHandle = typeof window.requestIdleCallback === 'function'
+        ? window.requestIdleCallback(loadRest, { timeout: 2500 })
+        : window.setTimeout(loadRest, 1200)
+    }
 
     resize()
     update()
@@ -91,6 +108,10 @@ export default function VideoScrollHero({ children }: { children: React.ReactNod
     window.addEventListener('resize', resize)
 
     return () => {
+      if (idleHandle !== undefined) {
+        if (typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(idleHandle)
+        else window.clearTimeout(idleHandle)
+      }
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', resize)
       cancelAnimationFrame(rafRef.current)
@@ -100,6 +121,10 @@ export default function VideoScrollHero({ children }: { children: React.ReactNod
   return (
     <div ref={containerRef} className={styles.container}>
       <div className={styles.sticky}>
+        {/* First frame as a real image: visible before any JS runs, and the
+            canvas (transparent until it draws) paints the same frame over it. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={framePath(0)} alt="" aria-hidden className={styles.poster} fetchPriority="high" />
         <canvas ref={canvasRef} className={styles.canvas} />
         <div className={styles.grid} />
         <div className={styles.scanlines} />

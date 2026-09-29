@@ -1,16 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './page.module.css'
-import type { Metadata } from 'next'
+import { pageMetadata, breadcrumbJsonLd } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'GDN Ad Specs Cheat Sheet – Leng Media',
   description: 'Every Google Display Network ad size, format and spec you need in one clean reference sheet. Free to download.',
-}
+  path: '/free-tools/gdn-ad-specs',
+})
 
 export default function GDNCheatSheet() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Free Tools', path: '/free-tools' }, { name: 'GDN Ad Specs Cheat Sheet', path: '/free-tools/gdn-ad-specs' }])} />
       <section className={styles.hero}>
         <div className={styles.heroGrid} />
         <div className={styles.heroScanlines} />

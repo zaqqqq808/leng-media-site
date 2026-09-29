@@ -1,17 +1,20 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { SignInButton, SignUpButton, UserButton, useAuth } from '@clerk/nextjs'
 import styles from './Nav.module.css'
+import { SERVICE_LINKS } from '@/lib/site-links'
+
+// Sign In / Sign Up are plain links to the Clerk pages rather than Clerk's
+// modal buttons, so the login system only loads where it's used (members,
+// login, checkout) instead of on every marketing page.
 
 export default function Nav() {
-  const { isSignedIn } = useAuth()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', fn)
+    window.addEventListener('scroll', fn, { passive: true })
     return () => window.removeEventListener('scroll', fn)
   }, [])
 
@@ -33,20 +36,23 @@ export default function Nav() {
         {/* Desktop links */}
         <ul className={styles.links}>
           <li><Link href="/">Home</Link></li>
-          <li><Link href="/#services">Services</Link></li>
+          <li className={styles.hasMenu}>
+            <Link href="/#services" aria-haspopup="true">Services</Link>
+            <div className={styles.dropdown}>
+              <ul className={styles.dropdownInner}>
+                {SERVICE_LINKS.map(l => (
+                  <li key={l.href}><Link href={l.href}>{l.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+          </li>
           <li><Link href="/blog">Blog</Link></li>
           <li><Link href="/free-tools">Resources</Link></li>
           <li><Link href="/ecommerce-protocol" className={styles.course}>Ecom Launch Protocol</Link></li>
           <li><Link href="/business-enquiry" className={styles.enquiry}>Business Enquiry</Link></li>
           <li className={styles.authControls}>
-            {isSignedIn ? (
-              <UserButton />
-            ) : (
-              <>
-                <SignInButton mode="modal"><button className={styles.signIn}>Sign In</button></SignInButton>
-                <SignUpButton mode="modal"><button className={styles.signUp}>Sign Up</button></SignUpButton>
-              </>
-            )}
+            <Link href="/login" className={styles.signIn}>Sign In</Link>
+            <Link href="/sign-up" className={styles.signUp}>Sign Up</Link>
           </li>
         </ul>
 
@@ -64,7 +70,14 @@ export default function Nav() {
       <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ''}`}>
         <ul className={styles.mobileLinks}>
           <li><Link href="/" onClick={close}>Home</Link></li>
-          <li><Link href="/#services" onClick={close}>Services</Link></li>
+          <li>
+            <Link href="/#services" onClick={close}>Services</Link>
+            <ul className={styles.mobileSubLinks}>
+              {SERVICE_LINKS.map(l => (
+                <li key={l.href}><Link href={l.href} onClick={close}>{l.label}</Link></li>
+              ))}
+            </ul>
+          </li>
           <li><Link href="/blog" onClick={close}>Blog</Link></li>
           <li><Link href="/free-tools" onClick={close}>Resources</Link></li>
           <li><Link href="/ecommerce-protocol" className={styles.mobileCourse} onClick={close}>Ecom Launch Protocol</Link></li>

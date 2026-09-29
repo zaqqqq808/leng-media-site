@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import styles from './page.module.css'
-import type { Metadata } from 'next'
+import { pageMetadata, breadcrumbJsonLd } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'AI for Ecommerce Cheat Sheet – Leng Media',
   description: 'The exact AI tools and prompts we use to grow ecommerce brands faster. Free reference sheet — no email required.',
-}
+  path: '/free-tools/ai-cheat-sheet',
+})
 
 const SECTIONS = [
   {
@@ -39,6 +41,7 @@ const SECTIONS = [
 export default function AICheatSheet() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Free Tools', path: '/free-tools' }, { name: 'AI for Ecommerce Cheat Sheet', path: '/free-tools/ai-cheat-sheet' }])} />
       <section className={styles.hero}>
         <div className={styles.heroGrid} />
         <div className={styles.heroScanlines} />

@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import styles from '../ecommerce-protocol/page.module.css'
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'AI for Ecommerce Course – Leng Media',
   description: 'Live 1-on-1 AI sessions with a performance marketing agency. We show you exactly how to apply AI to your ecommerce brand — copy, ads, SEO, support, and product images.',
-  alternates: { canonical: 'https://www.lengmedia.com/ai-course' },
-}
+  path: '/ai-course',
+})
 
 const WHAT_YOU_GET = [
   { num: '01', tag: 'LIVE SESSION',  name: 'Direct 1-on-1 Time',        desc: 'A 60-minute Zoom session with us. We look at your actual store, your actual ad account, and tell you exactly what to do. No theory.' },

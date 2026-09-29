@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Space_Mono, Inter } from 'next/font/google'
 import Script from 'next/script'
-import { ClerkProvider } from '@clerk/nextjs'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -51,6 +50,7 @@ const jsonLd = {
       '@id': 'https://www.lengmedia.com/#organization',
       name: 'Leng Media',
       url: 'https://www.lengmedia.com',
+      logo: 'https://www.lengmedia.com/apple-icon.png',
       description: 'Performance marketing agency for ecommerce brands. We scale DTC brands through paid media, SEO, AI solutions and revenue driven growth strategy.',
       address: {
         '@type': 'PostalAddress',
@@ -70,7 +70,6 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider afterSignOutUrl="/">
     <html lang="en" className={`${cormorant.variable} ${spaceMono.variable} ${inter.variable}`}>
       <body>
         {/* Meta Pixel */}
@@ -105,6 +104,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
       </body>
     </html>
-    </ClerkProvider>
   )
 }

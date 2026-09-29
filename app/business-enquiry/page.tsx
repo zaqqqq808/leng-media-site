@@ -3,13 +3,13 @@ import ScrollReveal from '@/components/ScrollReveal'
 import ContactForm from '@/components/ContactForm'
 import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import styles from './page.module.css'
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Business Enquiry – Leng Media',
   description: 'Book a discovery call with the Leng Media team. Tell us about your goals and we\'ll show you how we can help.',
-  alternates: { canonical: 'https://www.lengmedia.com/business-enquiry' },
-}
+  path: '/business-enquiry',
+})
 
 const CALENDLY_URL = 'https://calendly.com/zaq-lengmedia/leng-media-intro-call'
 

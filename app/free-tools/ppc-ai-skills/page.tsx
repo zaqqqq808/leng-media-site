@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import styles from './page.module.css'
-import type { Metadata } from 'next'
+import { pageMetadata, breadcrumbJsonLd } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'PPC AI Skills for Claude – Leng Media',
   description: 'Free Claude AI skills for PPC and paid media professionals to automate keyword research, ad copy and bid management.',
-  alternates: { canonical: 'https://www.lengmedia.com/free-tools/ppc-ai-skills' },
-}
+  path: '/free-tools/ppc-ai-skills',
+})
 
 const SKILLS = [
   {
@@ -86,6 +87,7 @@ const SKILLS = [
 export default function PPCAISkills() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Free Tools', path: '/free-tools' }, { name: 'PPC AI Skills for Claude', path: '/free-tools/ppc-ai-skills' }])} />
       <section className={styles.hero}>
         <div className={styles.heroGrid} />
         <div className={styles.heroScanlines} />

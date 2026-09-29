@@ -16,6 +16,16 @@
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
+/* Frame 0, server-rendered so the hero isn't black while JS loads */
+.poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Canvas renders the frame sequence on desktop */
 .canvas {
   position: absolute;

@@ -5,6 +5,8 @@ import Ticker from '@/components/Ticker'
 import WebsiteFaqAccordion from '@/components/WebsiteFaqAccordion'
 import CalendlyPopupLink from '@/components/CalendlyPopupLink'
 import styles from './page.module.css'
+import JsonLd from '@/components/JsonLd'
+import { breadcrumbJsonLd } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'ChatGPT Ads Agency | AI Ads Agency – Leng Media',
@@ -102,6 +104,7 @@ const FAQ = [
 export default function ChatGPTAdsAgencyPage() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'ChatGPT Ads Agency', path: '/chatgpt-ads-agency' }])} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

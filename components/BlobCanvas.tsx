@@ -341,13 +341,31 @@ export default function BlobCanvas() {
       }
 
       t += .022
-      raf = requestAnimationFrame(frame)
+      // Keep animating only while on screen; with reduced motion, stop after
+      // one fully-drawn frame so the blob still appears, just static.
+      if (visible && !reduced) raf = requestAnimationFrame(frame)
+      else running = false
     }
+
+    // Pause the loop when the blob scrolls out of view, instead of redrawing
+    // gradients and particles 60 times a second for nobody.
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    let visible = true
+    let running = true
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting
+      if (visible && !running && !reduced) {
+        running = true
+        raf = requestAnimationFrame(frame)
+      }
+    })
+    observer.observe(canvas)
 
     window.addEventListener('resize', resize)
     setTimeout(resize, 50)
     frame()
     return () => {
+      observer.disconnect()
       window.removeEventListener('resize', resize)
       cancelAnimationFrame(raf)
     }
