@@ -1,0 +1,79 @@
+.form { display: flex; flex-direction: column; }
+
+.section {
+  display: grid; grid-template-columns: 300px 1fr; gap: 64px;
+  padding: 56px 0; border-bottom: 1px solid var(--line);
+}
+.sectionHead { position: sticky; top: 100px; align-self: start; }
+.num {
+  display: inline-block; font-family: var(--font-mono), monospace; font-size: 11px; letter-spacing: 2px;
+  color: var(--black); background: var(--neon); padding: 3px 8px; margin-bottom: 14px;
+}
+.sectionTitle {
+  font-family: var(--font-serif), serif; font-weight: 300; font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1; letter-spacing: -1px; color: var(--ink);
+}
+.intro { font-size: 14px; line-height: 1.7; color: var(--ink-2); margin-top: 14px; }
+
+.fields { display: flex; flex-direction: column; gap: 26px; }
+.field { display: flex; flex-direction: column; gap: 9px; border: 0; padding: 0; margin: 0; min-width: 0; }
+.field legend { padding: 0; margin-bottom: 9px; }
+.label { font-family: var(--font-inter), sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.4; }
+.req { color: var(--neon); }
+.opt { font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-3); margin-left: 6px; }
+.help { font-size: 12.5px; color: var(--ink-3); margin-top: -4px; }
+
+.input {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+  color: var(--ink); font-family: var(--font-inter), sans-serif; font-size: 15px;
+  padding: 14px 16px; outline: none; width: 100%;
+  transition: border-color .2s, box-shadow .2s;
+}
+.input::placeholder { color: #797C80; }
+.input:focus { border-color: var(--accent-ink-soft); box-shadow: 0 0 0 3px rgba(212,255,0,0.10); }
+.input[type="date"] { color-scheme: dark; max-width: 240px; }
+.textarea { min-height: 120px; resize: vertical; line-height: 1.6; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none;
+  border: 1px solid var(--line); background: var(--surface); border-radius: 100px;
+  padding: 10px 16px; font-size: 13.5px; color: var(--ink-2);
+  transition: border-color .2s, color .2s, background .2s;
+}
+.chip:hover { border-color: rgba(255,255,255,0.25); color: var(--ink); }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip:has(input:focus-visible) { box-shadow: 0 0 0 3px rgba(212,255,0,0.25); }
+.chipOn { border-color: var(--neon); color: var(--ink); background: rgba(212,255,0,0.08); }
+.chipOn::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--neon); }
+
+.declare {
+  display: grid; grid-template-columns: 22px 1fr; gap: 14px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); padding: 18px 20px; border-radius: 4px;
+  font-size: 14px; line-height: 1.6; color: var(--ink-2);
+}
+.declare:has(input:checked) { border-color: var(--accent-ink-soft); color: var(--ink); }
+.declare input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--neon); }
+
+.signature { font-family: var(--font-serif), serif; font-size: 24px; padding: 12px 16px; }
+.small { font-size: 12px; color: var(--ink-3); line-height: 1.6; }
+.error { color: #f87171; font-size: 14px; line-height: 1.6; }
+.linkBtn { background: none; border: 0; color: var(--neon); text-decoration: underline; cursor: pointer; font: inherit; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.done { padding: 72px 0 96px; max-width: 720px; }
+.doneTitle {
+  font-family: var(--font-serif), serif; font-weight: 300; font-size: clamp(34px, 4.4vw, 56px);
+  line-height: 1.02; letter-spacing: -1px; color: var(--ink); margin-bottom: 32px;
+}
+.doneMeta { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ink-3); margin-bottom: 24px; }
+.doneMeta div { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.doneMeta dt { font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+.doneMeta dd { font-family: var(--font-mono), monospace; font-size: 14px; color: var(--ink); word-break: break-all; }
+.doneText { font-size: 15px; line-height: 1.7; color: var(--ink-2); margin-bottom: 28px; }
+
+@media (max-width: 900px) {
+  .section { grid-template-columns: 1fr; gap: 26px; padding: 44px 0; }
+  .sectionHead { position: static; }
+  .doneMeta { grid-template-columns: 1fr; }
+}

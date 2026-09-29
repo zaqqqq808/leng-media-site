@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
         <div className={styles.heroContent}>
           <p className={styles.sys}><span className={styles.accent}>SYS:</span> LEGAL // DATA PROTECTION</p>
           <h1 className={styles.title}>Privacy Policy.</h1>
-          <p className={styles.updated}>Last updated: 5 August 2026</p>
+          <p className={styles.updated}>Last updated: 29 September 2026</p>
         </div>
       </section>
 
@@ -31,6 +31,7 @@ export default function PrivacyPolicy() {
         <ul className={styles.list}>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>Name, email address and phone number, when you submit a contact form, book a call, or complete a Meta lead ad</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>The content of any message you send us, including via our enquiry form or WhatsApp</li>
+          <li className={styles.listItem}><span className={styles.bullet}>◆</span>If you are a client, the answers you give in our project brief and project update forms, your typed signature, and the time, IP address and browser details of each submission</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>Account details if you sign up or sign in, including your email address and authentication data</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>Payment and billing details if you purchase a product from us, processed and stored directly by our payment provider, Stripe, not by us</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>Technical data such as your IP address, browser type, device type and pages visited, collected automatically via analytics and advertising tools</li>
@@ -43,6 +44,7 @@ export default function PrivacyPolicy() {
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>To process payments for any products or services you purchase</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>To measure how our website and advertising perform, and improve them</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>To send you information you have requested, such as a quote or follow-up message</li>
+          <li className={styles.listItem}><span className={styles.bullet}>◆</span>To keep a signed, timestamped record of what was agreed on a project (the brief, approvals and change requests) that both you and we hold a copy of</li>
         </ul>
         <p className={styles.para}>We do not sell your personal data to third parties.</p>
 
@@ -53,7 +55,7 @@ export default function PrivacyPolicy() {
           <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Meta (Facebook/Instagram) Pixel and Conversions API</strong> — measures the performance of our advertising and helps us show relevant ads. Where technically possible, personal identifiers such as your email address are cryptographically hashed before being sent to Meta</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Calendly</strong> — manages call bookings</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>WhatsApp Business</strong> — if you choose to message us on WhatsApp, that conversation is subject to WhatsApp&apos;s own privacy policy</li>
-          <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Resend</strong> — delivers transactional emails, such as notifying us of your enquiry</li>
+          <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Resend</strong> — delivers transactional emails, such as notifying us of your enquiry or sending you a copy of a project record</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Google Workspace</strong> — we keep a record of enquiries and bookings in a private, access-controlled spreadsheet</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Stripe</strong> — processes payments securely; we do not see or store your full card details</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Clerk</strong> — manages account sign-in for members-only areas of the site</li>
@@ -66,7 +68,7 @@ export default function PrivacyPolicy() {
 
         <h2 className={styles.h2}>How long we keep your data</h2>
         <p className={styles.para}>
-          We keep enquiry and booking records for as long as reasonably necessary to respond to you and maintain our business records, and no longer than we have a legitimate reason to. You can ask us to delete your data at any time, as set out below.
+          We keep enquiry and booking records for as long as reasonably necessary to respond to you and maintain our business records, and no longer than we have a legitimate reason to. Project records (briefs, approvals and change requests) are kept for the duration of the project and for up to six years afterwards, as evidence of what was agreed. You can ask us to delete your data at any time, as set out below.
         </p>
 
         <h2 className={styles.h2}>Your rights</h2>
