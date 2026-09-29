@@ -57,6 +57,7 @@ const jsonLd = {
         addressLocality: 'London',
         addressCountry: 'GB',
       },
+      sameAs: ['https://www.instagram.com/lengmedia.ai/'],
     },
     {
       '@type': 'WebSite',
