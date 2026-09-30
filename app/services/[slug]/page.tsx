@@ -30,6 +30,25 @@ const CLIENTS = [
   { name: 'Chesneys',                     domain: 'chesneys.co.uk' },
 ]
 
+// Website-builds headline numbers. Every figure is measured: Ayla Property
+// from GSC and their analytics, Ideal Feet from Lighthouse (mobile) before
+// and after the rebuild.
+const BUILD_PROOF = [
+  { value: '0.2% → 1.1%', label: 'Conversion rate after weekly split testing', client: 'Ayla Property' },
+  { value: '6.28K', label: 'Organic clicks in the first 3 months', client: 'Ayla Property' },
+  { value: '100', label: 'Mobile Lighthouse score, up from 67', client: 'Ideal Feet' },
+  { value: '1.9s', label: 'To load on mobile, down from 35.4s', client: 'Ideal Feet' },
+]
+
+const BUILD_COMPARE = [
+  { area: 'Speed', them: "Heavy themes and plugins. Ideal Feet's old homepage took 35s to load on mobile.", us: 'Hand-coded, every image sized per device. 1.9s and a Lighthouse score of 100.' },
+  { area: 'Design', them: 'The same theme as thousands of other shops.', us: 'Designed for your brand, with scroll animation nobody else has.' },
+  { area: 'Conversion', them: 'Looks nice, with no plan for the sale.', us: 'Every page built around one action, then split tested and heat mapped every week.' },
+  { area: 'SEO', them: 'An SEO plugin and hope.', us: 'Structured data, clean URLs and a sitemap from day one, readable by Google and AI search.' },
+  { area: 'Migration', them: 'Old URLs break, and years of backlinks break with them.', us: 'Every old URL redirected (125 rules for Ideal Feet), so your authority carries over.' },
+  { area: 'Ownership', them: 'Monthly builder fees and a platform you can’t leave.', us: 'You own the code outright. No subscriptions.' },
+]
+
 // Tags a Calendly link with the service that led to the booking, so the
 // leng-media-intro-call event (shared by several services) can still be
 // told apart in the leads sheet.
@@ -110,6 +129,45 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     ...(s.websiteFaq ? [faqJsonLd(s.websiteFaq)] : []),
   ]
 
+  const offerSection = s.offer && (
+        <section className={styles.offerSection}>
+          <div className={styles.offerInner}>
+            <ScrollReveal>
+              <span className="section-label">// The Offer</span>
+              <h2 className={styles.offerHeading}>{s.offer.heading}</h2>
+            </ScrollReveal>
+            <div className={styles.offerGrid}>
+              <ScrollReveal delay={1}>
+                <div className={styles.offerCell}>
+                  <span className={styles.offerCellLabel}>// What you get</span>
+                  <p className={styles.offerCellText}>{s.offer.what}</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={2}>
+                <div className={styles.offerCell}>
+                  <span className={styles.offerCellLabel}>// Timeframe</span>
+                  <p className={styles.offerCellText}>{s.offer.time}</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={3}>
+                <div className={styles.offerCell}>
+                  <span className={styles.offerCellLabel}>// The risk</span>
+                  <p className={styles.offerCellText}>{s.offer.risk}</p>
+                </div>
+              </ScrollReveal>
+            </div>
+            <div className={styles.offerFooter}>
+              {s.offer.ctaHref.includes('calendly.com') ? (
+                <CalendlyPopupLink href={withCalendlyService(s.offer.ctaHref, s.name)} className={styles.heroCtaBtn}>{s.offer.ctaLabel}</CalendlyPopupLink>
+              ) : (
+                <Link href={withFormService(s.offer.ctaHref, s.name)} className={styles.heroCtaBtn}>{s.offer.ctaLabel}</Link>
+              )}
+              {s.offer.qualifier && <span className={styles.offerQualifier}>{s.offer.qualifier}</span>}
+            </div>
+          </div>
+        </section>
+  )
+
   return (
     <>
       <JsonLd data={schema} />
@@ -138,15 +196,45 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
-      <Ticker />
+      {slug !== 'website-builds' && <Ticker />}
 
-      {/* STATEMENT — website-builds only */}
+      {/* PROOF BAND — website-builds only, the most reassuring facts first */}
       {slug === 'website-builds' && (
-        <section className={styles.statementSection}>
+        <section className={styles.proofBand} aria-label="Results">
+          {BUILD_PROOF.map((p, i) => (
+            <ScrollReveal key={p.label} delay={(i + 1) as 1|2|3|4} className={styles.proofItem}>
+              <span className={styles.proofValue}>{p.value}</span>
+              <span className={styles.proofLabel}>{p.label}</span>
+              <span className={styles.proofClient}>// {p.client}</span>
+            </ScrollReveal>
+          ))}
+        </section>
+      )}
+
+      {/* WHY CUSTOM — website-builds only, what the price pays for */}
+      {slug === 'website-builds' && (
+        <section className={styles.compareSection}>
           <ScrollReveal>
-            <p className={styles.statementLine}>Some people need a <em>fancy animation</em>. Others don&apos;t.</p>
-            <p className={styles.statementLine}>But what everyone needs is a mobile-first, optimised site that <span className={styles.statementAccent}>converts</span>.</p>
+            <span className="section-label">// Why custom</span>
+            <h2 className={styles.seoHeading}>What the price buys.</h2>
+            <p className={styles.compareIntro}>Templates are cheap because they skip the hard parts. These are the hard parts.</p>
           </ScrollReveal>
+          <div className={styles.compareTable}>
+            <div className={styles.compareHead}>
+              <span aria-hidden="true" />
+              <span>Template or page builder</span>
+              <span className={styles.compareUsHead}>Leng Media</span>
+            </div>
+            {BUILD_COMPARE.map(r => (
+              <ScrollReveal key={r.area}>
+                <div className={styles.compareRow}>
+                  <span className={styles.compareArea}>{r.area}</span>
+                  <p className={styles.compareThem}><span className={styles.compareMark} aria-hidden="true">✕</span>{r.them}</p>
+                  <p className={styles.compareUs}><span className={styles.compareMarkUs} aria-hidden="true">◆</span>{r.us}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </section>
       )}
 
@@ -177,6 +265,24 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <span className={styles.performanceImageLabel}>// Conversion rate · Jan – Aug 2026</span>
               <p className={styles.performanceImageCaption}>Same site, same period. Weekly split testing and heat map reviews pushed conversion rate from 0.2% to 1.1% and rising.</p>
               <Image src="/conversion-rate-growth.png" alt="Conversion rate climbing steadily from 0.2% in January to 1.1% by August after weekly split testing and CRO work" width={1744} height={902} sizes="(max-width: 768px) 100vw, 720px" className={styles.performanceImage} />
+            </div>
+          </ScrollReveal>
+        </section>
+      )}
+
+      {/* TRUSTED BY — website-builds only */}
+      {slug === 'website-builds' && (
+        <section className={styles.clientsSection}>
+          <ScrollReveal style={{ marginBottom: 36 }}>
+            <span className="section-label">// Trusted by</span>
+          </ScrollReveal>
+          <ScrollReveal delay={2}>
+            <div className={styles.clientGrid}>
+              {CLIENTS.map(c => (
+                <div key={c.name} className={styles.clientLogo}>
+                  <ClientLogo name={c.name} domain={c.domain} />
+                </div>
+              ))}
             </div>
           </ScrollReveal>
         </section>
@@ -292,42 +398,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
-      {/* DELIVERABLES — website-builds only */}
-      {slug === 'website-builds' && (
-        <section className={styles.bodyFull}>
-          <ScrollReveal>
-            <span className="section-label">// Deliverables</span>
-            <ul className={styles.outcomes}>
-              {s.outcomes.map((o, i) => (
-                <ScrollReveal key={o} delay={(Math.min(i % 3 + 1, 3)) as 1|2|3}>
-                  <li className={styles.outcome}>
-                    <span className={styles.outcomeDot}>◆</span>{o}
-                  </li>
-                </ScrollReveal>
-              ))}
-            </ul>
-          </ScrollReveal>
-        </section>
-      )}
-
-      {/* TRUSTED BY — website-builds only */}
-      {slug === 'website-builds' && (
-        <section className={styles.clientsSection}>
-          <ScrollReveal style={{ marginBottom: 36 }}>
-            <span className="section-label">// Trusted by</span>
-          </ScrollReveal>
-          <ScrollReveal delay={2}>
-            <div className={styles.clientGrid}>
-              {CLIENTS.map(c => (
-                <div key={c.name} className={styles.clientLogo}>
-                  <ClientLogo name={c.name} domain={c.domain} />
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </section>
-      )}
-
       {/* PORTFOLIO — website showcase */}
       {s.portfolio && (
         <section id="portfolio" className={styles.portfolio}>
@@ -381,6 +451,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
+      {slug === 'website-builds' && offerSection}
+
       {/* PROCESS — how it works */}
       {s.process && (
         <section className={styles.processSection}>
@@ -398,19 +470,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
             ))}
           </div>
-        </section>
-      )}
-
-      {/* MID-PAGE CTA — website-builds only */}
-      {slug === 'website-builds' && (
-        <section className={styles.midCta}>
-          <ScrollReveal>
-            <p className={styles.midCtaText}>Book a 20-minute call. Fixed quote within 24 hours. No obligation.</p>
-            <div className={styles.midCtaBtns}>
-              <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
-              <WhatsAppLink href="https://wa.me/447928668478?text=Hi%2C%20I%27m%20interested%20in%20a%20website%20build" className={styles.waBtn}>WhatsApp Us</WhatsAppLink>
-            </div>
-          </ScrollReveal>
         </section>
       )}
 
@@ -545,45 +604,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
-      {/* OFFER */}
-      {s.offer && (
-        <section className={styles.offerSection}>
-          <div className={styles.offerInner}>
-            <ScrollReveal>
-              <span className="section-label">// The Offer</span>
-              <h2 className={styles.offerHeading}>{s.offer.heading}</h2>
-            </ScrollReveal>
-            <div className={styles.offerGrid}>
-              <ScrollReveal delay={1}>
-                <div className={styles.offerCell}>
-                  <span className={styles.offerCellLabel}>// What you get</span>
-                  <p className={styles.offerCellText}>{s.offer.what}</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={2}>
-                <div className={styles.offerCell}>
-                  <span className={styles.offerCellLabel}>// Timeframe</span>
-                  <p className={styles.offerCellText}>{s.offer.time}</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={3}>
-                <div className={styles.offerCell}>
-                  <span className={styles.offerCellLabel}>// The risk</span>
-                  <p className={styles.offerCellText}>{s.offer.risk}</p>
-                </div>
-              </ScrollReveal>
-            </div>
-            <div className={styles.offerFooter}>
-              {s.offer.ctaHref.includes('calendly.com') ? (
-                <CalendlyPopupLink href={withCalendlyService(s.offer.ctaHref, s.name)} className={styles.heroCtaBtn}>{s.offer.ctaLabel}</CalendlyPopupLink>
-              ) : (
-                <Link href={withFormService(s.offer.ctaHref, s.name)} className={styles.heroCtaBtn}>{s.offer.ctaLabel}</Link>
-              )}
-              {s.offer.qualifier && <span className={styles.offerQualifier}>{s.offer.qualifier}</span>}
-            </div>
-          </div>
-        </section>
-      )}
+      {slug !== 'website-builds' && offerSection}
 
       {/* CTA */}
       <section className={`${styles.cta} theme-dark`}>
@@ -594,6 +615,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <h2 className="section-title">Ready to <em>get noticed?</em></h2>
               <p className={styles.ctaSub}>Book a 20-minute call. We will scope your project and send a quote within 24 hours.</p>
               <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</CalendlyPopupLink>
+              <WhatsAppLink href="https://wa.me/447928668478?text=Hi%2C%20I%27m%20interested%20in%20a%20website%20build" className={styles.ctaWa}>Or message us on WhatsApp</WhatsAppLink>
             </>
           ) : (
             <>
