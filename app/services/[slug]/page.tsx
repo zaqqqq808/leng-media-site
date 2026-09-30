@@ -40,13 +40,13 @@ const BUILD_PROOF = [
   { value: '1.9s', label: 'To load on mobile, down from 35.4s', client: 'Ideal Feet' },
 ]
 
-const BUILD_COMPARE = [
-  { area: 'Speed', them: "Heavy themes and plugins. Ideal Feet's old homepage took 35s to load on mobile.", us: 'Hand-coded, every image sized per device. 1.9s and a Lighthouse score of 100.' },
-  { area: 'Design', them: 'The same theme as thousands of other shops.', us: 'Designed for your brand, with scroll animation nobody else has.' },
-  { area: 'Conversion', them: 'Looks nice, with no plan for the sale.', us: 'Every page built around one action, then split tested and heat mapped every week.' },
-  { area: 'SEO', them: 'An SEO plugin and hope.', us: 'Structured data, clean URLs and a sitemap from day one, readable by Google and AI search.' },
-  { area: 'Migration', them: 'Old URLs break, and years of backlinks break with them.', us: 'Every old URL redirected (125 rules for Ideal Feet), so your authority carries over.' },
-  { area: 'Ownership', them: 'Monthly builder fees and a platform you can’t leave.', us: 'You own the code outright. No subscriptions.' },
+// Website-builds "why us": what it takes for a site to actually sell.
+const BUILD_WHY = [
+  { title: 'Converts on mobile', body: 'Floating call to action, reviews and delivery info above the fold, and the key facts top left, where the eye lands first.' },
+  { title: 'Knows your customer', body: 'We find your audience’s real needs and pain points, then say them on the page in as few words as possible.' },
+  { title: 'Understands offers', body: 'The game theory behind bundles and email capture popups, so more visits turn into orders and subscribers.' },
+  { title: 'Sees the whole funnel', body: 'Email marketing, Meta ads, SEO, AI search (GEO) and Reddit. The site is built to work with every one of them.' },
+  { title: 'Makes content that spreads', body: 'We’ve made viral videos for many clients, and we build the site around the content that sells.' },
 ]
 
 // Tags a Calendly link with the service that led to the booking, so the
@@ -211,30 +211,28 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
-      {/* WHY CUSTOM — website-builds only, what the price pays for */}
+      {/* WHY US — website-builds only, what makes a site sell */}
       {slug === 'website-builds' && (
-        <section className={styles.compareSection}>
+        <section className={styles.whySection}>
           <ScrollReveal>
-            <span className="section-label">// Why custom</span>
-            <h2 className={styles.seoHeading}>What the price buys.</h2>
-            <p className={styles.compareIntro}>Templates are cheap because they skip the hard parts. These are the hard parts.</p>
+            <span className="section-label">// Why Leng Media</span>
+            <h2 className={styles.seoHeading}>Building a site is easy now. Selling from it isn&apos;t.</h2>
+            <p className={styles.whyIntro}>A good-looking site doesn&apos;t mean anyone will buy. You need an agency that knows what makes people buy, especially on mobile.</p>
           </ScrollReveal>
-          <div className={styles.compareTable}>
-            <div className={styles.compareHead}>
-              <span aria-hidden="true" />
-              <span>Template or page builder</span>
-              <span className={styles.compareUsHead}>Leng Media</span>
-            </div>
-            {BUILD_COMPARE.map(r => (
-              <ScrollReveal key={r.area}>
-                <div className={styles.compareRow}>
-                  <span className={styles.compareArea}>{r.area}</span>
-                  <p className={styles.compareThem}><span className={styles.compareMark} aria-hidden="true">✕</span>{r.them}</p>
-                  <p className={styles.compareUs}><span className={styles.compareMarkUs} aria-hidden="true">◆</span>{r.us}</p>
-                </div>
+          <ol className={styles.whyList}>
+            {BUILD_WHY.map((w, i) => (
+              <ScrollReveal key={w.title}>
+                <li className={styles.whyRow}>
+                  <span className={styles.whyNum}>{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className={styles.whyTitle}>{w.title}</h3>
+                  <p className={styles.whyBody}>{w.body}</p>
+                </li>
               </ScrollReveal>
             ))}
-          </div>
+          </ol>
+          <ScrollReveal>
+            <p className={styles.whyClose}>All of it goes into your site.</p>
+          </ScrollReveal>
         </section>
       )}
 

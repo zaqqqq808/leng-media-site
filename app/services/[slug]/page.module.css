@@ -314,70 +314,67 @@
   .proofValue { font-size: 30px; }
   .proofLabel { font-size: 13px; }
 }
-/* WHY CUSTOM — template vs Leng Media */
-.compareSection {
+/* WHY US — website-builds, what makes a site sell */
+.whySection {
   padding: 96px 52px;
   background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
-.compareIntro {
+.whyIntro {
   font-family: var(--font-inter), sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
-  color: var(--grey-5);
-  max-width: 620px;
-  margin: 16px 0 44px;
+  color: var(--ink-2);
+  max-width: 640px;
+  margin: 18px 0 44px;
 }
-.compareTable { border-top: 1px solid var(--line); }
-.compareHead,
-.compareRow {
+.whyList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.whyRow {
   display: grid;
-  grid-template-columns: 150px 1fr 1fr;
-  gap: 32px;
-  align-items: start;
-}
-.compareHead {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-.compareUsHead { color: var(--accent-ink); }
-.compareRow {
-  padding: 22px 0;
+  grid-template-columns: 48px 260px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  padding: 24px 0;
   border-bottom: 1px solid var(--line-soft);
 }
-.compareArea {
+.whyNum {
   font-family: var(--font-mono), monospace;
   font-size: 10px;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--ink);
-  padding-top: 3px;
+  color: var(--accent-ink);
 }
-.compareThem,
-.compareUs {
-  display: flex;
-  gap: 12px;
+.whyTitle {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: -0.2px;
+  color: var(--ink);
+  margin: 0;
+}
+.whyBody {
   font-family: var(--font-inter), sans-serif;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.65;
+  color: var(--ink-3);
+  margin: 0;
 }
-.compareThem { color: var(--ink-3); }
-.compareUs { color: var(--ink); }
-.compareMark,
-.compareMarkUs { flex-shrink: 0; font-size: 10px; line-height: 24px; }
-.compareMark { color: var(--grey-4); }
-.compareMarkUs { color: var(--accent-ink); font-size: 8px; }
+.whyClose {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  color: var(--ink);
+  margin-top: 40px;
+}
 @media (max-width: 768px) {
-  .compareSection { padding: 64px 24px; }
-  .compareIntro { margin-bottom: 28px; }
-  .compareHead { display: none; }
-  .compareRow { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
-  .compareThem, .compareUs { font-size: 14px; }
+  .whySection { padding: 64px 24px; }
+  .whyIntro { font-size: 15px; margin-bottom: 28px; }
+  .whyRow { grid-template-columns: 32px 1fr; gap: 6px 12px; padding: 20px 0; }
+  .whyBody { grid-column: 2; font-size: 14px; }
+  .whyClose { margin-top: 28px; }
 }
 /* PERFORMANCE SECTION — website-builds only, SEO + CRO results chart */
 .performanceSection {
