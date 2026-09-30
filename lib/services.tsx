@@ -41,7 +41,8 @@ export interface Service {
   portfolio?: {
     projects: {
       name: string
-      url: string
+      /** Omit until the site is live; urlLabel then shows as plain text. */
+      url?: string
       urlLabel: string
       challenge: string
       solution: string
@@ -392,6 +393,22 @@ export const SERVICES: Record<string, Service> = {
           solution: 'We removed the property search entirely and built a high converting landing page with a custom scroll animation of a villa being constructed, giving prospective buyers a tangible sense of the development quality.',
           desktopImg: '/portfolio-aylaproperty-desktop.png',
           mobileImg: '/portfolio-ayla-mobile.jpg',
+        },
+        {
+          name: 'Ideal Feet',
+          urlLabel: 'idealfeetgroup.com · launching soon',
+          challenge: 'A Texas arch support brand with two stores and TV ad traffic, held back by a WordPress site that took 35 seconds to load on mobile and hid the booking button.',
+          solution: 'We rebuilt it by hand around one action, booking a free fitting, with a scroll animation of the product at work, local SEO for both cities and a redirect for every old URL. Mobile Lighthouse went from 67 to 100.',
+          desktopImg: '/portfolio-idealfeet-desktop.jpg',
+          mobileImg: '/portfolio-idealfeet-mobile.jpg',
+        },
+        {
+          name: 'Chesneys France',
+          urlLabel: 'Chesneys France · launching soon',
+          challenge: 'Chesneys, the London fireplace and stove maker, was bringing its luxury wood stoves to France and needed a site that recruits distributors, architects and specifiers rather than selling to the public.',
+          solution: 'We built a French trade site with an editorial, luxury feel: the two collections, the engineering story and a clear route in for dealers and specifiers.',
+          desktopImg: '/portfolio-chesneys-fr-desktop.jpg',
+          mobileImg: '/portfolio-chesneys-fr-mobile.jpg',
         },
         {
           name: 'Leng Media',

@@ -411,9 +411,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <div className={styles.portfolioText}>
                   <p className={styles.portfolioNum}>// {String(i + 1).padStart(2, '0')}</p>
                   <h3 className={styles.portfolioName}>{project.name}</h3>
-                  <a href={project.url} target="_blank" rel="noopener noreferrer" className={styles.portfolioUrl}>
-                    {project.urlLabel} ↗
-                  </a>
+                  {project.url ? (
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className={styles.portfolioUrl}>
+                      {project.urlLabel} ↗
+                    </a>
+                  ) : (
+                    <span className={styles.portfolioUrlPending}>{project.urlLabel}</span>
+                  )}
                   <div className={styles.portfolioMeta}>
                     <div className={styles.portfolioBlock}>
                       <span className={styles.portfolioBlockLabel}>// The challenge</span>
