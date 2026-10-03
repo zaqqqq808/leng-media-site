@@ -30,14 +30,12 @@ const CLIENTS = [
   { name: 'Chesneys',                     domain: 'chesneys.co.uk' },
 ]
 
-// Website-builds headline numbers. Every figure is measured: Ayla Property
-// from GSC and their analytics, Ideal Feet from Lighthouse (mobile) before
-// and after the rebuild.
+// Website-builds headline callouts, straight after the hero.
 const BUILD_PROOF = [
-  { value: '0.2% → 1.1%', label: 'Conversion rate after weekly split testing', client: 'Ayla Property' },
-  { value: '6.28K', label: 'Organic clicks in the first 3 months', client: 'Ayla Property' },
-  { value: '100', label: 'Mobile Lighthouse score, up from 67', client: 'Ideal Feet' },
-  { value: '1.9s', label: 'To load on mobile, down from 35.4s', client: 'Ideal Feet' },
+  { value: '100%', label: 'of our clients see an uplift in conversion rate', tag: 'CRO built in' },
+  { value: 'Google + AI', label: 'Built to rank fast on Google and in AI search', tag: 'SEO and GEO' },
+  { value: 'Mobile first', label: 'Designed for the thumb first, then scaled up to desktop', tag: 'Built for phones' },
+  { value: 'Fully custom', label: 'No templates or page builders. You own the code.', tag: 'Built in Next.js' },
 ]
 
 // Website-builds "why us": what it takes for a site to actually sell.
@@ -200,12 +198,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       {/* PROOF BAND — website-builds only, the most reassuring facts first */}
       {slug === 'website-builds' && (
-        <section className={styles.proofBand} aria-label="Results">
+        <section className={styles.proofBand} aria-label="Highlights">
           {BUILD_PROOF.map((p, i) => (
-            <ScrollReveal key={p.label} delay={(i + 1) as 1|2|3|4} className={styles.proofItem}>
-              <span className={styles.proofValue}>{p.value}</span>
-              <span className={styles.proofLabel}>{p.label}</span>
-              <span className={styles.proofClient}>// {p.client}</span>
+            <ScrollReveal key={p.label} delay={(i + 1) as 1|2|3|4} className={styles.bandItem}>
+              <span className={styles.bandValue}>{p.value}</span>
+              <span className={styles.bandLabel}>{p.label}</span>
+              <span className={styles.bandTag}>// {p.tag}</span>
             </ScrollReveal>
           ))}
         </section>

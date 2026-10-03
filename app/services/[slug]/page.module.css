@@ -269,7 +269,7 @@
   margin: 0 0 40px;
 }
 .seoChart .seoCopy { color: var(--grey-5); }
-/* PROOF BAND — website-builds, headline numbers straight after the hero */
+/* PROOF BAND — website-builds, headline callouts straight after the hero */
 .proofBand {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -278,29 +278,28 @@
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-.proofItem {
+.bandItem {
   background: var(--bg);
   padding: 40px 32px 36px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.proofValue {
+.bandValue {
   font-family: var(--font-serif), serif;
   font-size: clamp(34px, 3.4vw, 50px);
   line-height: 1;
   letter-spacing: -1px;
   color: var(--accent-ink);
-  white-space: nowrap;
   font-variant-numeric: lining-nums;
 }
-.proofLabel {
+.bandLabel {
   font-family: var(--font-inter), sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: var(--ink-2);
 }
-.proofClient {
+.bandTag {
   font-family: var(--font-mono), monospace;
   font-size: 9px;
   letter-spacing: 2px;
@@ -310,9 +309,9 @@
 }
 @media (max-width: 900px) {
   .proofBand { grid-template-columns: repeat(2, 1fr); }
-  .proofItem { padding: 28px 20px 24px; gap: 8px; }
-  .proofValue { font-size: 30px; }
-  .proofLabel { font-size: 13px; }
+  .bandItem { padding: 28px 20px 24px; gap: 8px; }
+  .bandValue { font-size: 26px; }
+  .bandLabel { font-size: 13px; }
 }
 /* WHY US — website-builds, what makes a site sell */
 .whySection {
