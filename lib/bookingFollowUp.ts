@@ -41,12 +41,70 @@ function formatWhen(startTime?: string, timezone?: string) {
   return { day, full: `${day} at ${time}` }
 }
 
-function fallbackEmail(firstName: string, when: string) {
+// Finds the answer to a Calendly question by matching its wording, so it
+// keeps working if a question is lightly reworded or reordered.
+function answerTo(answers: QA[], pattern: RegExp) {
+  return answers.find(qa => pattern.test(qa.question))?.answer?.trim() || ''
+}
+
+function domainOf(raw: string) {
+  const host = raw.trim().replace(/^https?:\/\//i, '').replace(/^www\./i, '').split(/[/?#\s]/)[0]
+  return /^[a-z0-9-]+(\.[a-z0-9-]+)+$/i.test(host) ? host.toLowerCase() : ''
+}
+
+/**
+ * Picks one qualifying question from the booking answers. Each one is aimed
+ * at budget, timing or authority, and the weakest-fit answers get a polite
+ * test of commitment. Questions match the two Calendly forms: the website
+ * build call and the general intro call.
+ */
+function pickQuestion(answers: QA[]): { remark: string; question: string } {
+  const site = domainOf(answerTo(answers, /what is your website/i))
+  const remark = site ? `I'll take a look at ${site} before we speak. ` : ''
+
+  // Intro call (ads, SEO, AI, lead gen, CMO, white label)
+  const budget = answerTo(answers, /within your budget/i)
+  const adSpend = answerTo(answers, /spend on ads/i)
+  if (/^no/i.test(budget)) {
+    return { remark, question: "You mentioned our fees are above your current budget. Is that likely to change in the next few months, or is there a figure you'd want to stay under?" }
+  }
+  if (adSpend) {
+    if (/nothing/i.test(adSpend)) {
+      return { remark, question: "As you're not running ads yet, have you set a budget aside for marketing over the next few months, or are you still scoping it?" }
+    }
+    if (/100k|100,000\+/i.test(adSpend) || /25,?000\s*-\s*\$?100/i.test(adSpend)) {
+      return { remark, question: 'Who else will be involved in choosing an agency? I want to make sure we cover what matters to them on the call.' }
+    }
+    if (/5,?000\s*-\s*\$?25/i.test(adSpend)) {
+      return { remark, question: 'If we got your ads performing, how quickly would you be ready to scale your spend?' }
+    }
+    return { remark, question: "What's held you back from spending more on ads so far? Is it results, budget, or not having the right setup?" }
+  }
+
+  // Website build call
+  const hasSite = answerTo(answers, /already have a website/i)
+  const platform = answerTo(answers, /built on/i)
+  if (/need a new/i.test(hasSite)) {
+    return { remark, question: "So I can make the most of our time: have you set a budget aside for the build yet, and is there a launch date you're working towards?" }
+  }
+  if (/shopify/i.test(platform)) {
+    return { remark, question: 'To pitch the build at the right level, roughly what does your Shopify store turn over each month?' }
+  }
+  if (/wordpress|wix|squarespace|godaddy|webflow|weebly/i.test(platform)) {
+    return { remark, question: "What's the main thing your current site is holding you back on? Even a rough idea of the enquiries or sales you think you're missing would help." }
+  }
+
+  return { remark, question: "So I can make the most of our time: what's prompting you to look at this now, and what would a great result look like for you over the next three months?" }
+}
+
+/** The free, rule-based email. Used when Claude isn't configured or fails. */
+export function ruleBasedEmail(firstName: string, when: string, answers: QA[]) {
+  const { remark, question } = pickQuestion(answers)
   return `Hi ${firstName},
 
 Thanks for booking in for ${when}. Looking forward to speaking.
 
-So I can make the most of our time: what's prompting you to look at this now, and what would a great result look like for you over the next three months?
+${remark}${question}
 
 Speak soon,
 Zaq`
@@ -108,7 +166,7 @@ export async function sendBookingFollowUp(d: BookingDetails) {
       console.error('Booking follow-up: Claude call failed:', error)
     }
   }
-  if (!body) body = fallbackEmail(firstName, when.full)
+  if (!body) body = ruleBasedEmail(firstName, when.full, answers)
 
   // Land ~8 minutes after booking unless the call itself is sooner than that.
   const startsAt = d.startTime ? new Date(d.startTime).getTime() : Infinity
