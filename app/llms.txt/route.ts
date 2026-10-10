@@ -23,6 +23,7 @@ export function GET() {
 
 ${services}
 - [ChatGPT Ads Agency](${SITE_URL}/chatgpt-ads-agency): Ads inside ChatGPT via OpenAI, plus AI-built creative across Meta, TikTok and Google.
+- [Reddit & Forum Marketing Agency](${SITE_URL}/forum-marketing-agency): Organic Reddit, Quora, Mumsnet and Hacker News marketing, plus our ranking of the English-language forums by size, audience income and buying intent.
 
 ## Courses
 

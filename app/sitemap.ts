@@ -8,6 +8,7 @@ import { SITE_URL } from '@/lib/seo'
 const PAGES: { path: string; priority: number }[] = [
   { path: '', priority: 1 },
   { path: '/chatgpt-ads-agency', priority: 0.9 },
+  { path: '/forum-marketing-agency', priority: 0.9 },
   { path: '/ecommerce-protocol', priority: 0.8 },
   { path: '/blog', priority: 0.8 },
   { path: '/business-enquiry', priority: 0.7 },

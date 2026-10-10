@@ -7,6 +7,7 @@ export interface SiteLink { label: string; href: string }
 export const SERVICE_LINKS: SiteLink[] = [
   { label: 'Ecommerce PPC Agency', href: '/services/direct-response' },
   { label: 'ChatGPT Ads Agency', href: '/chatgpt-ads-agency' },
+  { label: 'Reddit & Forum Marketing', href: '/forum-marketing-agency' },
   { label: 'Ecommerce SEO Agency', href: '/services/seo' },
   { label: 'AI Chatbot Development', href: '/services/ai-solutions' },
   { label: 'Ecommerce Web Design', href: '/services/website-builds' },
