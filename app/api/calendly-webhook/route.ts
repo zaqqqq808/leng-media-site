@@ -1,8 +1,9 @@
-import { NextResponse } from 'next/server'
+import { NextResponse, after } from 'next/server'
 import { createHmac, timingSafeEqual } from 'crypto'
 import { appendLeadRow } from '@/lib/googleSheets'
 import { sendMetaConversionEvent } from '@/lib/metaConversions'
 import { sendGa4Event, fallbackClientId } from '@/lib/ga4'
+import { sendBookingFollowUp } from '@/lib/bookingFollowUp'
 
 // Verifies Calendly's HMAC-SHA256 webhook signature.
 // Header format: "t=<timestamp>,v1=<signature>"
@@ -93,6 +94,25 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error('Failed to send GA4 conversion event:', error)
   }
+
+  // Personal follow-up email asking one qualifying question. Runs after the
+  // response so Calendly never waits on the Claude call (and never retries
+  // the webhook, which would send the email twice).
+  after(async () => {
+    try {
+      await sendBookingFollowUp({
+        name: payload?.name || '',
+        firstName: payload?.first_name || undefined,
+        email: payload?.email || '',
+        timezone: payload?.timezone,
+        eventName: payload?.scheduled_event?.name,
+        startTime: payload?.scheduled_event?.start_time,
+        answers: payload?.questions_and_answers || [],
+      })
+    } catch (error) {
+      console.error('Failed to send booking follow-up email:', error)
+    }
+  })
 
   return NextResponse.json({ received: true })
 }

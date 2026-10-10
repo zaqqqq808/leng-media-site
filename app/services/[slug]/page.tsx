@@ -615,7 +615,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <h2 className="section-title">Ready to <em>get noticed?</em></h2>
               <p className={styles.ctaSub}>Book a 20-minute call. We will scope your project and send a quote within 24 hours.</p>
               <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</CalendlyPopupLink>
-              <WhatsAppLink href="https://wa.me/447928668478?text=Hi%2C%20I%27m%20interested%20in%20a%20website%20build" className={styles.ctaWa}>Or message us on WhatsApp</WhatsAppLink>
+              <WhatsAppLink href="/whatsapp?service=website" className={styles.ctaWa}>Or message us on WhatsApp</WhatsAppLink>
             </>
           ) : (
             <>
@@ -665,7 +665,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       {slug === 'website-builds' && (
         <StickyMobileCta
           href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')}
-          whatsappHref="https://wa.me/447928668478?text=Hi%2C%20I%27m%20interested%20in%20a%20website%20build"
+          whatsappHref="/whatsapp?service=website"
         />
       )}
     </>

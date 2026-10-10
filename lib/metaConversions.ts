@@ -11,6 +11,10 @@ interface ConversionEvent {
   email?: string
   phone?: string
   eventSourceUrl?: string
+  /** Same id as the browser pixel's eventID, so Meta counts the pair once. */
+  eventId?: string
+  clientUserAgent?: string
+  clientIpAddress?: string
 }
 
 /**
@@ -20,7 +24,7 @@ interface ConversionEvent {
  * scripts and cross-window postMessage (what the client-side pixel
  * relies on) are often blocked or unreliable.
  */
-export async function sendMetaConversionEvent({ eventName, email, phone, eventSourceUrl }: ConversionEvent) {
+export async function sendMetaConversionEvent({ eventName, email, phone, eventSourceUrl, eventId, clientUserAgent, clientIpAddress }: ConversionEvent) {
   const pixelId = process.env.META_PIXEL_ID
   const accessToken = process.env.META_CAPI_ACCESS_TOKEN
 
@@ -29,9 +33,11 @@ export async function sendMetaConversionEvent({ eventName, email, phone, eventSo
     return
   }
 
-  const userData: Record<string, string[]> = {}
+  const userData: Record<string, string | string[]> = {}
   if (email) userData.em = [hashField(email)]
   if (phone) userData.ph = [hashField(phone.replace(/[^\d]/g, ''))]
+  if (clientUserAgent) userData.client_user_agent = clientUserAgent
+  if (clientIpAddress) userData.client_ip_address = clientIpAddress
 
   const res = await fetch(`https://graph.facebook.com/${GRAPH_VERSION}/${pixelId}/events?access_token=${accessToken}`, {
     method: 'POST',
@@ -42,6 +48,7 @@ export async function sendMetaConversionEvent({ eventName, email, phone, eventSo
         event_time: Math.floor(Date.now() / 1000),
         action_source: 'website',
         event_source_url: eventSourceUrl,
+        ...(eventId ? { event_id: eventId } : {}),
         user_data: userData,
       }],
     }),
