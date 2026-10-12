@@ -183,6 +183,7 @@ export const SERVICES: Record<string, Service> = {
     description: [
       'Ecommerce SEO is not the same as regular SEO. For a Shopify store or DTC brand, the pages that drive revenue are your collection pages and product pages. Informational blog content sits at the top of the funnel, and in 2026 AI has already taken that territory. We focus entirely on transactional keywords where people are ready to buy. That is where rankings convert directly into revenue.',
       'We cover the full stack: technical SEO, collection and product page optimisation, and link building that actually moves domain authority. We research and identify relevant contacts in your industry, create genuinely linkable assets worth pointing to, and build authority through editorial outreach and digital PR. The result is a site that earns trust over time and compounds in organic traffic.',
+      <>Search is no longer just Google. ChatGPT, Gemini and Perplexity build their answers from what people say on Reddit, Quora and other forums, so a brand nobody discusses rarely gets recommended. Our <Link href="/forum-marketing-agency" style={{color:'var(--neon)',textDecoration:'underline'}}>Reddit and forum marketing</Link> service puts your brand into those conversations, and it is one of the fastest ways to get cited by AI. It works alongside SEO or as a standalone service.</>,
     ],
     outcomes: [
       'Technical SEO audit, crawl fixes and Core Web Vitals optimisation',
@@ -190,6 +191,7 @@ export const SERVICES: Record<string, Service> = {
       'Competitor gap analysis: find where you can rank fast',
       'Link building: finding relevant contacts, creating linkable assets, editorial outreach',
       'Generative Engine Optimisation (GEO): get cited by ChatGPT and Perplexity',
+      'Reddit and forum presence, the sources AI answers cite most',
       'Monthly reporting tied to organic revenue, not just keyword rankings',
     ],
     offer: {
@@ -203,6 +205,7 @@ export const SERVICES: Record<string, Service> = {
     },
     related: ['website-builds', 'direct-response', 'agency-assist'],
     reading: [
+      { label: 'Reddit and forum marketing: the forums ranked by audience income', href: '/forum-marketing-agency' },
       { label: 'How to start an ecommerce business in 2026', href: '/blog/how-to-start-an-ecommerce-business' },
       { label: 'How to start dropshipping (an honest guide)', href: '/blog/how-to-start-dropshipping' },
     ],

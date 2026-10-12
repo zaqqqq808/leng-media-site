@@ -311,6 +311,10 @@ export default function ForumMarketingAgencyPage() {
               happening and become a voice the community actually wants to hear from. Across dozens of
               communities, that adds up to real influence over how your category is talked about.
             </p>
+            <p className={styles.whyNowBody}>
+              Forum threads also rank. Search almost any product question and a Reddit or Quora thread sits on page one,
+              which makes forum marketing a natural partner to our <Link href="/services/seo" style={{ color: 'var(--neon)', textDecoration: 'underline' }}>ecommerce SEO</Link> work.
+            </p>
           </ScrollReveal>
         </div>
         <div className={styles.whyNowRight}>

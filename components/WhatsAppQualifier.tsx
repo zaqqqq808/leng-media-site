@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import styles from './WhatsAppQualifier.module.css'
+import { WhatsAppIcon } from './WhatsAppLink'
 import {
   SERVICES, SERVICE_PHRASES, WHATSAPP_NUMBER, stepsFor, isServiceKey,
   type ServiceKey, type Step,
@@ -106,8 +107,21 @@ export default function WhatsAppQualifier({ initialService }: { initialService: 
     )
   }
 
+  // The first screen people see, whether or not the service was preselected
+  const firstScreen = !service || (phase === 'questions' && index === 0)
+
   return (
     <div className={styles.card}>
+      <div className={styles.waBadge}>
+        <span className={styles.waIcon}><WhatsAppIcon size={18} /></span>
+        <span>WhatsApp · Leng Media</span>
+      </div>
+      {firstScreen && (
+        <div className={styles.intro}>
+          <h2 className={styles.introTitle}>Contact Leng Media directly on WhatsApp.</h2>
+          <p className={styles.introText}>Quickly answer a few basic questions so we can help you better.</p>
+        </div>
+      )}
       <div className={styles.progress} aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
 
       {!service && (

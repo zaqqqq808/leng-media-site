@@ -41,7 +41,7 @@ export default function Nav() {
             <div className={styles.dropdown}>
               <ul className={styles.dropdownInner}>
                 {SERVICE_LINKS.map(l => (
-                  <li key={l.href}><Link href={l.href}>{l.label}</Link></li>
+                  <li key={l.href}><Link href={l.href}>{l.navLabel ?? l.label}</Link></li>
                 ))}
               </ul>
             </div>
@@ -74,7 +74,7 @@ export default function Nav() {
             <Link href="/#services" onClick={close}>Services</Link>
             <ul className={styles.mobileSubLinks}>
               {SERVICE_LINKS.map(l => (
-                <li key={l.href}><Link href={l.href} onClick={close}>{l.label}</Link></li>
+                <li key={l.href}><Link href={l.href} onClick={close}>{l.navLabel ?? l.label}</Link></li>
               ))}
             </ul>
           </li>
