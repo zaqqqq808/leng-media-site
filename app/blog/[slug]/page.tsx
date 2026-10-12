@@ -8,9 +8,11 @@ import { POSTS, POSTS_BY_DATE, CALENDLY, type Block, type Post } from '@/lib/blo
 import JsonLd from '@/components/JsonLd'
 import { breadcrumbJsonLd } from '@/lib/seo'
 
-// Renders [label](href) markdown links inside block text
+// Renders [label](href) markdown links and **bold** inside block text
 function renderText(text: string) {
-  return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
+  return text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g).map((part, i) => {
+    const bold = part.match(/^\*\*([^*]+)\*\*$/)
+    if (bold) return <strong key={i}>{bold[1]}</strong>
     const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
     if (!m) return part
     const [, label, href] = m
@@ -29,6 +31,11 @@ const SERVICES_BY_CATEGORY: Record<string, { label: string; href: string }[]> = 
     { label: 'AI Chatbot Development', href: '/services/ai-solutions' },
     { label: 'ChatGPT Ads Agency', href: '/chatgpt-ads-agency' },
     { label: 'Lead Generation Agency', href: '/services/lead-generation' },
+  ],
+  SEO: [
+    { label: 'Reddit & Forum Marketing', href: '/forum-marketing-agency' },
+    { label: 'Ecommerce SEO Agency', href: '/services/seo' },
+    { label: 'ChatGPT Ads Agency', href: '/chatgpt-ads-agency' },
   ],
   Ecommerce: [
     { label: 'Ecommerce Web Design', href: '/services/website-builds' },
@@ -93,6 +100,24 @@ function renderBlock(block: Block, i: number) {
             </li>
           ))}
         </ul>
+      )
+    case 'table':
+      return (
+        <figure key={i} className={styles.tableFigure}>
+          <div className={styles.tableWrap}>
+            <table className={styles.table}>
+              <thead>
+                <tr>{block.head.map(h => <th key={h}>{h}</th>)}</tr>
+              </thead>
+              <tbody>
+                {block.rows.map((row, r) => (
+                  <tr key={r}>{row.map((cell, c) => <td key={c}>{renderText(cell)}</td>)}</tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {block.caption && <figcaption className={styles.tableCaption}>{renderText(block.caption)}</figcaption>}
+        </figure>
       )
     case 'callout': {
       const btnStyle = { fontSize: 12, padding: '16px 40px', display: 'inline-block', marginTop: 20 }
@@ -164,12 +189,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
       <Ticker />
 
+      {/* No ScrollReveal here: its 8% visibility threshold can never be met
+          by a long article on a phone screen, which left the body invisible. */}
       <article className={styles.article}>
-        <ScrollReveal>
-          <div className={styles.body}>
-            {post.content.map((block, i) => renderBlock(block, i))}
-          </div>
-        </ScrollReveal>
+        <div className={styles.body}>
+          {post.content.map((block, i) => renderBlock(block, i))}
+        </div>
       </article>
 
       <section className={styles.footer}>

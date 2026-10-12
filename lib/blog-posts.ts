@@ -7,6 +7,7 @@ export type Block =
   | { type: 'h3'; text: string }
   | { type: 'ul'; items: string[] }
   | { type: 'callout'; text: string; cta: string; href: string }
+  | { type: 'table'; head: string[]; rows: string[][]; caption?: string }
 
 export interface Post {
   slug: string
@@ -435,6 +436,228 @@ export const POSTS: Record<string, Post> = {
         href: '/ecommerce-protocol',
       },
     ],
+  },
+  'reddit-seo-ai-search': {
+    "slug": "reddit-seo-ai-search",
+    "title": "Reddit SEO and AI Search: Where the Conversations That Shape AI Answers Happen",
+    "metaTitle": "Reddit SEO for AI Search (2026): The Forum Advertising Guide",
+    "description": "Why AI trusts forum conversations, what ChatGPT’s 2026 Reddit citation drop really means, the five forums that matter most, and how to do Reddit and forum SEO properly.",
+    "date": "12 Oct 2026",
+    "dateISO": "2026-10-12",
+    "readTime": "8 min",
+    "category": "SEO",
+    "content": [
+      {
+        "type": "p",
+        "text": "Ask ChatGPT for the best running shoes for flat feet, the most reliable family SUV, or a good accountant for a small business, and the answer you get is not written from scratch. It is assembled from what people have already said about those things: in threads, in answers, in arguments that went on for 400 comments. AI search is, more than anything, a summary of human conversation."
+      },
+      {
+        "type": "p",
+        "text": "That changes what marketing has to do. For twenty years, SEO meant convincing Google that your own pages deserved to rank. Now the question is different: when an AI model goes looking for what real people think about your category, does it find your name? This guide covers why AI leans so heavily on forums, what changed in 2026, where the most valuable conversations actually happen, and how to earn a place in them properly."
+      },
+      {
+        "type": "h2",
+        "text": "Why AI trusts conversation over brand content"
+      },
+      {
+        "type": "p",
+        "text": "Every brand says its product is the best. That claim is worth almost nothing to a model trying to give a useful answer, because it is unverified and written by the one party with a reason to exaggerate. A forum thread is different in four ways that matter."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**First-hand experience.** People describe what actually happened when they bought the thing, used it for six months, and returned it or bought another.",
+          "**Many independent voices.** One review can be fake. Forty people in a thread agreeing, disagreeing and adding detail is much harder to fake, and much more informative.",
+          "**Built-in quality control.** Upvotes, replies and corrections push the best answers up and the bad ones down, before any AI reads them.",
+          "**Natural language that matches questions.** People ask AI the same way they ask a forum. The threads are, in effect, pre-written answers to the prompts users type."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Search engines reached the same conclusion first. In late 2022 Google added Experience to its E-E-A-T quality guidelines, explicitly rewarding first-hand knowledge. In 2023 it began showing a dedicated “Discussions and forums” block in results, and Reddit’s search visibility climbed faster than almost any site on the web. In 2024 Google and OpenAI both signed deals to license Reddit’s data. The message was consistent: real conversation is the signal everyone was missing."
+      },
+      {
+        "type": "p",
+        "text": "For brands, the uncomfortable consequence is that the most persuasive content about your product is content you did not write. The good news is that you can take part in it."
+      },
+      {
+        "type": "h2",
+        "text": "What changed in August 2026"
+      },
+      {
+        "type": "p",
+        "text": "If you follow AI search closely, you will have seen the headlines. In August 2026, Reddit’s share of ChatGPT’s citations collapsed. Data from Promptwatch, [reported by Search Engine Land](https://searchengineland.com/reddit-chatgpt-search-citations-fall-report-485473), showed Reddit holding a steady 3.8% of ChatGPT Search citations through late July and early August, then falling to an average of 0.52% between 14 and 17 August: an 86% drop in four days."
+      },
+      {
+        "type": "p",
+        "text": "It would be easy to read that as “AI has stopped caring about Reddit”. The detail says otherwise. [OtterlyAI’s measurements](https://otterly.ai/blog/chatgpt-reddit-citations/) found Reddit citations in ChatGPT fell by 73%, but across Google’s AI Overviews, AI Mode, Gemini and Perplexity they fell by just 0.6%. Across every engine combined, Reddit’s share of citations moved from 2.00% to 1.66%. Promptwatch saw Google’s AI Overviews ease only gradually, from about 2.5% to 2.1%. OpenAI has not explained the change, and a citation is not the same as a source: ChatGPT can still read a thread while researching an answer without linking to it."
+      },
+      {
+        "type": "p",
+        "text": "What did ChatGPT cite instead? Otterly found the gap was filled mostly by official brand pages, reference sources and other commercial sites. In other words, ChatGPT got more selective about where it shows its working, not less interested in what people think."
+      },
+      {
+        "type": "h3",
+        "text": "The lesson: don’t bet everything on one forum"
+      },
+      {
+        "type": "p",
+        "text": "The August episode is the best argument there is against single-platform “Reddit SEO”. A strategy that depends on one site and one AI engine can lose most of its value overnight because of a change nobody announces. A strategy built on being genuinely discussed across several high-value communities, backed by strong pages on your own site, survives it. AI is relying less directly on Reddit, but it is still reading valuable discourse wherever it happens. The job is to make sure that discourse includes you."
+      },
+      {
+        "type": "h2",
+        "text": "Where the most valuable conversations happen"
+      },
+      {
+        "type": "p",
+        "text": "Not all discussion is equally useful. A million people arguing about video games are worth less to most brands than a few thousand parents comparing family cars. So we ran a simple piece of research to find where the conversations that matter actually take place."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**Ranked by size.** We listed the 50 biggest discussion forums on the internet, in any language.",
+          "**English only.** We removed the 22 that don’t run in English, leaving 28.",
+          "**UK and US audiences.** We removed forums whose readers mostly sit outside the UK and US, such as those serving Nigeria, Singapore, Canada and Australia. 24 remained.",
+          "**Scored the audience.** Each forum got a score for how affluent its readers are and how ready they are to buy.",
+          "**Scored the openness.** Each forum got a second score for how much of it is general, any-subject discussion that any brand can join, rather than a single niche.",
+          "**Combined.** Multiplying the two scores produced a clear top five."
+        ]
+      },
+      {
+        "type": "table",
+        "head": [
+          "Forum",
+          "Score",
+          "UK share",
+          "US share",
+          "Best for"
+        ],
+        "rows": [
+          [
+            "1. Reddit",
+            "40 / 50",
+            "5%",
+            "55%",
+            "Every category. The biggest conversation online, with an affluent, US-led audience"
+          ],
+          [
+            "2. Mumsnet",
+            "36 / 50",
+            "77%",
+            "14%",
+            "Household, family, home, travel and money. Readers who control family budgets"
+          ],
+          [
+            "3. Hacker News",
+            "27 / 50",
+            "–",
+            "–",
+            "Tech, software, media and startups. The highest-earning audience we scored"
+          ],
+          [
+            "4. Quora",
+            "20 / 50",
+            "4%",
+            "50%",
+            "Any question in any category. Answers rank in Google and feed AI answers"
+          ],
+          [
+            "5. PistonHeads",
+            "18 / 50",
+            "81%",
+            "10%",
+            "Cars, watches, property and money. Small, affluent and British"
+          ]
+        ],
+        "caption": "Score = share of open discussion (0–5) × audience income plus buying intent (0–10). UK and US shares are each forum’s search visitors by country (Ahrefs, October 2026). Hacker News visitors mostly arrive directly, so no reliable split exists. Full method on our [forum marketing page](/forum-marketing-agency)."
+      },
+      {
+        "type": "p",
+        "text": "Two things stand out. First, Reddit alone is not a UK strategy: only about 5% of its search visitors are British, so a UK brand has to work in specific communities such as r/CasualUK and r/UKPersonalFinance. Mumsnet and PistonHeads, by contrast, are around 80% British. Second, the smaller forums punch far above their size. Hacker News and PistonHeads have a fraction of Reddit’s traffic, but their readers earn and spend far more than average, and their threads are exactly the kind of considered, expert discussion AI models value."
+      },
+      {
+        "type": "h2",
+        "text": "How to do Reddit and forum SEO for AI, properly"
+      },
+      {
+        "type": "p",
+        "text": "Forum marketing has a bad reputation because most of it is done badly: brand accounts that only ever post links, fake “I found this amazing product” comments, and bought upvotes. Communities spot it quickly, moderators ban it, and the backlash becomes its own thread. Here is the approach that works, and keeps working."
+      },
+      {
+        "type": "h3",
+        "text": "1. Find the threads that already matter"
+      },
+      {
+        "type": "p",
+        "text": "Start with the questions your buyers ask. Search Google for them with “reddit” or “site:mumsnet.com” added, then ask ChatGPT, Gemini and Perplexity the same questions and note which threads they draw on. Those threads already rank and already feed AI answers. A useful reply there is worth more than a hundred new posts nobody reads."
+      },
+      {
+        "type": "h3",
+        "text": "2. Use real, clearly identified accounts"
+      },
+      {
+        "type": "p",
+        "text": "Post as yourself, your founder or a named member of your team, and say who you work for. It feels counter-intuitive, but disclosed experts get more trust, not less, and every major forum has rules against undisclosed promotion. In the UK, the Digital Markets, Competition and Consumers Act 2024 makes fake reviews and hidden paid endorsements illegal, so this is not optional."
+      },
+      {
+        "type": "h3",
+        "text": "3. Give before you ask"
+      },
+      {
+        "type": "p",
+        "text": "Build a history of genuinely helpful answers before you ever mention your product. A good rule of thumb is that most of your contributions should not mention your brand at all. When you do recommend it, it should be because it honestly answers the question, and you should say why it might not suit everyone."
+      },
+      {
+        "type": "h3",
+        "text": "4. Start conversations about the industry, not just the product"
+      },
+      {
+        "type": "p",
+        "text": "The most valuable threads are often about the category itself: what has changed, what most people get wrong, what a newcomer should know. Starting those conversations positions you as the expert in the room, and the discussion that follows is exactly the kind of content AI summarises."
+      },
+      {
+        "type": "h3",
+        "text": "5. Back it up on your own site"
+      },
+      {
+        "type": "p",
+        "text": "When ChatGPT pulled back from Reddit, it leaned towards official brand pages. So the conversation should point somewhere solid: a clear page on your site that answers the same questions, with specifics, prices and proof. Forum presence and [on-site SEO](/services/seo) work best together."
+      },
+      {
+        "type": "h3",
+        "text": "6. Measure mentions, not just links"
+      },
+      {
+        "type": "p",
+        "text": "Most forum links are nofollow, so traditional link metrics miss the point. Track how often your brand is mentioned across your target communities, the sentiment of those mentions, the referral traffic they send, and whether AI tools mention you when asked about your category. That last measure is the one that matters most in 2026."
+      },
+      {
+        "type": "h2",
+        "text": "Forum advertising: organic and paid"
+      },
+      {
+        "type": "p",
+        "text": "“Forum advertising” covers two different things, and the best campaigns use both. Organic forum marketing is everything above: taking part in the conversation from real accounts. Paid forum advertising means placements the forums sell: Reddit Ads and Quora Ads, which target people by community and interest, and sponsored partnerships on forums such as Mumsnet. Paid placements reach people fast, but they work best in communities that already recognise your name from the organic work, because forum audiences are quick to ignore brands they have never seen take part."
+      },
+      {
+        "type": "h2",
+        "text": "Where to start"
+      },
+      {
+        "type": "p",
+        "text": "If you do one thing after reading this, ask an AI tool the question your best customers would ask before buying from you, and see whose name comes up. If it isn’t yours, the brands that are mentioned are the ones being talked about in the places above."
+      },
+      {
+        "type": "p",
+        "text": "That is the gap our [Reddit and forum marketing service](/forum-marketing-agency) exists to close. We map the threads and communities that matter in your category across Reddit, Mumsnet, Hacker News, Quora and PistonHeads, then put your brand into those conversations from clearly identified accounts, with reporting on mentions, traffic and AI visibility. It works alongside our SEO, or on its own."
+      },
+      {
+        "type": "callout",
+        "text": "Find out what forums, and AI, say about your brand. We’ll check all five, live, on a free call.",
+        "cta": "Book a Free Strategy Call →",
+        "href": "https://calendly.com/zaq-lengmedia/leng-media-intro-call?utm_campaign=Reddit+SEO+Blog"
+      }
+    ]
   },
 }
 

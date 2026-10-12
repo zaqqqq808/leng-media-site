@@ -172,6 +172,51 @@
 }
 
 /* ── CALLOUT ── */
+/* Tables scroll inside their frame on small screens, never the page. */
+.tableFigure { margin: 32px 0; }
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  -webkit-overflow-scrolling: touch;
+}
+.table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+}
+.table th {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink-3);
+  text-align: left;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.table td {
+  padding: 13px 16px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line-soft);
+}
+.table tr:last-child td { border-bottom: none; }
+.table td:first-child { color: var(--ink); font-weight: 500; }
+.tableCaption {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  line-height: 1.7;
+  color: var(--ink-3);
+  margin-top: 12px;
+}
+
 .callout {
   margin: 48px 0 0;
   padding: 40px 48px;

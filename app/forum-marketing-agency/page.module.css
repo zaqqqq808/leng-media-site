@@ -618,46 +618,16 @@
 }
 .step:last-child { border-right: none; }
 
-/* ── COUNTRY GRID ── */
-.countryGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-.countryCard {
-  background: var(--surface);
-  padding: 28px 26px;
-}
-.countryName {
+/* ── FUNNEL COUNT ── */
+.funnelCount {
   font-family: var(--font-inter), sans-serif;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--ink);
-  margin: 0 0 14px;
-}
-.countryList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.countryList li {
-  font-family: var(--font-inter), sans-serif;
-  font-size: 13px;
-  color: var(--ink-2);
-  line-height: 1.5;
-}
-.countryList li span {
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-left: 6px;
+  font-weight: 700;
+  font-size: clamp(36px, 4vw, 52px);
+  color: var(--accent-ink);
+  letter-spacing: -1.5px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 18px;
 }
 
 @media (max-width: 900px) {
@@ -665,5 +635,4 @@
   .steps { grid-template-columns: 1fr; }
   .step { border-right: none; border-bottom: 1px solid var(--line); }
   .step:last-child { border-bottom: none; }
-  .countryGrid { grid-template-columns: 1fr; }
 }
