@@ -49,6 +49,7 @@ export default function Nav() {
           <li><Link href="/blog">Blog</Link></li>
           <li><Link href="/free-tools">Resources</Link></li>
           <li><Link href="/ecommerce-protocol" className={styles.course}>Ecom Launch Protocol</Link></li>
+          <li><a href="https://www.lengchronicle.org" target="_blank" rel="noopener" className={styles.chronicle}>Leng Chronicle</a></li>
           <li><Link href="/business-enquiry" className={styles.enquiry}>Business Enquiry</Link></li>
           <li className={styles.authControls}>
             <Link href="/login" className={styles.signIn}>Sign In</Link>
@@ -81,6 +82,7 @@ export default function Nav() {
           <li><Link href="/blog" onClick={close}>Blog</Link></li>
           <li><Link href="/free-tools" onClick={close}>Resources</Link></li>
           <li><Link href="/ecommerce-protocol" className={styles.mobileCourse} onClick={close}>Ecom Launch Protocol</Link></li>
+          <li><a href="https://www.lengchronicle.org" target="_blank" rel="noopener" className={styles.mobileChronicle} onClick={close}>Leng Chronicle</a></li>
           <li><Link href="/business-enquiry" className={styles.mobileEnquiry} onClick={close}>Business Enquiry</Link></li>
         </ul>
       </div>

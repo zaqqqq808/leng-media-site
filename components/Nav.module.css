@@ -55,6 +55,7 @@
   text-transform: uppercase;
   transition: color 0.2s;
   position: relative;
+  white-space: nowrap;
 }
 .links a::after {
   content: '';
@@ -76,6 +77,18 @@
   background: rgba(255,183,0,0.1) !important;
   border-color: #FFB700 !important;
   color: #FFB700 !important;
+}
+/* Leng Chronicle, our publishing arm (lengchronicle.org) */
+.chronicle {
+  color: #00E5FF !important;
+  border: 1px solid rgba(0,229,255,0.4);
+  padding: 8px 16px !important;
+}
+.chronicle::after { display: none !important; }
+.chronicle:hover {
+  background: rgba(0,229,255,0.1) !important;
+  border-color: #00E5FF !important;
+  color: #00E5FF !important;
 }
 .enquiry {
   color: var(--neon) !important;
@@ -213,6 +226,9 @@
 .mobileCourse {
   color: #FFB700 !important;
 }
+.mobileChronicle {
+  color: #00E5FF !important;
+}
 .mobileEnquiry {
   color: var(--neon) !important;
 }
@@ -254,7 +270,13 @@
 .links a.signIn::after, .links a.signUp::after { display: none; }
 
 /* ── Responsive ── */
-@media (max-width: 860px) {
+/* The desktop row holds three outlined buttons plus auth; tighten it on
+   smaller laptops, then hand over to the burger before it can collide
+   with the logo. */
+@media (max-width: 1360px) {
+  .links { gap: 22px; }
+}
+@media (max-width: 1240px) {
   .nav { padding: 18px 24px; }
   .links { display: none; }
   .burger { display: flex; }
