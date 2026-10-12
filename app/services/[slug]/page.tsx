@@ -180,6 +180,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className={styles.heroCtaBtn}>Get Your Quote →</CalendlyPopupLink>
             <ScrollToLink targetId="examples" className={styles.heroCtaBtnGhost}>See Our Work</ScrollToLink>
           </div>
+          <p className={styles.heroNote}><span className={styles.heroNoteDot} aria-hidden="true" />We only take on a few builds each month.</p>
         </VideoScrollHeroWrapper>
       ) : (
         <section className={styles.hero}>
@@ -217,6 +218,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <h2 className={styles.seoHeading}>Building a site is easy now. Selling from it isn&apos;t.</h2>
             <p className={styles.whyIntro}>A good-looking site doesn&apos;t mean anyone will buy. You need an agency that knows what makes people buy, especially on mobile.</p>
           </ScrollReveal>
+          <ScrollReveal>
+            <h3 className={styles.whySub}>So why are clients coming to us over bigger agencies?</h3>
+          </ScrollReveal>
           <ol className={styles.whyList}>
             {BUILD_WHY.map((w, i) => (
               <ScrollReveal key={w.title}>
@@ -229,7 +233,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             ))}
           </ol>
           <ScrollReveal>
-            <p className={styles.whyClose}>All of it goes into your site.</p>
+            <p className={styles.whyClose}>All of it goes into your site. That&apos;s why we&apos;re one of the fastest growing web design agencies.</p>
           </ScrollReveal>
         </section>
       )}
@@ -613,14 +617,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           {slug === 'website-builds' ? (
             <>
               <h2 className="section-title">Ready to <em>get noticed?</em></h2>
-              <p className={styles.ctaSub}>Book a 20-minute call. We will scope your project and send a quote within 24 hours.</p>
+              <p className={styles.ctaSub}>Every week on a slow site is sales going to your competitors. Book a 20-minute call and get a fixed quote within 24 hours.</p>
               <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Get Your Quote →</CalendlyPopupLink>
               <WhatsAppLink href="/whatsapp?service=website" className={styles.ctaWa}>Or message us on WhatsApp</WhatsAppLink>
             </>
           ) : (
             <>
               <h2 className="section-title">Want to <em>chat?</em></h2>
-              <p className={styles.ctaSub}>Book a call. We&apos;ll look at where you are and tell you honestly if we can help.</p>
+              <p className={styles.ctaSub}>Every month you wait, your competitors pull further ahead. Book a call and we&apos;ll tell you honestly if we can help.</p>
               <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/leng-media-intro-call', s.name)} className="btn-primary" style={{fontSize:12,padding:'18px 52px'}}>Book a Call</CalendlyPopupLink>
             </>
           )}
