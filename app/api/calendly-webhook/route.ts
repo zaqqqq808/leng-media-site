@@ -43,6 +43,9 @@ export async function POST(req: Request) {
   const service = payload?.tracking?.utm_campaign || 'Unknown (direct Calendly link)'
   // Only present if the invitee opted into SMS reminders when booking.
   const phone = payload?.text_reminder_number || ''
+  // Booked from our site by someone who declined cookies (see
+  // CalendlyPopupLink): log the lead, but don't report it to Meta or GA4.
+  const declinedTracking = payload?.tracking?.utm_medium === 'no_consent'
 
   try {
     await appendLeadRow({
@@ -64,35 +67,37 @@ export async function POST(req: Request) {
   // Server-side Schedule event: reports the booking to Meta directly,
   // independent of whatever browser (including Instagram's in-app
   // browser, where the client-side pixel is unreliable) the visitor used.
-  try {
-    await sendMetaConversionEvent({
-      eventName: 'Schedule',
-      email: payload?.email,
-      eventSourceUrl: 'https://www.lengmedia.com/services/website-builds',
-    })
-  } catch (error) {
-    console.error('Failed to send Meta conversion event:', error)
-  }
+  if (!declinedTracking) {
+    try {
+      await sendMetaConversionEvent({
+        eventName: 'Schedule',
+        email: payload?.email,
+        eventSourceUrl: 'https://www.lengmedia.com/services/website-builds',
+      })
+    } catch (error) {
+      console.error('Failed to send Meta conversion event:', error)
+    }
 
-  // Server-side GA4 conversion. The client-side gtag call only sees bookings
-  // made in the popup embedded on our own page, so direct calendly.com links
-  // (WhatsApp, Instagram bio, email) never reached GA4 at all. utm_content
-  // carries the real GA client_id when the visit started on the site.
-  try {
-    const gaClientId = payload?.tracking?.utm_content
-    const gaSessionId = payload?.tracking?.utm_term
-    await sendGa4Event({
-      name: 'generate_lead',
-      clientId: gaClientId || fallbackClientId(payload?.email || 'anonymous'),
-      sessionId: gaSessionId,
-      params: {
-        method: 'calendly',
-        service,
-        booking_origin: gaClientId ? 'site' : 'direct_calendly_link',
-      },
-    })
-  } catch (error) {
-    console.error('Failed to send GA4 conversion event:', error)
+    // Server-side GA4 conversion. The client-side gtag call only sees bookings
+    // made in the popup embedded on our own page, so direct calendly.com links
+    // (WhatsApp, Instagram bio, email) never reached GA4 at all. utm_content
+    // carries the real GA client_id when the visit started on the site.
+    try {
+      const gaClientId = payload?.tracking?.utm_content
+      const gaSessionId = payload?.tracking?.utm_term
+      await sendGa4Event({
+        name: 'generate_lead',
+        clientId: gaClientId || fallbackClientId(payload?.email || 'anonymous'),
+        sessionId: gaSessionId,
+        params: {
+          method: 'calendly',
+          service,
+          booking_origin: gaClientId ? 'site' : 'direct_calendly_link',
+        },
+      })
+    } catch (error) {
+      console.error('Failed to send GA4 conversion event:', error)
+    }
   }
 
   // Personal follow-up email asking one qualifying question. Runs after the

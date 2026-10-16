@@ -38,4 +38,5 @@ export const COURSE_LINKS: SiteLink[] = [
 export const COMPANY_LINKS: SiteLink[] = [
   { label: 'Business Enquiry', href: '/business-enquiry' },
   { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Cookie Policy', href: '/cookies' },
 ]

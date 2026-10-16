@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import styles from '@/app/business-enquiry/page.module.css'
+import { hasConsent } from '@/lib/analytics'
+import { HONEYPOT_FIELD, pageAge } from '@/lib/formGuard'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
@@ -34,6 +36,9 @@ export default function ContactForm() {
       phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
       service: (form.elements.namedItem('service') as HTMLSelectElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      [HONEYPOT_FIELD]: (form.elements.namedItem(HONEYPOT_FIELD) as HTMLInputElement).value,
+      elapsed: pageAge(), // lets the server spot instant scripted posts
+      consent: hasConsent(),
     }
 
     try {
@@ -60,6 +65,9 @@ export default function ContactForm() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
+      {/* Honeypot: hidden from people and screen readers, filled by bots. */}
+      <input type="text" name={HONEYPOT_FIELD} tabIndex={-1} autoComplete="off" aria-hidden="true"
+        style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }} />
       <div className={styles.field}>
         <label className={styles.label}>Name</label>
         <input className={styles.input} type="text" name="name" placeholder="Your name" required disabled={status === 'sending'} />

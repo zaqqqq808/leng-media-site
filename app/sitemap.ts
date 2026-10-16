@@ -19,6 +19,7 @@ const PAGES: { path: string; priority: number }[] = [
   { path: '/free-tools/gdn-ad-specs', priority: 0.5 },
   { path: '/free-tools/ppc-ai-skills', priority: 0.5 },
   { path: '/privacy', priority: 0.2 },
+  { path: '/cookies', priority: 0.2 },
 ]
 
 // lastModified is only set where we know it: stamping every URL with

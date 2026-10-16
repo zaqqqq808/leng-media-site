@@ -3,6 +3,8 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import styles from './WhatsAppQualifier.module.css'
+import { hasConsent } from '@/lib/analytics'
+import { HONEYPOT_FIELD, pageAge } from '@/lib/formGuard'
 import { WhatsAppIcon } from './WhatsAppLink'
 import {
   SERVICES, SERVICE_PHRASES, WHATSAPP_NUMBER, stepsFor, isServiceKey,
@@ -32,6 +34,7 @@ export default function WhatsAppQualifier({ initialService }: { initialService: 
   const [draft, setDraft] = useState('')
   const [name, setName] = useState('')
   const [notes, setNotes] = useState('')
+  const [honeypot, setHoneypot] = useState('')
 
   const steps = useMemo(() => (service ? visibleSteps(service, answers) : []), [service, answers])
   const step = steps[index]
@@ -48,6 +51,9 @@ export default function WhatsAppQualifier({ initialService }: { initialService: 
       answers: visibleSteps(service, finalAnswers).map(s => ({ label: s.label, answer: finalAnswers[s.id] || '' })),
       qualified,
       eventId,
+      elapsed: pageAge(), // lets the server spot instant scripted posts
+      consent: hasConsent(),
+      [HONEYPOT_FIELD]: honeypot,
       ...extra,
     })
     // keepalive lets the request finish while the page hands over to WhatsApp
@@ -171,6 +177,10 @@ export default function WhatsAppQualifier({ initialService }: { initialService: 
 
       {service && phase === 'details' && (
         <form onSubmit={submit}>
+          {/* Honeypot: hidden from people and screen readers, filled by bots. */}
+          <input type="text" name={HONEYPOT_FIELD} value={honeypot} onChange={e => setHoneypot(e.target.value)}
+            tabIndex={-1} autoComplete="off" aria-hidden="true"
+            style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }} />
           <p className={styles.eyebrow}>// Last step</p>
           <h1 className={styles.question}>Great. Who am I speaking to?</h1>
           <input className={styles.input} autoFocus required value={name} onChange={e => setName(e.target.value)} placeholder="Your first name" aria-label="Your first name" autoComplete="given-name" />

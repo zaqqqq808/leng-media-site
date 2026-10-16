@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
         <div className={styles.heroContent}>
           <p className={styles.sys}><span className={styles.accent}>SYS:</span> LEGAL // DATA PROTECTION</p>
           <h1 className={styles.title}>Privacy Policy.</h1>
-          <p className={styles.updated}>Last updated: 29 September 2026</p>
+          <p className={styles.updated}>Last updated: 16 October 2026</p>
         </div>
       </section>
 
@@ -34,7 +34,8 @@ export default function PrivacyPolicy() {
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>If you are a client, the answers you give in our project brief and project update forms, your typed signature, and the time, IP address and browser details of each submission</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>Account details if you sign up or sign in, including your email address and authentication data</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span>Payment and billing details if you purchase a product from us, processed and stored directly by our payment provider, Stripe, not by us</li>
-          <li className={styles.listItem}><span className={styles.bullet}>◆</span>Technical data such as your IP address, browser type, device type and pages visited, collected automatically via analytics and advertising tools</li>
+          <li className={styles.listItem}><span className={styles.bullet}>◆</span>Technical data such as your IP address, browser type, device type and pages visited, collected via analytics and advertising tools only if you accept cookies</li>
+          <li className={styles.listItem}><span className={styles.bullet}>◆</span>Your IP address when you submit a form, held briefly in server memory to limit repeated submissions and stop spam. It is not stored with your enquiry</li>
         </ul>
 
         <h2 className={styles.h2}>How we use your data</h2>
@@ -51,9 +52,10 @@ export default function PrivacyPolicy() {
         <h2 className={styles.h2}>Third-party services we use</h2>
         <p className={styles.para}>We rely on the following services to run our business. Each processes a limited set of your data for the purpose described:</p>
         <ul className={styles.list}>
-          <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Google Analytics</strong> — anonymised website usage statistics</li>
-          <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Meta (Facebook/Instagram) Pixel and Conversions API</strong> — measures the performance of our advertising and helps us show relevant ads. Where technically possible, personal identifiers such as your email address are cryptographically hashed before being sent to Meta</li>
-          <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Calendly</strong> — manages call bookings</li>
+          <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Google Analytics</strong> — website usage statistics. Loads only if you accept cookies</li>
+          <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Meta (Facebook/Instagram) Pixel and Conversions API</strong> — measures the performance of our advertising. The Pixel loads only if you accept cookies. If you have accepted and then send an enquiry, book a call or start a WhatsApp chat from our site, our server also tells Meta that this happened (the Conversions API), with your email address hashed and your IP address and browser details attached. If you decline, none of this is sent</li>
+          <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Calendly</strong> — manages call bookings. If you book from our site after declining cookies, we do not report the booking to Meta or Google. If you book through a Calendly link outside our site (for example from Instagram or an email), we report the booking to Meta and Google Analytics with your email address hashed, to measure our advertising</li>
+          <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Vimeo</strong> — plays the video on our ecommerce protocol page, with Vimeo&apos;s tracking turned off</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>WhatsApp Business</strong> — if you choose to message us on WhatsApp, that conversation is subject to WhatsApp&apos;s own privacy policy</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Resend</strong> — delivers transactional emails, such as notifying us of your enquiry or sending you a copy of a project record</li>
           <li className={styles.listItem}><span className={styles.bullet}>◆</span><strong>Google Workspace</strong> — we keep a record of enquiries and bookings in a private, access-controlled spreadsheet</li>
@@ -63,7 +65,7 @@ export default function PrivacyPolicy() {
 
         <h2 className={styles.h2}>Cookies</h2>
         <p className={styles.para}>
-          Our site uses cookies and similar technologies from the services listed above (for example, to remember your session or measure ad performance). You can control or delete cookies through your browser settings at any time.
+          Analytics and advertising cookies (Google Analytics and the Meta Pixel) are only set if you accept them in the banner, and you can change your mind at any time. Sign-in cookies set by Clerk on the members pages are strictly necessary and don&apos;t need consent. Our <Link href="/cookies" className={styles.inlineLink}>cookie policy</Link> lists every cookie, what it does and how long it lasts.
         </p>
 
         <h2 className={styles.h2}>How long we keep your data</h2>

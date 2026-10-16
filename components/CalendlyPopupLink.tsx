@@ -1,5 +1,6 @@
 'use client'
 import { useEffect } from 'react'
+import { hasConsent } from '@/lib/analytics'
 
 let assetsPromise: Promise<void> | null = null
 function loadCalendlyAssets(): Promise<void> {
@@ -32,11 +33,21 @@ function gaIdsFromCookie(): { clientId: string | null; sessionId: string | null 
   return { clientId: client?.[1] ?? null, sessionId: session?.[1] ?? null }
 }
 
+// Visitors who haven't accepted cookies are tagged utm_medium=no_consent, so
+// the webhook knows not to report their booking to Meta or GA4 either.
+// Bookings from direct calendly.com links carry no tag and are unaffected.
+const NO_CONSENT_MEDIUM = 'no_consent'
+
 function withGaIds(href: string): string {
-  const { clientId, sessionId } = gaIdsFromCookie()
-  if (!clientId) return href
-  const params = new URLSearchParams({ utm_content: clientId })
-  if (sessionId) params.set('utm_term', sessionId)
+  const params = new URLSearchParams()
+  if (!hasConsent()) {
+    params.set('utm_medium', NO_CONSENT_MEDIUM)
+  } else {
+    const { clientId, sessionId } = gaIdsFromCookie()
+    if (clientId) params.set('utm_content', clientId)
+    if (sessionId) params.set('utm_term', sessionId)
+  }
+  if (!params.size) return href
   return `${href}${href.includes('?') ? '&' : '?'}${params.toString()}`
 }
 

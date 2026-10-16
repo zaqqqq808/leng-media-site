@@ -2,20 +2,28 @@ import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 import { appendLeadRow } from '@/lib/googleSheets'
 import { sendMetaConversionEvent } from '@/lib/metaConversions'
+import { HONEYPOT_FIELD, clientIp, cookie, escapeHtml as escape, looksLikeBot, rateLimited, sameOrigin } from '@/lib/formGuard'
 
 interface Answer { label: string; answer: string }
-
-const escape = (s: string) => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!))
 
 // Logs the /whatsapp qualifier. The lead continues on WhatsApp in the same
 // moment, so nothing here can block them: every step is best-effort.
 export async function POST(req: Request) {
-  let body: { service?: string; answers?: Answer[]; qualified?: boolean; name?: string; notes?: string; eventId?: string }
+  if (!sameOrigin(req)) return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  if (rateLimited(`whatsapp:${clientIp(req)}`, 10)) return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
+
+  let body: {
+    service?: string; answers?: Answer[]; qualified?: boolean; name?: string; notes?: string; eventId?: string
+    elapsed?: number; consent?: boolean; [HONEYPOT_FIELD]?: string
+  }
   try {
     body = await req.json()
   } catch {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
   }
+
+  // Bots get a normal-looking reply, but nothing is logged, emailed or sent to Meta.
+  if (looksLikeBot(body[HONEYPOT_FIELD], body.elapsed)) return NextResponse.json({ ok: true })
 
   const service = String(body.service || 'Unknown').slice(0, 80)
   const answers = (Array.isArray(body.answers) ? body.answers : [])
@@ -63,16 +71,21 @@ export async function POST(req: Request) {
     console.error('Failed to email WhatsApp lead alert:', error)
   }
 
-  try {
-    await sendMetaConversionEvent({
-      eventName: 'Contact',
-      eventId: body.eventId,
-      eventSourceUrl: 'https://www.lengmedia.com/whatsapp',
-      clientUserAgent: req.headers.get('user-agent') || undefined,
-      clientIpAddress: req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || undefined,
-    })
-  } catch (error) {
-    console.error('Failed to send Meta Contact event:', error)
+  // Only for visitors who accepted cookies, matching the browser pixel.
+  if (body.consent === true) {
+    try {
+      await sendMetaConversionEvent({
+        eventName: 'Contact',
+        eventId: typeof body.eventId === 'string' ? body.eventId.slice(0, 64) : undefined,
+        eventSourceUrl: 'https://www.lengmedia.com/whatsapp',
+        clientUserAgent: req.headers.get('user-agent') || undefined,
+        clientIpAddress: clientIp(req) === 'unknown' ? undefined : clientIp(req),
+        fbp: cookie(req, '_fbp'),
+        fbc: cookie(req, '_fbc'),
+      })
+    } catch (error) {
+      console.error('Failed to send Meta Contact event:', error)
+    }
   }
 
   return NextResponse.json({ ok: true })

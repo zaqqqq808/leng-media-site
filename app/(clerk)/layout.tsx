@@ -9,5 +9,6 @@ export const metadata: Metadata = {
 }
 
 export default function ClerkLayout({ children }: { children: React.ReactNode }) {
-  return <ClerkProvider afterSignOutUrl="/">{children}</ClerkProvider>
+  // Telemetry off: it's not needed, and it would need another CSP host.
+  return <ClerkProvider afterSignOutUrl="/" telemetry={false}>{children}</ClerkProvider>
 }

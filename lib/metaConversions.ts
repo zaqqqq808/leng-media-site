@@ -15,6 +15,9 @@ interface ConversionEvent {
   eventId?: string
   clientUserAgent?: string
   clientIpAddress?: string
+  /** Meta's _fbp / _fbc browser cookies, only present after cookie consent. */
+  fbp?: string
+  fbc?: string
 }
 
 /**
@@ -23,8 +26,11 @@ interface ConversionEvent {
  * arrives via Instagram/Facebook's in-app browser, where third-party
  * scripts and cross-window postMessage (what the client-side pixel
  * relies on) are often blocked or unreliable.
+ *
+ * Callers only send these for visitors who accepted cookies on the site, so
+ * the server-side route never measures someone who declined the pixel.
  */
-export async function sendMetaConversionEvent({ eventName, email, phone, eventSourceUrl, eventId, clientUserAgent, clientIpAddress }: ConversionEvent) {
+export async function sendMetaConversionEvent({ eventName, email, phone, eventSourceUrl, eventId, clientUserAgent, clientIpAddress, fbp, fbc }: ConversionEvent) {
   const pixelId = process.env.META_PIXEL_ID
   const accessToken = process.env.META_CAPI_ACCESS_TOKEN
 
@@ -38,6 +44,8 @@ export async function sendMetaConversionEvent({ eventName, email, phone, eventSo
   if (phone) userData.ph = [hashField(phone.replace(/[^\d]/g, ''))]
   if (clientUserAgent) userData.client_user_agent = clientUserAgent
   if (clientIpAddress) userData.client_ip_address = clientIpAddress
+  if (fbp) userData.fbp = fbp
+  if (fbc) userData.fbc = fbc
 
   const res = await fetch(`https://graph.facebook.com/${GRAPH_VERSION}/${pixelId}/events?access_token=${accessToken}`, {
     method: 'POST',
