@@ -72,6 +72,8 @@ export async function POST(req: Request) {
     try {
       await sendMetaConversionEvent({
         eventName: 'Schedule',
+        // Same id the browser pixel used (CalendlyPopupLink), for dedup.
+        eventId: payload?.uri,
         email: payload?.email,
         eventSourceUrl: 'https://www.lengmedia.com/services/website-builds',
       })

@@ -62,7 +62,10 @@ function ensureScheduleListener() {
       // GA4 is reported from the Calendly webhook instead of here: it catches
       // every booking (including direct calendly.com links) and GA4 has no
       // event-id dedup, so firing in both places would double-count.
-      window.fbq?.('track', 'Schedule')
+      // The invitee URI is also in the webhook payload, so Meta can dedupe this
+      // browser event against the server-side Schedule the webhook sends.
+      const inviteeUri: string | undefined = e.data.payload?.invitee?.uri
+      window.fbq?.('track', 'Schedule', {}, inviteeUri ? { eventID: inviteeUri } : undefined)
     }
   })
 }
