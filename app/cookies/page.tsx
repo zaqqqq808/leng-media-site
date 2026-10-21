@@ -30,7 +30,9 @@ export default function CookiePolicy() {
         <p className={styles.para}>
           When you first visit, nothing that sets an analytics or advertising cookie loads. If you click
           Accept, we load Google Analytics and the Meta Pixel. If you click Decline, they never load and
-          we don&apos;t report your enquiries or bookings to Meta or Google from our server either.
+          we don&apos;t report your enquiries or bookings to Meta from our server either. If you book a
+          call, we still add one to our booking count in Google Analytics, anonymously: no cookie, no
+          identifier and no email address, and marked as not usable for advertising.
         </p>
         <p className={styles.para}><CookieSettingsButton /></p>
 

@@ -1,4 +1,4 @@
-import { createHash } from 'crypto'
+import { createHash, randomInt } from 'crypto'
 
 const MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-NBQPLL55BS'
 
@@ -17,6 +17,15 @@ export function fallbackClientId(seed: string): string {
   return `${a}.${b}`
 }
 
+/**
+ * A throwaway client_id for a booker who hasn't accepted cookies. It is not
+ * read from their device or derived from their email, so the event is a bare
+ * count: GA4 records that a booking happened, and nothing ties it to a person.
+ */
+export function anonymousClientId(): string {
+  return `${randomInt(1, 2 ** 31)}.${Math.floor(Date.now() / 1000)}`
+}
+
 interface Ga4Event {
   name: 'generate_lead'
   clientId: string
@@ -25,6 +34,8 @@ interface Ga4Event {
    *  sent them; without it GA4 opens a fresh "(direct)" session. */
   sessionId?: string
   params?: Record<string, string | number>
+  /** Marks the event as not usable for ads (Google Ads audiences/targeting). */
+  adsConsentDenied?: boolean
 }
 
 /**
@@ -35,7 +46,7 @@ interface Ga4Event {
  * bio, email), or one completed in a new tab when the widget script fails
  * to load. This closes that gap.
  */
-export async function sendGa4Event({ name, clientId, sessionId, params = {} }: Ga4Event) {
+export async function sendGa4Event({ name, clientId, sessionId, params = {}, adsConsentDenied }: Ga4Event) {
   const apiSecret = process.env.GA4_API_SECRET
 
   if (!apiSecret) {
@@ -50,6 +61,7 @@ export async function sendGa4Event({ name, clientId, sessionId, params = {} }: G
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       client_id: clientId,
+      ...(adsConsentDenied && { consent: { ad_user_data: 'DENIED', ad_personalization: 'DENIED' } }),
       events: [{
         name,
         params: {

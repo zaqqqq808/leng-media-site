@@ -2,7 +2,7 @@ import { NextResponse, after } from 'next/server'
 import { createHmac, timingSafeEqual } from 'crypto'
 import { appendLeadRow } from '@/lib/googleSheets'
 import { sendMetaConversionEvent } from '@/lib/metaConversions'
-import { sendGa4Event, fallbackClientId } from '@/lib/ga4'
+import { sendGa4Event, fallbackClientId, anonymousClientId } from '@/lib/ga4'
 import { sendBookingFollowUp } from '@/lib/bookingFollowUp'
 
 // Verifies Calendly's HMAC-SHA256 webhook signature.
@@ -43,8 +43,9 @@ export async function POST(req: Request) {
   const service = payload?.tracking?.utm_campaign || 'Unknown (direct Calendly link)'
   // Only present if the invitee opted into SMS reminders when booking.
   const phone = payload?.text_reminder_number || ''
-  // Booked from our site by someone who declined cookies (see
-  // CalendlyPopupLink): log the lead, but don't report it to Meta or GA4.
+  // Booked from our site by someone who hasn't accepted cookies (declined, or
+  // just ignored the banner; see CalendlyPopupLink). Meta isn't told, and GA4
+  // only gets an anonymous count, so the booking still shows up as a lead.
   const declinedTracking = payload?.tracking?.utm_medium === 'no_consent'
 
   try {
@@ -77,27 +78,33 @@ export async function POST(req: Request) {
     } catch (error) {
       console.error('Failed to send Meta conversion event:', error)
     }
+  }
 
-    // Server-side GA4 conversion. The client-side gtag call only sees bookings
-    // made in the popup embedded on our own page, so direct calendly.com links
-    // (WhatsApp, Instagram bio, email) never reached GA4 at all. utm_content
-    // carries the real GA client_id when the visit started on the site.
-    try {
-      const gaClientId = payload?.tracking?.utm_content
-      const gaSessionId = payload?.tracking?.utm_term
-      await sendGa4Event({
-        name: 'generate_lead',
-        clientId: gaClientId || fallbackClientId(payload?.email || 'anonymous'),
-        sessionId: gaSessionId,
-        params: {
-          method: 'calendly',
-          service,
-          booking_origin: gaClientId ? 'site' : 'direct_calendly_link',
-        },
-      })
-    } catch (error) {
-      console.error('Failed to send GA4 conversion event:', error)
-    }
+  // Server-side GA4 conversion, sent for EVERY booking. The client-side gtag
+  // call only sees bookings made in the popup on our own page by someone who
+  // accepted cookies, which is a minority of real bookings. utm_content and
+  // utm_term carry the real GA client and session ids when the visitor
+  // accepted, so GA4 credits the channel that sent them. Without consent the
+  // event uses a random id with ad consent denied: no device storage is read
+  // and nothing identifies the person, it just counts the booking.
+  try {
+    const gaClientId = declinedTracking ? undefined : payload?.tracking?.utm_content
+    const gaSessionId = declinedTracking ? undefined : payload?.tracking?.utm_term
+    await sendGa4Event({
+      name: 'generate_lead',
+      clientId: declinedTracking
+        ? anonymousClientId()
+        : gaClientId || fallbackClientId(payload?.email || 'anonymous'),
+      sessionId: gaSessionId,
+      adsConsentDenied: declinedTracking,
+      params: {
+        method: 'calendly',
+        service,
+        booking_origin: declinedTracking ? 'site_no_consent' : gaClientId ? 'site' : 'direct_calendly_link',
+      },
+    })
+  } catch (error) {
+    console.error('Failed to send GA4 conversion event:', error)
   }
 
   // Personal follow-up email asking one qualifying question. Runs after the
