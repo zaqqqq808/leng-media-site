@@ -3,7 +3,9 @@ import { createHmac, timingSafeEqual } from 'crypto'
 import { appendLeadRow } from '@/lib/googleSheets'
 import { sendMetaConversionEvent } from '@/lib/metaConversions'
 import { sendGa4Event, fallbackClientId, anonymousClientId } from '@/lib/ga4'
-import { sendBookingFollowUp } from '@/lib/bookingFollowUp'
+import { sendBookingFollowUp, formatWhen } from '@/lib/bookingFollowUp'
+import { normalisePhone } from '@/lib/whatsapp'
+import { openingMessage, sendWhatsAppNudge } from '@/lib/whatsappNudge'
 
 // Verifies Calendly's HMAC-SHA256 webhook signature.
 // Header format: "t=<timestamp>,v1=<signature>"
@@ -41,8 +43,37 @@ export async function POST(req: Request) {
 
   const payload = body.payload
   const service = payload?.tracking?.utm_campaign || 'Unknown (direct Calendly link)'
-  // Only present if the invitee opted into SMS reminders when booking.
-  const phone = payload?.text_reminder_number || ''
+  const answers: { question: string; answer: string }[] = payload?.questions_and_answers || []
+  // The SMS-reminder number if they opted in, otherwise any phone/WhatsApp
+  // question on the booking form.
+  const rawPhone = payload?.text_reminder_number
+    || answers.find(qa => /phone|whats\s?app|mobile/i.test(qa.question))?.answer
+    || ''
+  const phone = rawPhone ? normalisePhone(rawPhone) || '' : ''
+  const name = payload?.name || 'Unknown'
+
+  let whatsappStatus = phone ? '' : 'No phone number'
+  if (phone) {
+    try {
+      await sendWhatsAppNudge({
+        source: 'calendly',
+        name,
+        phone,
+        text: openingMessage('calendly', name, {
+          when: formatWhen(payload?.scheduled_event?.start_time, payload?.timezone).full,
+        }),
+        details: [
+          ['Call', `${payload?.scheduled_event?.name || 'Call'}, ${formatWhen(payload?.scheduled_event?.start_time, 'Europe/London').full} (UK time)`],
+          ['Email', payload?.email || ''],
+          ...answers.map(qa => [qa.question, qa.answer] as [string, string]),
+        ],
+      })
+      whatsappStatus = 'One-tap nudge emailed to Zaq'
+    } catch (error) {
+      console.error('Failed to send WhatsApp nudge:', error)
+      whatsappStatus = 'Nudge failed'
+    }
+  }
   // Booked from our site by someone who hasn't accepted cookies (declined, or
   // just ignored the banner; see CalendlyPopupLink). Meta isn't told, and GA4
   // only gets an anonymous count, so the booking still shows up as a lead.
@@ -50,16 +81,15 @@ export async function POST(req: Request) {
 
   try {
     await appendLeadRow({
-      name: payload?.name || 'Unknown',
+      name,
       email: payload?.email || 'Unknown',
       service,
-      message: (payload?.questions_and_answers || [])
-        .map((qa: { question: string; answer: string }) => `${qa.question}: ${qa.answer}`)
+      message: answers
+        .map(qa => `${qa.question}: ${qa.answer}`)
         .join(' | ') || 'Calendly booking, no additional answers',
       source: 'Calendly booking',
       phone,
-      // Left unset: the Apps Script sheet-watcher sends the WhatsApp
-      // follow-up for this row if a phone number is present.
+      whatsappStatus,
     })
   } catch (error) {
     console.error('Failed to log Calendly booking to sheet:', error)

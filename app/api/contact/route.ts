@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server'
 import { appendLeadRow } from '@/lib/googleSheets'
 import { sendMetaConversionEvent } from '@/lib/metaConversions'
 import { normalisePhone } from '@/lib/whatsapp'
+import { nudgeButtonHtml, openingMessage } from '@/lib/whatsappNudge'
 import { HONEYPOT_FIELD, EMAIL_RE, clientIp, cookie, escapeHtml, looksLikeBot, rateLimited, sameOrigin } from '@/lib/formGuard'
 
 const field = (v: unknown, max: number) => (typeof v === 'string' ? v.trim().slice(0, max) : '')
@@ -31,6 +32,7 @@ export async function POST(req: Request) {
     if (!EMAIL_RE.test(email)) return NextResponse.json({ error: 'Invalid email' }, { status: 400 })
 
     const serviceLabel = service || 'General enquiry'
+    const normalisedPhone = phone ? normalisePhone(phone) : null
     // Created per request, not at import: a missing key then fails this one
     // request instead of crashing every build that imports the route.
     const resend = new Resend(process.env.RESEND_API_KEY)
@@ -56,7 +58,12 @@ export async function POST(req: Request) {
               <td style="padding: 8px 0; font-weight: bold; color: #555;">Service</td>
               <td style="padding: 8px 0;">${escapeHtml(serviceLabel)}</td>
             </tr>
+            ${phone ? `<tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Phone</td>
+              <td style="padding: 8px 0;">${escapeHtml(phone)}</td>
+            </tr>` : ''}
           </table>
+          ${normalisedPhone ? nudgeButtonHtml(normalisedPhone, openingMessage('contact', name, { service: serviceLabel })) : ''}
           <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
           <h3 style="color: #111; margin-bottom: 8px;">Message</h3>
           <p style="color: #333; line-height: 1.6; white-space: pre-wrap;">${escapeHtml(message)}</p>
@@ -67,12 +74,10 @@ export async function POST(req: Request) {
     })
 
     try {
-      const normalisedPhone = phone ? normalisePhone(phone) : null
       await appendLeadRow({
         name, email, service: serviceLabel, message, source: 'Website form',
         phone: normalisedPhone || '',
-        // Left unset: the Apps Script sheet-watcher sends the WhatsApp
-        // follow-up for this row if a phone number is present.
+        whatsappStatus: normalisedPhone ? 'One-tap button in enquiry email' : 'No phone number',
       })
     } catch (sheetError) {
       console.error('Google Sheets log failed (email was still sent):', sheetError)

@@ -31,7 +31,7 @@ function firstNameOf(d: BookingDetails) {
   return (d.firstName || d.name || '').trim().split(/\s+/)[0] || 'there'
 }
 
-function formatWhen(startTime?: string, timezone?: string) {
+export function formatWhen(startTime?: string, timezone?: string) {
   if (!startTime) return { day: '', full: 'our call' }
   const date = new Date(startTime)
   const opts = { timeZone: timezone || 'Europe/London' }

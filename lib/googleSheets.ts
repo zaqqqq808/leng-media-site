@@ -8,12 +8,7 @@ interface LeadRow {
   source: string
   /** E.164 digits, no "+". Leave unset if the lead didn't share a number. */
   phone?: string
-  /**
-   * Set only when this code path already sent a WhatsApp message itself
-   * (e.g. the Meta lead webhook's immediate send), so the Apps Script
-   * sheet-watcher skips the row instead of messaging the lead twice.
-   * Leave unset to let the Apps Script handle sending.
-   */
+  /** What happened about a WhatsApp follow-up (e.g. the one-tap nudge to Zaq). */
   whatsappStatus?: string
 }
 
@@ -75,7 +70,7 @@ export async function appendLeadRow(row: LeadRow) {
   const token = await sheetsAccessToken()
 
   // Columns: A Timestamp, B Name, C Email, D Service, E Source, F Message,
-  // G Phone, H WhatsApp Sent (the Apps Script sheet-watcher reads G/H).
+  // G Phone, H WhatsApp Sent.
   const range = encodeURIComponent('Leads!A:H')
   const res = await fetch(
     `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}:append?valueInputOption=USER_ENTERED`,

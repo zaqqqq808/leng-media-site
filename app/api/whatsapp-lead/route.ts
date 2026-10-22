@@ -42,7 +42,7 @@ export async function POST(req: Request) {
       message: [summary, notes && `Notes: ${notes}`].filter(Boolean).join(' | '),
       source: qualified ? 'WhatsApp qualifier: qualified' : 'WhatsApp qualifier: disqualified',
       // No phone here: they message from WhatsApp, so the number arrives there.
-      // Marked so the sheet-watcher never tries to WhatsApp this row.
+      // They are already messaging Zaq on WhatsApp, so no nudge needed.
       whatsappStatus: 'n/a (WhatsApp qualifier)',
     })
   } catch (error) {

@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { createHmac, timingSafeEqual } from 'crypto'
 import { appendLeadRow } from '@/lib/googleSheets'
 import { normalisePhone, sendWhatsAppTemplate } from '@/lib/whatsapp'
+import { openingMessage, sendWhatsAppNudge } from '@/lib/whatsappNudge'
 
 const GRAPH_VERSION = process.env.META_GRAPH_VERSION || 'v21.0'
 
@@ -71,7 +72,23 @@ async function processLead(leadgenId: string, formId?: string) {
   const phone = rawPhone ? normalisePhone(rawPhone) : null
 
   let whatsappStatus = 'No phone number on lead'
-  if (phone) {
+  // Without a Cloud API number (Zaq's number stays on the WhatsApp Business
+  // app), email him a one-tap button instead of messaging the lead directly.
+  if (phone && !process.env.WHATSAPP_ACCESS_TOKEN) {
+    try {
+      await sendWhatsAppNudge({
+        source: 'lead-form',
+        name: name || 'there',
+        phone,
+        text: openingMessage('lead-form', name),
+        details: [['Email', email], ['Interested in', service]],
+      })
+      whatsappStatus = 'One-tap nudge emailed to Zaq'
+    } catch (err) {
+      console.error('WhatsApp nudge failed:', err)
+      whatsappStatus = 'Nudge failed'
+    }
+  } else if (phone) {
     try {
       await sendWhatsAppTemplate({
         to: phone,
@@ -94,8 +111,6 @@ async function processLead(leadgenId: string, formId?: string) {
       source: `Meta lead form${formId ? ` (${formId})` : ''}`,
       message: 'Meta Instant Form submission',
       phone: phone || rawPhone || '',
-      // Already sent (or attempted) above, so the sheet-watcher script
-      // skips this row instead of messaging the lead a second time.
       whatsappStatus,
     })
   } catch (err) {
