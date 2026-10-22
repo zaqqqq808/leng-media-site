@@ -18,7 +18,9 @@ function visibleSteps(service: ServiceKey, answers: Record<string, string>): Ste
 }
 
 function whatsappMessage(service: ServiceKey, steps: Step[], answers: Record<string, string>, name: string, notes: string) {
-  const lines = [`Hi Zaq, it's ${name}. I'm interested in ${SERVICE_PHRASES[service]}.`, '']
+  // WhatsApp is shared with Zaq's other businesses, so the first words name
+  // Leng Media: the chat list then shows which business it's about.
+  const lines = [`Hi Leng Media, it's ${name}. I'm interested in ${SERVICE_PHRASES[service]}.`, '']
   for (const s of steps) {
     if (answers[s.id]) lines.push(`• ${s.label}: ${answers[s.id]}`)
   }
