@@ -434,6 +434,14 @@
 @media (max-width: 768px) {
   .performanceImageWrap { max-width: 100%; padding: 16px 16px 20px; }
 }
+.caseStudyResult {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--grey-5);
+  max-width: 720px;
+  margin: 40px auto 0;
+}
 .seoPillarsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

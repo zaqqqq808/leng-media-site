@@ -78,6 +78,13 @@ export interface Service {
     }[]
     proofImages?: { src: string; alt: string }[]
   }
+  /** Screenshot-led case study shown after the overview. */
+  caseStudy?: {
+    heading: string
+    intro: string
+    items: { label: string; caption: string; src: string; alt: string; width: number; height: number }[]
+    result: string
+  }
 }
 
 export const SERVICES: Record<string, Service> = {
@@ -288,6 +295,48 @@ export const SERVICES: Record<string, Service> = {
       qualifier: 'For brands doing $50k+/month. Limited spots each quarter.',
       ctaLabel: 'Book Your Strategy Session →',
       ctaHref: 'https://calendly.com/zaq-lengmedia/leng-media-intro-call',
+    },
+    caseStudy: {
+      heading: 'Spot the opportunity. Ship it in days.',
+      intro: 'One example of how we work. A UK ecommerce client was running its affiliate programme on an off-the-shelf app. The fees grew with every sale, and the experience looked nothing like their brand. So we built them their own affiliate platform.',
+      items: [
+        {
+          label: '// The problem · a typical affiliate app',
+          caption: 'A monthly plan plus up to 2% of every referral sale. The bigger the programme grows, the more the app takes.',
+          src: '/case-affiliate-problem-pricing.png',
+          alt: 'Affiliate app pricing: monthly plans from $29.99 to $199.99, plus 1% to 2% of referral sales',
+          width: 1600, height: 431,
+        },
+        {
+          label: '// The fix · a branded application page',
+          caption: 'Creators apply on the brand’s own subdomain. Each application lands in the affiliate manager’s inbox to approve.',
+          src: '/case-affiliate-apply.png',
+          alt: 'Affiliate application page with benefits and an apply form',
+          width: 1600, height: 1000,
+        },
+        {
+          label: '// Affiliate dashboard',
+          caption: 'Approved affiliates get their link and discount code straight away, with live stats and a feed of real payouts to keep them motivated.',
+          src: '/case-affiliate-dashboard.png',
+          alt: 'Affiliate dashboard showing a referral link, discount code, stats and a payout feed',
+          width: 1600, height: 1100,
+        },
+        {
+          label: '// Trade-price stock',
+          caption: 'Affiliates generate a one-time 50% code to buy their own stock, limited to one a month.',
+          src: '/case-affiliate-stock.png',
+          alt: 'Stock page showing a one-time 50% off code',
+          width: 1600, height: 650,
+        },
+        {
+          label: '// Friday payouts',
+          caption: 'Orders sync from Shopify automatically. Each Friday the manager sees who is owed, pays them, and records it in one click.',
+          src: '/case-affiliate-admin-payouts.png',
+          alt: 'Admin payout screen listing affiliates owed this Friday',
+          width: 1600, height: 1075,
+        },
+      ],
+      result: 'The result: no monthly plan, no cut of sales, and an affiliate programme that looks and feels like the brand. Spotting levers like this, and actioning them fast, is what a fractional CMO is for. Screens show sample data; client details are hidden.',
     },
     related: ['direct-response', 'lead-generation', 'agency-assist'],
   },

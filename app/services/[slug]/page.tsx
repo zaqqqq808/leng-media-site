@@ -345,6 +345,29 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
+      {/* CASE STUDY — screenshot-led example of the service in action */}
+      {s.caseStudy && (
+        <section className={`${styles.performanceSection} theme-dark`}>
+          <ScrollReveal>
+            <span className="section-label">// Case study</span>
+            <h2 className={styles.seoHeading}>{s.caseStudy.heading}</h2>
+            <p className={styles.performanceCopy}>{s.caseStudy.intro}</p>
+          </ScrollReveal>
+          {s.caseStudy.items.map((item, i) => (
+            <ScrollReveal key={item.src} delay={(i === 0 ? 1 : 2) as 1|2}>
+              <div className={styles.performanceImageWrap}>
+                <span className={styles.performanceImageLabel}>{item.label}</span>
+                <p className={styles.performanceImageCaption}>{item.caption}</p>
+                <Image src={item.src} alt={item.alt} width={item.width} height={item.height} sizes="(max-width: 768px) 100vw, 720px" className={styles.performanceImage} />
+              </div>
+            </ScrollReveal>
+          ))}
+          <ScrollReveal>
+            <p className={styles.caseStudyResult}>{s.caseStudy.result}</p>
+          </ScrollReveal>
+        </section>
+      )}
+
       {/* SHOWCASE — interactive examples */}
       {s.showcase && (
         <section className={styles.showcase}>
