@@ -118,6 +118,11 @@ export default function EcommerceProtocol() {
             figuring out what we&apos;ll tell<br />
             <span className={styles.accent}>you in week one.</span>
           </h1>
+          <p className={styles.heroSub}>
+            Guided 1-on-1 calls to turbocharge your ecommerce brand launch.<br />
+            Everything from supplier to first sale, in one place.<br />
+            First sale within 7 days of launch. <strong>Or we refund you 100%.</strong>
+          </p>
           <div className={styles.vslWrap}>
             <div className={styles.vslGlow} />
             <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
@@ -131,10 +136,6 @@ export default function EcommerceProtocol() {
               />
             </div>
           </div>
-          <p className={styles.heroSub}>
-            Everything from supplier to first sale, in one place.<br />
-            First sale within 7 days of launch. <strong>Or we refund you 100%.</strong>
-          </p>
           <div className={styles.heroActions}>
             <a href="https://buy.stripe.com/14AdR37zKbF53gNaPsbjW02" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Start The Protocol →</a>
             <span className={styles.spotsHero}>⚡ Only 8 spots remaining this month</span>
@@ -178,7 +179,7 @@ export default function EcommerceProtocol() {
               <span className={styles.checkBig}>✓</span>
               <h3>We&apos;ve already figured all of this out.</h3>
               <p>Every answer above is inside the Protocol. The exact supplier list we use. The exact ad structure we run for clients today. The exact Shopify setup that converts. You follow the steps.</p>
-              <span className={styles.roiBadge}>Save 100+ Hours</span>
+              <a href="https://buy.stripe.com/14AdR37zKbF53gNaPsbjW02" className={`${styles.btnMain} ${styles.roiBtn}`} target="_blank" rel="noopener noreferrer">Save 100+ Hours →</a>
             </div>
           </div>
           <p className={styles.swipeHint}>swipe to explore →</p>
@@ -220,7 +221,7 @@ export default function EcommerceProtocol() {
       <section className={styles.modules}>
         <div className={styles.container}>
           <span className={styles.sectionLabel}>// THE SYSTEM</span>
-          <h2 className={styles.sectionTitle}>The System Architecture</h2>
+          <h2 className={styles.sectionTitle}>The modules we&apos;ll go through together</h2>
           <div className={styles.bentoGrid}>
             {[
               { num: '01', tag: 'RESEARCH', title: 'Choosing the Right Product', desc: "Don't guess. Our checklist finds products with real demand before you spend a penny on inventory.", value: '$399' },
