@@ -136,7 +136,7 @@ export default function EcommerceProtocol() {
             First sale within 7 days of launch. <strong>Or we refund you 100%.</strong>
           </p>
           <div className={styles.heroActions}>
-            <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
+            <a href="https://buy.stripe.com/14AdR37zKbF53gNaPsbjW02" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Start The Protocol →</a>
             <span className={styles.spotsHero}>⚡ Only 8 spots remaining this month</span>
           </div>
           <p className={styles.heroPriceNote}>
@@ -190,9 +190,14 @@ export default function EcommerceProtocol() {
         <div className={styles.container}>
           <span className={styles.sectionLabel}>// Picture This</span>
           <h2 className={styles.dreamTitle}>Eight weeks from now.</h2>
-          <p className={styles.dreamText}>Your store is live. You wake up to a notification you have never seen before. Someone you have never met, in a city you have never been to, just bought something you sell.</p>
-          <p className={styles.dreamText}>That is the moment everything changes. The money is part of it. But what you now know is something most people never figure out. You know how to build a revenue stream that does not need you to clock in. You understand how business actually works. And you can do it again.</p>
-          <p className={styles.dreamText}>More time. More options. The freedom to say no to things that do not serve you. The 9-to-5 stays or goes on your terms. Not your employer&apos;s.</p>
+          <ul className={styles.dreamList}>
+            <li>Your store is live.</li>
+            <li>You wake up to a notification you have never seen before: someone you have never met, in a city you have never been to, just bought something you sell.</li>
+            <li>You know how to build a revenue stream that does not need you to clock in.</li>
+            <li>You understand how business actually works, and you can do it again.</li>
+            <li>More time, more options, and the freedom to say no to things that do not serve you.</li>
+            <li>The 9-to-5 stays or goes on your terms. Not your employer&apos;s.</li>
+          </ul>
           <div className={styles.dreamStats}>
             <div className={styles.dreamStat}>
               <span className={styles.dreamStatNum}>8</span>
@@ -251,7 +256,7 @@ export default function EcommerceProtocol() {
         {/* CTA #1 */}
         <div className={styles.container}>
           <div className={styles.midCta}>
-            <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
+            <a href="https://buy.stripe.com/14AdR37zKbF53gNaPsbjW02" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Start The Protocol →</a>
             <span className={styles.spotsInline}>⚡ Only 8 spots remaining this month</span>
           </div>
         </div>
@@ -284,7 +289,7 @@ export default function EcommerceProtocol() {
           </div>
           {/* CTA #2 */}
           <div className={styles.midCta}>
-            <Link href="#pricing" className={styles.btnMain}>Claim Your Spot →</Link>
+            <a href="https://buy.stripe.com/14AdR37zKbF53gNaPsbjW02" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Claim Your Spot →</a>
             <span className={styles.spotsInline}>⚡ Mentorship is capped at 8 students per month</span>
           </div>
         </div>
@@ -365,7 +370,7 @@ export default function EcommerceProtocol() {
             </p>
             <p className={styles.guaranteeCta}>You literally cannot fail.</p>
             {/* CTA #3 */}
-            <Link href="#pricing" className={`${styles.btnMain} ${styles.guaranteeBtn}`}>Start The Protocol →</Link>
+            <a href="https://buy.stripe.com/14AdR37zKbF53gNaPsbjW02" className={`${styles.btnMain} ${styles.guaranteeBtn}`} target="_blank" rel="noopener noreferrer">Start The Protocol →</a>
           </div>
         </div>
       </section>
@@ -404,16 +409,23 @@ export default function EcommerceProtocol() {
       <section className={styles.nextSteps}>
         <div className={styles.container}>
           <span className={styles.sectionLabel}>// WHAT HAPPENS NEXT</span>
-          <h2 className={styles.sectionTitle}>Here&apos;s exactly what to expect.</h2>
+          <h2 className={styles.sectionTitle}>Here&apos;s exactly what to expect after booking the course.</h2>
           <div className={styles.stepsGrid}>
             {[
               { num: '01', title: 'You enrol and book your Kickoff Call', desc: 'The moment you purchase, you are taken straight to our booking page. Pick a slot that works for you, usually within 48 hours.' },
               { num: '02', title: 'We map out your entire launch plan', desc: 'On the Kickoff Call we walk through your idea, your budget, and your timeline. You leave with a personalised action plan. Not a login link and a good luck.' },
-              { num: '03', title: 'You work through the modules', desc: 'Eight modules, each ending with a clear deliverable and checklist. Nothing vague. You always know what to do next.' },
+              { num: '03', title: 'You work through the modules', desc: 'Eight modules, each ending with a clear deliverable and checklist. Nothing vague. You always know what to do next.', href: '#modules' },
               { num: '04', title: 'Bi-weekly check-in calls', desc: 'Every two weeks we get back on a call. We review progress, unblock anything in the way, and tell you exactly what to do next.' },
               { num: '05', title: 'Green Light store review', desc: 'Before you spend a penny on ads, we personally review your store. You don\'t launch until we say you\'re ready.' },
               { num: '06', title: 'You launch and make your first sale', desc: 'With the Green Light given, you go live. First sale within 7 days. If not, we refund you 100%, no questions asked.' },
-            ].map(s => (
+            ].map(s => s.href ? (
+              <a key={s.num} href={s.href} className={`${styles.stepCard} ${styles.stepCardLink}`}>
+                <span className={styles.stepNum}>{s.num}</span>
+                <h3 className={styles.stepTitle}>{s.title}</h3>
+                <p className={styles.stepDesc}>{s.desc}</p>
+                <span className={styles.stepLinkHint}>See the modules ↓</span>
+              </a>
+            ) : (
               <div key={s.num} className={styles.stepCard}>
                 <span className={styles.stepNum}>{s.num}</span>
                 <h3 className={styles.stepTitle}>{s.title}</h3>
@@ -437,7 +449,7 @@ export default function EcommerceProtocol() {
           <div className={styles.priceCardFull}>
 
             {/* Left — what's inside */}
-            <div className={styles.priceLeft}>
+            <div className={styles.priceLeft} id="modules">
               <h3 className={styles.priceFullTitle}>Eight modules.<br />One outcome.</h3>
               <p className={styles.priceFullSub}>Eight modules, each delivered live 1-on-1 and recorded. Four accountability calls. A personal store review before you spend a penny on ads. The exact systems we use with agency clients, now yours.</p>
               <div className={styles.modulePriceGrid}>
@@ -497,7 +509,7 @@ export default function EcommerceProtocol() {
           <h2 className={styles.sectionTitle}>Everything you&apos;re wondering.</h2>
           <FaqAccordion faqs={FAQS} />
           <div className={styles.midCta} style={{marginTop: 64}}>
-            <Link href="#pricing" className={styles.btnMain}>Start The Protocol →</Link>
+            <a href="https://buy.stripe.com/14AdR37zKbF53gNaPsbjW02" className={styles.btnMain} target="_blank" rel="noopener noreferrer">Start The Protocol →</a>
           </div>
         </div>
       </section>
