@@ -28,6 +28,7 @@ export default function Footer() {
         <Link href="/" className={styles.logo}>
           Leng. <span className={styles.logoSub}>MEDIA</span>
         </Link>
+        <a href="https://www.lengchronicle.org" target="_blank" rel="noopener" className={styles.chronicle}>Leng Chronicle</a>
         <span className={styles.copy}>© {new Date().getFullYear()} Leng Media. All rights reserved.</span>
       </div>
     </footer>

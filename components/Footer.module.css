@@ -52,6 +52,22 @@
   color: var(--grey-3);
   font-style: normal;
 }
+/* Leng Chronicle, our publishing arm (lengchronicle.org) */
+.chronicle {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #00E5FF;
+  border: 1px solid rgba(0,229,255,0.4);
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.chronicle:hover {
+  background: rgba(0,229,255,0.1);
+  border-color: #00E5FF;
+}
 .copy {
   font-family: var(--font-mono), monospace;
   font-size: 8px;
