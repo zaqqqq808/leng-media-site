@@ -11,6 +11,7 @@ import ClientLogo from '@/components/ClientLogo'
 import WhatsAppLink from '@/components/WhatsAppLink'
 import ScrollToLink from '@/components/ScrollToLink'
 import StickyMobileCta from '@/components/StickyMobileCta'
+import PortfolioGrid from '@/components/PortfolioGrid'
 import styles from './page.module.css'
 import { SERVICES } from '@/lib/services'
 import { FunnelDiagram, TrafficChart } from './charts'
@@ -424,57 +425,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       {/* PORTFOLIO — website showcase */}
       {s.portfolio && (
         <section id="portfolio" className={styles.portfolio}>
-          <ScrollReveal style={{ marginBottom: 56 }}>
+          <ScrollReveal style={{ marginBottom: 40 }}>
             <span className="section-label">// Our work</span>
             <h2 className={styles.portfolioTitle}>Sites we&apos;ve built.</h2>
           </ScrollReveal>
-          {s.portfolio.projects.map((project, i) => (
-            <ScrollReveal key={project.name} delay={(i % 2 === 0 ? 1 : 2) as 1|2}>
-              <div className={styles.portfolioItem}>
-                <div className={styles.portfolioText}>
-                  <p className={styles.portfolioNum}>// {String(i + 1).padStart(2, '0')}</p>
-                  <h3 className={styles.portfolioName}>{project.name}</h3>
-                  {project.url ? (
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className={styles.portfolioUrl}>
-                      {project.urlLabel} ↗
-                    </a>
-                  ) : (
-                    <span className={styles.portfolioUrlPending}>{project.urlLabel}</span>
-                  )}
-                  <div className={styles.portfolioMeta}>
-                    <div className={styles.portfolioBlock}>
-                      <span className={styles.portfolioBlockLabel}>// The challenge</span>
-                      <p className={styles.portfolioBlockText}>{project.challenge}</p>
-                    </div>
-                    <div className={styles.portfolioBlock}>
-                      <span className={styles.portfolioBlockLabel}>// Our approach</span>
-                      <p className={styles.portfolioBlockText}>{project.solution}</p>
-                    </div>
-                  </div>
-                  <div className={styles.portfolioInlineCta}>
-                    <span className={styles.portfolioInlineCtaText}>Want something like this?</span>
-                    <CalendlyPopupLink href={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')} className={styles.portfolioInlineCtaLink}>Book a call →</CalendlyPopupLink>
-                  </div>
-                </div>
-                <div className={styles.portfolioScreenshots}>
-                  {project.desktopImg && (
-                    <div className={styles.portfolioDesktop}>
-                      <div className={styles.portfolioDesktopImgWrap}>
-                        <Image src={project.desktopImg} alt={`${project.name} desktop`} fill sizes="(max-width:900px) 100vw, 50vw" style={{objectFit:'cover',objectPosition:'top'}} />
-                      </div>
-                      <span className={styles.portfolioImgLabel}>// Desktop</span>
-                    </div>
-                  )}
-                  <div className={styles.portfolioMobile}>
-                    <div className={styles.portfolioMobileImgWrap}>
-                      <Image src={project.mobileImg} alt={`${project.name} mobile`} fill sizes="210px" style={{objectFit:'cover',objectPosition:'top'}} />
-                    </div>
-                    <span className={styles.portfolioImgLabel}>// Mobile</span>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
+          <PortfolioGrid
+            projects={s.portfolio.projects}
+            ctaHref={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')}
+          />
         </section>
       )}
 

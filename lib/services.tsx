@@ -40,12 +40,18 @@ export interface Service {
   }
   portfolio?: {
     projects: {
+      /** Card heading. The brand name only shows once the card is opened. */
+      industry: string
+      /** One key feature we built, shown under the industry on the card. */
+      feature: string
       name: string
       /** Omit until the site is live; urlLabel then shows as plain text. */
       url?: string
       urlLabel: string
-      challenge: string
-      solution: string
+      /** One sentence: who they are and what they needed. */
+      brief: string
+      /** Two to four short points on what we did. */
+      work: string[]
       desktopImg: string
       mobileImg: string
     }[]
@@ -429,54 +435,89 @@ export const SERVICES: Record<string, Service> = {
     portfolio: {
       projects: [
         {
+          industry: 'Art Studio & Classes',
+          feature: 'Bilingual booking synced to Google Calendar',
           name: 'Inspire Art Lab',
           url: 'https://inspireartlab.com',
           urlLabel: 'inspireartlab.com',
-          challenge: 'A Santa Fe art studio and gallery running Saturday paint parties, online classes and retreats needed a site that fills seats every week, for English and Spanish speaking customers alike.',
-          solution: 'We built a bold, playful bilingual site around one action, booking a class. Customers pick an experience, a Saturday and a group size, and the booking lands straight in the studio’s Google Calendar with live seat counts, plus local SEO for Santa Fe art classes.',
+          brief: 'A Santa Fe art studio needed to fill its Saturday classes with English and Spanish speakers.',
+          work: [
+            'English and Spanish site with a one-tap language switch',
+            'Booking flow that writes straight into the studio’s Google Calendar, with live seat counts',
+            'Local SEO for Santa Fe art classes',
+          ],
           desktopImg: '/portfolio-inspireartlab-desktop.jpg',
           mobileImg: '/portfolio-inspireartlab-mobile.jpg',
         },
         {
+          industry: 'Media & Podcasts',
+          feature: 'AI search by mood, topic or guest',
           name: 'WhichPodcast',
           url: 'https://www.whichpodcast.com',
           urlLabel: 'whichpodcast.com',
-          challenge: 'Client wanted to create the Netflix of podcasts, a rich discovery platform with a familiar content grid feel and the ability for creators to upload their own shows.',
-          solution: 'We built a Netflix inspired UI and introduced AI powered natural language search, letting users find podcasts by mood, topic, guest, or feeling rather than just keyword.',
+          brief: 'A podcast discovery platform built to be the Netflix of podcasts.',
+          work: [
+            'Netflix-style content grid',
+            'AI natural language search: find shows by mood, topic, guest or feeling',
+            'Creators can upload their own shows',
+          ],
           desktopImg: '/portfolio-whichpodcast-desktop.png',
           mobileImg: '/portfolio-whichpodcast-mobile.jpg',
         },
         {
+          industry: 'Real Estate',
+          feature: 'Scroll animation of a villa being built',
           name: 'Ayla Property',
           url: 'https://www.aylaproperty.com',
           urlLabel: 'aylaproperty.com',
-          challenge: 'Client needed a lead generating site that projected authority in the Bali property market without the distraction of a browseable listing tool.',
-          solution: 'We removed the property search entirely and built a high converting landing page with a custom scroll animation of a villa being constructed, giving prospective buyers a tangible sense of the development quality.',
+          brief: 'A Bali property developer needed leads, not a listings browser.',
+          work: [
+            'Replaced property search with one high-converting landing page',
+            'Custom scroll animation of a villa being constructed',
+          ],
           desktopImg: '/portfolio-aylaproperty-desktop.png',
           mobileImg: '/portfolio-ayla-mobile.jpg',
         },
         {
+          industry: 'Health & Retail',
+          feature: 'Mobile Lighthouse score from 67 to 100',
           name: 'Ideal Feet',
           urlLabel: 'idealfeetgroup.com · launching soon',
-          challenge: 'A Texas arch support brand with two stores and TV ad traffic, held back by a WordPress site that took 35 seconds to load on mobile and hid the booking button.',
-          solution: 'We rebuilt it by hand around one action, booking a free fitting, with a scroll animation of the product at work, local SEO for both cities and a redirect for every old URL. Mobile Lighthouse went from 67 to 100.',
+          brief: 'A Texas arch support brand whose WordPress site took 35 seconds to load on mobile.',
+          work: [
+            'Rebuilt by hand around one action: booking a free fitting',
+            'Scroll animation of the product at work',
+            'Local SEO for both store cities, with every old URL redirected',
+          ],
           desktopImg: '/portfolio-idealfeet-desktop.jpg',
           mobileImg: '/portfolio-idealfeet-mobile.jpg',
         },
         {
+          industry: 'Luxury Home & Interiors',
+          feature: 'French trade site for distributors',
           name: 'Chesneys France',
           urlLabel: 'Chesneys France · launching soon',
-          challenge: 'Chesneys, the London fireplace and stove maker, was bringing its luxury wood stoves to France and needed a site that recruits distributors, architects and specifiers rather than selling to the public.',
-          solution: 'We built a French trade site with an editorial, luxury feel: the two collections, the engineering story and a clear route in for dealers and specifiers.',
+          brief: 'A London fireplace and stove maker bringing its wood stoves to France.',
+          work: [
+            'French site with an editorial, luxury feel',
+            'Built to recruit distributors, architects and specifiers, not sell to the public',
+            'Both collections and the engineering story, with a clear route in for dealers',
+          ],
           desktopImg: '/portfolio-chesneys-fr-desktop.jpg',
           mobileImg: '/portfolio-chesneys-fr-mobile.jpg',
         },
         {
+          industry: 'Marketing Agency',
+          feature: 'Custom canvas animation',
           name: 'Leng Media',
           url: 'https://www.lengmedia.com',
           urlLabel: 'lengmedia.com',
-          challenge: 'Our own site needed a major upgrade. Something modern and unmistakably distinct from the generic agency template.',
-          solution: 'Built from scratch in Next.js with a custom canvas animation, dark design system, and Core Web Vitals optimisation. Ready to run paid traffic from day one.',
+          brief: 'Our own site, rebuilt to look nothing like an agency template.',
+          work: [
+            'Built from scratch in Next.js with a dark design system',
+            'Custom canvas animation',
+            'Core Web Vitals optimised and ready for paid traffic from day one',
+          ],
           desktopImg: '/portfolio-lengmedia-desktop.png',
           mobileImg: '/portfolio-lengmedia-mobile.jpg',
         },

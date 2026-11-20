@@ -528,110 +528,6 @@
   margin-top: 16px;
   margin-bottom: 0;
 }
-.portfolioItem {
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 64px;
-  align-items: start;
-  padding: 56px 0;
-  border-top: 1px solid var(--line);
-}
-.portfolioItem:last-child {
-  border-bottom: 1px solid var(--line);
-}
-.portfolioNum {
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--accent-ink);
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.portfolioName {
-  font-family: var(--font-inter), sans-serif;
-  font-weight: 500;
-  font-size: clamp(24px, 2.5vw, 36px);
-  color: var(--ink);
-  letter-spacing: -0.3px;
-  margin-bottom: 10px;
-}
-.portfolioUrl {
-  font-family: var(--font-mono), monospace;
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: var(--accent-ink);
-  text-decoration: none;
-  text-transform: lowercase;
-  display: inline-block;
-  margin-bottom: 32px;
-  border-bottom: 1px solid var(--accent-ink-soft);
-  padding-bottom: 2px;
-  transition: border-color .2s, opacity .2s;
-}
-.portfolioUrlPending {
-  display: inline-block;
-  font-family: var(--font-mono), monospace;
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: lowercase;
-  color: var(--ink-3);
-  margin-bottom: 32px;
-  padding-bottom: 3px;
-}
-.portfolioUrl:hover { opacity: 0.7; border-color: var(--accent-ink); }
-.portfolioMeta { display: flex; flex-direction: column; gap: 24px; }
-.portfolioBlockLabel {
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--ink-3);
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 10px;
-}
-.portfolioBlockText {
-  font-family: var(--font-inter), sans-serif;
-  font-size: 14px;
-  color: var(--ink-2);
-  line-height: 1.7;
-}
-.portfolioScreenshots {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  align-items: flex-start;
-}
-.portfolioDesktop,
-.portfolioMobile { display: flex; flex-direction: column; gap: 10px; }
-.portfolioMobile { width: 100%; max-width: 210px; }
-.portfolioDesktopImgWrap {
-  width: 100%;
-  aspect-ratio: 16/10;
-  position: relative;
-  border-radius: 6px;
-  border: 1px solid var(--line);
-  overflow: hidden;
-  background: var(--bg-alt);
-}
-.portfolioMobileImgWrap {
-  width: 100%;
-  aspect-ratio: 9/16;
-  position: relative;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  overflow: hidden;
-  background: var(--bg-alt);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
-}
-.portfolioImgLabel {
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  color: var(--ink-3);
-  text-transform: uppercase;
-  text-align: center;
-  display: block;
-}
 /* RELATED */
 .related {
   padding: 80px 52px;
@@ -990,35 +886,6 @@
   border: 1px solid rgba(212,255,0,0.25);
   padding: 4px 10px;
 }
-/* ── PORTFOLIO INLINE CTA ── */
-.portfolioInlineCta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-}
-.portfolioInlineCtaText {
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  color: var(--ink-3);
-  text-transform: uppercase;
-}
-.portfolioInlineCtaLink {
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  color: var(--accent-ink);
-  text-transform: uppercase;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(212,255,0,0.3);
-  padding-bottom: 1px;
-  transition: border-color .2s;
-  white-space: nowrap;
-}
-.portfolioInlineCtaLink:hover { border-color: var(--accent-ink); }
 /* ── WEBSITE FAQ ── */
 .websiteFaq {
   padding: 80px 52px;
@@ -1067,8 +934,6 @@
   .seoPillarsGrid { grid-template-columns: 1fr; }
   .seoPillarCard { padding: 32px 24px; }
   .portfolio { padding: 60px 24px; }
-  .portfolioItem { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
-  .portfolioMobile { max-width: 180px; }
   .heroCtas { flex-direction: column; align-items: flex-start; gap: 16px; }
   .processSection { padding: 60px 24px; }
   .processGrid { grid-template-columns: 1fr 1fr; }
