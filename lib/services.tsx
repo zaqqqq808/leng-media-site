@@ -429,6 +429,15 @@ export const SERVICES: Record<string, Service> = {
     portfolio: {
       projects: [
         {
+          name: 'Inspire Art Lab',
+          url: 'https://inspireartlab.com',
+          urlLabel: 'inspireartlab.com',
+          challenge: 'A Santa Fe art studio and gallery running Saturday paint parties, online classes and retreats needed a site that fills seats every week, for English and Spanish speaking customers alike.',
+          solution: 'We built a bold, playful bilingual site around one action, booking a class. Customers pick an experience, a Saturday and a group size, and the booking lands straight in the studio’s Google Calendar with live seat counts, plus local SEO for Santa Fe art classes.',
+          desktopImg: '/portfolio-inspireartlab-desktop.jpg',
+          mobileImg: '/portfolio-inspireartlab-mobile.jpg',
+        },
+        {
           name: 'WhichPodcast',
           url: 'https://www.whichpodcast.com',
           urlLabel: 'whichpodcast.com',
