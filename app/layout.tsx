@@ -4,6 +4,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CookieConsent from '@/components/CookieConsent'
+import { Analytics } from '@vercel/analytics/next'
 
 const cormorant = Cormorant_Garamond({
   variable: '--font-serif',
@@ -82,6 +83,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         {/* Meta Pixel and Google Analytics load from here, only after consent. */}
         <CookieConsent />
+        {/* Vercel Web Analytics is cookieless, so it counts every visitor without consent. */}
+        <Analytics />
       </body>
     </html>
   )
