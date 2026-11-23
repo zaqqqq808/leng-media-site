@@ -289,33 +289,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
-      {/* EXAMPLES — interactive concept showcase */}
-      {s.examples && (
-        <section id="examples" className={styles.examples}>
-          <ScrollReveal className={styles.examplesHead}>
-            <span className="section-label">// Examples of what we can do</span>
-            <h2 className={styles.examplesTitle}>{s.examples.heading}</h2>
-            <p className={styles.examplesIntro}>{s.examples.intro}</p>
-          </ScrollReveal>
-          <div className={styles.examplesGrid}>
-            {s.examples.items.map((ex, i) => (
-              <ScrollReveal key={ex.name} delay={((i % 3) + 1) as 1|2|3}>
-                <a href={ex.url} target="_blank" rel="noopener noreferrer" className={styles.exCard}>
-                  <span className={styles.exNum}>{String(i + 1).padStart(2, '0')}</span>
-                  <span className={styles.exName}>{ex.name}</span>
-                  <span className={styles.exTag}>{ex.tag}</span>
-                </a>
-              </ScrollReveal>
-            ))}
-          </div>
-          <ScrollReveal>
-            <a href={s.examples.galleryUrl} target="_blank" rel="noopener noreferrer" className={styles.examplesCta}>
-              View the full gallery →
-            </a>
-          </ScrollReveal>
-        </section>
-      )}
-
       {/* BODY */}
       {slug !== 'website-builds' && (
         <section className={styles.body}>
@@ -433,6 +406,33 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             projects={s.portfolio.projects}
             ctaHref={withCalendlyService('https://calendly.com/zaq-lengmedia/website-build-discovery-call', 'Website Building')}
           />
+        </section>
+      )}
+
+      {/* EXAMPLES — interactive concept showcase */}
+      {s.examples && (
+        <section id="examples" className={styles.examples}>
+          <ScrollReveal className={styles.examplesHead}>
+            <span className="section-label">// More examples of what we can do for you</span>
+            <h2 className={styles.examplesTitle}>{s.examples.heading}</h2>
+            <p className={styles.examplesIntro}>{s.examples.intro}</p>
+          </ScrollReveal>
+          <div className={styles.examplesGrid}>
+            {s.examples.items.map((ex, i) => (
+              <ScrollReveal key={ex.name} delay={((i % 3) + 1) as 1|2|3}>
+                <a href={ex.url} target="_blank" rel="noopener noreferrer" className={styles.exCard}>
+                  <span className={styles.exNum}>{String(i + 1).padStart(2, '0')}</span>
+                  <span className={styles.exName}>{ex.name}</span>
+                  <span className={styles.exTag}>{ex.tag}</span>
+                </a>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal>
+            <a href={s.examples.galleryUrl} target="_blank" rel="noopener noreferrer" className={styles.examplesCta}>
+              View the full gallery →
+            </a>
+          </ScrollReveal>
         </section>
       )}
 
